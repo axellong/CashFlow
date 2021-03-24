@@ -1,10 +1,11 @@
 package sample.DAOs;
 
+import entity.SubCategoria;
+import hibernete.ConexionHibernete;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import sample.Entitys.SubCategoria;
 
 import java.io.File;
 import java.util.List;
@@ -22,17 +23,10 @@ public class SubCategoriasDAO {
 
     @SuppressWarnings("deprecation")
 
-    public SubCategoriasDAO(String nombre){
-        System.err.println("Starting");
-        try {
-            Configuration configuration = new Configuration();
-            System.err.println("Reading Configuration");
-            configuration.configure();
-
-            factory = new Configuration().configure(new File("/src/sample/"+nombre+".cfg.xml")).buildSessionFactory();
-        } catch (Throwable ex){
-            System.err.println("Session cannot be created ");
-        }
+    public SubCategoriasDAO(){
+        ConexionHibernete.setDriver("postgresql");
+        ConexionHibernete.generarConexion();
+        factory = ConexionHibernete.getFactory();
     }
 
     public int saveSubCategoria(SubCategoria subCategoria) throws HibernateException {

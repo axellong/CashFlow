@@ -1,6 +1,7 @@
 package sample.Controller;
 
 import animatefx.animation.FadeOut;
+import hibernete.ConexionHibernete;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
@@ -33,6 +34,8 @@ public class LoginController {
     @FXML
     void MouseClickedVerificar(MouseEvent event) {
         makefadeOut(1);
+        ConexionHibernete.setDriver("postgresql");
+        ConexionHibernete.generarConexion();
     }
 
     @FXML

@@ -1,10 +1,12 @@
 package sample.DAOs;
 
+import entity.ClasificacionIndicadores;
+import hibernete.ConexionHibernete;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import sample.Entitys.ClasificacionIndicadores;
+
 
 import java.io.File;
 import java.util.List;
@@ -22,17 +24,10 @@ public class ClasificacionIdicadoresDAO {
 
     @SuppressWarnings("deprecation")
 
-    public ClasificacionIdicadoresDAO(String nombre){
-        System.err.println("Starting");
-        try {
-            Configuration configuration = new Configuration();
-            System.err.println("Reading Configuration");
-            configuration.configure();
-
-            factory = new Configuration().configure(new File("/src/sample/"+nombre+".cfg.xml")).buildSessionFactory();
-        } catch (Throwable ex){
-            System.err.println("Session cannot be created ");
-        }
+    public ClasificacionIdicadoresDAO(){
+        ConexionHibernete.setDriver("postgresql");
+        ConexionHibernete.generarConexion();
+        factory = ConexionHibernete.getFactory();
     }
 
     public int saveClasificacionIndicador(ClasificacionIndicadores clasificacionIndicadores) throws HibernateException {

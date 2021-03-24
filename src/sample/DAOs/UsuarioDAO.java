@@ -1,6 +1,7 @@
 package sample.DAOs;
 
-import sample.Entitys.Usuario;
+import entity.Usuario;
+import hibernete.ConexionHibernete;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -23,17 +24,10 @@ public class UsuarioDAO {
 
     @SuppressWarnings("deprecation")
 
-    public UsuarioDAO(String nombre){
-        System.err.println("Starting");
-        try {
-            Configuration configuration = new Configuration();
-            System.err.println("Reading Configuration");
-            configuration.configure();
-
-            factory = new Configuration().configure(new File("/src/sample/"+nombre+".cfg.xml")).buildSessionFactory();
-        } catch (Throwable ex){
-            System.err.println("Session cannot be created ");
-        }
+    public UsuarioDAO(){
+        ConexionHibernete.setDriver("postgresql");
+        ConexionHibernete.generarConexion();
+        factory = ConexionHibernete.getFactory();
     }
 
     public int saveUsuario (Usuario usuario) throws HibernateException {

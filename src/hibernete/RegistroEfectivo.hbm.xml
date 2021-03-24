@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+    <class name="RegistroEfectivo" table="registroEfectivo">
+
+        <id name="idRegistroEfectivo"
+            column="idRegistroEfectivo"
+            type="java.lang.Integer"
+            unsaved-value="null" >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property name="tipoMovimiento" column="tipoMovimiento"/>
+        <property name="idCategoria" column="idCategoria"/>
+        <property name="concepto" column="concepto"/>
+        <property name="monto" column="monto"/>
+        <property name="fecha" column="fecha"/>
+        <property name="hora" column="hora"/>
+        <property name="idSubcategoria" column="idSubcategoria"/>
+        <property name="idClasificacion" column="idClasificacion"/>
+
+
+
+
+    </class>
+</hibernate-mapping>

@@ -1,10 +1,12 @@
 package sample.DAOs;
 
+import entity.RegistroIndicadores;
+import hibernete.ConexionHibernete;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import sample.Entitys.RegistroIndicadores;
+
 
 import java.io.File;
 import java.util.List;
@@ -23,17 +25,10 @@ public class RegistroIndicadoresDAO {
 
     @SuppressWarnings("deprecation")
 
-    public RegistroIndicadoresDAO(String nombre){
-        System.err.println("Starting");
-        try {
-            Configuration configuration = new Configuration();
-            System.err.println("Reading Configuration");
-            configuration.configure();
-
-            factory = new Configuration().configure(new File("/src/sample/"+nombre+".cfg.xml")).buildSessionFactory();
-        } catch (Throwable ex){
-            System.err.println("Session cannot be created ");
-        }
+    public RegistroIndicadoresDAO(){
+        ConexionHibernete.setDriver("postgresql");
+        ConexionHibernete.generarConexion();
+        factory = ConexionHibernete.getFactory();
     }
 
     public int saveRegistroIndicador (RegistroIndicadores registroIndicadores) throws HibernateException {
