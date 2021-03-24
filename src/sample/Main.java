@@ -11,8 +11,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-import sample.DAOs.UsuarioDAO;
-
 import java.io.IOException;
 
 public class Main extends Application {
@@ -105,7 +103,6 @@ public class Main extends Application {
 
     //METODO MAIN
     public static void main(String[] args) {
-        UsuarioDAO usuarioDAO = new UsuarioDAO("hibernate");
         launch(args);
     }
 }
