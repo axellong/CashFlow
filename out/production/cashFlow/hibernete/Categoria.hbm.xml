@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+    <class name="Categoria" table="categoria">
+
+        <id name="idCategoria"
+            column="idCategoria"
+            type="java.lang.Integer"
+            unsaved-value="null" >
+            <generator class="native">
+            </generator>
+        </id>
+
+        <property name="nombreCategoria" column="nombreCategoria"/>
+        <property name="idUsuario" column="idUsuario"/>
+
+
+
+    </class>
+</hibernate-mapping>
