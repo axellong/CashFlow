@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="sample.Persistence">
+    <class name="Clasificacion" table="clasificacion">
+        <id name="idClasificacion"
+            column="idClasificacion"
+            type="java.lang.Integer"
+            unsaved-value="null">
+            <generator class="native"> </generator>
+        </id>
+
+        <property name="nombreClasificacion" column="nombreClasificacion"/>
+    </class>
+</hibernate-mapping>
