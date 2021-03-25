@@ -9,9 +9,10 @@ public class RegistroIndicadores {
     private double monto;
     private String mes;
     private int semana;
+    private int ano;
     private String descripcion;
 
-    public RegistroIndicadores(int idRegistroIndicadores, int idClasificacion, String concepto, String razonSocial, double monto, String mes, int semana, String descripcion) {
+    public RegistroIndicadores(int idRegistroIndicadores, int idClasificacion, String concepto, String razonSocial, double monto, String mes, int semana, int ano, String descripcion) {
         this.idRegistroIndicadores = idRegistroIndicadores;
         this.idClasificacion = idClasificacion;
         this.concepto = concepto;
@@ -19,12 +20,20 @@ public class RegistroIndicadores {
         this.monto = monto;
         this.mes = mes;
         this.semana = semana;
+        this.ano = ano;
         this.descripcion = descripcion;
     }
 
     public RegistroIndicadores() {
     }
 
+    public int getAno() {
+        return ano;
+    }
+
+    public void setAno(int ano) {
+        this.ano = ano;
+    }
 
     public int getIdRegistroIndicadores() {
         return idRegistroIndicadores;

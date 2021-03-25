@@ -31,6 +31,7 @@ public class LoginController {
     @FXML
     void MouseClickedIngresar(MouseEvent event) {
         cambiarScene("Dash","DashView");
+        loginSecure.CheckSecureCode(111);
     }
 
     @FXML
@@ -39,7 +40,7 @@ public class LoginController {
         ConexionHibernete.setDriver("postgresql");
         ConexionHibernete.generarConexion();
 
-        loginSecure.SendMail("ruizaxellongines@gmail.com");
+        loginSecure.SendMail("193239@ids.upchiapas.edu.mx");
     }
 
     @FXML
