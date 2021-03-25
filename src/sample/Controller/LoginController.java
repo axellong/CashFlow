@@ -6,11 +6,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import logic.LoginSecure;
 import sample.Main;
 
 import java.io.IOException;
 
 public class LoginController {
+    LoginSecure loginSecure = new LoginSecure();
 
     @FXML
     private Pane paneVerificar;
@@ -36,6 +38,8 @@ public class LoginController {
         makefadeOut(1);
         ConexionHibernete.setDriver("postgresql");
         ConexionHibernete.generarConexion();
+
+        loginSecure.SendMail("ruizaxellongines@gmail.com");
     }
 
     @FXML
