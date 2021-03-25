@@ -27,7 +27,7 @@
                               <Image url="@Resources/icons8_new_post_48.png" />
                            </image>
                         </ImageView>
-                        <JFXTextField id="input-label" focusColor="WHITE" labelFloat="true" prefHeight="40.0" prefWidth="210.0" promptText="Correo Electronico">
+                        <JFXTextField id="input-label" fx:id="inputEmail" focusColor="WHITE" labelFloat="true" prefHeight="40.0" prefWidth="210.0" promptText="Correo Electronico">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -44,7 +44,7 @@
                               <Image url="@Resources/icons8_lock_48.png" />
                            </image>
                         </ImageView>
-                        <JFXPasswordField id="input-label" focusColor="WHITE" labelFloat="true" prefHeight="40.0" prefWidth="210.0" promptText="Contraseña">
+                        <JFXPasswordField id="input-label" fx:id="inputPassword" focusColor="WHITE" labelFloat="true" prefHeight="40.0" prefWidth="210.0" promptText="Contraseña">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -62,7 +62,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton layoutX="15.0" layoutY="193.0" text="OLVIDASTE TU CONTRASEÑA?" textFill="WHITE">
+                  <JFXButton layoutX="15.0" layoutY="193.0" onMouseClicked="#MouseClickedForget" text="OLVIDASTE TU CONTRASEÑA?" textFill="WHITE">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -81,7 +81,7 @@
                         <Font size="16.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="49.0" layoutY="281.0" text="REENVIAR CODIGO DE VERIFICACION" textFill="WHITE">
+                  <JFXButton layoutX="49.0" layoutY="281.0" onMouseClicked="#MouseClikedForgetCode" text="REENVIAR CODIGO DE VERIFICACION" textFill="WHITE">
                      <font>
                         <Font size="10.0" />
                      </font>
@@ -93,7 +93,7 @@
                               <Image url="@Resources/icons8_alarm_48.png" />
                            </image>
                         </ImageView>
-                        <JFXTextField id="input-label" focusColor="WHITE" labelFloat="true" prefHeight="40.0" prefWidth="210.0" promptText="Codigo de verificacion">
+                        <JFXTextField id="input-label" fx:id="inputCode" focusColor="WHITE" labelFloat="true" prefHeight="40.0" prefWidth="210.0" promptText="Codigo de verificacion">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -194,7 +194,14 @@
       <AnchorPane id="left-panel" prefHeight="550.0" prefWidth="515.0">
          <effect>
             <DropShadow blurType="ONE_PASS_BOX" />
-         </effect></AnchorPane>
+         </effect>
+         <children>
+            <ImageView fitHeight="446.0" fitWidth="546.0" layoutX="35.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../CashflowLogo.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
    </children>
    <stylesheets>
       <URL value="@LoginStyle.css" />

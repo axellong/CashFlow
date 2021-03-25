@@ -26,11 +26,11 @@ public class Main extends Application {
     public void start(Stage stage){
         primaryStage = stage;
 
-        setRoot("Login","LoginView");
-        //setRoot("Dash","DashView");
+        //setRoot("Login","LoginView");
+        setRoot("Dash","DashView");
         scene.setFill(Color.TRANSPARENT);
         primaryStage.setTitle("CashFlow");
-        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("Resources/iconAppLog.png")));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("Resources/iconLogo.png")));
         primaryStage.setScene(scene);
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.centerOnScreen();

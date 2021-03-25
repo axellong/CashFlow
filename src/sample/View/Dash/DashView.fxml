@@ -168,11 +168,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <Label layoutX="99.0" layoutY="6.0" text="Menu" textAlignment="CENTER" textFill="WHITE" underline="true">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
+                  <JFXButton layoutX="10.0" layoutY="415.0" onMouseClicked="#MouseClickedCerrarSesion" ripplerFill="WHITE" text="Cerrar sesión" textFill="WHITE" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -186,16 +182,21 @@
                   <Image url="@Resources/icons8_male_user_64.png" />
                </image>
             </ImageView>
-            <Label layoutX="74.0" layoutY="29.0" text="USER" textFill="WHITE">
+            <Label layoutX="74.0" layoutY="29.0" text="User" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label layoutX="74.0" layoutY="54.0" text="EMAIL" textFill="WHITE">
+            <Label layoutX="74.0" layoutY="54.0" text="E-mail" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
+            <ImageView fx:id="initialLog" fitHeight="446.0" fitWidth="546.0" layoutX="333.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../CashflowLogo.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

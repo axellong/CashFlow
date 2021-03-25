@@ -18,34 +18,34 @@
    <children>
       <TableView layoutY="20.0" prefHeight="220.0" prefWidth="550.0">
         <columns>
-          <TableColumn maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Fecha" />
-          <TableColumn maxWidth="171.0" minWidth="171.0" prefWidth="171.0" text="Descripción" />
-            <TableColumn maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Categoria" />
-            <TableColumn maxWidth="138.0" minWidth="138.0" prefWidth="138.0" text="SubCategoria" />
+          <TableColumn fx:id="colFecha" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Fecha" />
+          <TableColumn fx:id="colDescripcion" maxWidth="171.0" minWidth="171.0" prefWidth="171.0" text="Descripción" />
+            <TableColumn fx:id="colCategoria" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Categoria" />
+            <TableColumn fx:id="colSubCategoria" maxWidth="138.0" minWidth="138.0" prefWidth="138.0" text="SubCategoria" />
         </columns>
       </TableView>
-      <JFXCheckBox layoutX="14.0" layoutY="254.0" text="Entrada">
+      <JFXCheckBox fx:id="checkEntrada" layoutX="14.0" layoutY="254.0" text="Entrada">
          <font>
             <Font size="13.0" />
          </font>
       </JFXCheckBox>
-      <JFXCheckBox layoutX="114.0" layoutY="254.0" text="Salida">
+      <JFXCheckBox fx:id="checkSalida" layoutX="114.0" layoutY="254.0" text="Salida">
          <font>
             <Font size="13.0" />
          </font>
       </JFXCheckBox>
-      <JFXComboBox layoutX="14.0" layoutY="304.0" prefHeight="30.0" prefWidth="220.0" promptText="Categoria" />
-      <JFXTextField layoutX="14.0" layoutY="358.0" prefHeight="30.0" prefWidth="220.0" promptText="Descripción">
+      <JFXComboBox id="input-label" fx:id="boxCategoria" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="304.0" prefHeight="30.0" prefWidth="220.0" promptText="Categoria" />
+      <JFXTextField id="input-label" fx:id="inputDescripcion" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="358.0" prefHeight="30.0" prefWidth="220.0" promptText="Descripción">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField layoutX="14.0" layoutY="405.0" prefHeight="30.0" prefWidth="150.0" promptText="Cantidad">
+      <JFXTextField id="input-label" fx:id="inputCantidad" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="410.0" prefHeight="30.0" prefWidth="150.0" promptText="Cantidad">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXButton id="button-base" layoutX="290.0" layoutY="405.0" prefHeight="30.0" prefWidth="220.0" text="Guardar" textFill="WHITE">
+      <JFXButton id="button-base" layoutX="290.0" layoutY="405.0" onMouseClicked="#MouseClickedSave" prefHeight="30.0" prefWidth="220.0" text="Guardar" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>

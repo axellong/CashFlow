@@ -1,22 +1,40 @@
 package sample.Controller;
 
 import animatefx.animation.FadeOut;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import sample.Main;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController implements Initializable {
 
     @FXML
-    private Pane paneVerificar;
+    private Pane paneVerificar, paneIngresar;
 
     @FXML
-    private Pane paneIngresar;
+    private JFXTextField inputEmail, inputCode;
 
+    @FXML
+    private JFXPasswordField inputPassword;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        inputCode.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                inputCode.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+        });
+    }
+
+    //metodos para minimizar y cerrar
     @FXML
     void MouseClickedMin(MouseEvent event) { Main.primaryStage.setIconified(true); }
 
@@ -25,6 +43,7 @@ public class LoginController {
         System.exit(0);
     }
 
+    // metodos para ingresar y verificacion
     @FXML
     void MouseClickedIngresar(MouseEvent event) {
         cambiarScene("Dash","DashView");
@@ -35,6 +54,18 @@ public class LoginController {
         makefadeOut(1);
     }
 
+    // metodos de recuperar contraseña y reenvio de codigo
+    @FXML
+    void MouseClickedForget(MouseEvent event) {
+
+    }
+
+    @FXML
+    void MouseClikedForgetCode(MouseEvent event) {
+
+    }
+
+    // metodos para regresar, cambiar scene
     @FXML
     void MouseClickedBack(MouseEvent event) {
         makefadeOut(2);
@@ -77,4 +108,11 @@ public class LoginController {
             e.printStackTrace();
         }
     }
+
+    //metodo de limpieza
+
+    public void clean(){
+
+    }
+
 }

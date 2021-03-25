@@ -9,27 +9,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="base-category" prefHeight="480.0" prefWidth="550.0" scaleZ="-1.0" style="-fx-background-color: #121315;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.CategoryController">
+<AnchorPane id="base-category" prefHeight="480.0" prefWidth="550.0" scaleZ="-1.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.CategoryController">
    <children>
-      <JFXComboBox focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="267.0" prefHeight="30.0" prefWidth="220.0" promptText="Clasificacion" />
-      <TableView id="table-base" layoutY="20.0" prefHeight="220.0" prefWidth="550.0">
+      <JFXComboBox id="input-label" fx:id="boxClasificacion" focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="267.0" prefHeight="30.0" prefWidth="220.0" promptText="Clasificacion" />
+      <TableView id="table-base" layoutY="20.0" onMouseClicked="#MouseClickeSelect" prefHeight="220.0" prefWidth="550.0">
         <columns>
-          <TableColumn id="colum" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" text="Clasificacion" />
-          <TableColumn maxWidth="220.0" minWidth="220.0" prefWidth="220.0" text="Categoria" />
-            <TableColumn maxWidth="220.0" minWidth="220.0" prefWidth="220.0" resizable="false" text="Sub-Categoria" />
+          <TableColumn id="colum" fx:id="colClasificacion" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" text="Clasificación" />
+          <TableColumn fx:id="colCategoria" maxWidth="220.0" minWidth="220.0" prefWidth="220.0" text="Categoria" />
+            <TableColumn fx:id="colSubCategoria" maxWidth="220.0" minWidth="220.0" prefWidth="220.0" resizable="false" text="Sub-Categoria" />
         </columns>
       </TableView>
-      <JFXTextField focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="327.0" prefHeight="30.0" prefWidth="220.0" promptText="Categoria">
+      <JFXTextField id="input-label" fx:id="inputCategoria" focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="327.0" prefHeight="30.0" prefWidth="220.0" promptText="Categoria">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXTextField focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="386.0" prefHeight="30.0" prefWidth="220.0" promptText="Sub-Categoria">
+      <JFXTextField id="input-label" fx:id="inputSubCategoria" focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="386.0" prefHeight="30.0" prefWidth="220.0" promptText="Sub-Categoria">
          <font>
             <Font size="13.0" />
          </font>
       </JFXTextField>
-      <JFXButton id="button-base" buttonType="RAISED" layoutX="290.0" layoutY="394.0" prefHeight="30.0" prefWidth="220.0" text="Guardar / Editar" textFill="WHITE">
+      <JFXButton id="button-base" buttonType="RAISED" layoutX="290.0" layoutY="394.0" onMouseClicked="#MouseClickedSaveAndEdit" prefHeight="30.0" prefWidth="220.0" text="Guardar / Editar" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>
