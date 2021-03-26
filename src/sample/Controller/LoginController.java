@@ -21,7 +21,9 @@ public class LoginController {
     private Pane paneIngresar;
 
     @FXML
-    void MouseClickedMin(MouseEvent event) { Main.primaryStage.setIconified(true); }
+    void MouseClickedMin(MouseEvent event) {
+        Main.primaryStage.setIconified(true);
+    }
 
     @FXML
     void MouseClickedClose(MouseEvent event) {
@@ -30,17 +32,13 @@ public class LoginController {
 
     @FXML
     void MouseClickedIngresar(MouseEvent event) {
-        cambiarScene("Dash","DashView");
-        loginSecure.CheckSecureCode(111);
+
+        cambiarScene("Dash", "DashView");
     }
 
     @FXML
     void MouseClickedVerificar(MouseEvent event) {
         makefadeOut(1);
-        ConexionHibernete.setDriver("postgresql");
-        ConexionHibernete.generarConexion();
-
-        loginSecure.SendMail("193239@ids.upchiapas.edu.mx");
     }
 
     @FXML
@@ -48,8 +46,8 @@ public class LoginController {
         makefadeOut(2);
     }
 
-    private void changePane(int option){
-        switch(option){
+    private void changePane(int option) {
+        switch (option) {
             case 1:
                 paneVerificar.setVisible(false);
                 paneVerificar.setDisable(true);
@@ -65,21 +63,21 @@ public class LoginController {
         }
     }
 
-    private void makefadeOut(int option){
+    private void makefadeOut(int option) {
         FadeOut fade = new FadeOut();
         fade.setResetOnFinished(true);
-        if(option == 1) {
+        if (option == 1) {
             fade.setNode(paneVerificar);
-        }else{
+        } else {
             fade.setNode(paneIngresar);
         }
         fade.play();
-        fade.setOnFinished((ActionEvent event)-> changePane(option));
+        fade.setOnFinished((ActionEvent event) -> changePane(option));
     }
 
     private void cambiarScene(String carpeta, String fxml) {
         try {
-            Main.setFXML(carpeta,fxml);
+            Main.setFXML(carpeta, fxml);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
