@@ -25,12 +25,23 @@
 	/* #5A5DEA  */
 	-fx-background-color:  #3E1F47;
 }
-
+/*
+/* --------------------Table--------------------------------------
 #table-base{
     -fx-background-color:  #1b202699;
 
 }
-/* MODIFICA LA ETIQUETA DEL AS COLUMNAS */
+/* Encabezado
+.table-view .column-header-background .filler {
+    -fx-background-color: transparente;
+}
+
+.table-view .corner {
+    -fx-background-color : transparente;
+}
+/* Filas*/
+/* BARRA DE DESPLAZAMINTO */
+/* MODIFICA LA ETIQUETA DEL AS COLUMNAS
 .table-view .column-header-background .label{
     -fx-background-color: transparent;
     -fx-text-fill: white;
@@ -46,4 +57,4 @@
 .table-view .column-header{
     -fx-background-color:  #1b2026CC;
 
-}
+}*/
