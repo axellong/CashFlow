@@ -6,6 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import sample.Main;
@@ -18,17 +20,20 @@ public class DashController implements Initializable {
 
     private ObservableList<Parent> menu;
 
-    private Parent categoryRoot;
+    private Parent categoryRoot, flujoRoot, registoRoot;
 
-    private Parent flujoRoot;
-
-    private Parent registoRoot;
-    @FXML
-    private AnchorPane paneAdditional;
+    private CategoryController categoryController;
+    private FlujoController flujoController;
+    private RegistroController registroController;
 
     @FXML
-    private AnchorPane panePrincipal;
+    private AnchorPane paneAdditional, panePrincipal;
 
+    @FXML
+    private ImageView initialLog;
+
+    @FXML
+    private Label labelUser,labelEmail;
     // metodo INITIALIZE
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -69,7 +74,9 @@ public class DashController implements Initializable {
     @FXML
     void MouseClickedCategory(MouseEvent event) {
         if(categoryRoot!=null){
+            clean();
             notVisible();
+            icoLog();
             visable(categoryRoot);
         }
     }
@@ -77,7 +84,9 @@ public class DashController implements Initializable {
     @FXML
     void MouseClickedFlujo(MouseEvent event) {
         if(flujoRoot!=null){
+            clean();
             notVisible();
+            icoLog();
             visable(flujoRoot);
         }
     }
@@ -85,11 +94,29 @@ public class DashController implements Initializable {
     @FXML
     void MouseClickedRegistro(MouseEvent event) {
         if(registoRoot!=null){
+            clean();
             notVisible();
+            icoLog();
             visable(registoRoot);
         }
     }
 
+    @FXML
+    void MouseClickedCerrarSesion(MouseEvent event) {
+
+        //Borrar licensias
+        try {
+            Main.setFXML("Login","LoginView");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    //metodo para agregar email and user
+    /*public void setLabels(String user, String email){
+        labelUser.setText(user);
+        labelEmail.setText(email);
+    }*/
     // metodos para integrar los Parent a las ESCENA
     private Parent integratePanel(String carpeta, String fxml,int x , int y) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/"+carpeta+"/"+fxml+".fxml"));
@@ -97,6 +124,18 @@ public class DashController implements Initializable {
         root.setLayoutX(x);
         root.setLayoutY(y);
         root.setVisible(false);
+
+        switch (fxml){
+            case "Category":
+                categoryController = fxmlLoader.getController();
+                break;
+            case "Flujo":
+                flujoController = fxmlLoader.getController();
+                break;
+            case "Registro":
+                registroController = fxmlLoader.getController();
+                break;
+        }
         return root;
 
     }
@@ -130,9 +169,16 @@ public class DashController implements Initializable {
         });
     }
 
+    private void icoLog(){
+        if (initialLog.isVisible()){
+            initialLog.setVisible(false);
+        }
+    }
+
     //metodo para borrar el contenido al momento de cambiar de scena
-
     private void clean(){
-
+        categoryController.clean();
+        flujoController.clean();
+        registroController.clean();
     }
 }

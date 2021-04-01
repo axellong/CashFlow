@@ -1,55 +1,78 @@
 package sample.Controller;
 
 import animatefx.animation.FadeOut;
-import hibernete.ConexionHibernete;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
-import logic.LoginSecure;
-import sample.DAOs.UsuarioDAO;
 import sample.Main;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class LoginController {
-    LoginSecure loginSecure = new LoginSecure();
-
-    @FXML
-    private Pane paneVerificar;
+public class LoginController implements Initializable {
 
     @FXML
-    private Pane paneIngresar;
+    private Pane paneVerificar, paneIngresar;
 
     @FXML
-    void MouseClickedMin(MouseEvent event) {
-        Main.primaryStage.setIconified(true);
+    private JFXTextField inputEmail, inputCode;
+
+    @FXML
+    private JFXPasswordField inputPassword;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        inputCode.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                inputCode.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+        });
     }
+
+    //metodos para minimizar y cerrar
+    @FXML
+    void MouseClickedMin(MouseEvent event) { Main.primaryStage.setIconified(true); }
 
     @FXML
     void MouseClickedClose(MouseEvent event) {
         System.exit(0);
     }
 
+    // metodos para ingresar y verificacion
     @FXML
     void MouseClickedIngresar(MouseEvent event) {
-        cambiarScene("Dash", "DashView");
+        cambiarScene("Dash","DashView");
     }
 
     @FXML
     void MouseClickedVerificar(MouseEvent event) {
         makefadeOut(1);
-        UsuarioDAO dao = new UsuarioDAO();
-        System.out.println(dao.getUsuario("Eduardo93").getNombre());
     }
 
+    // metodos de recuperar contraseña y reenvio de codigo
+    @FXML
+    void MouseClickedForget(MouseEvent event) {
+
+    }
+
+    @FXML
+    void MouseClikedForgetCode(MouseEvent event) {
+
+    }
+
+    // metodos para regresar, cambiar scene
     @FXML
     void MouseClickedBack(MouseEvent event) {
         makefadeOut(2);
     }
 
-    private void changePane(int option) {
-        switch (option) {
+    private void changePane(int option){
+        switch(option){
             case 1:
                 paneVerificar.setVisible(false);
                 paneVerificar.setDisable(true);
@@ -65,24 +88,31 @@ public class LoginController {
         }
     }
 
-    private void makefadeOut(int option) {
+    private void makefadeOut(int option){
         FadeOut fade = new FadeOut();
         fade.setResetOnFinished(true);
-        if (option == 1) {
+        if(option == 1) {
             fade.setNode(paneVerificar);
-        } else {
+        }else{
             fade.setNode(paneIngresar);
         }
         fade.play();
-        fade.setOnFinished((ActionEvent event) -> changePane(option));
+        fade.setOnFinished((ActionEvent event)-> changePane(option));
     }
 
     private void cambiarScene(String carpeta, String fxml) {
         try {
-            Main.setFXML(carpeta, fxml);
+            Main.setFXML(carpeta,fxml);
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
+
+    //metodo de limpieza
+
+    public void clean(){
+
+    }
+
 }
