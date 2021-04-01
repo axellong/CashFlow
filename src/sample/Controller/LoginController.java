@@ -10,10 +10,7 @@ import javafx.scene.control.TextFormatter;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.util.converter.IntegerStringConverter;
-import sample.Main;
 import sample.Util.Utils;
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -35,23 +32,29 @@ public class LoginController implements Initializable {
 
     //metodos para minimizar y cerrar
     @FXML
-    void MouseClickedMin(MouseEvent event) { Main.primaryStage.setIconified(true); }
+    void MouseClickedMin(MouseEvent event) { Utils.minimize(); }
 
     @FXML
-    void MouseClickedClose(MouseEvent event) {
-        System.exit(0);
-    }
+    void MouseClickedClose(MouseEvent event) { Utils.close(); }
 
     // metodos para ingresar y verificacion
     @FXML
     void MouseClickedIngresar(MouseEvent event) {
         clean();
-        cambiarScene("Dash","DashView");
+        Utils.changeScene("Dash","DashView");
+        //Guardar Credenciales de Usuario
     }
 
     @FXML
     void MouseClickedVerificar(MouseEvent event) {
-        makefadeOut(1);
+        makefadeOut(true);
+    }
+
+    // metodos para regresar, cambiar scene
+    @FXML
+    void MouseClickedBack(MouseEvent event) {
+        clean();
+        makefadeOut(false);
     }
 
     // metodos de recuperar contraseña y reenvio de codigo
@@ -65,49 +68,20 @@ public class LoginController implements Initializable {
 
     }
 
-    // metodos para regresar, cambiar scene
-    @FXML
-    void MouseClickedBack(MouseEvent event) {
-        clean();
-        makefadeOut(2);
+    private void changePane(boolean value) {
+        paneVerificar.setVisible(!value);
+        paneVerificar.setDisable(value);
+        paneIngresar.setVisible(value);
+        paneIngresar.setDisable(!value);
     }
 
-    private void changePane(int option){
-        switch(option){
-            case 1:
-                paneVerificar.setVisible(false);
-                paneVerificar.setDisable(true);
-                paneIngresar.setVisible(true);
-                paneIngresar.setDisable(false);
-                break;
-            case 2:
-                paneIngresar.setVisible(false);
-                paneIngresar.setDisable(true);
-                paneVerificar.setVisible(true);
-                paneVerificar.setDisable(false);
-                break;
-        }
-    }
-
-    private void makefadeOut(int option){
+    private void makefadeOut(boolean value){
         FadeOut fade = new FadeOut();
         fade.setResetOnFinished(true);
-        if(option == 1) {
-            fade.setNode(paneVerificar);
-        }else{
-            fade.setNode(paneIngresar);
-        }
+        if(value) { fade.setNode(paneVerificar);
+        }else{ fade.setNode(paneIngresar); }
         fade.play();
-        fade.setOnFinished((ActionEvent event)-> changePane(option));
-    }
-
-    private void cambiarScene(String carpeta, String fxml) {
-        try {
-            Main.setFXML(carpeta,fxml);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+        fade.setOnFinished((ActionEvent event)-> changePane(value));
     }
 
     //metodo de limpieza

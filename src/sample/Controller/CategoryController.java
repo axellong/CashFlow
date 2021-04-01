@@ -35,8 +35,6 @@ public class CategoryController implements Initializable {
         colClasificacion.setCellValueFactory(new PropertyValueFactory<>("clasificacion"));
         colSubCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
         colCategoria.setCellValueFactory(new PropertyValueFactory<>("subCategoria"));
-
-
         tableViewCategoria.getItems().add(person);
     }
 

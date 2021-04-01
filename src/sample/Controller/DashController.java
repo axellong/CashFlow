@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import sample.Main;
+import sample.Util.Utils;
 
 import java.io.IOException;
 import java.net.URL;
@@ -52,11 +53,11 @@ public class DashController implements Initializable {
 
     // METODOS PARA CERRAR Y MINIMAZAR LA VENTANA
     @FXML
-    void MouseClickedMin(MouseEvent event) { Main.primaryStage.setIconified(true); }
+    void MouseClickedMin(MouseEvent event) { Utils.minimize(); }
 
     @FXML
     void MouseClickedClose(MouseEvent event) {
-        System.exit(0);
+        Utils.close();
     }
 
     // METODOS PARA ABRIR Y CERRAR MENU ADICIONAL
@@ -73,43 +74,33 @@ public class DashController implements Initializable {
     // Metodos de accion de botones del menu
     @FXML
     void MouseClickedCategory(MouseEvent event) {
-        if(categoryRoot!=null){
-            clean();
-            notVisible();
-            icoLog();
-            visable(categoryRoot);
-        }
+       nodeChange(categoryRoot);
     }
 
     @FXML
     void MouseClickedFlujo(MouseEvent event) {
-        if(flujoRoot!=null){
-            clean();
-            notVisible();
-            icoLog();
-            visable(flujoRoot);
-        }
+        nodeChange(flujoRoot);
     }
 
     @FXML
     void MouseClickedRegistro(MouseEvent event) {
-        if(registoRoot!=null){
+        nodeChange(registoRoot);
+    }
+
+    private void nodeChange(Parent node){
+        if(node != null){
             clean();
             notVisible();
             icoLog();
-            visable(registoRoot);
+            visable(node);
         }
     }
 
+    // metodo para cerrar la secion del Usuario
     @FXML
     void MouseClickedCerrarSesion(MouseEvent event) {
-
-        //Borrar licensias
-        try {
-            Main.setFXML("Login","LoginView");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //borrar credenciales del Usuario
+        Utils.changeScene("Login","LoginView");
     }
 
     //metodo para agregar email and user
@@ -143,36 +134,27 @@ public class DashController implements Initializable {
     private void goBack(ObservableList<Parent> node){
         panePrincipal.getChildrenUnmodifiable().forEach((children)-> {
             node.forEach((nodeMenu) -> {
-                if (children == nodeMenu) {
-                    children.toBack();
-                }
+                if (children == nodeMenu) { children.toBack(); }
             });
         });
    }
     // metodo para hacer un nodo visible
     private void visable(Parent node){
         panePrincipal.getChildrenUnmodifiable().forEach((childre)->{
-            if(childre == node){
-                childre.setVisible(true);
-            }
+            if(childre == node){ childre.setVisible(true); }
         });
     }
     // metodo para hacer todos los nodos nuevos no visibles
     private void notVisible(){
         panePrincipal.getChildrenUnmodifiable().forEach((children)->{
             menu.forEach((nodeMenu)->{
-                if(children == nodeMenu){
-                    children.setVisible(false);
-                }
+                if(children == nodeMenu){ children.setVisible(false); }
             });
-
         });
     }
 
     private void icoLog(){
-        if (initialLog.isVisible()){
-            initialLog.setVisible(false);
-        }
+        if (initialLog.isVisible()){ initialLog.setVisible(false); }
     }
 
     //metodo para borrar el contenido al momento de cambiar de scena
