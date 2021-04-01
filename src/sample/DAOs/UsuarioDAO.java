@@ -2,10 +2,12 @@ package sample.DAOs;
 
 import entity.Usuario;
 import hibernete.ConexionHibernete;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
 
 import java.io.File;
 import java.util.List;
@@ -18,19 +20,19 @@ public class UsuarioDAO {
         return factory;
     }
 
-    public void setFactory(SessionFactory factory){
+    public void setFactory(SessionFactory factory) {
         UsuarioDAO.factory = factory;
     }
 
     @SuppressWarnings("deprecation")
 
-    public UsuarioDAO(){
+    public UsuarioDAO() {
         ConexionHibernete.setDriver("postgresql");
         ConexionHibernete.generarConexion();
         factory = ConexionHibernete.getFactory();
     }
 
-    public int saveUsuario (Usuario usuario) throws HibernateException {
+    public int saveUsuario(Usuario usuario) throws HibernateException {
         Session session = factory.openSession();
         session.beginTransaction();
         int id = 0;
@@ -57,24 +59,20 @@ public class UsuarioDAO {
         session.close();
     }
 
-    public Usuario getUsuario(int idUsuario) throws HibernateException {
-        Usuario usuario = null;
-        Session session = factory.openSession();
-        session.beginTransaction();
+   public Usuario getUsuario(String email) throws HibernateException{
+       Session session = factory.openSession();
+       Criteria crit = session.createCriteria(Usuario.class);
+       crit.add(Restrictions.eq("email",email));
+       Usuario user = (Usuario) crit.list().get(0);
+       session.close();
+       return user;
+   }
 
-        usuario = (Usuario) session.get(Usuario.class, idUsuario);
-        session.getTransaction();
-        session.close();
-        return usuario;
-    }
-
-    public List<Usuario> getListUsuarios() throws HibernateException {
-        List <Usuario> listaUsuarios = null;
+    public List<Usuario> getListUsuarios() throws HibernateException{
         Session session = factory.openSession();
-        session.beginTransaction();
-        listaUsuarios = session.createQuery("from usuario").list();
-        session.getTransaction();
+        Criteria crit = session.createCriteria(Usuario.class);
+        List<Usuario> listUsers = crit.list();
         session.close();
-        return listaUsuarios;
+        return listUsers;
     }
 }

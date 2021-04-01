@@ -17,17 +17,18 @@ public class ConexionHibernete {
     }
 
     public static void generarConexion() {
-
-        System.err.println("Iniciando");
-        try {
-            System.err.println("Leyendo configuracion.");
-            generarConfiguracion();
-            serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
-            factory = configuration.buildSessionFactory(serviceRegistry);
-            System.err.println("se genero correctamente");
-        } catch (Throwable ex) {
-            System.err.println("No se puede crear la Sesion" + ex);
-            throw new ExceptionInInitializerError(ex);
+        if(factory == null) {
+            System.err.println("Iniciando");
+            try {
+                System.err.println("Leyendo configuracion.");
+                generarConfiguracion();
+                serviceRegistry = new ServiceRegistryBuilder().applySettings(configuration.getProperties()).buildServiceRegistry();
+                factory = configuration.buildSessionFactory(serviceRegistry);
+                System.err.println("se genero correctamente");
+            } catch (Throwable ex) {
+                System.err.println("No se puede crear la Sesion" + ex);
+                throw new ExceptionInInitializerError(ex);
+            }
         }
 
 

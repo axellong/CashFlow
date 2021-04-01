@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import logic.LoginSecure;
+import sample.DAOs.UsuarioDAO;
 import sample.Main;
 
 import java.io.IOException;
@@ -32,13 +33,14 @@ public class LoginController {
 
     @FXML
     void MouseClickedIngresar(MouseEvent event) {
-
         cambiarScene("Dash", "DashView");
     }
 
     @FXML
     void MouseClickedVerificar(MouseEvent event) {
         makefadeOut(1);
+        UsuarioDAO dao = new UsuarioDAO();
+        System.out.println(dao.getUsuario("Eduardo93").getNombre());
     }
 
     @FXML
