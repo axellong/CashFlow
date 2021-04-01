@@ -32,6 +32,27 @@ public class UsuarioDAO {
         factory = ConexionHibernete.getFactory();
     }
 
+    public boolean Validate(String Email, String Pass) throws HibernateException{
+        boolean answer = true;
+        Usuario users = null;
+        String sentence = "FROM Usuario WHERE email='" + Email
+                + "' and password='" + Pass + "'";
+        try {
+            Session session = factory.openSession();
+            session.beginTransaction();
+            List<Usuario> Listpeople = (List<Usuario>) session.createQuery(sentence).list();
+            if (!Listpeople.isEmpty()){
+                users = Listpeople.get(0);
+                answer = true;
+            }else{
+                answer = false;
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return answer;
+    }
+
     public int saveUsuario(Usuario usuario) throws HibernateException {
         Session session = factory.openSession();
         session.beginTransaction();

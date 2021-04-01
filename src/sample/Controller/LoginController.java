@@ -59,16 +59,17 @@ public class LoginController implements Initializable {
     //Ingresar Email y Password para enviar el codigo de verificacion
     @FXML
     void MouseClickedVerificar(MouseEvent event) {
-        String correo = inputEmail.getText();
-        String Pass = inputPassword.getText();
-        Daos.Mostrar();
-        /*boolean Decision;
-        Decision = Daos.getlogueo(correo,Pass);
-        if (Decision == true){
-            makefadeOut(1);
+        String Email = inputEmail.getText();
+        String Passw = inputPassword.getText();
+        boolean Decision;
+        Decision = Daos.Validate(Email,Passw);
+
+        if(Decision == false){
+            System.out.println("No se encontro");
         }else{
-            System.out.println("Algo Salio Mal");
-        }*/
+            makefadeOut(1);
+            Segure.SendMail(Email);
+        }
     }
 
     // metodos de recuperar contraseña y reenvio de codigo
