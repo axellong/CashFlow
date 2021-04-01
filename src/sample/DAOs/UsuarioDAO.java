@@ -2,12 +2,9 @@ package sample.DAOs;
 
 import entity.Usuario;
 import hibernete.ConexionHibernete;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.*;
+import org.hibernate.criterion.Restrictions;
 
-import java.io.File;
 import java.util.List;
 
 public class UsuarioDAO {
@@ -28,6 +25,43 @@ public class UsuarioDAO {
         ConexionHibernete.setDriver("postgresql");
         ConexionHibernete.generarConexion();
         factory = ConexionHibernete.getFactory();
+    }
+
+    public boolean getlogueo(String emails, String Passw){
+        Session session = factory.openSession();
+        session.beginTransaction();
+        try {
+            Usuario users = (Usuario) session.createQuery("FROM Usuario");
+            if (users!=null){
+                if (users.getPassword().equals(Passw)){
+                    System.out.println("Encontrado");
+                    return true;
+                }else{
+                    System.out.println("No encontrado");
+                    return false;
+                }
+            }else {
+                System.out.println("No Existe");
+                return false;
+            }
+        }catch (Exception e){
+            System.out.println("Error" + e);
+            return false;
+        }
+    }
+
+    public void Mostrar(){
+        try {
+            Session session = factory.openSession();
+            session.beginTransaction();
+            Query query = session.createQuery("FROM Usuario");
+            List<Usuario> people = query.list();
+            for (Usuario users : people) {
+                System.out.println(" La Lista es: \n" + users);
+            }
+        }catch (HibernateException e){
+            System.out.println(e);
+        }
     }
 
     public int saveUsuario (Usuario usuario) throws HibernateException {
@@ -72,7 +106,7 @@ public class UsuarioDAO {
         List <Usuario> listaUsuarios = null;
         Session session = factory.openSession();
         session.beginTransaction();
-        listaUsuarios = session.createQuery("from usuario").list();
+        listaUsuarios = session.createQuery("from Usuario").list();
         session.getTransaction();
         session.close();
         return listaUsuarios;

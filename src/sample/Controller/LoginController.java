@@ -3,11 +3,18 @@ package sample.Controller;
 import animatefx.animation.FadeOut;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import entity.Usuario;
+import hibernete.ConexionHibernete;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import logic.LoginSecure;
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+import sample.DAOs.UsuarioDAO;
 import sample.Main;
 
 import java.io.IOException;
@@ -16,14 +23,14 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
-    @FXML
-    private Pane paneVerificar, paneIngresar;
+    @FXML private Pane paneVerificar, paneIngresar;
 
-    @FXML
-    private JFXTextField inputEmail, inputCode;
+    @FXML private JFXTextField inputEmail, inputCode;
 
-    @FXML
-    private JFXPasswordField inputPassword;
+    @FXML private JFXPasswordField inputPassword;
+
+    LoginSecure Segure = new LoginSecure();
+    UsuarioDAO Daos = new UsuarioDAO();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -49,9 +56,19 @@ public class LoginController implements Initializable {
         cambiarScene("Dash","DashView");
     }
 
+    //Ingresar Email y Password para enviar el codigo de verificacion
     @FXML
     void MouseClickedVerificar(MouseEvent event) {
-        makefadeOut(1);
+        String correo = inputEmail.getText();
+        String Pass = inputPassword.getText();
+        Daos.Mostrar();
+        /*boolean Decision;
+        Decision = Daos.getlogueo(correo,Pass);
+        if (Decision == true){
+            makefadeOut(1);
+        }else{
+            System.out.println("Algo Salio Mal");
+        }*/
     }
 
     // metodos de recuperar contraseña y reenvio de codigo
