@@ -6,9 +6,12 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.util.converter.IntegerStringConverter;
 import sample.Main;
+import sample.Util.Utils;
 
 import java.io.IOException;
 import java.net.URL;
@@ -27,11 +30,7 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        inputCode.textProperty().addListener((observableValue, oldValue, newValue) -> {
-            if (!newValue.matches("\\d*")) {
-                inputCode.setText(newValue.replaceAll("[^\\d]", ""));
-            }
-        });
+        inputCode.setTextFormatter(new TextFormatter<Integer>(new IntegerStringConverter(), null, Utils.integerFilter));
     }
 
     //metodos para minimizar y cerrar
@@ -46,6 +45,7 @@ public class LoginController implements Initializable {
     // metodos para ingresar y verificacion
     @FXML
     void MouseClickedIngresar(MouseEvent event) {
+        clean();
         cambiarScene("Dash","DashView");
     }
 
@@ -68,6 +68,7 @@ public class LoginController implements Initializable {
     // metodos para regresar, cambiar scene
     @FXML
     void MouseClickedBack(MouseEvent event) {
+        clean();
         makefadeOut(2);
     }
 
@@ -112,7 +113,9 @@ public class LoginController implements Initializable {
     //metodo de limpieza
 
     public void clean(){
-
+        inputCode.setText(null);
+        inputEmail.setText(null);
+        inputPassword.setText(null);
     }
 
 }

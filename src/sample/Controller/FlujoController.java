@@ -10,10 +10,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextFormatter;
 import javafx.scene.input.MouseEvent;
 import javafx.util.converter.IntegerStringConverter;
-
+import sample.Util.Utils;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.function.UnaryOperator;
 
 public class FlujoController implements Initializable {
 
@@ -53,24 +52,7 @@ public class FlujoController implements Initializable {
     }
 
     private void onlyNumeric(){
-
-        UnaryOperator<TextFormatter.Change> integerFilter = change -> {
-            String newText = change.getControlNewText();
-            if (newText.matches("-?([1-9][0-9]*)?")) {
-                return change;
-            }
-            return null;
-        };
-
-        inputCantidad.setTextFormatter(
-                new TextFormatter<Integer>(new IntegerStringConverter(), 0, integerFilter));
-
-        /*inputCantidad.textProperty().addListener((observableValue, oldValue, newValue) -> {
-            if (!newValue.matches("\\d*")) {
-                inputCantidad.setText(newValue.replaceAll("[^\\d]", ""));
-            }
-        });*/
-
+        inputCantidad.setTextFormatter(new TextFormatter<Integer>(new IntegerStringConverter(), null, Utils.integerFilter));
     }
 
     public void clean(){

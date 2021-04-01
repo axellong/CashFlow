@@ -5,7 +5,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextFormatter;
 import javafx.scene.input.MouseEvent;
+import javafx.util.converter.IntegerStringConverter;
+import sample.Util.Utils;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,11 +37,7 @@ public class RegistroController implements Initializable {
     }
 
     private void onlyNumeric(){
-        numeric.forEach((node)-> node.textProperty().addListener((observableValue, oldValue, newValue) -> {
-            if (!newValue.matches("\\d*")) {
-                node.setText(newValue.replaceAll("[^\\d]", ""));
-            }
-        }));
+        numeric.forEach((node)-> node.setTextFormatter(new TextFormatter<Integer>(new IntegerStringConverter(), null, Utils.integerFilter)));
     }
 
     @FXML
@@ -57,7 +56,7 @@ public class RegistroController implements Initializable {
     }
 
     public void clean(){
-        numeric.forEach((node)-> node.setText(""));
+        numeric.forEach((node)-> node.setText(null));
         text.forEach((node)-> node.setText(null));
     }
 }
