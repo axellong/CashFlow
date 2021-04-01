@@ -54,7 +54,7 @@
                         </JFXPasswordField>
                      </children>
                   </HBox>
-                  <JFXButton id="button-base" buttonType="RAISED" layoutX="15.0" layoutY="143.0" onMouseClicked="#MouseClickedVerificar" prefHeight="40.0" prefWidth="250.0" text="Verificar" textFill="WHITE">
+                  <JFXButton id="button-base" buttonType="RAISED" layoutX="15.0" layoutY="143.0" onMouseClicked="#MouseClickedVerificar" prefHeight="40.0" prefWidth="250.0" ripplerFill="WHITE" text="Verificar" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -76,10 +76,13 @@
                         <Image url="@Resources/icons8_undo_48.png" />
                      </image>
                   </ImageView>
-                  <JFXButton id="button-base" buttonType="RAISED" layoutX="47.0" layoutY="329.0" onMouseClicked="#MouseClickedIngresar" prefHeight="40.0" prefWidth="250.0" text="Ingresar" textFill="WHITE">
+                  <JFXButton id="button-base" buttonType="RAISED" layoutX="47.0" layoutY="329.0" onMouseClicked="#MouseClickedIngresar" prefHeight="40.0" prefWidth="250.0" ripplerFill="WHITE" text="Ingresar" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </JFXButton>
                   <JFXButton layoutX="49.0" layoutY="281.0" onMouseClicked="#MouseClikedForgetCode" text="REENVIAR CODIGO DE VERIFICACION" textFill="WHITE">
                      <font>

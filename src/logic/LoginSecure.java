@@ -3,7 +3,6 @@ package logic;
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-import java.sql.Time;
 import java.util.Calendar;
 import java.util.Properties;
 
@@ -16,15 +15,18 @@ public class LoginSecure {
     private final String password = "1deNoviembre";
     private final String host = "smtp.gmail.com";
     private final int port = 587;
-    Calendar calendario;
+
     private int codigo;
     private int timeGenerationcode = -1;
     private final Session sesion;
     Properties propiedades;
 
 
-//  genera el codigo y establece el timepo en el que se genero para asi poder verificar la hora si es compatible
+    //  genera el codigo y establece el timepo en el que se genero para asi poder verificar la hora si es compatible
     private int GenerationCodeSecure() {
+
+        Calendar calendario = Calendar.getInstance();
+
 
         int generado = (int) (Math.random() * 10000);
         System.out.println(generado);
@@ -35,8 +37,6 @@ public class LoginSecure {
     }
 
     public LoginSecure() {
-//      inicializo el timer
-        calendario = Calendar.getInstance();
 
 //      aqui se asignan las propiedades para el envio de correo
         propiedades = new Properties();
@@ -54,7 +54,8 @@ public class LoginSecure {
         });
     }
 
-//  este metodo envia el mail a quien quiera iniciar sesion
+    //  este metodo envia el mail a quien quiera iniciar sesion y
+    //  este metodo se usara cuando se compruebe que si existe el usuario y se le pasasra como parametro el email del ususario desde la db
     public void SendMail(String destinatario) {
 
         System.out.println("inicio el envio");
@@ -81,36 +82,36 @@ public class LoginSecure {
         }
     }
 
-// este metodo checa si el codigo  introducido es el correcto
+    // este metodo checa si el codigo  introducido es el correcto y se le pasasra el codigo introducido del usuario
     public boolean CheckSecureCode(int codeIn) {
+
         boolean onTime = timeCheck();
         if (onTime == true) {
             if (codeIn == codigo) {
+                System.out.println("codigo  coincide");
                 return true;
             } else {
+                System.out.println("codigo no coincide");
                 return false;
             }
         } else {
+            System.out.println("no esta en tiempo");
             return false;
         }
-
     }
 
-//  este metodo checa si esta en tiempo la introduccion de la contraseña
+    //  este metodo checa si esta en tiempo la introduccion de la contraseña
     private boolean timeCheck() {
 
 
-        if (timeGenerationcode == -1) {
-            timeGenerationcode = calendario.get(Calendar.MINUTE);
-            System.out.println(timeGenerationcode);
-        }
-        if (calendario.get(Calendar.MINUTE) > timeGenerationcode) {
+        Calendar calendario = Calendar.getInstance();
+        if (calendario.get(Calendar.MINUTE) > timeGenerationcode + 5 || calendario.get(Calendar.MINUTE) < timeGenerationcode) {
             GenerationCodeSecure();
-            System.out.println("entro dentro del tiempo");
-            return true;
-        } else {
-            System.out.println("no entro dentro del tiempo");
+            System.out.println("se tardo mucho");
             return false;
+        } else {
+            System.out.println("esta en tiempo");
+            return true;
         }
     }
 

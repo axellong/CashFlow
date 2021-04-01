@@ -3,9 +3,12 @@ package sample.Controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import entity.Person;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
@@ -21,6 +24,21 @@ public class CategoryController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> colClasificacion, colCategoria, colSubCategoria;
+
+    @FXML
+    private TableView<Person> tableViewCategoria;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Person person = new Person("HOLA","HOLA","HOLA");
+
+        colClasificacion.setCellValueFactory(new PropertyValueFactory<>("clasificacion"));
+        colSubCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
+        colCategoria.setCellValueFactory(new PropertyValueFactory<>("subCategoria"));
+
+
+        tableViewCategoria.getItems().add(person);
+    }
 
     // metodo que se aactiva al seleccionar el boton guardar o Edit
     @FXML
@@ -40,8 +58,4 @@ public class CategoryController implements Initializable {
         inputSubCategoria.setText(null);
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
 }

@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -31,6 +32,8 @@ public class DashController implements Initializable {
     @FXML
     private ImageView initialLog;
 
+    @FXML
+    private Label labelUser,labelEmail;
     // metodo INITIALIZE
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -109,6 +112,11 @@ public class DashController implements Initializable {
         }
     }
 
+    //metodo para agregar email and user
+    /*public void setLabels(String user, String email){
+        labelUser.setText(user);
+        labelEmail.setText(email);
+    }*/
     // metodos para integrar los Parent a las ESCENA
     private Parent integratePanel(String carpeta, String fxml,int x , int y) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/"+carpeta+"/"+fxml+".fxml"));

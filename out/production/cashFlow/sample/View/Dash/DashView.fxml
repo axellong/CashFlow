@@ -182,12 +182,12 @@
                   <Image url="@Resources/icons8_male_user_64.png" />
                </image>
             </ImageView>
-            <Label layoutX="74.0" layoutY="29.0" text="User" textFill="WHITE">
+            <Label fx:id="labelUser" layoutX="74.0" layoutY="29.0" text="User" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label layoutX="74.0" layoutY="54.0" text="E-mail" textFill="WHITE">
+            <Label fx:id="labelEmail" layoutX="74.0" layoutY="54.0" text="E-mail" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font>
