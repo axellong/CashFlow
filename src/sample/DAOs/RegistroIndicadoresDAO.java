@@ -2,13 +2,12 @@ package sample.DAOs;
 
 import entity.RegistroIndicadores;
 import hibernete.ConexionHibernete;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
 
-
-import java.io.File;
 import java.util.List;
 
 public class RegistroIndicadoresDAO {
@@ -63,8 +62,10 @@ public class RegistroIndicadoresDAO {
         Session session = factory.openSession();
         session.beginTransaction();
 
-        registroIndicador = (RegistroIndicadores) session.get(RegistroIndicadores.class, idRegistroIndicador);
-        session.getTransaction();
+        Criteria criteria = session.createCriteria(RegistroIndicadores.class);
+        criteria.add(Restrictions.eq("idRegistroIndicadores", idRegistroIndicador));
+        registroIndicador = (RegistroIndicadores) criteria.list().get(0);
+
         session.close();
         return registroIndicador;
     }
@@ -73,9 +74,13 @@ public class RegistroIndicadoresDAO {
         List <RegistroIndicadores> listaRegistroIndicadores = null;
         Session session = factory.openSession();
         session.beginTransaction();
-        listaRegistroIndicadores = session.createQuery("from registroIndicadores").list();
+
+        Criteria criteria = session.createCriteria(RegistroIndicadores.class);
+        listaRegistroIndicadores = criteria.list();
+
         session.getTransaction();
         session.close();
+
         return listaRegistroIndicadores;
     }
 }

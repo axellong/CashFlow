@@ -6,8 +6,7 @@ public class ReportesIndicadores {
     private int idRegistroIndicadores;
     private int numReporte;
 
-    public ReportesIndicadores(int idReporte, String descripcion, int idRegistroIndicadores, int numReporte) {
-        this.idReporte = idReporte;
+    public ReportesIndicadores(String descripcion, int idRegistroIndicadores, int numReporte) {
         this.descripcion = descripcion;
         this.idRegistroIndicadores = idRegistroIndicadores;
         this.numReporte = numReporte;
@@ -46,5 +45,15 @@ public class ReportesIndicadores {
 
     public void setNumReporte(int numReporte) {
         this.numReporte = numReporte;
+    }
+
+    @Override
+    public String toString() {
+        return "ReportesIndicadores{" +
+                "idReporte=" + idReporte +
+                ", descripcion='" + descripcion + '\'' +
+                ", idRegistroIndicadores=" + idRegistroIndicadores +
+                ", numReporte=" + numReporte +
+                '}';
     }
 }

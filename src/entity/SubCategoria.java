@@ -6,8 +6,7 @@ public class SubCategoria {
     private String nombreSubCategoria;
     private int idCategoria;
 
-    public SubCategoria(int idSubCategoria, String nombreSubCategoria, int idCategoria) {
-        this.idSubCategoria = idSubCategoria;
+    public SubCategoria( String nombreSubCategoria, int idCategoria) {
         this.nombreSubCategoria = nombreSubCategoria;
         this.idCategoria = idCategoria;
     }
@@ -37,5 +36,14 @@ public class SubCategoria {
 
     public void setIdCategoria(int idCategoria) {
         this.idCategoria = idCategoria;
+    }
+
+    @Override
+    public String toString() {
+        return "SubCategoria{" +
+                "idSubCategoria=" + idSubCategoria +
+                ", nombreSubCategoria='" + nombreSubCategoria + '\'' +
+                ", idCategoria=" + idCategoria +
+                '}';
     }
 }

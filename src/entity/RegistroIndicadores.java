@@ -10,9 +10,9 @@ public class RegistroIndicadores {
     private String mes;
     private int semana;
     private String descripcion;
+    private int anio;
 
-    public RegistroIndicadores(int idRegistroIndicadores, int idClasificacion, String concepto, String razonSocial, double monto, String mes, int semana, String descripcion) {
-        this.idRegistroIndicadores = idRegistroIndicadores;
+    public RegistroIndicadores(int idClasificacion, String concepto, String razonSocial, double monto, String mes, int semana, String descripcion, int anio) {
         this.idClasificacion = idClasificacion;
         this.concepto = concepto;
         this.razonSocial = razonSocial;
@@ -20,6 +20,7 @@ public class RegistroIndicadores {
         this.mes = mes;
         this.semana = semana;
         this.descripcion = descripcion;
+        this.anio = anio;
     }
 
     public RegistroIndicadores() {
@@ -88,5 +89,27 @@ public class RegistroIndicadores {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
+
+    @Override
+    public String toString() {
+        return "RegistroIndicadores{" +
+                "idRegistroIndicadores=" + idRegistroIndicadores +
+                ", idClasificacion=" + idClasificacion +
+                ", concepto='" + concepto + '\'' +
+                ", razonSocial='" + razonSocial + '\'' +
+                ", monto=" + monto +
+                ", mes='" + mes + '\'' +
+                ", semana=" + semana +
+                ", descripcion='" + descripcion + '\'' +
+                '}';
     }
 }

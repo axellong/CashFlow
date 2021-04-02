@@ -4,15 +4,15 @@
     <class name="Categoria" table="categoria">
 
         <id name="idCategoria"
-            column="idCategoria"
+            column="id_categoria"
             type="java.lang.Integer"
             unsaved-value="null" >
-            <generator class="native">
+            <generator class="increment">
             </generator>
         </id>
 
-        <property name="nombreCategoria" column="nombreCategoria"/>
-        <property name="idUsuario" column="idUsuario"/>
+        <property name="nombreCategoria" column="nombre_categoria"/>
+        <property name="idUsuario" column="id_usuario"/>
 
 
 

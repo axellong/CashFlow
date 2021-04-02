@@ -2,12 +2,12 @@ package sample.DAOs;
 
 import entity.ReportesEfectivo;
 import hibernete.ConexionHibernete;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
 
-import java.io.File;
 import java.util.List;
 
 public class ReportesEfectivoDAO {
@@ -30,14 +30,13 @@ public class ReportesEfectivoDAO {
         factory = ConexionHibernete.getFactory();
     }
 
-    public int saveReporteEfectivo(ReportesEfectivo reporteEfectivo) throws HibernateException {
+    public void saveReporteEfectivo(ReportesEfectivo reporteEfectivo) throws HibernateException {
         Session session = factory.openSession();
         session.beginTransaction();
         int id = 0;
         id = (int) session.save(reporteEfectivo);
         session.getTransaction().commit();
         session.close();
-        return id;
     }
 
 
@@ -62,8 +61,10 @@ public class ReportesEfectivoDAO {
         Session session = factory.openSession();
         session.beginTransaction();
 
-        reporteEfectivo = (ReportesEfectivo) session.get(ReportesEfectivo.class, idReporteEfectivo);
-        session.getTransaction();
+        Criteria criteria = session.createCriteria(ReportesEfectivo.class);
+        criteria.add(Restrictions.eq("idReporte",idReporteEfectivo));
+        reporteEfectivo = (ReportesEfectivo) criteria.list().get(0);
+
         session.close();
         return reporteEfectivo;
     }
@@ -72,8 +73,10 @@ public class ReportesEfectivoDAO {
         List <ReportesEfectivo> listaReportesEfectivos = null;
         Session session = factory.openSession();
         session.beginTransaction();
-        listaReportesEfectivos = session.createQuery("from reportesEfectivo").list();
-        session.getTransaction();
+
+        Criteria criteria = session.createCriteria(ReportesEfectivo.class);
+        listaReportesEfectivos = criteria.list();
+
         session.close();
         return listaReportesEfectivos;
     }

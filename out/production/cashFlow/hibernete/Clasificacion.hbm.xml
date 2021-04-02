@@ -4,14 +4,14 @@
     <class name="Clasificacion" table="clasificacion">
 
         <id name="idClasificacion"
-            column="idClasificacion"
+            column="id_clasificacion"
             type="java.lang.Integer"
             unsaved-value="null" >
-            <generator class="native">
+            <generator class="increment">
             </generator>
         </id>
 
-        <property name="nombreClasificacion" column="nombreClasificacion"/>
+        <property name="nombreClasificacion" column="nombre_clasificacion"/>
 
 
 

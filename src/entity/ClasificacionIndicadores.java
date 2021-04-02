@@ -8,8 +8,7 @@ public class ClasificacionIndicadores {
     public ClasificacionIndicadores() {
     }
 
-    public ClasificacionIndicadores(int idClasificadoresIndicadores, String nombreClasificacion) {
-        this.idClasificadoresIndicadores = idClasificadoresIndicadores;
+    public ClasificacionIndicadores(String nombreClasificacion) {
         this.nombreClasificacion = nombreClasificacion;
     }
 
@@ -27,5 +26,13 @@ public class ClasificacionIndicadores {
 
     public void setNombreClasificacion(String nombreClasificacion) {
         this.nombreClasificacion = nombreClasificacion;
+    }
+
+    @Override
+    public String toString() {
+        return "ClasificacionIndicadores{" +
+                "idClasificadoresIndicadores=" + idClasificadoresIndicadores +
+                ", nombreClasificacion='" + nombreClasificacion + '\'' +
+                '}';
     }
 }

@@ -2,13 +2,12 @@ package sample.DAOs;
 
 import entity.Clasificacion;
 import hibernete.ConexionHibernete;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
 
-
-import java.io.File;
 import java.util.List;
 
 public class ClasificacionDAO {
@@ -30,14 +29,13 @@ public class ClasificacionDAO {
         factory = ConexionHibernete.getFactory();
     }
 
-    public int saveClasificacion(Clasificacion clasificacion) throws HibernateException {
+    public void saveClasificacion(Clasificacion clasificacion) throws HibernateException {
         Session session = factory.openSession();
         session.beginTransaction();
         int id = 0;
         id = (int) session.save(clasificacion);
         session.getTransaction().commit();
         session.close();
-        return id;
     }
 
 
@@ -57,13 +55,15 @@ public class ClasificacionDAO {
         session.close();
     }
 
-    public Clasificacion getClasificacion(int idClasificacion) throws HibernateException {
+    public Clasificacion getClasificacion(String nombreClasificacion) throws HibernateException {
         Clasificacion clasificacion = null;
         Session session = factory.openSession();
         session.beginTransaction();
 
-        clasificacion = (Clasificacion) session.get(Clasificacion.class, idClasificacion);
-        session.getTransaction();
+        Criteria criteria = session.createCriteria(Clasificacion.class);
+        criteria.add(Restrictions.eq("nombreClasificacion", nombreClasificacion));
+        clasificacion = (Clasificacion) criteria.list().get(0);
+
         session.close();
         return clasificacion;
     }
@@ -72,7 +72,10 @@ public class ClasificacionDAO {
         List <Clasificacion> listaClasificaciones = null;
         Session session = factory.openSession();
         session.beginTransaction();
-        listaClasificaciones = session.createQuery("from clasificacion").list();
+
+        Criteria criteria = session.createCriteria(Clasificacion.class);
+        listaClasificaciones = criteria.list();
+
         session.getTransaction();
         session.close();
         return listaClasificaciones;

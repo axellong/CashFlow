@@ -4,10 +4,10 @@
     <class name="Usuario" table="usuario">
 
         <id name="idUsuario"
-            column="idUsuario"
+            column="idusuario"
             type="java.lang.Integer"
             unsaved-value="null" >
-            <generator class="native">
+            <generator class="increment">
             </generator>
         </id>
 

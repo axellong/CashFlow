@@ -1,6 +1,7 @@
 package sample;
 
 import animatefx.animation.FadeOut;
+import entity.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +11,11 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.DAOs.*;
 
 import java.io.IOException;
+import java.sql.Time;
+import java.util.*;
 
 public class Main extends Application {
     static double xOffset;
@@ -103,6 +107,13 @@ public class Main extends Application {
 
     //METODO MAIN
     public static void main(String[] args) {
-        launch(args);
+        Scanner teclado = new Scanner(System.in);
+
+        ReportesIndicadoresDAO reportesIndicadoresDAO = new ReportesIndicadoresDAO();
+        ReportesIndicadores reportesIndicadores = new ReportesIndicadores("descripcion1", 1, 1);
+        reportesIndicadoresDAO.saveReporteIndicador(reportesIndicadores);
+
+        System.out.println(reportesIndicadoresDAO.getReporteIndicador(1).toString());
+        //launch(args);
     }
 }
