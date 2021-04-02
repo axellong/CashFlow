@@ -34,7 +34,7 @@
             <Font size="13.0" />
          </font>
       </JFXCheckBox>
-      <JFXComboBox id="input-label" fx:id="boxCategoria" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="304.0" prefHeight="30.0" prefWidth="220.0" promptText="Categoria" />
+      <JFXComboBox id="box-style" fx:id="boxCategoria" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="304.0" prefHeight="30.0" prefWidth="220.0" promptText="Categoria" />
       <JFXTextField id="input-label" fx:id="inputDescripcion" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="358.0" prefHeight="30.0" prefWidth="220.0" promptText="Descripción">
          <font>
             <Font size="13.0" />

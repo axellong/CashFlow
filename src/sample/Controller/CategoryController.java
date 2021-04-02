@@ -33,11 +33,11 @@ public class CategoryController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Person person = new Person("HOLA","HOLA","HOLA");
-
+        Person a = new Person("HOLA","HOLA","HOLA");
         colClasificacion.setCellValueFactory(new PropertyValueFactory<>("clasificacion"));
         colSubCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
         colCategoria.setCellValueFactory(new PropertyValueFactory<>("subCategoria"));
-        tableViewCategoria.getItems().add(person);
+        tableViewCategoria.getItems().addAll(person,a);
     }
 
     // metodo que se aactiva al seleccionar el boton guardar o Edit
@@ -55,12 +55,17 @@ public class CategoryController implements Initializable {
     @FXML
     void MouseClickeSelect(MouseEvent event) {
         selected = tableViewCategoria.getSelectionModel().getSelectedItem();
-        boxClasificacion.setValue(selected.clasificacion);
-        inputCategoria.setText(selected.categoria);
-        inputSubCategoria.setText(selected.subCategoria);
+        if(selected != null){
+            boxClasificacion.getItems().add("HOLA");
+            boxClasificacion.getItems().add("HOLA2");
+            boxClasificacion.setValue(selected.clasificacion);
+            inputCategoria.setText(selected.categoria);
+            inputSubCategoria.setText(selected.subCategoria);
+        }
     }
 
     public void clean(){
+        tableViewCategoria.getSelectionModel().clearSelection();
         boxClasificacion.getSelectionModel().clearSelection();
         inputCategoria.setText(null);
         inputSubCategoria.setText(null);

@@ -11,7 +11,7 @@
 
 <AnchorPane id="base-category" prefHeight="480.0" prefWidth="550.0" scaleZ="-1.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.CategoryController">
    <children>
-      <JFXComboBox id="input-label" fx:id="boxClasificacion" focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="267.0" prefHeight="30.0" prefWidth="220.0" promptText="Clasificacion" />
+      <JFXComboBox id="box-style" fx:id="boxClasificacion" focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="267.0" prefHeight="30.0" prefWidth="220.0" promptText="Clasificacion" />
       <TableView id="table-base" fx:id="tableViewCategoria" layoutY="20.0" onMouseClicked="#MouseClickeSelect" prefHeight="220.0" prefWidth="550.0">
         <columns>
           <TableColumn id="colum" fx:id="colClasificacion" maxWidth="110.0" minWidth="110.0" prefWidth="110.0" text="Clasificación" />

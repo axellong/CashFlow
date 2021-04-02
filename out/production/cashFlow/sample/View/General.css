@@ -21,6 +21,18 @@
 	-fx-text-inner-color: #fff;
 }
 
+#box-style .text{
+   -fx-font-size: 13px;
+
+}
+#box-style .list-cell{
+   -fx-text-fill: #fff;
+
+}
+#box-style .list-view .list-cell{
+    -fx-text-fill: #000;
+}
+
 #button-base{
 	/* #5A5DEA  */
 	-fx-background-color:  #3E1F47;
@@ -51,6 +63,10 @@
 .table-view .table-cell{
     -fx-border-color: transparent;
     -fx-padding: 2 0 2 10px;
+    -fx-background-color:  #1b2026;
+    -fx-text-fill: white;
 }
-.table-row-cell: highlighted {
+
+.table-view  .table-row-cell:selected{
+    -fx-border-color: white;
 }
