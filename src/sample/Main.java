@@ -109,11 +109,6 @@ public class Main extends Application {
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
 
-        ReportesIndicadoresDAO reportesIndicadoresDAO = new ReportesIndicadoresDAO();
-        ReportesIndicadores reportesIndicadores = new ReportesIndicadores("descripcion1", 1, 1);
-        reportesIndicadoresDAO.saveReporteIndicador(reportesIndicadores);
-
-        System.out.println(reportesIndicadoresDAO.getReporteIndicador(1).toString());
         //launch(args);
     }
 }
