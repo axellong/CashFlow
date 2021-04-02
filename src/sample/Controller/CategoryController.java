@@ -28,6 +28,8 @@ public class CategoryController implements Initializable {
     @FXML
     private TableView<Person> tableViewCategoria;
 
+    private Person selected;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Person person = new Person("HOLA","HOLA","HOLA");
@@ -41,13 +43,21 @@ public class CategoryController implements Initializable {
     // metodo que se aactiva al seleccionar el boton guardar o Edit
     @FXML
     void MouseClickedSaveAndEdit(MouseEvent event) {
+        if(selected != null){
+
+        }else{
+
+        }
         clean();
     }
 
     //metodo que se activa al seleccionar algo en la tabla
     @FXML
     void MouseClickeSelect(MouseEvent event) {
-
+        selected = tableViewCategoria.getSelectionModel().getSelectedItem();
+        boxClasificacion.setValue(selected.clasificacion);
+        inputCategoria.setText(selected.categoria);
+        inputSubCategoria.setText(selected.subCategoria);
     }
 
     public void clean(){
