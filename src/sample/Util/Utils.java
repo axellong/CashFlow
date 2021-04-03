@@ -26,7 +26,7 @@ public class Utils {
 
     public static void changeScene(String carpeta, String fxml){
         try {
-            Main.setFXML(carpeta,fxml);
+            SceneAssembler.setFXML(carpeta,fxml);
         } catch (IOException e) {
             e.printStackTrace();
         }
