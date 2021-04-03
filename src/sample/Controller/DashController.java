@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import sample.Main;
+import sample.Util.SceneAdd;
 import sample.Util.Utils;
 
 import java.io.IOException;
@@ -21,12 +22,7 @@ public class DashController implements Initializable {
 
     private ObservableList<Parent> menu;
 
-    private Parent categoryRoot, flujoRoot, registoRoot;
-
-    private CategoryController categoryController;
-    private FlujoController flujoController;
-    private RegistroController registroController;
-
+    private SceneAdd category, flow, register;
     @FXML
     private AnchorPane paneAdditional, panePrincipal;
 
@@ -40,10 +36,10 @@ public class DashController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         menu= FXCollections.observableArrayList();
         try {
-            categoryRoot = integratePanel("Dash","Category",275,45);
-            flujoRoot = integratePanel("Dash","Flujo",275,45);
-            registoRoot = integratePanel("Dash","Registro",275,45);
-            menu.addAll(categoryRoot,flujoRoot,registoRoot);
+            category = integratePanel("Dash","Category",275,45);
+            flow = integratePanel("Dash","Flujo",275,45);
+            register = integratePanel("Dash","Registro",275,45);
+            menu.addAll(category.getNode(),flow.getNode(),register.getNode());
             panePrincipal.getChildren().addAll(menu);
             goBack(menu);
         } catch (IOException e) {
@@ -56,36 +52,24 @@ public class DashController implements Initializable {
     void MouseClickedMin(MouseEvent event) { Utils.minimize(); }
 
     @FXML
-    void MouseClickedClose(MouseEvent event) {
-        Utils.close();
-    }
+    void MouseClickedClose(MouseEvent event) { Utils.close(); }
 
     // METODOS PARA ABRIR Y CERRAR MENU ADICIONAL
     @FXML
-    void MouseEnteredAdditional(MouseEvent event) {
-        paneAdditional.setVisible(true);
-    }
+    void MouseEnteredAdditional(MouseEvent event) { paneAdditional.setVisible(true); }
 
     @FXML
-    void MouseExitedAdditional(MouseEvent event) {
-        paneAdditional.setVisible(false);
-    }
+    void MouseExitedAdditional(MouseEvent event) { paneAdditional.setVisible(false); }
 
     // Metodos de accion de botones del menu
     @FXML
-    void MouseClickedCategory(MouseEvent event) {
-       nodeChange(categoryRoot);
-    }
+    void MouseClickedCategory(MouseEvent event) { nodeChange(category.getNode()); }
 
     @FXML
-    void MouseClickedFlujo(MouseEvent event) {
-        nodeChange(flujoRoot);
-    }
+    void MouseClickedFlujo(MouseEvent event) { nodeChange(flow.getNode()); }
 
     @FXML
-    void MouseClickedRegistro(MouseEvent event) {
-        nodeChange(registoRoot);
-    }
+    void MouseClickedRegistro(MouseEvent event) { nodeChange(register.getNode()); }
 
     private void nodeChange(Parent node){
         if(node != null){
@@ -108,35 +92,22 @@ public class DashController implements Initializable {
         labelUser.setText(user);
         labelEmail.setText(email);
     }*/
+
     // metodos para integrar los Parent a las ESCENA
-    private Parent integratePanel(String carpeta, String fxml,int x , int y) throws IOException {
+    private SceneAdd integratePanel(String carpeta, String fxml,int x , int y) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/"+carpeta+"/"+fxml+".fxml"));
         Parent root = fxmlLoader.load();
+        Object controller= fxmlLoader.getController();
         root.setLayoutX(x);
         root.setLayoutY(y);
         root.setVisible(false);
-
-        switch (fxml){
-            case "Category":
-                categoryController = fxmlLoader.getController();
-                break;
-            case "Flujo":
-                flujoController = fxmlLoader.getController();
-                break;
-            case "Registro":
-                registroController = fxmlLoader.getController();
-                break;
-        }
-        return root;
-
+        return new SceneAdd(root,controller);
     }
     // Metodo para enviar los nuevos nodos al fondo
     private void goBack(ObservableList<Parent> node){
-        panePrincipal.getChildrenUnmodifiable().forEach((children)-> {
-            node.forEach((nodeMenu) -> {
-                if (children == nodeMenu) { children.toBack(); }
-            });
-        });
+        panePrincipal.getChildrenUnmodifiable().forEach((children)-> node.forEach((nodeMenu) -> {
+            if (children == nodeMenu) { children.toBack(); }
+        }));
    }
     // metodo para hacer un nodo visible
     private void visable(Parent node){
@@ -146,11 +117,9 @@ public class DashController implements Initializable {
     }
     // metodo para hacer todos los nodos nuevos no visibles
     private void notVisible(){
-        panePrincipal.getChildrenUnmodifiable().forEach((children)->{
-            menu.forEach((nodeMenu)->{
-                if(children == nodeMenu){ children.setVisible(false); }
-            });
-        });
+        panePrincipal.getChildrenUnmodifiable().forEach((children)-> menu.forEach((nodeMenu)->{
+            if(children == nodeMenu){ children.setVisible(false); }
+        }));
     }
 
     private void icoLog(){
@@ -159,8 +128,8 @@ public class DashController implements Initializable {
 
     //metodo para borrar el contenido al momento de cambiar de scena
     private void clean(){
-        categoryController.clean();
-        flujoController.clean();
-        registroController.clean();
+        ((CategoryController)category.getController()).clean();
+        ((FlujoController)flow.getController()).clean();
+        ((RegistroController)register.getController()).clean();
     }
 }
