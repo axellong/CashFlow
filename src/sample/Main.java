@@ -107,8 +107,8 @@ public class Main extends Application {
 
     //METODO MAIN
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
+        //Scanner teclado = new Scanner(System.in);
 
-        //launch(args);
+        launch(args);
     }
 }

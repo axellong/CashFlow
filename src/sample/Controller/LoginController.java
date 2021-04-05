@@ -66,9 +66,11 @@ public class LoginController implements Initializable {
 
         if(Decision == false){
             System.out.println("No se encontro");
+
         }else{
             makefadeOut(1);
             Segure.SendMail(Email);
+
         }
     }
 

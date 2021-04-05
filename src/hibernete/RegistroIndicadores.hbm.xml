@@ -17,7 +17,6 @@
         <property name="monto" column="monto"/>
         <property name="mes" column="mes"/>
         <property name="semana" column="semana"/>
-        <property name="ano" column="ano"/>
         <property name="descripcion" column="descripcion"/>
         <property name="anio" column="año"/>
 
