@@ -7,9 +7,8 @@ public class Clasificacion {
     public Clasificacion() {
     }
 
-    public Clasificacion(int idClasifiacion, String nombreClasificaion) {
-        this.idClasificacion = idClasifiacion;
-        this.nombreClasificacion = nombreClasificaion;
+    public Clasificacion(String nombreClasificion) {
+        this.nombreClasificacion = nombreClasificion;
     }
 
     public int getIdClasificacion() {
@@ -26,5 +25,13 @@ public class Clasificacion {
 
     public void setNombreClasificacion(String nombreClasificacion) {
         this.nombreClasificacion = nombreClasificacion;
+    }
+
+    @Override
+    public String toString() {
+        return "Clasificacion{" +
+                "idClasificacion=" + idClasificacion +
+                ", nombreClasificacion='" + nombreClasificacion + '\'' +
+                '}';
     }
 }

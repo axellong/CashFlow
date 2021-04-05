@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="entity">
-    <class name="RegistroIndicadores" table="registroIndicadores">
+    <class name="RegistroIndicadores" table="registro_indicadores">
 
         <id name="idRegistroIndicadores"
-            column="idRegistroIndicadores"
+            column="id_registro_indicadores"
             type="java.lang.Integer"
             unsaved-value="null" >
-            <generator class="native">
+            <generator class="increment">
             </generator>
         </id>
 
-        <property name="idClasificacion" column="idClasificacion"/>
+        <property name="idClasificacion" column="id_clasificacion"/>
         <property name="concepto" column="concepto"/>
-        <property name="razonSocial" column="razonSocial"/>
+        <property name="razonSocial" column="razon_social"/>
         <property name="monto" column="monto"/>
         <property name="mes" column="mes"/>
         <property name="semana" column="semana"/>
         <property name="ano" column="ano"/>
         <property name="descripcion" column="descripcion"/>
+        <property name="anio" column="año"/>
 
 
 

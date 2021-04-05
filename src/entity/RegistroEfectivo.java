@@ -18,8 +18,7 @@ public class RegistroEfectivo {
     public RegistroEfectivo() {
     }
 
-    public RegistroEfectivo(int idRegistroEfectivo, String tipoMovimiento, int idCategoria, String concepto, double monto, Date fecha, Time hora, int idSubcategoria, int idClasificacion) {
-        this.idRegistroEfectivo = idRegistroEfectivo;
+    public RegistroEfectivo(String tipoMovimiento, int idCategoria, String concepto, double monto, Date fecha, Time hora, int idSubcategoria, int idClasificacion) {
         this.tipoMovimiento = tipoMovimiento;
         this.idCategoria = idCategoria;
         this.concepto = concepto;
@@ -101,5 +100,20 @@ public class RegistroEfectivo {
 
     public void setIdClasificacion(int idClasificacion) {
         this.idClasificacion = idClasificacion;
+    }
+
+    @Override
+    public String toString() {
+        return "RegistroEfectivo{" +
+                "idRegistroEfectivo=" + idRegistroEfectivo +
+                ", tipoMovimiento='" + tipoMovimiento + '\'' +
+                ", idCategoria=" + idCategoria +
+                ", concepto='" + concepto + '\'' +
+                ", monto=" + monto +
+                ", fecha=" + fecha +
+                ", hora=" + hora +
+                ", idSubcategoria=" + idSubcategoria +
+                ", idClasificacion=" + idClasificacion +
+                '}';
     }
 }

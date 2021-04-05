@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="entity">
-    <class name="ReportesEfectivo" table="reportesEfectivo">
+    <class name="ReportesEfectivo" table="reportes_efectivo">
 
         <id name="idReporte"
-            column="idReporte"
+            column="id_reporte"
             type="java.lang.Integer"
             unsaved-value="null" >
-            <generator class="native">
+            <generator class="increment">
             </generator>
         </id>
 
         <property name="descripcion" column="descripcion"/>
-        <property name="idRegistroEfectivo" column="idRegistroEfectivo"/>
-        <property name="numReporte" column="numReporte"/>
+        <property name="idRegistroEfectivo" column="id_registro_efectivo"/>
+        <property name="numReporte" column="num_reporte"/>
 
 
 

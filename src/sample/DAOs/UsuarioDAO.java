@@ -2,12 +2,12 @@ package sample.DAOs;
 
 import entity.Usuario;
 import hibernete.ConexionHibernete;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
 
-import java.io.File;
 import java.util.List;
 
 public class UsuarioDAO {
@@ -30,14 +30,13 @@ public class UsuarioDAO {
         factory = ConexionHibernete.getFactory();
     }
 
-    public int saveUsuario (Usuario usuario) throws HibernateException {
+    public void saveUsuario (Usuario usuario) throws HibernateException {
         Session session = factory.openSession();
         session.beginTransaction();
         int id = 0;
         id = (int) session.save(usuario);
         session.getTransaction().commit();
         session.close();
-        return id;
     }
 
 
@@ -57,12 +56,15 @@ public class UsuarioDAO {
         session.close();
     }
 
-    public Usuario getUsuario(int idUsuario) throws HibernateException {
+    public Usuario getUsuario(String email) throws HibernateException {
         Usuario usuario = null;
         Session session = factory.openSession();
         session.beginTransaction();
 
-        usuario = (Usuario) session.get(Usuario.class, idUsuario);
+        Criteria criteria = session.createCriteria(Usuario.class);
+        criteria.add(Restrictions.eq("email", email));
+
+        usuario = (Usuario) criteria.list().get(0);
         session.getTransaction();
         session.close();
         return usuario;
@@ -72,7 +74,11 @@ public class UsuarioDAO {
         List <Usuario> listaUsuarios = null;
         Session session = factory.openSession();
         session.beginTransaction();
-        listaUsuarios = session.createQuery("from usuario").list();
+
+        Criteria criteria = session.createCriteria(Usuario.class);
+
+        listaUsuarios = criteria.list();
+
         session.getTransaction();
         session.close();
         return listaUsuarios;

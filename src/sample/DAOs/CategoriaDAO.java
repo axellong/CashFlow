@@ -2,13 +2,12 @@ package sample.DAOs;
 
 import entity.Categoria;
 import hibernete.ConexionHibernete;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
 
-
-import java.io.File;
 import java.util.List;
 
 public class CategoriaDAO {
@@ -31,14 +30,13 @@ public class CategoriaDAO {
         factory = ConexionHibernete.getFactory();
     }
 
-    public int saveCategoria(Categoria categoria) throws HibernateException {
+    public void saveCategoria(Categoria categoria) throws HibernateException {
         Session session = factory.openSession();
         session.beginTransaction();
         int id = 0;
         id = (int) session.save(categoria);
         session.getTransaction().commit();
         session.close();
-        return id;
     }
 
 
@@ -58,13 +56,15 @@ public class CategoriaDAO {
         session.close();
     }
 
-    public Categoria getCategoria(int idCategoria) throws HibernateException {
+    public Categoria getCategoria(String nombreCategoria) throws HibernateException {
         Categoria categoria = null;
         Session session = factory.openSession();
         session.beginTransaction();
 
-        categoria = (Categoria) session.get(Categoria.class, idCategoria);
-        session.getTransaction();
+        Criteria criteria = session.createCriteria(Categoria.class);
+        criteria.add(Restrictions.eq("nombreCategoria", nombreCategoria));
+        categoria = (Categoria) session.get(Categoria.class, nombreCategoria);
+
         session.close();
         return categoria;
     }
@@ -73,7 +73,10 @@ public class CategoriaDAO {
         List <Categoria> listaCategorias = null;
         Session session = factory.openSession();
         session.beginTransaction();
-        listaCategorias = session.createQuery("from categoria").list();
+
+        Criteria criteria = session.createCriteria(Categoria.class);
+        listaCategorias = criteria.list();
+
         session.getTransaction();
         session.close();
         return listaCategorias;

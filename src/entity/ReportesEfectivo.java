@@ -7,8 +7,7 @@ public class ReportesEfectivo {
     private int idRegistroEfectivo;
     private int numReporte;
 
-    public ReportesEfectivo(int idReporte, String descripcion, int idRegistroEfectivo, int numReporte) {
-        this.idReporte = idReporte;
+    public ReportesEfectivo(String descripcion, int idRegistroEfectivo, int numReporte) {
         this.descripcion = descripcion;
         this.idRegistroEfectivo = idRegistroEfectivo;
         this.numReporte = numReporte;
@@ -47,5 +46,15 @@ public class ReportesEfectivo {
 
     public void setNumReporte(int numReporte) {
         this.numReporte = numReporte;
+    }
+
+    @Override
+    public String toString() {
+        return "ReportesEfectivo{" +
+                "idReporte=" + idReporte +
+                ", descripcion='" + descripcion + '\'' +
+                ", idRegistroEfectivo=" + idRegistroEfectivo +
+                ", numReporte=" + numReporte +
+                '}';
     }
 }

@@ -9,8 +9,7 @@ public class Usuario {
     private  boolean credencial;
     private String email;
 
-    public Usuario(int idUsuario, String nombre, String username, String password, boolean credencial, String email) {
-        this.idUsuario = idUsuario;
+    public Usuario(String nombre, String username, String password, boolean credencial, String email) {
         this.nombre = nombre;
         this.username = username;
         this.password = password;
@@ -67,5 +66,17 @@ public class Usuario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "Usuario{" +
+                "idUsuario=" + idUsuario +
+                ", nombre='" + nombre + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", credencial=" + credencial +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

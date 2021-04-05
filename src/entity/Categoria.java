@@ -9,8 +9,7 @@ public class Categoria {
     public Categoria() {
     }
 
-    public Categoria(int idCategoria, String nombreCategoria, int idUsuario) {
-        this.idCategoria = idCategoria;
+    public Categoria(String nombreCategoria, int idUsuario) {
         this.nombreCategoria = nombreCategoria;
         this.idUsuario = idUsuario;
     }
@@ -37,5 +36,14 @@ public class Categoria {
 
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "idCategoria=" + idCategoria +
+                ", nombreCategoria='" + nombreCategoria + '\'' +
+                ", idUsuario=" + idUsuario +
+                '}';
     }
 }

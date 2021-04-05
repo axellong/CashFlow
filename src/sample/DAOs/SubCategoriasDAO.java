@@ -2,12 +2,12 @@ package sample.DAOs;
 
 import entity.SubCategoria;
 import hibernete.ConexionHibernete;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
 
-import java.io.File;
 import java.util.List;
 
 public class SubCategoriasDAO {
@@ -29,14 +29,13 @@ public class SubCategoriasDAO {
         factory = ConexionHibernete.getFactory();
     }
 
-    public int saveSubCategoria(SubCategoria subCategoria) throws HibernateException {
+    public void saveSubCategoria(SubCategoria subCategoria) throws HibernateException {
         Session session = factory.openSession();
         session.beginTransaction();
         int id = 0;
         id = (int) session.save(subCategoria);
         session.getTransaction().commit();
         session.close();
-        return id;
     }
 
 
@@ -56,13 +55,15 @@ public class SubCategoriasDAO {
         session.close();
     }
 
-    public SubCategoria getSubCategoria(int idSubCategoria) throws HibernateException {
+    public SubCategoria getSubCategoria(String nombreSubCategoria) throws HibernateException {
         SubCategoria subCategoria = null;
         Session session = factory.openSession();
         session.beginTransaction();
 
-        subCategoria = (SubCategoria) session.get(SubCategoria.class, idSubCategoria);
-        session.getTransaction();
+        Criteria criteria = session.createCriteria(SubCategoria.class);
+        criteria.add(Restrictions.eq("nombreSubCategoria", nombreSubCategoria));
+        subCategoria = (SubCategoria) criteria.list().get(0);
+
         session.close();
         return subCategoria;
     }
@@ -71,8 +72,10 @@ public class SubCategoriasDAO {
         List <SubCategoria> listaSubCategorias = null;
         Session session = factory.openSession();
         session.beginTransaction();
-        listaSubCategorias = session.createQuery("from subCategoria").list();
-        session.getTransaction();
+
+        Criteria criteria = session.createCriteria(SubCategoria.class);
+        listaSubCategorias = criteria.list();
+
         session.close();
         return listaSubCategorias;
     }

@@ -2,13 +2,12 @@ package sample.DAOs;
 
 import entity.ClasificacionIndicadores;
 import hibernete.ConexionHibernete;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Restrictions;
 
-
-import java.io.File;
 import java.util.List;
 
 public class ClasificacionIdicadoresDAO {
@@ -30,14 +29,13 @@ public class ClasificacionIdicadoresDAO {
         factory = ConexionHibernete.getFactory();
     }
 
-    public int saveClasificacionIndicador(ClasificacionIndicadores clasificacionIndicadores) throws HibernateException {
+    public void saveClasificacionIndicador(ClasificacionIndicadores clasificacionIndicadores) throws HibernateException {
         Session session = factory.openSession();
         session.beginTransaction();
         int id = 0;
         id = (int) session.save(clasificacionIndicadores);
         session.getTransaction().commit();
         session.close();
-        return id;
     }
 
 
@@ -62,8 +60,10 @@ public class ClasificacionIdicadoresDAO {
         Session session = factory.openSession();
         session.beginTransaction();
 
-        clasificacionIndicador = (ClasificacionIndicadores) session.get(ClasificacionIndicadores.class, idClasificacionIndicador);
-        session.getTransaction();
+        Criteria criteria = session.createCriteria(ClasificacionIndicadores.class);
+        criteria.add(Restrictions.eq("idClasificadoresIndicadores", idClasificacionIndicador));
+        clasificacionIndicador = (ClasificacionIndicadores) criteria.list().get(0);
+
         session.close();
         return clasificacionIndicador;
     }
@@ -72,7 +72,10 @@ public class ClasificacionIdicadoresDAO {
         List <ClasificacionIndicadores> listaClasificacionIndicadores = null;
         Session session = factory.openSession();
         session.beginTransaction();
-        listaClasificacionIndicadores = session.createQuery("from clasificacionIndicadores").list();
+
+        Criteria criteria = session.createCriteria(ClasificacionIndicadores.class);
+        listaClasificacionIndicadores = criteria.list();
+
         session.getTransaction();
         session.close();
         return listaClasificacionIndicadores;
