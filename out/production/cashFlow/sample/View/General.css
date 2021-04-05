@@ -26,11 +26,11 @@
 	-fx-background-color:  #3E1F47;
 }
 
+/* --------------------Table--------------------------------------*/
 #table-base{
     -fx-background-color:  #1b202699;
 
 }
-/* MODIFICA LA ETIQUETA DEL AS COLUMNAS */
 .table-view .column-header-background .label{
     -fx-background-color: transparent;
     -fx-text-fill: white;
@@ -46,4 +46,11 @@
 .table-view .column-header{
     -fx-background-color:  #1b2026CC;
 
+}
+
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+.table-row-cell: highlighted {
 }

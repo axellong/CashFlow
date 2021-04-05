@@ -6,8 +6,10 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 
+import java.io.File;
 import java.util.List;
 
 public class UsuarioDAO {
@@ -18,25 +20,47 @@ public class UsuarioDAO {
         return factory;
     }
 
-    public void setFactory(SessionFactory factory){
+    public void setFactory(SessionFactory factory) {
         UsuarioDAO.factory = factory;
     }
 
     @SuppressWarnings("deprecation")
 
-    public UsuarioDAO(){
+    public UsuarioDAO() {
         ConexionHibernete.setDriver("postgresql");
         ConexionHibernete.generarConexion();
         factory = ConexionHibernete.getFactory();
     }
 
-    public void saveUsuario (Usuario usuario) throws HibernateException {
+    public boolean Validate(String Email, String Pass) throws HibernateException{
+        boolean answer = true;
+        Usuario users = null;
+        String sentence = "FROM Usuario WHERE email='" + Email
+                + "' and password='" + Pass + "'";
+        try {
+            Session session = factory.openSession();
+            session.beginTransaction();
+            List<Usuario> Listpeople = (List<Usuario>) session.createQuery(sentence).list();
+            if (!Listpeople.isEmpty()){
+                users = Listpeople.get(0);
+                answer = true;
+            }else{
+                answer = false;
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        return answer;
+    }
+
+    public int saveUsuario(Usuario usuario) throws HibernateException {
         Session session = factory.openSession();
         session.beginTransaction();
         int id = 0;
         id = (int) session.save(usuario);
         session.getTransaction().commit();
         session.close();
+        return id;
     }
 
 
@@ -56,31 +80,20 @@ public class UsuarioDAO {
         session.close();
     }
 
-    public Usuario getUsuario(String email) throws HibernateException {
-        Usuario usuario = null;
+   public Usuario getUsuario(String email) throws HibernateException{
+       Session session = factory.openSession();
+       Criteria crit = session.createCriteria(Usuario.class);
+       crit.add(Restrictions.eq("email",email));
+       Usuario user = (Usuario) crit.list().get(0);
+       session.close();
+       return user;
+   }
+
+    public List<Usuario> getListUsuarios() throws HibernateException{
         Session session = factory.openSession();
-        session.beginTransaction();
-
-        Criteria criteria = session.createCriteria(Usuario.class);
-        criteria.add(Restrictions.eq("email", email));
-
-        usuario = (Usuario) criteria.list().get(0);
-        session.getTransaction();
+        Criteria crit = session.createCriteria(Usuario.class);
+        List<Usuario> listUsers = crit.list();
         session.close();
-        return usuario;
-    }
-
-    public List<Usuario> getListUsuarios() throws HibernateException {
-        List <Usuario> listaUsuarios = null;
-        Session session = factory.openSession();
-        session.beginTransaction();
-
-        Criteria criteria = session.createCriteria(Usuario.class);
-
-        listaUsuarios = criteria.list();
-
-        session.getTransaction();
-        session.close();
-        return listaUsuarios;
+        return listUsers;
     }
 }
