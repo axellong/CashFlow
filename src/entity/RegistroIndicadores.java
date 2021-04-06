@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.List;
+
 public class RegistroIndicadores {
 
     private int idRegistroIndicadores;
@@ -12,7 +14,11 @@ public class RegistroIndicadores {
     private String descripcion;
     private int anio;
 
-    public RegistroIndicadores(int idClasificacion, String concepto, String razonSocial, double monto, String mes, int semana, String descripcion, int anio) {
+    // lista para hibernete
+    private List<ReportesIndicadores> listaReportes;
+
+    public RegistroIndicadores(int idRegistroIndicadores, int idClasificacion, String concepto, String razonSocial, double monto, String mes, int semana, String descripcion, int anio, List<ReportesIndicadores> listaReportes) {
+        this.idRegistroIndicadores = idRegistroIndicadores;
         this.idClasificacion = idClasificacion;
         this.concepto = concepto;
         this.razonSocial = razonSocial;
@@ -21,11 +27,20 @@ public class RegistroIndicadores {
         this.semana = semana;
         this.descripcion = descripcion;
         this.anio = anio;
+        this.listaReportes = listaReportes;
     }
 
     public RegistroIndicadores() {
     }
 
+
+    public List<ReportesIndicadores> getListaReportes() {
+        return listaReportes;
+    }
+
+    public void setListaReportes(List<ReportesIndicadores> listaReportes) {
+        this.listaReportes = listaReportes;
+    }
 
     public int getIdRegistroIndicadores() {
         return idRegistroIndicadores;
@@ -110,6 +125,8 @@ public class RegistroIndicadores {
                 ", mes='" + mes + '\'' +
                 ", semana=" + semana +
                 ", descripcion='" + descripcion + '\'' +
+                ", anio=" + anio +
+                ", listaReportes=" + listaReportes +
                 '}';
     }
 }

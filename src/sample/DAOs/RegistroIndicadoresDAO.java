@@ -77,9 +77,10 @@ public class RegistroIndicadoresDAO {
 
         Criteria criteria = session.createCriteria(RegistroIndicadores.class);
         listaRegistroIndicadores = criteria.list();
-
         session.getTransaction();
+        listaRegistroIndicadores.toString();
         session.close();
+
 
         return listaRegistroIndicadores;
     }

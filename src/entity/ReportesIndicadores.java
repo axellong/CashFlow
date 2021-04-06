@@ -3,10 +3,10 @@ package entity;
 public class ReportesIndicadores {
     private int idReporte;
     private String descripcion;
-    private int idRegistroIndicadores;
+    private RegistroIndicadores idRegistroIndicadores;
     private int numReporte;
 
-    public ReportesIndicadores(String descripcion, int idRegistroIndicadores, int numReporte) {
+    public ReportesIndicadores(String descripcion, RegistroIndicadores idRegistroIndicadores, int numReporte) {
         this.descripcion = descripcion;
         this.idRegistroIndicadores = idRegistroIndicadores;
         this.numReporte = numReporte;
@@ -31,11 +31,11 @@ public class ReportesIndicadores {
         this.descripcion = descripcion;
     }
 
-    public int getIdRegistroIndicadores() {
+    public RegistroIndicadores getIdRegistroIndicadores() {
         return idRegistroIndicadores;
     }
 
-    public void setIdRegistroIndicadores(int idRegistroIndicadores) {
+    public void setIdRegistroIndicadores(RegistroIndicadores idRegistroIndicadores) {
         this.idRegistroIndicadores = idRegistroIndicadores;
     }
 

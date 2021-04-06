@@ -12,9 +12,13 @@
         </id>
 
         <property name="descripcion" column="descripcion"/>
-        <property name="idRegistroIndicadores" column="id_registro_indicadores"/>
         <property name="numReporte" column="num_reporte"/>
 
+<!--        este many to one esta por arreglara paar que sea  bidereccional-->
+
+<!--        <many-to-one name="idRegistroIndicadores" class="RegistroIndicadores" fetch="select">-->
+<!--            <column name="id_registro_indicadores" not-null="true" />-->
+<!--        </many-to-one>-->
 
 
     </class>
