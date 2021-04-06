@@ -24,7 +24,7 @@ public class DashController implements Initializable {
 
     private SceneAdd category, flow, register;
     @FXML
-    private AnchorPane paneAdditional, panePrincipal;
+    private AnchorPane  panePrincipal;
 
     @FXML
     private ImageView initialLog;
@@ -53,13 +53,6 @@ public class DashController implements Initializable {
 
     @FXML
     void MouseClickedClose(MouseEvent event) { Utils.close(); }
-
-    // METODOS PARA ABRIR Y CERRAR MENU ADICIONAL
-    @FXML
-    void MouseEnteredAdditional(MouseEvent event) { paneAdditional.setVisible(true); }
-
-    @FXML
-    void MouseExitedAdditional(MouseEvent event) { paneAdditional.setVisible(false); }
 
     // Metodos de accion de botones del menu
     @FXML

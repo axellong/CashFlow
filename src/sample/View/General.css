@@ -1,72 +1,127 @@
+* {
+    -color-prompt-text-general: rgba(255,255,255,0.8);
+    -color-focus-general: rgba(255,255,255,1);
+    -color-unfocus-general: rgba(255,255,255,0.8);
+    -color-button-general: rgba(11,118,85,0.6);
+
+}
+
 #base-panel{
      -fx-background-color:  transparent;
 }
-
+/* --------------------BUTTON--------------------------------------*/
 #button-close{
 	-fx-border-radius:50;
-	-fx-background-color: #9d0208;
+	-fx-background-color: #FF6059;
 	-fx-background-radius:50;
 	-fx-border-color:transparent;
 	-fx-text-fill:none;
 }
+
 #button-min{
 	-fx-border-radius:50;
-	-fx-background-color: #885829;
+	-fx-background-color: #FFBD2E;
 	-fx-background-radius:50;
 	-fx-border-color:transparent;
 	-fx-text-fill:none;
 }
 
+#button-base{
+	-fx-background-color: -color-button-general;
+}
+/* --------------------iNPUT--------------------------------------*/
 #input-label{
+    -jfx-unfocus-color: -color-unfocus-general;
+    -jfx-focus-color: -color-focus-general;
 	-fx-text-inner-color: #fff;
+	-fx-prompt-text-fill: -color-prompt-text-general;
 }
 
+/* --------------------COMBOBOX--------------------------------------*/
+#box-style {
+    -jfx-unfocus-color: -color-unfocus-general;
+    -jfx-focus-color: -color-focus-general;
+   -fx-prompt-text-fill: -color-prompt-text-general;
+}
+
+#checkbox-base {
+    -fx-text-fill: rgba(255,255,255,0.8);
+}
+
+/* MODIFICA EL TEXTO DEL COMBOBOX*/
 #box-style .text{
    -fx-font-size: 13px;
 
 }
+/* MODIFICA EL AREA DE LA OPCION SELECCIONADA*/
 #box-style .list-cell{
    -fx-text-fill: #fff;
 
 }
+/*Modifica la lista que se despliega del COMBOBOX .list-view .list-cell */
 #box-style .list-view .list-cell{
     -fx-text-fill: #000;
 }
 
-#button-base{
-	/* #5A5DEA  */
-	-fx-background-color:  #3E1F47;
-}
 
 /* --------------------Table--------------------------------------*/
+
+/* AREA ENCARGADA DE LA FORMA BASE DE LA TABLA*/
 #table-base{
     -fx-background-color:  #1b202699;
 
 }
+
+/* AREA ENCARGADA DE EL HEADER DE CADA COLUMNA ESPECIALMENTE EN LAS ETIQUETAS*/
 .table-view .column-header-background .label{
     -fx-background-color: transparent;
     -fx-text-fill: white;
     -fx-font-size: 13;
 
 }
-
+/* AREA ENCARGADA DE EL HEADER DE CADA COLUMNA*/
 .table-view .column-header-background{
-    -fx-background-color:  #1b2026CC;
-
+    -fx-background-color:  #252628;
+/*    -fx-background-color:  #0F0F1C;*/
 }
 
 .table-view .column-header{
-    -fx-background-color:  #1b2026CC;
+    -fx-background-color:  #252628;
+     /*-fx-background-color:  #0F0F1C;*/
 
 }
-
+/* AREA ENCARGADA DESPUES DE CONTENER DATOS EN LA TABLA*/
 .table-view .table-cell{
     -fx-border-color: transparent;
     -fx-padding: 2 0 2 10px;
-    -fx-background-color:  #1b2026;
+    -fx-background-color:  #1D1D1F;
+    /*-fx-background-color:  #121524;*/
     -fx-text-fill: white;
 }
 
+/* MODIFICA EL AREA DE LA SELECCION HECHA EN LA TABLA*/
 .table-view  .table-row-cell:selected{
     -fx-border-color: white;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical,
+.table-view .virtual-flow .scroll-bar:vertical .track,
+.table-view .virtual-flow .scroll-bar:vertical .track-background,
+.table-view .virtual-flow .scroll-bar:horizontal,
+.table-view .virtual-flow .scroll-bar:horizontal .track,
+.table-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+
+.table-view .virtual-flow .scroll-bar .increment-button,
+.table-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+
+.table-view .virtual-flow .scroll-bar:vertical .thumb{
+    -fx-background-color:  #45474B;
+}
+.table-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:   #45474B;
 }

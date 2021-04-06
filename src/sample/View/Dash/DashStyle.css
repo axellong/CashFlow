@@ -1,25 +1,24 @@
+*{
+    -color-pane-principal: rgba(31,31,31,1) /*#1F1F1F*/;
+    -color-pane-menu: rgba(26,26,26,1)/*#1A1A1A*/;
+    -color-button-focused: rgba(255,255,255,0.1);
+}
+
 #base-panel{
      -fx-background-color:  transparent;
 }
 #principal-Pane{
-    -fx-background-color:  #121315;
-    -fx-border-radius: 15;
-    -fx-background-radius: 15;
+    -fx-background-color: -color-pane-principal;
 }
 
 #menu-pane{
-    -fx-background-color:  #3E1F47;
-    -fx-border-radius: 0 50 0 15;
-    -fx-background-radius: 0 50 0 15;
-    -fx-border-width : 0 0 0 0;
+    -fx-background-color: -color-pane-menu;
 }
 
 #button-menu{
 -fx-text-fill:none;
 }
 
-#pane-additional{
-    -fx-background-color:  #3E1F47;
-    -fx-border-width : 0 0 0 0;
-    /*-fx-border-color: Red;*/
+#button-menu:focused{
+    -fx-background-color: -color-button-focused;
 }

@@ -6,7 +6,7 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,18 +16,18 @@
 
 <AnchorPane id="base-panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.LoginController">
    <children>
-      <AnchorPane id="rigth-panel" layoutX="500.0" prefHeight="550.0" prefWidth="350.0" AnchorPane.leftAnchor="500.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane id="rigth-panel" layoutX="515.0" prefHeight="550.0" prefWidth="335.0">
          <children>
-            <Pane fx:id="paneVerificar" layoutX="46.0" layoutY="180.0">
+            <Pane fx:id="paneVerificar" layoutX="43.0" layoutY="185.0" prefWidth="250.0">
                <children>
-                  <HBox alignment="CENTER" layoutX="19.0">
+                  <HBox alignment="CENTER">
                      <children>
                         <ImageView fitHeight="22.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Resources/icons8_new_post_48.png" />
                            </image>
                         </ImageView>
-                        <JFXTextField id="input-label" fx:id="inputEmail" focusColor="WHITE" labelFloat="true" prefHeight="40.0" prefWidth="210.0" promptText="Correo Electronico">
+                        <JFXTextField id="input-label" fx:id="inputEmail" labelFloat="true" prefHeight="40.0" prefWidth="210.0" promptText="Correo Electronico">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -37,14 +37,14 @@
                         </JFXTextField>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="19.0" layoutY="75.0">
+                  <HBox alignment="CENTER" layoutY="75.0">
                      <children>
                         <ImageView fitHeight="22.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@Resources/icons8_lock_48.png" />
                            </image>
                         </ImageView>
-                        <JFXPasswordField id="input-label" fx:id="inputPassword" focusColor="WHITE" labelFloat="true" prefHeight="40.0" prefWidth="210.0" promptText="Contraseña">
+                        <JFXPasswordField id="input-label" fx:id="inputPassword" focusColor="WHITE" labelFloat="true" prefHeight="40.0" prefWidth="210.0" promptText="Contraseña" unFocusColor="#ffffffcc">
                            <font>
                               <Font size="13.0" />
                            </font>
@@ -54,7 +54,7 @@
                         </JFXPasswordField>
                      </children>
                   </HBox>
-                  <JFXButton id="button-base" buttonType="RAISED" layoutX="15.0" layoutY="143.0" onMouseClicked="#MouseClickedVerificar" prefHeight="40.0" prefWidth="250.0" ripplerFill="WHITE" text="Verificar" textFill="WHITE">
+                  <JFXButton id="button-base" buttonType="RAISED" layoutY="143.0" onMouseClicked="#MouseClickedVerificar" prefHeight="40.0" prefWidth="250.0" ripplerFill="WHITE" text="Verificar" textFill="WHITE">
                      <font>
                         <Font size="16.0" />
                      </font>
@@ -62,14 +62,14 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <JFXButton layoutX="15.0" layoutY="193.0" onMouseClicked="#MouseClickedForget" text="OLVIDASTE TU CONTRASEÑA?" textFill="WHITE">
+                  <JFXButton layoutY="193.0" onMouseClicked="#MouseClickedForget" text="OLVIDASTE TU CONTRASEÑA?" textFill="WHITE">
                      <font>
                         <Font size="10.0" />
                      </font>
                   </JFXButton>
                </children>
             </Pane>
-            <Pane fx:id="paneIngresar" layoutX="14.0" layoutY="-6.0" visible="false">
+            <Pane fx:id="paneIngresar" visible="false">
                <children>
                   <ImageView cache="true" fitHeight="25.0" fitWidth="25.0" layoutX="20.0" layoutY="16.0" nodeOrientation="INHERIT" onMouseClicked="#MouseClickedBack" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -89,7 +89,7 @@
                         <Font size="10.0" />
                      </font>
                   </JFXButton>
-                  <HBox alignment="CENTER" layoutX="49.0" layoutY="228.0">
+                  <HBox alignment="CENTER" layoutX="55.0" layoutY="228.0">
                      <children>
                         <ImageView fitHeight="22.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -108,21 +108,21 @@
                   </HBox>
                </children>
             </Pane>
-            <HBox alignment="CENTER" layoutX="279.0" layoutY="14.0">
+            <HBox alignment="CENTER" layoutX="277.0" layoutY="14.0">
                <children>
-                  <JFXButton id="button-min" buttonType="RAISED" minHeight="16.0" minWidth="16.0" onMouseClicked="#MouseClickedMin" prefHeight="16.0" prefWidth="16.0" ripplerFill="WHITE" text="Button">
+                  <JFXButton id="button-min" buttonType="RAISED" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#MouseClickedMin" prefHeight="12.0" prefWidth="12.0" ripplerFill="WHITE" text="Button">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
                   </JFXButton>
-                  <JFXButton id="button-close" buttonType="RAISED" minHeight="16.0" minWidth="16.0" onMouseClicked="#MouseClickedClose" prefHeight="16.0" prefWidth="16.0" ripplerFill="WHITE" text="Button">
+                  <JFXButton id="button-close" buttonType="RAISED" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#MouseClickedClose" prefHeight="12.0" prefWidth="12.0" ripplerFill="WHITE" text="Button">
                      <HBox.margin>
                         <Insets left="5.0" right="5.0" />
                      </HBox.margin>
                   </JFXButton>
                </children>
             </HBox>
-            <HBox alignment="CENTER" layoutX="66.0" layoutY="443.0">
+            <HBox alignment="CENTER" layoutX="48.0" layoutY="437.0">
                <children>
                   <Pane prefHeight="40.0" prefWidth="40.0">
                      <children>
@@ -195,16 +195,19 @@
             </HBox>
          </children></AnchorPane>
       <AnchorPane id="left-panel" prefHeight="550.0" prefWidth="515.0">
-         <effect>
-            <DropShadow blurType="ONE_PASS_BOX" />
-         </effect>
          <children>
             <ImageView fitHeight="446.0" fitWidth="546.0" layoutX="35.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../CashflowLogo.png" />
                </image>
             </ImageView>
-         </children></AnchorPane>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <effect>
+            <InnerShadow blurType="TWO_PASS_BOX" height="0.0" radius="4.5" width="20.0" />
+         </effect></AnchorPane>
    </children>
    <stylesheets>
       <URL value="@LoginStyle.css" />

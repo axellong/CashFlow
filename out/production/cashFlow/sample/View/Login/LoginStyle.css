@@ -1,18 +1,21 @@
+*{
+    -color-pane-left: rgba(31,31,31,1) /*#1F1F1F*/;
+    -color-pane-rigth: rgba(26,26,26,1)/*#1A1A1A*/;
+    -color-button-link: rgba(77,77,77,0.25)/*#4d4d4d60*/;
+    -color-button-back: rgba(77,77,77,0.1)/*#4d4d4d20*/;
+}
+
 #rigth-panel{
-    -fx-background-color:  #121315;
-    -fx-border-radius: 0 15 15 0;
-    -fx-background-radius: 0 15 15 0;
+    -fx-background-color: -color-pane-rigth;
 }
 
 #left-panel{
-    -fx-background-color:  #3E1F47;
-    -fx-border-radius: 15;
-    -fx-background-radius: 15;
+    -fx-background-color: -color-pane-left;
 }
 
 #button-link{
 	-fx-border-radius:20;
-	-fx-background-color: #4d4d4d60;
+	-fx-background-color: -color-button-link;
 	-fx-background-radius:20;
 	-fx-border-color:transparent;
 	-fx-text-fill:none;
@@ -20,7 +23,7 @@
 
 #button-back{
 	-fx-border-radius:25;
-    -fx-background-color: #4d4d4d20;
+    -fx-background-color: -color-button-back;
     -fx-background-radius:25;
     -fx-border-color:transparent;
     -fx-text-fill:none;

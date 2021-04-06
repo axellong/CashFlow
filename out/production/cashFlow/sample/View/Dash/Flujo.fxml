@@ -24,12 +24,12 @@
             <TableColumn fx:id="colSubCategoria" maxWidth="138.0" minWidth="138.0" prefWidth="138.0" text="SubCategoria" />
         </columns>
       </TableView>
-      <JFXCheckBox fx:id="checkEntrada" layoutX="14.0" layoutY="254.0" text="Entrada">
+      <JFXCheckBox id="checkbox-base" fx:id="checkEntrada" layoutX="14.0" layoutY="254.0" text="Entrada">
          <font>
             <Font size="13.0" />
          </font>
       </JFXCheckBox>
-      <JFXCheckBox fx:id="checkSalida" layoutX="114.0" layoutY="254.0" text="Salida">
+      <JFXCheckBox id="checkbox-base" fx:id="checkSalida" layoutX="114.0" layoutY="254.0" text="Salida">
          <font>
             <Font size="13.0" />
          </font>
