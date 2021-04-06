@@ -4,12 +4,13 @@ public class SubCategoria {
 
     private int idSubCategoria;
     private String nombreSubCategoria;
-    private int idCategoria;
+    private Categoria id_Categoria;
 
-    public SubCategoria( String nombreSubCategoria, int idCategoria) {
+    public SubCategoria(String nombreSubCategoria, Categoria idCategoria) {
         this.nombreSubCategoria = nombreSubCategoria;
-        this.idCategoria = idCategoria;
+        this.id_Categoria = idCategoria;
     }
+
 
     public SubCategoria() {
     }
@@ -30,12 +31,12 @@ public class SubCategoria {
         this.nombreSubCategoria = nombreSubCategoria;
     }
 
-    public int getIdCategoria() {
-        return idCategoria;
+    public Categoria getId_Categoria() {
+        return id_Categoria;
     }
 
-    public void setIdCategoria(int idCategoria) {
-        this.idCategoria = idCategoria;
+    public void setId_Categoria(Categoria id_Categoria) {
+        this.id_Categoria = id_Categoria;
     }
 
     @Override
@@ -43,7 +44,7 @@ public class SubCategoria {
         return "SubCategoria{" +
                 "idSubCategoria=" + idSubCategoria +
                 ", nombreSubCategoria='" + nombreSubCategoria + '\'' +
-                ", idCategoria=" + idCategoria +
+                ", id_Categoria=" + id_Categoria +
                 '}';
     }
 }

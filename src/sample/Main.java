@@ -108,7 +108,8 @@ public class Main extends Application {
     //METODO MAIN
     public static void main(String[] args) {
         //Scanner teclado = new Scanner(System.in);
-
-        launch(args);
+        CategoriaDAO categoria = new CategoriaDAO();
+        System.out.println(categoria.getListCategorias());
+        //launch(args);
     }
 }

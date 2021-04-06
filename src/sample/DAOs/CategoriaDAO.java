@@ -78,7 +78,7 @@ public class CategoriaDAO {
         listaCategorias = criteria.list();
 
         session.getTransaction();
-        session.close();
+        //session.close();
         return listaCategorias;
     }
 }

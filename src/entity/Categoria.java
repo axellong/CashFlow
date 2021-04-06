@@ -1,17 +1,25 @@
 package entity;
 
+import java.util.List;
+
 public class Categoria {
+
     private int idCategoria;
     private String nombreCategoria;
     private int idUsuario;
+
+    //esto es para el mapeo de hbn
+    private List<SubCategoria> subCategorias;
 
 
     public Categoria() {
     }
 
-    public Categoria(String nombreCategoria, int idUsuario) {
+    public Categoria( String nombreCategoria, int idUsuario) {
+        this.idCategoria = idCategoria;
         this.nombreCategoria = nombreCategoria;
         this.idUsuario = idUsuario;
+        this.subCategorias = subCategorias;
     }
 
     public int getIdCategoria() {
@@ -44,6 +52,15 @@ public class Categoria {
                 "idCategoria=" + idCategoria +
                 ", nombreCategoria='" + nombreCategoria + '\'' +
                 ", idUsuario=" + idUsuario +
+                ", subCategorias=" + subCategorias +
                 '}';
+    }
+
+    public List<SubCategoria> getSubCategorias() {
+        return subCategorias;
+    }
+
+    public void setSubCategorias(List<SubCategoria> subCategorias) {
+        this.subCategorias = subCategorias;
     }
 }
