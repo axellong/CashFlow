@@ -1,0 +1,56 @@
+#base-panel{
+     -fx-background-color:  transparent;
+}
+
+#button-close{
+	-fx-border-radius:50;
+	-fx-background-color: #9d0208;
+	-fx-background-radius:50;
+	-fx-border-color:transparent;
+	-fx-text-fill:none;
+}
+#button-min{
+	-fx-border-radius:50;
+	-fx-background-color: #885829;
+	-fx-background-radius:50;
+	-fx-border-color:transparent;
+	-fx-text-fill:none;
+}
+
+#input-label{
+	-fx-text-inner-color: #fff;
+}
+
+#button-base{
+	/* #5A5DEA  */
+	-fx-background-color:  #3E1F47;
+}
+
+/* --------------------Table--------------------------------------*/
+#table-base{
+    -fx-background-color:  #1b202699;
+
+}
+.table-view .column-header-background .label{
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 13;
+
+}
+
+.table-view .column-header-background{
+    -fx-background-color:  #1b2026CC;
+
+}
+
+.table-view .column-header{
+    -fx-background-color:  #1b2026CC;
+
+}
+
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    -fx-padding: 2 0 2 10px;
+}
+.table-row-cell: highlighted {
+}

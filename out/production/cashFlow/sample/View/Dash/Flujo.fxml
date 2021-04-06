@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="base-category" prefHeight="480.0" prefWidth="550.0" scaleZ="-1.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.FlujoController">
+   <stylesheets>
+      <URL value="@../General.css" />
+      <URL value="@Flujo.css" />
+   </stylesheets>
+   <children>
+      <TableView id="table-base" layoutY="20.0" prefHeight="220.0" prefWidth="550.0">
+        <columns>
+          <TableColumn fx:id="colFecha" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Fecha" />
+          <TableColumn fx:id="colDescripcion" maxWidth="171.0" minWidth="171.0" prefWidth="171.0" text="Descripción" />
+            <TableColumn fx:id="colCategoria" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Categoria" />
+            <TableColumn fx:id="colSubCategoria" maxWidth="138.0" minWidth="138.0" prefWidth="138.0" text="SubCategoria" />
+        </columns>
+      </TableView>
+      <JFXCheckBox fx:id="checkEntrada" layoutX="14.0" layoutY="254.0" text="Entrada">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXCheckBox>
+      <JFXCheckBox fx:id="checkSalida" layoutX="114.0" layoutY="254.0" text="Salida">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXCheckBox>
+      <JFXComboBox id="input-label" fx:id="boxCategoria" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="304.0" prefHeight="30.0" prefWidth="220.0" promptText="Categoria" />
+      <JFXTextField id="input-label" fx:id="inputDescripcion" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="358.0" prefHeight="30.0" prefWidth="220.0" promptText="Descripción">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField id="input-label" fx:id="inputCantidad" focusColor="WHITE" labelFloat="true" layoutX="14.0" layoutY="410.0" prefHeight="30.0" prefWidth="150.0" promptText="Cantidad">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton id="button-base" layoutX="290.0" layoutY="405.0" onMouseClicked="#MouseClickedSave" prefHeight="30.0" prefWidth="220.0" text="Guardar" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
