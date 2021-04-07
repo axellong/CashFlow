@@ -64,7 +64,9 @@ public class ReportesIndicadoresDAO {
         Criteria criteria = session.createCriteria(ReportesIndicadores.class);
         criteria.add(Restrictions.eq("idReporte", idReporteIndicador));
         reporteIndicador = (ReportesIndicadores) criteria.list().get(0);
-
+//        reporteIndicador.toString();
+//        reporteIndicador.getIdRegistroIndicadores().toString();
+        session.getTransaction().commit();
         session.close();
         return reporteIndicador;
     }

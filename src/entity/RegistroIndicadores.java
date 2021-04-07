@@ -126,7 +126,7 @@ public class RegistroIndicadores {
                 ", semana=" + semana +
                 ", descripcion='" + descripcion + '\'' +
                 ", anio=" + anio +
-                ", listaReportes=" + listaReportes +
+
                 '}';
     }
 }

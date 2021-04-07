@@ -52,7 +52,6 @@ public class ReportesIndicadores {
         return "ReportesIndicadores{" +
                 "idReporte=" + idReporte +
                 ", descripcion='" + descripcion + '\'' +
-                ", idRegistroIndicadores=" + idRegistroIndicadores +
                 ", numReporte=" + numReporte +
                 '}';
     }
