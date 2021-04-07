@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="entity">
-    <class name="ReportesEfectivo" table="reportes_efectivo">
+    <class name="ReportesEfectivo" table="reportes_efectivo" lazy="false">
 
         <id name="idReporte"
             column="id_reporte"
@@ -12,8 +12,12 @@
         </id>
 
         <property name="descripcion" column="descripcion"/>
-        <property name="idRegistroEfectivo" column="id_registro_efectivo"/>
         <property name="numReporte" column="num_reporte"/>
+
+
+        <many-to-one name="idRegistroEfectivo" class="RegistroEfectivo" fetch="select">
+            <column name="id_registro_efectivo" not-null="true" />
+        </many-to-one>
 
 
 

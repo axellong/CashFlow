@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="entity">
-    <class name="ReportesIndicadores" table="reportes_indicadores">
+    <class name="ReportesIndicadores" table="reportes_indicadores" lazy="false">
 
         <id name="idReporte"
             column="id_reporte"
@@ -16,9 +16,9 @@
 
 <!--        este many to one esta por arreglara paar que sea  bidereccional-->
 
-<!--        <many-to-one name="idRegistroIndicadores" class="RegistroIndicadores" fetch="select">-->
-<!--            <column name="id_registro_indicadores" not-null="true" />-->
-<!--        </many-to-one>-->
+        <many-to-one name="idRegistroIndicadores" class="RegistroIndicadores" fetch="select">
+            <column name="id_registro_indicadores" not-null="true" />
+        </many-to-one>
 
 
     </class>

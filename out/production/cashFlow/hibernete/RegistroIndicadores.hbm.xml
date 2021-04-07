@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="entity">
-    <class name="RegistroIndicadores" table="registro_indicadores">
+    <class name="RegistroIndicadores" table="registro_indicadores" lazy="false">
 
         <id name="idRegistroIndicadores"
             column="id_registro_indicadores"
@@ -20,7 +20,7 @@
         <property name="descripcion" column="descripcion"/>
         <property name="anio" column="año"/>
 
-        <bag name="listaReportes" table="reportes_indicadores" inverse="true" lazy="true" fetch="select">
+        <bag name="listaReportes" table="reportes_indicadores" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="id_registro_indicadores" not-null="true"/>
             </key>
