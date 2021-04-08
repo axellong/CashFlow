@@ -1,9 +1,11 @@
 package entity;
 
+import java.util.List;
+
 public class Clasificacion {
     private int idClasificacion;
     private String nombreClasificacion;
-
+    private List<Categoria> categoriaList;
     public Clasificacion() {
     }
 
@@ -27,11 +29,16 @@ public class Clasificacion {
         this.nombreClasificacion = nombreClasificacion;
     }
 
+    public List<Categoria> getCategoriaList() {
+        return categoriaList;
+    }
+
+    public void setCategoriaList(List<Categoria> categoriaList) {
+        this.categoriaList = categoriaList;
+    }
+
     @Override
     public String toString() {
-        return "Clasificacion{" +
-                "idClasificacion=" + idClasificacion +
-                ", nombreClasificacion='" + nombreClasificacion + '\'' +
-                '}';
+        return nombreClasificacion;
     }
 }

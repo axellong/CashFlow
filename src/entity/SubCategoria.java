@@ -41,10 +41,6 @@ public class SubCategoria {
 
     @Override
     public String toString() {
-        return "SubCategoria{" +
-                "idSubCategoria=" + idSubCategoria +
-                ", nombreSubCategoria='" + nombreSubCategoria + '\'' +
-                ", id_Categoria=" + id_Categoria +
-                '}';
+        return nombreSubCategoria;
     }
 }

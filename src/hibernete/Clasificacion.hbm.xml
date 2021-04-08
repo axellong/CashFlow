@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="entity">
-    <class name="Clasificacion" table="clasificacion">
+    <class name="Clasificacion" table="clasificacion" lazy="false">
 
         <id name="idClasificacion"
             column="id_clasificacion"
@@ -10,6 +10,13 @@
             <generator class="increment">
             </generator>
         </id>
+
+        <bag name="categoriaList" table="categoria" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="id_clasificacion" not-null="true"/>
+            </key>
+            <one-to-many class="Categoria"/>
+        </bag>
 
         <property name="nombreClasificacion" column="nombre_clasificacion"/>
 

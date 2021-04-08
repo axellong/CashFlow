@@ -3,7 +3,7 @@ package sample.Controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
-import entity.Categoria;
+import entity.SubCategoria;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -12,9 +12,12 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import sample.DAOs.CategoriaDAO;
+import logic.Model.CategoryTable;
+import sample.DAOs.SubCategoriasDAO;
 
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class CategoryController implements Initializable {
@@ -26,25 +29,26 @@ public class CategoryController implements Initializable {
     private JFXTextField inputCategoria, inputSubCategoria;
 
     @FXML
-    private TableColumn<Categoria, String> colClasificacion, colCategoria, colSubCategoria;
+    private TableColumn<CategoryTable, String> colClasificacion, colCategoria, colSubCategoria;
 
     @FXML
-    private TableView<Categoria> tableViewCategoria;
+    private TableView<CategoryTable> tableViewCategoria;
 
-    private Categoria selected;
+    private CategoryTable selected;
 
-    private ObservableList<Categoria> categoriasList;
+    private ObservableList<CategoryTable> categoriasList;
 
-    private CategoriaDAO categoriaDAO = new CategoriaDAO();
+    private SubCategoriasDAO subCategoriasDAO = new SubCategoriasDAO();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         categoriasList = FXCollections.observableArrayList();
-        colClasificacion.setCellValueFactory(new PropertyValueFactory<Categoria,String>("clasificacion"));
-        //colSubCategoria.setCellValueFactory(new PropertyValueFactory<Categoria,String>("subcategoria"));
-        colCategoria.setCellValueFactory(new PropertyValueFactory<Categoria,String>("nombreCategoria"));
-        categoriasList.addAll(categoriaDAO.getListCategorias());
+        colClasificacion.setCellValueFactory(new PropertyValueFactory<CategoryTable,String>("clasificacion"));
+        colSubCategoria.setCellValueFactory(new PropertyValueFactory<CategoryTable,String>("SubCategoria"));
+        colCategoria.setCellValueFactory(new PropertyValueFactory<CategoryTable,String>("categoria"));
+        fillTable();
         tableViewCategoria.getItems().addAll(categoriasList);
+
     }
 
     // metodo que se aactiva al seleccionar el boton guardar o Edit
@@ -70,6 +74,14 @@ public class CategoryController implements Initializable {
     @FXML
     void MouseClickedClearSelection(MouseEvent event) {
         clean();
+    }
+
+
+    private void fillTable(){
+        List<SubCategoria> subCategoriaList = subCategoriasDAO.getListSubCategorias();
+        List<CategoryTable> categoryTables = new ArrayList<>();
+        subCategoriaList.forEach((subCategoria -> categoryTables.add(new CategoryTable(subCategoria))));
+        categoriasList.addAll(categoryTables);
     }
 
     public void clean(){

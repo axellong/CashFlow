@@ -8,7 +8,6 @@ public class Categoria {
     private String nombreCategoria;
     private int idUsuario;
     private Clasificacion clasificacion;
-
     //esto es para el mapeo de hbn
     private List<SubCategoria> subCategorias;
 
@@ -56,12 +55,7 @@ public class Categoria {
 
     @Override
     public String toString() {
-        return "Categoria{" +
-                "idCategoria=" + idCategoria +
-                ", nombreCategoria='" + nombreCategoria + '\'' +
-                ", idUsuario=" + idUsuario +
-                ", subCategorias=" + subCategorias +
-                '}';
+        return nombreCategoria;
     }
 
     public List<SubCategoria> getSubCategorias() {
