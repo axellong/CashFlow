@@ -1,0 +1,25 @@
+#base-panel{
+     -fx-background-color:  transparent;
+}
+#principal-Pane{
+    -fx-background-color:  #121315;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+}
+
+#menu-pane{
+    -fx-background-color:  #3E1F47;
+    -fx-border-radius: 0 50 0 15;
+    -fx-background-radius: 0 50 0 15;
+    -fx-border-width : 0 0 0 0;
+}
+
+#button-menu{
+-fx-text-fill:none;
+}
+
+#pane-additional{
+    -fx-background-color:  #3E1F47;
+    -fx-border-width : 0 0 0 0;
+    /*-fx-border-color: Red;*/
+}

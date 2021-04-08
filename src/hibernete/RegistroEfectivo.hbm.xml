@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+    <class name="RegistroEfectivo" table="registro_efectivo" lazy="false">
+
+        <id name="idRegistroEfectivo"
+            column="id_registro_efectivo"
+            type="java.lang.Integer"
+            unsaved-value="null" >
+            <generator class="increment">
+            </generator>
+        </id>
+
+        <property name="tipoMovimiento" column="tipo_movimiento"/>
+        <property name="idCategoria" column="id_categoria"/>
+        <property name="concepto" column="concepto"/>
+        <property name="monto" column="monto"/>
+        <property name="fecha" column="fecha"/>
+        <property name="hora" column="hora"/>
+        <property name="idSubcategoria" column="id_subcategoria"/>
+        <property name="idClasificacion" column="id_clasificacion"/>
+
+        <bag name="listaReportesEfectivo" table="reportes_efectivo" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="id_registro_efectivo" not-null="true"/>
+            </key>
+            <one-to-many class="ReportesEfectivo"/>
+        </bag>
+
+
+
+
+    </class>
+</hibernate-mapping>

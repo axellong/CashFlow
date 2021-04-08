@@ -1,0 +1,27 @@
+#rigth-panel{
+    -fx-background-color:  #121315;
+    -fx-border-radius: 0 15 15 0;
+    -fx-background-radius: 0 15 15 0;
+}
+
+#left-panel{
+    -fx-background-color:  #3E1F47;
+    -fx-border-radius: 15;
+    -fx-background-radius: 15;
+}
+
+#button-link{
+	-fx-border-radius:20;
+	-fx-background-color: #4d4d4d60;
+	-fx-background-radius:20;
+	-fx-border-color:transparent;
+	-fx-text-fill:none;
+}
+
+#button-back{
+	-fx-border-radius:25;
+    -fx-background-color: #4d4d4d20;
+    -fx-background-radius:25;
+    -fx-border-color:transparent;
+    -fx-text-fill:none;
+}
