@@ -11,6 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Line;
+import logic.Credential;
 import sample.Main;
 import sample.Util.SceneAdd;
 import sample.Util.Utils;
@@ -39,6 +40,7 @@ public class DashController implements Initializable {
     // metodo INITIALIZE
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        setLabels();
         menu= FXCollections.observableArrayList();
         try {
             category = integratePanel("Dash","Category",262.5,45);
@@ -95,10 +97,13 @@ public class DashController implements Initializable {
     }
 
     //metodo para agregar email and user
-    /*public void setLabels(String user, String email){
-        labelUser.setText(user);
-        labelEmail.setText(email);
-    }*/
+    public void setLabels(){
+        if(Credential.getUser() != null){
+            labelUser.setText(Credential.getUser().getUsername());
+            labelEmail.setText(Credential.getUser().getEmail());
+        }
+
+    }
 
     // metodos para integrar los Parent a las ESCENA
     private SceneAdd integratePanel(String carpeta, String fxml,double x , double y) throws IOException {

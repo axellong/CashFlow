@@ -3,6 +3,7 @@ package sample.Controller;
 import animatefx.animation.FadeOut;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import entity.Usuario;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,6 +11,9 @@ import javafx.scene.control.TextFormatter;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.util.converter.IntegerStringConverter;
+import logic.Credential;
+import logic.LoginSecure;
+import sample.DAOs.UsuarioDAO;
 import sample.Util.Utils;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,9 +29,12 @@ public class LoginController implements Initializable {
     @FXML
     private JFXPasswordField inputPassword;
 
+    LoginSecure segure = new LoginSecure();
+    UsuarioDAO usuarioDAO = new UsuarioDAO();
+    Usuario usuario;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        inputCode.setTextFormatter(new TextFormatter<Integer>(new IntegerStringConverter(), null, Utils.integerFilter));
+        inputCode.setTextFormatter(new TextFormatter<>(new IntegerStringConverter(), null, Utils.integerFilter));
     }
 
     //metodos para minimizar y cerrar
@@ -40,14 +47,27 @@ public class LoginController implements Initializable {
     // metodos para ingresar y verificacion
     @FXML
     void MouseClickedIngresar(MouseEvent event) {
-        clean();
-        Utils.changeScene("Dash","DashView");
-        //Guardar Credenciales de Usuario
+        int code = Integer.parseInt(inputCode.getText());
+        if( segure.CheckSecureCode(code)){
+            clean();
+            Utils.changeScene("Dash","DashView");
+            Credential.setUser(usuario);
+            //Guardar Credenciales de Usuario
+        }
     }
 
     @FXML
     void MouseClickedVerificar(MouseEvent event) {
-        makefadeOut(true);
+        String Email = inputEmail.getText();
+        String Passw = inputPassword.getText();
+        usuario = usuarioDAO.getUsuario(Email,Passw);
+
+        if(usuario != null){
+            makefadeOut(true);
+            segure.SendMail(Email);
+        }else{
+            System.out.println("No se encontro");
+        }
     }
 
     // metodos para regresar, cambiar scene

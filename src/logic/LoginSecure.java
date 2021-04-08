@@ -86,7 +86,7 @@ public class LoginSecure {
     public boolean CheckSecureCode(int codeIn) {
 
         boolean onTime = timeCheck();
-        if (onTime == true) {
+        if (onTime) {
             if (codeIn == codigo) {
                 System.out.println("codigo  coincide");
                 return true;
