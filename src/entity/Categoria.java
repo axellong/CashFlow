@@ -7,6 +7,7 @@ public class Categoria {
     private int idCategoria;
     private String nombreCategoria;
     private int idUsuario;
+    private Clasificacion clasificacion;
 
     //esto es para el mapeo de hbn
     private List<SubCategoria> subCategorias;
@@ -16,7 +17,6 @@ public class Categoria {
     }
 
     public Categoria( String nombreCategoria, int idUsuario) {
-        this.idCategoria = idCategoria;
         this.nombreCategoria = nombreCategoria;
         this.idUsuario = idUsuario;
         this.subCategorias = subCategorias;
@@ -44,6 +44,14 @@ public class Categoria {
 
     public void setIdUsuario(int idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public Clasificacion getClasificacion() {
+        return clasificacion;
+    }
+
+    public void setClasificacion(Clasificacion clasificacion) {
+        this.clasificacion = clasificacion;
     }
 
     @Override
