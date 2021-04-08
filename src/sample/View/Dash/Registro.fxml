@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
@@ -8,81 +9,55 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="base-category" prefHeight="480.0" prefWidth="550.0" scaleZ="-1.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.RegistroController">
+<AnchorPane id="base-panel" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="550.0" scaleZ="-1.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.RegistroController">
    <stylesheets>
       <URL value="@../General.css" />
       <URL value="@Registro.css" />
    </stylesheets>
    <children>
-      <Pane layoutX="14.0" layoutY="14.0">
+      <Pane layoutX="14.0" prefHeight="240.0" prefWidth="536.0">
          <children>
-            <JFXTextField id="input-label" fx:id="inputSemana_1" focusColor="WHITE" labelFloat="true" layoutY="45.0" prefHeight="30.0" prefWidth="80.0" promptText="No.Semana:">
+            <JFXTextField id="input-label" fx:id="inputSemana_1" focusColor="WHITE" labelFloat="true" layoutY="52.0" prefHeight="30.0" prefWidth="120.0" promptText="No.Semana :">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXTextField>
-            <JFXTextField id="input-label" fx:id="inputRazonCobrar" focusColor="WHITE" labelFloat="true" layoutY="99.0" prefHeight="30.0" prefWidth="200.0" promptText="Razon Social:">
+            <JFXTextField id="input-label" fx:id="inputMonto_1" focusColor="WHITE" labelFloat="true" layoutY="106.0" prefHeight="30.0" prefWidth="120.0" promptText="Monto $ :">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXTextField>
-            <JFXTextField id="input-label" fx:id="inputMonto_1" focusColor="WHITE" labelFloat="true" layoutY="153.0" prefHeight="30.0" prefWidth="200.0" promptText="Monto $:">
+            <JFXTextField id="input-label" fx:id="inputRazonSocial" focusColor="WHITE" labelFloat="true" layoutY="160.0" prefHeight="30.0" prefWidth="280.0" promptText="Razon Social :">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXTextField>
-            <Label text="Cuentas por cobrar" textFill="WHITE">
+            <Label text="Cuentas" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <JFXButton id="button-base" buttonType="RAISED" layoutX="71.0" layoutY="197.0" onMouseClicked="#MouseClickedSaveCobrar" text="Guardar" textFill="WHITE">
+            <JFXButton id="button-base" layoutX="330.0" layoutY="158.0" onMouseClicked="#MouseClickedSaveCobrarPagar" prefHeight="35.0" prefWidth="180.0" text="Guardar" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font></JFXButton>
+            <JFXRadioButton id="radio-button" fx:id="radioCobrar" layoutX="170.0" layoutY="62.0" text="Cobrar" />
+            <JFXRadioButton id="radio-button" fx:id="radioPagar" layoutX="170.0" layoutY="116.0" text="Pagar" />
          </children>
       </Pane>
-      <Pane layoutX="336.0" layoutY="14.0">
+      <Pane layoutX="14.0" layoutY="240.0" prefHeight="240.0" prefWidth="536.0">
          <children>
-            <JFXTextField id="input-label" fx:id="inputSemana_2" focusColor="WHITE" labelFloat="true" layoutY="45.0" prefHeight="30.0" prefWidth="80.0" promptText="No.Semana:">
+            <JFXTextField id="input-label" fx:id="inputSemana_2" focusColor="WHITE" labelFloat="true" layoutY="52.0" prefHeight="30.0" prefWidth="120.0" promptText="No.Semana :">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXTextField>
-            <JFXTextField id="input-label" fx:id="inputRazonPagar" focusColor="WHITE" labelFloat="true" layoutY="99.0" prefHeight="30.0" prefWidth="200.0" promptText="Razon Social:">
+            <JFXTextField id="input-label" fx:id="inputMonto_2" focusColor="WHITE" labelFloat="true" layoutY="106.0" prefHeight="30.0" prefWidth="120.0" promptText="Monto $ :">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXTextField>
-            <JFXTextField id="input-label" fx:id="inputMonto_2" focusColor="WHITE" labelFloat="true" layoutY="153.0" prefHeight="30.0" prefWidth="200.0" promptText="Monto $:">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </JFXTextField>
-            <Label text="Cuentas por pagar" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <JFXButton id="button-base" buttonType="RAISED" layoutX="71.0" layoutY="197.0" onMouseClicked="#MouseClickedSavePagar" text="Guardar" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font></JFXButton>
-         </children>
-      </Pane>
-      <Pane layoutX="175.0" layoutY="243.0">
-         <children>
-            <JFXTextField id="input-label" fx:id="inputSemana_3" focusColor="WHITE" labelFloat="true" layoutY="45.0" prefHeight="30.0" prefWidth="80.0" promptText="No.Semana:">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField id="input-label" fx:id="inputDescripcionBanco" focusColor="WHITE" labelFloat="true" layoutY="99.0" prefHeight="30.0" prefWidth="200.0" promptText="Descripción:">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField id="input-label" fx:id="inputMonto_3" focusColor="WHITE" labelFloat="true" layoutY="153.0" prefHeight="30.0" prefWidth="200.0" promptText="Monto $:">
+            <JFXTextField id="input-label" fx:id="inputDescripcionBanco" focusColor="WHITE" labelFloat="true" layoutY="160.0" prefHeight="30.0" prefWidth="280.0" promptText="Descripción :">
                <font>
                   <Font size="13.0" />
                </font>
@@ -92,7 +67,7 @@
                   <Font name="System Bold" size="20.0" />
                </font>
             </Label>
-            <JFXButton id="button-base" buttonType="RAISED" layoutX="71.0" layoutY="197.0" onMouseClicked="#MouseClickedSaveBanco" text="Guardar" textFill="WHITE">
+            <JFXButton id="button-base" layoutX="330.0" layoutY="158.0" onMouseClicked="#MouseClickedSaveBanco" prefHeight="35.0" prefWidth="180.0" text="Guardar" textFill="WHITE">
                <font>
                   <Font size="13.0" />
                </font></JFXButton>

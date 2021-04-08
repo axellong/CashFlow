@@ -1,0 +1,10 @@
+*{
+    -color-text-general: rgba(255,255,255,0.8);
+    -color-unselect-general: rgba(255,255,255,0.6);
+}
+
+#radio-button{
+    -fx-text-fill: -color-text-general;
+    -fx-font-size: 12.5;
+    -jfx-unselected-color: -color-unselect-general;
+}

@@ -32,6 +32,19 @@ public class FlujoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         onlyNumeric();
+        checkSelection();
+    }
+
+    @FXML
+    void MouseClickedSave(MouseEvent event) {
+        clean();
+    }
+
+    private void onlyNumeric(){
+        inputCantidad.setTextFormatter(new TextFormatter<Integer>(new IntegerStringConverter(), null, Utils.integerFilter));
+    }
+
+    private void checkSelection(){
         checkSalida.selectedProperty().addListener((ObservableValue<? extends Boolean> ov, Boolean old_val, Boolean new_val) -> {
             if(checkEntrada.isSelected()){
                 checkEntrada.setSelected(false);
@@ -44,15 +57,6 @@ public class FlujoController implements Initializable {
                 checkEntrada.setSelected(new_val);
             }
         });
-    }
-
-    @FXML
-    void MouseClickedSave(MouseEvent event) {
-        clean();
-    }
-
-    private void onlyNumeric(){
-        inputCantidad.setTextFormatter(new TextFormatter<Integer>(new IntegerStringConverter(), null, Utils.integerFilter));
     }
 
     public void clean(){

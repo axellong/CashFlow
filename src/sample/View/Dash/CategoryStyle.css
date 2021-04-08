@@ -1,3 +1,7 @@
-#base-category{
-    -fx-background-color: Transparent;
+#button-clearselection{
+    -fx-text-fill:#fff;
+}
+
+#button-clearselection:hover{
+    -fx-text-fill:Red;
 }

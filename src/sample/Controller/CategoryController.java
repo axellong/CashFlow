@@ -3,7 +3,6 @@ package sample.Controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
-import entity.Person;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -26,42 +25,42 @@ public class CategoryController implements Initializable {
     private TableColumn<?, ?> colClasificacion, colCategoria, colSubCategoria;
 
     @FXML
-    private TableView<Person> tableViewCategoria;
+    private TableView< > tableViewCategoria;
 
-    private Person selected;
+//    private Person selected;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        Person person = new Person("HOLA","HOLA","HOLA");
-        Person a = new Person("HOLA","HOLA","HOLA");
+
         colClasificacion.setCellValueFactory(new PropertyValueFactory<>("clasificacion"));
         colSubCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
         colCategoria.setCellValueFactory(new PropertyValueFactory<>("subCategoria"));
-        tableViewCategoria.getItems().addAll(person,a);
+        tableViewCategoria.getItems().addAll();
     }
 
     // metodo que se aactiva al seleccionar el boton guardar o Edit
     @FXML
     void MouseClickedSaveAndEdit(MouseEvent event) {
-        if(selected != null){
+        /*if(selected != null){
 
         }else{
 
-        }
+        }*/
         clean();
     }
 
     //metodo que se activa al seleccionar algo en la tabla
     @FXML
     void MouseClickeSelect(MouseEvent event) {
-        selected = tableViewCategoria.getSelectionModel().getSelectedItem();
+        /*selected = tableViewCategoria.getSelectionModel().getSelectedItem();
         if(selected != null){
-            boxClasificacion.getItems().add("HOLA");
-            boxClasificacion.getItems().add("HOLA2");
-            boxClasificacion.setValue(selected.clasificacion);
-            inputCategoria.setText(selected.categoria);
-            inputSubCategoria.setText(selected.subCategoria);
-        }
+
+        }*/
+    }
+
+    @FXML
+    void MouseClickedClearSelection(MouseEvent event) {
+        clean();
     }
 
     public void clean(){

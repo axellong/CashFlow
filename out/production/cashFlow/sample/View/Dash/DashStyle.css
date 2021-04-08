@@ -1,7 +1,9 @@
 *{
-    -color-pane-principal: rgba(31,31,31,1) /*#1F1F1F*/;
-    -color-pane-menu: rgba(26,26,26,1)/*#1A1A1A*/;
-    -color-button-focused: rgba(255,255,255,0.1);
+    /*-color-pane-principal: rgba(31,31,31,1) *//*#1F1F1F*//*;*/
+    -color-pane-principal: rgba(22,22,22,1);
+    /*-color-pane-menu: rgba(26,26,26,1)*//*#1A1A1A*//*;*/
+    -color-pane-menu: rgba(18,18,18,1)/*#1A1A1A*/;
+    -color-button-focused: rgba(30, 215, 96,0.8);/*rgba(255,255,255,0.1);*/
 }
 
 #base-panel{
@@ -20,5 +22,11 @@
 }
 
 #button-menu:focused{
-    -fx-background-color: -color-button-focused;
+   /* -fx-background-color: -color-button-focused;*/
+
+}
+
+#line-button{
+    -fx-stroke : -color-button-focused;
+    -fx-stroke-width: 6;
 }

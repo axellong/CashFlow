@@ -1,6 +1,6 @@
 *{
-    -color-pane-left: rgba(31,31,31,1) /*#1F1F1F*/;
-    -color-pane-rigth: rgba(26,26,26,1)/*#1A1A1A*/;
+    -color-pane-left: rgba(22,22,22,1) /*#1F1F1F*/;
+    -color-pane-rigth: rgba(18,18,18,1);/*#1A1A1A*/;
     -color-button-link: rgba(77,77,77,0.25)/*#4d4d4d60*/;
     -color-button-back: rgba(77,77,77,0.1)/*#4d4d4d20*/;
 }
