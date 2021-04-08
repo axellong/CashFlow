@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="entity">
+    <class name="Categoria" table="categoria">
+
+        <id name="idCategoria"
+            column="id_categoria"
+            type="java.lang.Integer"
+            unsaved-value="null" >
+            <generator class="increment">
+            </generator>
+        </id>
+
+        <property name="nombreCategoria" column="nombre_categoria"/>
+        <property name="idUsuario" column="id_usuario"/>
+
+        <bag name="subCategorias" table="sub_categoria" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_categoria" not-null="true"/>
+            </key>
+            <one-to-many class="SubCategoria"/>
+        </bag>
+
+
+
+    </class>
+</hibernate-mapping>

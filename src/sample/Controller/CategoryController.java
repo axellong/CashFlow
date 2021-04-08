@@ -24,8 +24,8 @@ public class CategoryController implements Initializable {
     @FXML
     private TableColumn<?, ?> colClasificacion, colCategoria, colSubCategoria;
 
-    @FXML
-    private TableView< > tableViewCategoria;
+   /* @FXML
+    private TableView< > tableViewCategoria;*/
 
 //    private Person selected;
 
@@ -35,7 +35,7 @@ public class CategoryController implements Initializable {
         colClasificacion.setCellValueFactory(new PropertyValueFactory<>("clasificacion"));
         colSubCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria"));
         colCategoria.setCellValueFactory(new PropertyValueFactory<>("subCategoria"));
-        tableViewCategoria.getItems().addAll();
+//        tableViewCategoria.getItems().addAll();
     }
 
     // metodo que se aactiva al seleccionar el boton guardar o Edit
@@ -64,7 +64,7 @@ public class CategoryController implements Initializable {
     }
 
     public void clean(){
-        tableViewCategoria.getSelectionModel().clearSelection();
+//        tableViewCategoria.getSelectionModel().clearSelection();
         boxClasificacion.getSelectionModel().clearSelection();
         inputCategoria.setText(null);
         inputSubCategoria.setText(null);
