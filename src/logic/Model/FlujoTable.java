@@ -3,13 +3,12 @@ package logic.Model;
 import entity.Categoria;
 import entity.RegistroEfectivo;
 import entity.SubCategoria;
-
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.ZoneId;
 
 public class FlujoTable {
-    private Calendar fecha;
-    private String Descripcion;
+    private LocalDate fecha;
+    private String descripcion;
     private Categoria categoria;
     private SubCategoria subCategoria;
 
@@ -17,33 +16,27 @@ public class FlujoTable {
 
     public FlujoTable(RegistroEfectivo entity) {
         this.entity = entity;
-        this.fecha = generateDate(entity.getFecha());
-        Descripcion = entity.getConcepto();
-        /*this.categoria = ;
-        this.subCategoria = subCategoria;*/
+        this.fecha = entity.getFecha().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        this.descripcion = entity.getConcepto();
+        this.subCategoria = entity.getIdSubcategoria();
+        this.categoria = entity.getIdSubcategoria().getId_Categoria();
         this.entity = entity;
     }
 
-    public Calendar generateDate(Date date){
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        return calendar;
-    }
-
-    public Calendar getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(Calendar fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
     public String getDescripcion() {
-        return Descripcion;
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        Descripcion = descripcion;
+        descripcion = descripcion;
     }
 
     public Categoria getCategoria() {

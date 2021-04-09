@@ -13,7 +13,7 @@ public class RegistroEfectivo {
     private double monto;
     private Date fecha;
     private Time hora;
-    private int idSubcategoria;
+    private SubCategoria idSubcategoria;
     private int idClasificacion;
 
     //lista para hibernete
@@ -30,7 +30,7 @@ public class RegistroEfectivo {
         this.listaReportesEfectivo = listaReportesEfectivo;
     }
 
-    public RegistroEfectivo(String tipoMovimiento, int idCategoria, String concepto, double monto, Date fecha, Time hora, int idSubcategoria, int idClasificacion) {
+    public RegistroEfectivo(String tipoMovimiento, int idCategoria, String concepto, double monto, Date fecha, Time hora, SubCategoria idSubcategoria, int idClasificacion) {
         this.tipoMovimiento = tipoMovimiento;
         this.idCategoria = idCategoria;
         this.concepto = concepto;
@@ -98,11 +98,11 @@ public class RegistroEfectivo {
         this.hora = hora;
     }
 
-    public int getIdSubcategoria() {
+    public SubCategoria getIdSubcategoria() {
         return idSubcategoria;
     }
 
-    public void setIdSubcategoria(int idSubcategoria) {
+    public void setIdSubcategoria(SubCategoria idSubcategoria) {
         this.idSubcategoria = idSubcategoria;
     }
 

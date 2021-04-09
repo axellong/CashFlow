@@ -16,7 +16,7 @@
       <URL value="@Flujo.css" />
    </stylesheets>
    <children>
-      <TableView id="table-base" layoutY="20.0" prefHeight="220.0" prefWidth="550.0">
+      <TableView id="table-base" fx:id="tableViewFlujo" layoutY="20.0" prefHeight="220.0" prefWidth="550.0">
         <columns>
           <TableColumn fx:id="colFecha" maxWidth="120.0" minWidth="120.0" prefWidth="120.0" text="Fecha" />
           <TableColumn fx:id="colDescripcion" maxWidth="171.0" minWidth="171.0" prefWidth="171.0" text="Descripción" />

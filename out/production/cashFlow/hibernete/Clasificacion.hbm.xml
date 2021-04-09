@@ -11,12 +11,12 @@
             </generator>
         </id>
 
-        <bag name="categoriaList" table="categoria" inverse="true" lazy="false" fetch="select">
+        <!--<bag name="categoriaList" table="categoria" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="id_clasificacion" not-null="true"/>
             </key>
             <one-to-many class="Categoria"/>
-        </bag>
+        </bag>-->
 
         <property name="nombreClasificacion" column="nombre_clasificacion"/>
 

@@ -20,12 +20,12 @@
         <property name="descripcion" column="descripcion"/>
         <property name="anio" column="año"/>
 
-        <bag name="listaReportes" table="reportes_indicadores" inverse="true" lazy="false" fetch="select">
+        <!--<bag name="listaReportes" table="reportes_indicadores" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="id_registro_indicadores" not-null="true"/>
             </key>
             <one-to-many class="ReportesIndicadores"/>
-        </bag>
+        </bag>-->
 
 
 

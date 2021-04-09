@@ -7,7 +7,11 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import logic.Model.FlujoTable;
+import sample.DAOs.RegistrosEfectivoDAO;
 import sample.Util.SceneAssembler;
+
+import java.net.Socket;
 
 public class Main extends Application {
     public static Stage primaryStage;

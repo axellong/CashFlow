@@ -17,16 +17,19 @@
         <property name="monto" column="monto"/>
         <property name="fecha" column="fecha"/>
         <property name="hora" column="hora"/>
-        <property name="idSubcategoria" column="id_subcategoria"/>
+   <!--     <property name="idSubcategoria" column="id_subcategoria"/>-->
         <property name="idClasificacion" column="id_clasificacion"/>
 
-        <bag name="listaReportesEfectivo" table="reportes_efectivo" inverse="true" lazy="false" fetch="select">
+        <!--<bag name="listaReportesEfectivo" table="reportes_efectivo" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="id_registro_efectivo" not-null="true"/>
             </key>
             <one-to-many class="ReportesEfectivo"/>
-        </bag>
+        </bag>-->
 
+        <many-to-one name="idSubcategoria" class="SubCategoria" fetch="join">
+            <column name="id_subcategoria" not-null="true" />
+        </many-to-one>
 
 
 

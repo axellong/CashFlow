@@ -15,16 +15,16 @@
 
         <property name="idUsuario" column="id_usuario"/>
 
-        <many-to-one name="clasificacion" class="Clasificacion" fetch="select">
+        <many-to-one name="clasificacion" class="Clasificacion" fetch="join">
             <column name="id_clasificacion" not-null="true" />
         </many-to-one>
 
-        <bag name="subCategorias" table="sub_categoria" inverse="true" lazy="false" fetch="select">
+       <!-- <bag name="subCategorias" table="sub_categoria" inverse="true" lazy="false" fetch="select">
             <key>
                 <column name="id_categoria" not-null="true"/>
             </key>
             <one-to-many class="SubCategoria"/>
-        </bag>
+        </bag>-->
 
 
 
