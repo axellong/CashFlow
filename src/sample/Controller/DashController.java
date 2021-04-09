@@ -65,6 +65,7 @@ public class DashController implements Initializable {
     @FXML
     void MouseClickedCategory(MouseEvent event) {
         nodeChange(category.getNode());
+        ((CategoryController) category.getController()).fillTable();
         moveLine(23.0);
     }
 
