@@ -17,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import logic.Model.CategoryTable;
 import sample.DAOs.CategoriaDAO;
 import sample.DAOs.ClasificacionDAO;
+import sample.DAOs.InitializerDAOs;
 import sample.DAOs.SubCategoriasDAO;
 
 import java.net.URL;
@@ -49,9 +50,9 @@ public class CategoryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        subCategoriasDAO = new SubCategoriasDAO();
-        clasificacionDAO = new ClasificacionDAO();
-        categoriaDAO = new CategoriaDAO();
+        subCategoriasDAO = InitializerDAOs.getInitializerDAOs().getSubCategoriasDAO();
+        clasificacionDAO = InitializerDAOs.getInitializerDAOs().getClasificacionDAO();
+        categoriaDAO = InitializerDAOs.getInitializerDAOs().getCategoriaDAO();
         initializeTable();
     }
 

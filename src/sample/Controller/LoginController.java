@@ -13,6 +13,7 @@ import javafx.scene.layout.Pane;
 import javafx.util.converter.IntegerStringConverter;
 import logic.Credential;
 import logic.LoginSecure;
+import sample.DAOs.InitializerDAOs;
 import sample.DAOs.UsuarioDAO;
 import sample.Util.Utils;
 import java.net.URL;
@@ -29,11 +30,14 @@ public class LoginController implements Initializable {
     @FXML
     private JFXPasswordField inputPassword;
 
-    LoginSecure segure = new LoginSecure();
-    UsuarioDAO usuarioDAO = new UsuarioDAO();
+    LoginSecure segure;
+    UsuarioDAO usuarioDAO;
     Usuario usuario;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        LoginSecure segure = new LoginSecure();
+        UsuarioDAO usuarioDAO = InitializerDAOs.getInitializerDAOs().getUsuarioDAO();
         inputCode.setTextFormatter(new TextFormatter<>(new IntegerStringConverter(), null, Utils.integerFilter));
     }
 
