@@ -15,7 +15,7 @@ public class RegistroIndicadores {
     private int anio;
 
     // lista para hibernete
-    private List<ReportesIndicadores> listaReportes;
+    private List<ReportesIndicadores> listaReportes ;
 
     public RegistroIndicadores(int idRegistroIndicadores, int idClasificacion, String concepto, String razonSocial, double monto, String mes, int semana, String descripcion, int anio, List<ReportesIndicadores> listaReportes) {
         this.idRegistroIndicadores = idRegistroIndicadores;
@@ -126,7 +126,6 @@ public class RegistroIndicadores {
                 ", semana=" + semana +
                 ", descripcion='" + descripcion + '\'' +
                 ", anio=" + anio +
-
                 '}';
     }
 }

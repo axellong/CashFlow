@@ -1,0 +1,184 @@
+[33mcommit d29f5497d26ff8f22df8e92f9ff922b25fec55e3[m[33m ([m[1;36mHEAD -> [m[1;32mAxel[m[33m, [m[1;31morigin/Axel[m[33m)[m
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Tue Apr 6 18:18:19 2021 -0500
+
+    reportes hbn funcionales pero el ovilla anda mamando asi que hi va
+
+[33mcommit faa9867225b696465888deefdce14c5bfa718920[m
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Tue Apr 6 15:18:27 2021 -0500
+
+    remake of entitys and problem solve about the get of dao, categoria and subcategoria mapped togetter
+
+[33mcommit a8b0ccd24afce7a89226eff00ccd82f332bc4e66[m
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Mon Apr 5 13:14:05 2021 -0500
+
+    merge whit dulce and fixedd problems whit the db auth
+
+[33mcommit 777fce6ee4699f4c986b627aa95f3d15733e6924[m
+Merge: c6657dc ae1489d
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Mon Apr 5 12:43:59 2021 -0500
+
+    mergin whit dulce and changes in auth in db and login
+
+[33mcommit c6657dc0c2c03981da7ceebdbc6f8d6b3728bd8f[m
+Merge: 5733685 ffb1d3b
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Mon Apr 5 12:28:57 2021 -0500
+
+    mergin whit chando for cahnges in db and entityes
+
+[33mcommit ffb1d3b7c2dadeda01be59f04ffbf722038ed096[m[33m ([m[1;31morigin/Chandoqui[m[33m, [m[1;32mChandoqui[m[33m)[m
+Author: JuanChandoqui <193242@ids.upchiapas.edu.mx>
+Date:   Thu Apr 1 22:30:17 2021 -0600
+
+    update DAOS(saves and gets), Entitys(method tostring added) and hbm files from hibernate
+
+[33mcommit 967ecadb1a97922673cd3436b2ea787e604459c9[m
+Author: JuanChandoqui <193242@ids.upchiapas.edu.mx>
+Date:   Thu Apr 1 22:29:59 2021 -0600
+
+    update DAOS(saves and gets), Entitys(method tostring added) and hbm files from hibernate
+
+[33mcommit ae1489d1fb5e04cf4cb84159e65d97f84c613537[m[33m ([m[1;31morigin/Dulce[m[33m, [m[1;32mDulce[m[33m)[m
+Author: gabyg25 <gab.gomez032@gmail.com>
+Date:   Thu Apr 1 00:14:48 2021 -0600
+
+    Validate Users in Login
+
+[33mcommit c1c7aa29ceec4c52fb160c27a012645e1c6afe0a[m
+Merge: 28e580b 1ca87d4
+Author: gabyg25 <gab.gomez032@gmail.com>
+Date:   Wed Mar 31 22:22:06 2021 -0600
+
+    Merge branch 'Dulce' of https://github.com/axellong/CashFlow into Dulce
+    
+     Conflicts:
+    	out/production/cashFlow/sample/Main.class
+    	src/hibernete/postgresql.cfg.xml
+    	src/sample/Controller/LoginController.java
+    	src/sample/DAOs/UsuarioDAO.java
+
+[33mcommit 28e580b616c2d99a812c1bad839456a8ae57eea0[m
+Author: gabyg25 <gab.gomez032@gmail.com>
+Date:   Wed Mar 31 22:16:21 2021 -0600
+
+    .
+
+[33mcommit 1ca87d4956146a99e341b58d77e936ea3197d05a[m
+Merge: 038ee78 0e1d05a
+Author: Eduardo913 <193239@ids.upchiapas.edu.mx>
+Date:   Wed Mar 31 21:56:52 2021 -0600
+
+    Merge remote-tracking branch 'origin/Ovilla' into Dulce
+    
+    # Conflicts:
+    #       out/production/cashFlow/sample/Controller/LoginController.class
+    #       out/production/cashFlow/sample/Main.class
+    #       src/sample/Controller/LoginController.java
+
+[33mcommit 038ee78fd6e1e7789bb08593dbeafeba52ec961d[m
+Author: Eduardo913 <193239@ids.upchiapas.edu.mx>
+Date:   Wed Mar 31 21:54:16 2021 -0600
+
+    Change in UsuarioDao
+
+[33mcommit 0e1d05afee86b28f8eb60e9394d1532f0e161a4b[m
+Author: Eduardo913 <193239@ids.upchiapas.edu.mx>
+Date:   Wed Mar 31 20:40:47 2021 -0600
+
+    minimal changes, creation of test entities (ignore), changes in numerical functions
+
+[33mcommit 6ad5a793f0b7a0b78884a0db1141e09107b69f8f[m
+Merge: 4a1f14f 2923bd2
+Author: gabyg25 <gab.gomez032@gmail.com>
+Date:   Fri Mar 26 12:26:06 2021 -0600
+
+    Merge branch 'Ovilla' into Dulce
+    
+    # Conflicts:
+    #       out/production/cashFlow/sample/Controller/LoginController.class
+    #       out/production/cashFlow/sample/Main.class
+    #       src/sample/Controller/LoginController.java
+
+[33mcommit 5733685f499f68a66b3dffdac638b41210553f95[m
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Thu Mar 25 21:27:36 2021 -0600
+
+    the loginsecure its totally complete only nedbe implemented
+
+[33mcommit 4a1f14f3d4ad1691a5a8b905795d083bb97886d6[m[33m ([m[1;31morigin/Merge[m[33m, [m[1;32mMerge[m[33m)[m
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Thu Mar 25 11:51:59 2021 -0600
+
+    resolve the problem of database of año
+
+[33mcommit 1e4965b391c0e7b8cad593ebb2cabd9cb9014859[m
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Thu Mar 25 03:04:46 2021 -0600
+
+    i start whit loginSecure and it is in a 80% complete only left chechk some details
+
+[33mcommit 2923bd20159102da17365b3d8f443941a9705623[m
+Author: Eduardo913 <193239@ids.upchiapas.edu.mx>
+Date:   Thu Mar 25 00:39:08 2021 -0600
+
+    Changes in functionality and new features are added as well as the implementation of the logo.
+
+[33mcommit 191afd08db5581e0d61c1cfb549479fe94f358d4[m
+Merge: 3cb76f3 04de5b9
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Wed Mar 24 11:43:14 2021 -0600
+
+    mergin branch axel whith the layerof hibernet and branch chandoqui whit daos
+
+[33mcommit 3cb76f3ec370f89ee22cecb509aa81558a040dc3[m
+Merge: 1a0db2b e47c589
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Wed Mar 24 11:22:56 2021 -0600
+
+    pulling the same branch to merge later whit branch axel
+
+[33mcommit 04de5b97ab0626746dcda3c20d0633c900c86ef1[m
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Wed Mar 24 01:05:49 2021 -0600
+
+    added changes in out in intellij
+
+[33mcommit df56bbfdb39105073c24e5bd587c23497c4c5383[m
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Wed Mar 24 00:52:21 2021 -0600
+
+    it was added the layer of hibernet at same time the entitys, hiberneteMaps and its all functional conects correctly to the db and doesnt say any error
+
+[33mcommit e47c58943968f274378eb181e76428ddaf81ec01[m
+Author: JuanChandoqui <193242@ids.upchiapas.edu.mx>
+Date:   Tue Mar 23 23:28:18 2021 -0600
+
+    added DAOs
+
+[33mcommit 37b049a15ced1a1a4685881f66d4ef139928a340[m
+Author: JuanChandoqui <193242@ids.upchiapas.edu.mx>
+Date:   Tue Mar 23 23:23:58 2021 -0600
+
+    added DAOs
+
+[33mcommit 1a0db2b955f8a41ab24b28a3a99d480f25a6d13f[m
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Mon Mar 22 13:20:33 2021 -0600
+
+    merge
+
+[33mcommit 503b03eca7c5210075657ae47e694eb42f74d4a9[m[33m ([m[1;31morigin/Ovilla[m[33m)[m
+Author: Eduardo913 <193239@ids.upchiapas.edu.mx>
+Date:   Mon Mar 22 12:06:41 2021 -0600
+
+    mi primer commit
+
+[33mcommit 58c539cdf374290c23f9beb8d7def7e1737da756[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mclear[m[33m)[m
+Author: axellong <193250@ids.upchiapas.edu.mx>
+Date:   Mon Mar 22 11:07:12 2021 -0600
+
+    initializer

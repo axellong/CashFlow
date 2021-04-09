@@ -3,7 +3,7 @@ package entity;
 public class ReportesIndicadores {
     private int idReporte;
     private String descripcion;
-    private RegistroIndicadores idRegistroIndicadores;
+    private RegistroIndicadores idRegistroIndicadores ;
     private int numReporte;
 
     public ReportesIndicadores(String descripcion, RegistroIndicadores idRegistroIndicadores, int numReporte) {

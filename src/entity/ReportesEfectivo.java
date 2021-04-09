@@ -4,10 +4,10 @@ public class ReportesEfectivo {
 
     private int idReporte;
     private String descripcion;
-    private int idRegistroEfectivo;
+    private RegistroEfectivo idRegistroEfectivo;
     private int numReporte;
 
-    public ReportesEfectivo(String descripcion, int idRegistroEfectivo, int numReporte) {
+    public ReportesEfectivo(String descripcion, RegistroEfectivo idRegistroEfectivo, int numReporte) {
         this.descripcion = descripcion;
         this.idRegistroEfectivo = idRegistroEfectivo;
         this.numReporte = numReporte;
@@ -32,11 +32,11 @@ public class ReportesEfectivo {
         this.descripcion = descripcion;
     }
 
-    public int getIdRegistroEfectivo() {
+    public RegistroEfectivo getIdRegistroEfectivo() {
         return idRegistroEfectivo;
     }
 
-    public void setIdRegistroEfectivo(int idRegistroEfectivo) {
+    public void setIdRegistroEfectivo(RegistroEfectivo idRegistroEfectivo) {
         this.idRegistroEfectivo = idRegistroEfectivo;
     }
 

@@ -2,6 +2,7 @@ package entity;
 
 import java.sql.Time;
 import java.util.Date;
+import java.util.List;
 
 public class RegistroEfectivo {
 
@@ -15,7 +16,18 @@ public class RegistroEfectivo {
     private int idSubcategoria;
     private int idClasificacion;
 
+    //lista para hibernete
+    private List<ReportesEfectivo> listaReportesEfectivo;
+
     public RegistroEfectivo() {
+    }
+
+    public List<ReportesEfectivo> getListaReportesEfectivo() {
+        return listaReportesEfectivo;
+    }
+
+    public void setListaReportesEfectivo(List<ReportesEfectivo> listaReportesEfectivo) {
+        this.listaReportesEfectivo = listaReportesEfectivo;
     }
 
     public RegistroEfectivo(String tipoMovimiento, int idCategoria, String concepto, double monto, Date fecha, Time hora, int idSubcategoria, int idClasificacion) {
