@@ -53,9 +53,6 @@ public class CategoryController implements Initializable {
         clasificacionDAO = new ClasificacionDAO();
         categoriaDAO = new CategoriaDAO();
         initializeTable();
-        fillTable();
-        fillbox();
-
     }
 
     // metodo que se aactiva al seleccionar el boton guardar o Edit
@@ -101,6 +98,11 @@ public class CategoryController implements Initializable {
         clean();
     }
 
+    public void initializarData(){
+        fillTable();
+        fillbox();
+    }
+
     private void initializeTable(){
         categoriasList = FXCollections.observableArrayList();
         colClasificacion.setCellValueFactory(new PropertyValueFactory<>("clasificacion"));
@@ -109,7 +111,7 @@ public class CategoryController implements Initializable {
         tableViewCategoria.setItems(categoriasList);
     }
 
-    public void fillTable(){
+    private void fillTable(){
         categoriasList.clear();
         List<SubCategoria> subCategoriaList = subCategoriasDAO.getListSubCategorias();
         List<CategoryTable> categoryTables = new ArrayList<>();
@@ -118,9 +120,11 @@ public class CategoryController implements Initializable {
     }
 
     private void fillbox(){
-        clasificacionList = clasificacionDAO.getListClasificaciones();
-        boxClasificacion.getItems().clear();
-        boxClasificacion.getItems().addAll(clasificacionList);
+        if(boxClasificacion.getItems().isEmpty()){
+            clasificacionList = clasificacionDAO.getListClasificaciones();
+            boxClasificacion.getItems().clear();
+            boxClasificacion.getItems().addAll(clasificacionList);
+        }
     }
 
     private Clasificacion checkSelection(Clasificacion review){
