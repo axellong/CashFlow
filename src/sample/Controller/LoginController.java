@@ -36,8 +36,9 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        LoginSecure segure = new LoginSecure();
-        UsuarioDAO usuarioDAO = InitializerDAOs.getInitializerDAOs().getUsuarioDAO();
+        segure = new LoginSecure();
+        usuarioDAO = InitializerDAOs.getInitializerDAOs().getUsuarioDAO();
+
         inputCode.setTextFormatter(new TextFormatter<>(new IntegerStringConverter(), null, Utils.integerFilter));
     }
 
@@ -65,6 +66,7 @@ public class LoginController implements Initializable {
         String Email = inputEmail.getText();
         String Passw = inputPassword.getText();
         usuario = usuarioDAO.getUsuario(Email,Passw);
+        System.out.println(usuario);
 
         if(usuario != null){
             makefadeOut(true);
