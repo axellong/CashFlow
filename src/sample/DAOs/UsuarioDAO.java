@@ -65,7 +65,7 @@ public class UsuarioDAO {
        crit.add(Restrictions.eq("email",email));
        crit.add(Restrictions.eq("password",password));
        Usuario user = null;
-       if(crit.list().isEmpty()){
+       if(!crit.list().isEmpty()){
            user = (Usuario) crit.list().get(0);
        }
        session.close();

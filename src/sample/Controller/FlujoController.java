@@ -32,6 +32,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static sample.Util.Utils.nullOrEmpty;
+
 public class FlujoController implements Initializable {
 
     @FXML
@@ -64,14 +66,19 @@ public class FlujoController implements Initializable {
 
     @FXML
     void MouseClickedSave(MouseEvent event) {
-        if (inputDescripcion.getText() != null && inputCantidad.getText() != null && boxCategoria.getSelectionModel().getSelectedItem() != null && (checkSalida.isSelected() || checkEntrada.isSelected())){
+        String descripcion = inputDescripcion.getText();
+        String cantidad = inputCantidad.getText();
+        Categoria_SubCategoria categoria_subCategoria =boxCategoria.getSelectionModel().getSelectedItem();
+        boolean salida = checkSalida.isSelected();
+        boolean entrada = checkEntrada.isSelected();
+        if (!nullOrEmpty(descripcion) && !nullOrEmpty(cantidad) && categoria_subCategoria != null && (salida || entrada)){
             RegistroEfectivo registroEfectivo = new RegistroEfectivo();
-            registroEfectivo.setConcepto(inputDescripcion.getText());
+            registroEfectivo.setConcepto(descripcion);
             registroEfectivo.setFecha(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
             registroEfectivo.setHora(Time.valueOf(LocalTime.now()));
-            registroEfectivo.setMonto(Double.parseDouble(inputCantidad.getText()));
-            registroEfectivo.setIdSubcategoria(boxCategoria.getSelectionModel().getSelectedItem().getEntity());
-            if (checkEntrada.isSelected()){
+            registroEfectivo.setMonto(Double.parseDouble(cantidad));
+            registroEfectivo.setIdSubcategoria(categoria_subCategoria.getEntity());
+            if (entrada){
                 registroEfectivo.setTipoMovimiento(checkEntrada.getText());
             }else{
                 registroEfectivo.setTipoMovimiento(checkSalida.getText());

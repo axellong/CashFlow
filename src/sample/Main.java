@@ -7,11 +7,10 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import logic.Model.FlujoTable;
-import sample.DAOs.RegistrosEfectivoDAO;
 import sample.Util.SceneAssembler;
 
-import java.net.Socket;
+import java.util.Objects;
+
 
 public class Main extends Application {
     public static Stage primaryStage;
@@ -26,7 +25,7 @@ public class Main extends Application {
         SceneAssembler.setRoot("Dash","DashView");
         scene.setFill(Color.TRANSPARENT);
         primaryStage.setTitle("CashFlow");
-        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("Resources/iconLogo.png")));
+        primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Resources/iconLogo.png"))));
         primaryStage.setScene(scene);
         primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.centerOnScreen();

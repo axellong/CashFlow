@@ -32,4 +32,15 @@ public class Utils {
         }
     }
 
+    public static boolean nullOrEmpty(String str){
+
+        if(str == null){
+            return true;
+        }else{
+            if(str.isBlank()){
+                return true;
+            }
+        }
+        return false;
+    }
 }
