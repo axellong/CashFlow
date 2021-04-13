@@ -55,7 +55,7 @@ public class UsuarioDAO {
         Session session = factory.openSession();
         session.beginTransaction();
         session.delete(usuario);
-        session.getTransaction();
+        session.getTransaction().commit();
         session.close();
     }
 

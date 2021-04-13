@@ -1,0 +1,12 @@
+#button-clearselection{
+    -fx-text-fill:#fff;
+}
+
+#button-clearselection:hover{
+    -fx-text-fill:Red;
+}
+
+#button-delete{
+    -fx-background-color: RGBA(168,5,5,0.8);
+}
+
