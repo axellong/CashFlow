@@ -9,6 +9,23 @@ public class Usuario {
     private  boolean credencial;
     private String email;
 
+    public Usuario(int idUsuario, String nombre, String username, String password, boolean credencial, String email) {
+        this.idUsuario = idUsuario;
+        this.nombre = nombre;
+        this.username = username;
+        this.password = password;
+        this.credencial = credencial;
+        this.email = email;
+    }
+
+
+    public Usuario (String nombre, String username, String password, String email){
+        this.nombre = nombre;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
+
     public Usuario(String nombre, String username, String password, boolean credencial, String email) {
         this.nombre = nombre;
         this.username = username;

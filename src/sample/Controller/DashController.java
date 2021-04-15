@@ -24,7 +24,7 @@ public class DashController implements Initializable {
 
     private ObservableList<Parent> menu;
 
-    private SceneAdd category, flow, register;
+    private SceneAdd category, flow, register, userView;
     @FXML
     private AnchorPane  panePrincipal;
 
@@ -46,7 +46,8 @@ public class DashController implements Initializable {
             category = integratePanel("Dash","Category",262.5,45);
             flow = integratePanel("Dash","Flujo",262.5,45);
             register = integratePanel("Dash","Registro",262.5,45);
-            menu.addAll(category.getNode(),flow.getNode(),register.getNode());
+            userView = integratePanel("Dash", "User", 262.5, 45);
+            menu.addAll(category.getNode(),flow.getNode(),register.getNode(), userView.getNode());
             panePrincipal.getChildren().addAll(menu);
             goBack(menu);
         } catch (IOException e) {
@@ -91,12 +92,19 @@ public class DashController implements Initializable {
         }
     }
 
+    @FXML
+    void MouseClickedUsuario(MouseEvent event) {
+        nodeChange(userView.getNode());
+        ((UserController) userView.getController()).initializarData();
+    }
+
     // metodo para cerrar la secion del Usuario
     @FXML
     void MouseClickedCerrarSesion(MouseEvent event) {
         //borrar credenciales del Usuario
         Utils.changeScene("Login","LoginView");
     }
+
 
     //metodo para agregar email and user
     public void setLabels(){
@@ -151,5 +159,6 @@ public class DashController implements Initializable {
         ((CategoryController)category.getController()).clean();
         ((FlujoController)flow.getController()).clean();
         ((RegistroController)register.getController()).clean();
+        ((UserController)userView.getController()).clean();
     }
 }
