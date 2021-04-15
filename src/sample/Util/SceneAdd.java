@@ -2,8 +2,6 @@ package sample.Util;
 
 import javafx.scene.Parent;
 
-import java.util.ArrayList;
-
 public class SceneAdd {
 
     private Parent node;
@@ -29,4 +27,5 @@ public class SceneAdd {
     public void setController(Object controller) {
         this.controller = controller;
     }
+
 }

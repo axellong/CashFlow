@@ -5,16 +5,21 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import sample.Main;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class SceneAssembler {
 
     private static double xOffset;
     private static double yOffset;
+    private static Alert alert;
 
     //METODO PARA CARGAR UN NUEVO FXML
     public static Parent loadFXML(String carpeta, String fxml) throws IOException {
@@ -74,6 +79,21 @@ public class SceneAssembler {
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
+        }
+    }
+
+    public static Optional<ButtonType> sceneAlert(String title,String contentText){
+        alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.initStyle(StageStyle.TRANSPARENT);
+        alert.setContentText(contentText);
+        return alert.showAndWait();
+    }
+
+    public static void closeAlert(){
+        if(alert != null){
+            alert.close();
         }
     }
 
