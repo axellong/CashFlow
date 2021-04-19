@@ -18,8 +18,8 @@ public class PruebaReports {
 //            viewer.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 //            viewer.setVisible(true);
 
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/sample/Reports/Jasper/ReportePagar.jasper"));
-            JasperPrint jsp = JasperFillManager.fillReport(jas,null, ReportsCuentasPagar.getDataSource());
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/sample/Reports/Jasper/ReportIndicadores.jasper"));
+            JasperPrint jsp = JasperFillManager.fillReport(jas,null, ReportsIndicadores.getDataSource());
             JasperViewer vie =  new JasperViewer(jsp, false);
             vie.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             vie.setVisible(true);
