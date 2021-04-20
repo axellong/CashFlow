@@ -41,7 +41,7 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <JFXButton id="button-menu" layoutY="23.0" onMouseClicked="#MouseClickedCategory" pickOnBounds="false" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
+                        <JFXButton id="button-menu" layoutY="23.0" onMouseClicked="#MouseClickedCategory" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
                            <graphic>
                               <HBox accessibleRole="BUTTON" alignment="CENTER_LEFT" mouseTransparent="true" prefHeight="45.0" prefWidth="225.0">
                                  <children>
@@ -97,7 +97,7 @@
                               <Font size="13.0" />
                            </font>
                         </Label>
-                        <JFXButton id="button-menu" layoutY="168.0" onMouseClicked="#MouseClickedRegistro" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
+                        <JFXButton id="button-menu" layoutY="168.0" onMouseClicked="#MouseClickedRegistro" pickOnBounds="false" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
                            <graphic>
                               <HBox accessibleRole="BUTTON" alignment="CENTER_LEFT" mouseTransparent="true" prefHeight="40.0" prefWidth="225.0">
                                  <children>
@@ -124,7 +124,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <JFXButton id="button-menu" layoutY="217.0" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
+                        <JFXButton id="button-menu" layoutY="217.0" pickOnBounds="false" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
                            <graphic>
                               <HBox accessibleRole="BUTTON" alignment="CENTER_LEFT" mouseTransparent="true" prefHeight="40.0" prefWidth="225.0">
                                  <children>

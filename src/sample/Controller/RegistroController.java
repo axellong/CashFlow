@@ -70,6 +70,7 @@ public class RegistroController implements Initializable {
             add.setMes(LocalDate.now().getMonth().name());
             add.setConcepto("Banco");
             registroIndicadoresDAO.saveRegistroIndicador(add);
+            clean();
         }
     }
 
