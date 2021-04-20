@@ -1,5 +1,6 @@
 package sample.Reports;
 
+import logic.Model.Calculos;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
@@ -18,12 +19,14 @@ public class PruebaReports {
 //            viewer.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 //            viewer.setVisible(true);
 
-            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/sample/Reports/Jasper/ReportIndicadores.jasper"));
-            JasperPrint jsp = JasperFillManager.fillReport(jas,null, ReportsIndicadores.getDataSource());
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/sample/Reports/Jasper/Reporte.jasper"));
+            JasperPrint jsp = JasperFillManager.fillReport(jas,null, ReportsCuentasCobrar.getDataSource());
             JasperViewer vie =  new JasperViewer(jsp, false);
             vie.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             vie.setVisible(true);
             System.out.println("salio");
+            Calculos calculos = new Calculos();
+            calculos.llenadoCuentasPagar();
         }catch (Exception exception){
             exception.getMessage();
         }
