@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4_Landscape" pageWidth="1500" pageHeight="1000" orientation="Landscape" columnWidth="1460" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a3bbdb8-00af-446b-8f42-168b5c50c176">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<subDataset name="Empty Dataset1" uuid="5d01a8ad-2d71-46a9-962c-655de42a22d2"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="totalSemana5" class="java.lang.Double"/>
+	<field name="totalSemana4" class="java.lang.Double"/>
+	<field name="totalSemana3" class="java.lang.Double"/>
+	<field name="totalSemana2" class="java.lang.Double"/>
+	<field name="totalSemana1" class="java.lang.Double"/>
+	<field name="MES" class="java.lang.String"/>
+	<field name="cuentaCobrar" class="java.lang.String"/>
+	<field name="semana5" class="java.lang.Double"/>
+	<field name="semana4" class="java.lang.Double"/>
+	<field name="semana3" class="java.lang.Double"/>
+	<field name="semana2" class="java.lang.Double"/>
+	<field name="semana1" class="java.lang.Double"/>
+	<field name="cuentasCobrarFinal" class="java.lang.Double"/>
+	<field name="totalSemanas" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="210" y="20" width="1090" height="58" uuid="5ee5500c-e007-4572-9aff-cc4921614519"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[Cuentas por cobrar]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="75" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="840" y="26" width="100" height="30" backcolor="#DBDBDB" uuid="995d25c0-23e9-4a6d-a515-781cebcff914"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[MES]]></text>
+			</staticText>
+			<frame>
+				<reportElement mode="Opaque" x="940" y="26" width="200" height="30" backcolor="#CFCFCF" uuid="8be38cf1-2807-4ae0-9a0c-fb96251504e6"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#D9D9D9"/>
+				</box>
+				<textField textAdjust="StretchHeight">
+					<reportElement x="51" y="1" width="100" height="30" uuid="f4d57051-8675-4562-8e73-03e589184746"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="15"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{MES}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="107" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="350" y="20" width="140" height="30" backcolor="#DBDBDB" uuid="0311fca3-5551-4411-ba84-84974d5278bb"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="770" y="20" width="140" height="30" backcolor="#DBDBDB" uuid="d837bf4a-4d6c-4beb-8fce-1e6f43180876"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="630" y="20" width="140" height="30" backcolor="#DBDBDB" uuid="a0a2b061-4c74-4995-a66f-ba6aeef99507"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="490" y="20" width="140" height="30" backcolor="#DBDBDB" uuid="4f3156b8-d409-484b-8d54-ba75e6957b6e"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="910" y="20" width="140" height="30" backcolor="#DBDBDB" uuid="4d20f933-ee49-4d20-998d-84591a621203"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1050" y="20" width="140" height="30" backcolor="#DBDBDB" uuid="8a9afca1-afe9-43ec-b648-93a27376df92"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Final]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="350" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="dd36ae1e-bbd7-4fa5-9130-f0f0369d19a4"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="490" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="1cc4f099-c955-49f4-b1ae-3c16370a74da"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="630" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="fd3f97a6-2715-428c-bd29-5e9aff3044c3"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="770" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="f0b4c93a-65af-4f6d-a0a7-14a89c86c646"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="910" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="01b1b455-cca1-4e8c-a872-8665a1d19dc8"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1050" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="b97feb61-0b85-43a2-9205-957852b94991"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<frame>
+				<reportElement x="100" y="0" width="1100" height="39" uuid="a2ddcad0-93a3-4bda-be04-817ce65d153e"/>
+				<textField textAdjust="StretchHeight">
+					<reportElement mode="Opaque" x="20" y="5" width="230" height="30" backcolor="#DEDEDE" uuid="bfd0ca61-de0d-4ff3-9a08-841a90114ea0">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="44fe469a-0170-45c0-b457-bf4a28bc66c0"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font size="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cuentaCobrar}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement mode="Opaque" x="950" y="5" width="140" height="30" backcolor="#ADA8A8" uuid="7cfbc0ef-ce02-4af8-99b1-6cf247129897">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ca3f2068-2c99-418a-9bfa-d5aee781518d"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font size="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cuentasCobrarFinal}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement mode="Opaque" x="390" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="b7ff5d78-d4e9-46ec-b070-b2444239c765">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3dd586be-a5b6-4d0c-88d5-d668c658c3bd"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font size="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{semana2}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement mode="Opaque" x="670" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="69c0c69a-7bd0-4d87-9164-ca0148537cc7">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9bcc4ffe-fef4-47fa-88e5-9701344ce0ba"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font size="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{semana4}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement mode="Opaque" x="250" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="a459f508-1cc5-41aa-8aed-4767f720cd28">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ed6904a3-ad82-47a0-bf75-2d96050c35d8"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font size="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{semana1}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement mode="Opaque" x="810" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="e9a1e06f-8319-445c-8e47-fc996f9e726c">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06ea6925-25ab-4789-b23b-64e82a072de2"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font size="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{semana5}]]></textFieldExpression>
+				</textField>
+				<textField textAdjust="StretchHeight">
+					<reportElement mode="Opaque" x="530" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="3b2bfaec-f890-4382-b175-f9e0cd490133">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="609b5883-a769-4b80-9434-d2efe8c600cb"/>
+					</reportElement>
+					<box>
+						<pen lineWidth="1.0" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center">
+						<font size="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{semana3}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="16" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="10" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="63">
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="490" y="10" width="140" height="30" backcolor="#DEDEDE" uuid="6587f2d4-0dd1-4b47-8621-b3c4cf200c02">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a07b820b-96da-4a8a-a38d-9422ba4ebb27"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalSemana2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="10" width="230" height="30" backcolor="#DEDEDE" uuid="eb0e2c37-c935-41ae-8187-6302e5bd4c2e"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Total cuentas por cobrar]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="350" y="10" width="140" height="30" backcolor="#DEDEDE" uuid="5d0fdd50-9384-4a20-821e-11d4b98655c3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d2514b39-0821-4470-87a1-c0f70f117298"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalSemana1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="630" y="10" width="140" height="30" backcolor="#DEDEDE" uuid="6471b2be-2830-4b58-b3d5-35b5d08801bc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d78c3c91-798a-4982-a6b2-2295d6f39a37"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalSemana3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="760" y="10" width="140" height="30" backcolor="#DEDEDE" uuid="1ea555d8-4267-4bee-bd26-3c5de7b65d75">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8dc74063-dc12-4ea4-b9a4-32908d91a307"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalSemana4}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="900" y="10" width="149" height="30" backcolor="#DEDEDE" uuid="d3a687a2-64a3-42f8-b43f-824c89a6f843">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6fa78a07-c0f4-4200-87cc-d713a8e6ff94"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalSemana5}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="1050" y="10" width="139" height="30" backcolor="#ADA8A8" uuid="737405bc-614e-41b5-8889-7201fbfd2945"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalSemanas}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band height="25" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -18,11 +18,17 @@ import javafx.scene.input.MouseEvent;
 import javafx.util.converter.IntegerStringConverter;
 import logic.Model.Categoria_SubCategoria;
 import logic.Model.FlujoTable;
+import sample.DAOs.InitializerDAOs;
 import sample.DAOs.RegistrosEfectivoDAO;
 import sample.DAOs.SubCategoriasDAO;
 import sample.Util.Utils;
 import java.net.URL;
+import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -49,8 +55,8 @@ public class FlujoController implements Initializable {
     private ObservableList<FlujoTable> flujoTables;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        subCategoriasDAO = new SubCategoriasDAO();
-        registrosEfectivoDAO = new RegistrosEfectivoDAO();
+        subCategoriasDAO = InitializerDAOs.getInitializerDAOs().getSubCategoriasDAO();
+        registrosEfectivoDAO = InitializerDAOs.getInitializerDAOs().getRegistrosEfectivoDAO();
         onlyNumeric();
         checkSelection();
         initializeTable();
@@ -58,7 +64,22 @@ public class FlujoController implements Initializable {
 
     @FXML
     void MouseClickedSave(MouseEvent event) {
-        clean();
+        if (inputDescripcion.getText() != null && inputCantidad.getText() != null && boxCategoria.getSelectionModel().getSelectedItem() != null && (checkSalida.isSelected() || checkEntrada.isSelected())){
+            RegistroEfectivo registroEfectivo = new RegistroEfectivo();
+            registroEfectivo.setConcepto(inputDescripcion.getText());
+            registroEfectivo.setFecha(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+            registroEfectivo.setHora(Time.valueOf(LocalTime.now()));
+            registroEfectivo.setMonto(Double.parseDouble(inputCantidad.getText()));
+            registroEfectivo.setIdSubcategoria(boxCategoria.getSelectionModel().getSelectedItem().getEntity());
+            if (checkEntrada.isSelected()){
+                registroEfectivo.setTipoMovimiento(checkEntrada.getText());
+            }else{
+                registroEfectivo.setTipoMovimiento(checkSalida.getText());
+            }
+            registrosEfectivoDAO.saveRegistroEfectivo(registroEfectivo);
+            flujoTables.add(new FlujoTable(registroEfectivo));
+            clean();
+        }
     }
 
     private void onlyNumeric(){

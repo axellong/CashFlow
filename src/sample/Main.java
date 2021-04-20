@@ -7,11 +7,9 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import logic.Model.FlujoTable;
-import sample.DAOs.RegistrosEfectivoDAO;
+import org.apache.log4j.BasicConfigurator;
+import sample.Reports.PruebaReports;
 import sample.Util.SceneAssembler;
-
-import java.net.Socket;
 
 public class Main extends Application {
     public static Stage primaryStage;
@@ -37,7 +35,9 @@ public class Main extends Application {
 
     //METODO MAIN
     public static void main(String[] args) {
-        launch(args);
+        //launch(args);}
+        PruebaReports pruebaReports = new PruebaReports();
+
     }
 
 
