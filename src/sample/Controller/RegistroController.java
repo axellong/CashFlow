@@ -27,7 +27,7 @@ public class RegistroController implements Initializable {
     private JFXTextField inputSemana_1,  inputSemana_2;
 
     @FXML
-    private JFXTextField inputMonto_1,  inputMonto_2;
+    private JFXTextField inputMonto_1,  inputMonto_2, inputCuenta;
 
     @FXML
     private JFXTextField inputRazonSocial, inputDescripcionBanco;
@@ -44,7 +44,7 @@ public class RegistroController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         registroIndicadoresDAO = InitializerDAOs.getInitializerDAOs().getRegistroIndicadoresDAO();
         numeric = FXCollections.observableArrayList();
-        numeric.addAll(inputSemana_2,inputSemana_1,inputMonto_2,inputMonto_1);
+        numeric.addAll(inputSemana_2,inputSemana_1,inputMonto_2,inputMonto_1,inputCuenta);
         onlyNumeric();
         text = FXCollections.observableArrayList();
         text.addAll(inputDescripcionBanco,inputRazonSocial);
@@ -77,13 +77,13 @@ public class RegistroController implements Initializable {
     @FXML
     void MouseClickedSaveCobrarPagar(MouseEvent event) {
         System.out.println("h");
+        String cuenta = inputCuenta.getText();
         String semana = inputSemana_1.getText();
         String monto = inputMonto_1.getText();
         String razonSocial = inputRazonSocial.getText();
         boolean pagar = radioPagar.isSelected();
         boolean cobro = radioCobrar.isSelected();
-        if(!nullOrEmpty(semana) && !nullOrEmpty(monto) && !nullOrEmpty(razonSocial) && (pagar || cobro)){
-            System.out.println("h");
+        if(!nullOrEmpty(semana) && !nullOrEmpty(cuenta) && !nullOrEmpty(monto) && !nullOrEmpty(razonSocial) && (pagar || cobro)){
             RegistroIndicadores add = new RegistroIndicadores();
             add.setSemana(Integer.parseInt(semana));
             add.setMonto(Double.parseDouble(monto));

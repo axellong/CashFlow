@@ -1,17 +1,20 @@
 package sample.Controller;
 
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import entity.Usuario;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.*;
+import javafx.fxml.Initializable;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import logic.Model.UserTable;
-import javafx.fxml.Initializable;
 import sample.DAOs.UsuarioDAO;
 import sample.Util.SceneAssembler;
 
@@ -40,6 +43,9 @@ public class UserController implements  Initializable{
 
     @FXML
     private Label labelWarningUsuario;
+
+    @FXML
+    private JFXCheckBox checkAdmin;
 
     private UserTable selected;
     private ObservableList<UserTable> usuariosList;
@@ -74,6 +80,7 @@ public class UserController implements  Initializable{
         String usuario = inputNombredeUsuario.getText();
         String email = inputEmail.getText();
         String contrasena = inputContrasena.getText();
+        boolean permisos = checkAdmin.isSelected();
         if(!nullOrEmpty(nombre) && !nullOrEmpty(usuario) && !nullOrEmpty(email) && !nullOrEmpty(contrasena)){
             if(selected != null){
                 usuariosList.remove(selected);
@@ -91,7 +98,7 @@ public class UserController implements  Initializable{
                 newUser.setNombre(nombre);
                 newUser.setUsername(usuario);
                 newUser.setPassword(contrasena);
-                newUser.setCredencial(true);
+                newUser.setCredencial(permisos);
                 newUser.setEmail(email);
 
                 boolean usuarioEncontrado = searchUser(newUser.getUsername());
@@ -119,7 +126,7 @@ public class UserController implements  Initializable{
             inputNombredeUsuario.setText(selected.getNombreUsuario());
             inputContrasena.setText(selected.getContrasena());
             inputEmail.setText(selected.getEmail());
-
+            checkAdmin.setSelected(selected.getUsuario().isCredencial());
         }
 
     }
@@ -137,6 +144,7 @@ public class UserController implements  Initializable{
         inputContrasena.setText(null);
         inputEmail.setText(null);
         labelWarningUsuario.setVisible(false);
+        checkAdmin.setSelected(false);
     }
 
     public void initializarData(){

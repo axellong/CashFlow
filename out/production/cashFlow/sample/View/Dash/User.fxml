@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
@@ -60,6 +61,8 @@
             <Font name="System Italic" size="12.0" />
          </font>
       </Label>
+      <Label layoutX="181.0" layoutY="378.0" text="Permisos:" textFill="WHITE" />
+      <JFXCheckBox fx:id="checkAdmin" layoutX="181.0" layoutY="402.0" text="Administrador" textFill="WHITE" unCheckedColor="WHITE" />
    </children>
 
 </AnchorPane>

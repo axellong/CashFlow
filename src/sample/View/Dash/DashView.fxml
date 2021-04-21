@@ -155,43 +155,32 @@
                      </children>
                   </Pane>
                   <JFXButton layoutX="14.0" layoutY="511.0" onMouseClicked="#MouseClickedCerrarSesion" ripplerFill="WHITE" text="Cerrar sesión" textFill="WHITE" />
-                  <Pane layoutX="14.0" layoutY="30.0">
-                     <children>
-                        <ImageView fitHeight="60.0" fitWidth="40.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Resources/icons8_male_user_64.png" />
-                           </image>
-                        </ImageView>
-                        <Label fx:id="labelUser" layoutX="49.0" text="User" textFill="WHITE">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Label>
-                        <Label fx:id="labelEmail" layoutX="49.0" layoutY="25.0" text="E-mail" textFill="WHITE">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <JFXButton id="button-menu" layoutY="430.0" onMouseClicked="#MouseClickedUsuario" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
-                     <graphic>
-                        <HBox accessibleRole="BUTTON" alignment="CENTER_LEFT" mouseTransparent="true" prefHeight="40.0" prefWidth="225.0">
-                           <children>
-                              <Label text="Usuarios" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </HBox>
-                     </graphic>
+                  <ImageView fitHeight="60.0" fitWidth="40.0" layoutX="93.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Resources/icons8_male_user_64.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="labelUser" layoutX="16.0" layoutY="64.0" text="User" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelEmail" layoutX="16.0" layoutY="89.0" text="E-mail" textFill="WHITE">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXButton id="button-menu" fx:id="buttonAddUser" layoutX="171.0" layoutY="496.0" minHeight="40.0" minWidth="40.0" onMouseClicked="#MouseClickedUsuario" prefHeight="35.0" prefWidth="35.0" ripplerFill="#ffffff81" style="-fx-border-radius: 25; -fx-background-radius: 25;" visible="false">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" focusTraversable="true" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Resources/icons8_add_user_group_man_woman_48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </JFXButton>
                </children>
                <opaqueInsets>

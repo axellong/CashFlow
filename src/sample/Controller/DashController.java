@@ -1,5 +1,6 @@
 package sample.Controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -37,10 +38,14 @@ public class DashController implements Initializable {
     @FXML
     private Line lineButton;
 
+    @FXML
+    private JFXButton buttonAddUser;
+
     // metodo INITIALIZE
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setLabels();
+        adminView();
         menu= FXCollections.observableArrayList();
         try {
             category = integratePanel("Dash","Category",262.5,45);
@@ -153,6 +158,12 @@ public class DashController implements Initializable {
             lineButton.setVisible(true);
         }
         lineButton.setLayoutY(y);
+    }
+
+    private void adminView(){
+        if(Credential.getUser().isCredencial()){
+            buttonAddUser.setVisible(true);
+        }
     }
     //metodo para borrar el contenido al momento de cambiar de scena
     private void clean(){

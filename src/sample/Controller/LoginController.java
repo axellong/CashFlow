@@ -16,6 +16,7 @@ import logic.LoginSecure;
 import sample.DAOs.InitializerDAOs;
 import sample.DAOs.UsuarioDAO;
 import sample.Util.Utils;
+
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -35,7 +36,7 @@ public class LoginController implements Initializable {
     LoginSecure segure;
     UsuarioDAO usuarioDAO;
     Usuario usuario;
-
+    FadeOut fade = new FadeOut();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         segure = new LoginSecure();
@@ -64,14 +65,13 @@ public class LoginController implements Initializable {
 
     @FXML
     void MouseClickedVerificar(MouseEvent event) {
-        String Email = inputEmail.getText();
-        String Pass = inputPassword.getText();
-        if(!nullOrEmpty(Email) && !nullOrEmpty(Pass)){
-            usuario = usuarioDAO.getUsuario(Email,Pass);
-
+        String email = inputEmail.getText();
+        String pass = inputPassword.getText();
+        if(!nullOrEmpty(email) && !nullOrEmpty(pass)){
+            usuario = usuarioDAO.getUsuario(email,pass);
             if(usuario != null){
                 makefadeOut(true);
-                segure.SendMail(Email);
+                sentEmailHilo(email);
             }else{
                 System.out.println("No se encontro");
             }
@@ -94,7 +94,8 @@ public class LoginController implements Initializable {
 
     @FXML
     void MouseClikedForgetCode(MouseEvent event) {
-
+        String email = inputEmail.getText();
+        sentEmailHilo(email);
     }
 
     private void changePane(boolean value) {
@@ -105,12 +106,17 @@ public class LoginController implements Initializable {
     }
 
     private void makefadeOut(boolean value){
-        FadeOut fade = new FadeOut();
         fade.setResetOnFinished(true);
         if(value) { fade.setNode(paneVerificar);
         }else{ fade.setNode(paneIngresar); }
         fade.play();
         fade.setOnFinished((ActionEvent event)-> changePane(value));
+    }
+
+    private void sentEmailHilo(String email){
+        Runnable emailHilo =()-> segure.SendMail(email);
+        Thread hilo = new Thread(emailHilo);
+        hilo.start();
     }
 
     //metodo de limpieza
