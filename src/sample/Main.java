@@ -37,16 +37,13 @@ public class Main extends Application {
     public static void main(String[] args) {
         //launch(args);
 
-        /*
+
         RegistroIndicadoresDAO registroIndicadoresDAO = new RegistroIndicadoresDAO();
-        RegistroIndicadores registroIndicadores = new RegistroIndicadores("pagar", "pago", "a pagar", 16314, "junio", 1, "cliente a pagar", 2021 );
-        registroIndicadoresDAO.saveRegistroIndicador(registroIndicadores, 124214);
-         */
+        RegistroIndicadores registroIndicadores = new RegistroIndicadores("pagar", "pago", "a pagar", 16314, "junio", 1, "cliente a pagar", 2021);
+        registroIndicadoresDAO.saveRegistroIndicador(registroIndicadores, 68275);
+
 
         //PruebaReports pruebaReports = new PruebaReports();
     }
-
-
-
 
 }
