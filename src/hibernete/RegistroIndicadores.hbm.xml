@@ -11,7 +11,6 @@
             </generator>
         </id>
 
-        <property name="idClasificacion" column="id_clasificacion"/>
         <property name="concepto" column="concepto"/>
         <property name="razonSocial" column="razon_social"/>
         <property name="monto" column="monto"/>
@@ -19,6 +18,7 @@
         <property name="semana" column="semana"/>
         <property name="descripcion" column="descripcion"/>
         <property name="anio" column="año"/>
+        <property name="clasificacion" column="clasificacion"/>
 
         <!--<bag name="listaReportes" table="reportes_indicadores" inverse="true" lazy="false" fetch="select">
             <key>
@@ -27,7 +27,9 @@
             <one-to-many class="ReportesIndicadores"/>
         </bag>-->
 
-
+        <many-to-one name="id_Cuenta" class="Cuenta" fetch="select">
+            <column name="id_cuenta" not-null="true"/>
+        </many-to-one>
 
     </class>
 </hibernate-mapping>

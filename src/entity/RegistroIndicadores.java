@@ -5,7 +5,7 @@ import java.util.List;
 public class RegistroIndicadores {
 
     private int idRegistroIndicadores;
-    private int idClasificacion;
+    private String clasificacion;
     private String concepto;
     private String razonSocial;
     private double monto;
@@ -13,13 +13,13 @@ public class RegistroIndicadores {
     private int semana;
     private String descripcion;
     private int anio;
+    private Cuenta id_Cuenta;
+
 
     // lista para hibernete
-    private List<ReportesIndicadores> listaReportes ;
-
-    public RegistroIndicadores(int idRegistroIndicadores, int idClasificacion, String concepto, String razonSocial, double monto, String mes, int semana, String descripcion, int anio, List<ReportesIndicadores> listaReportes) {
-        this.idRegistroIndicadores = idRegistroIndicadores;
-        this.idClasificacion = idClasificacion;
+   // private List<ReportesIndicadores> listaReportes ;
+    public RegistroIndicadores(String clasificacion, String concepto, String razonSocial, double monto, String mes, int semana, String descripcion, int anio) {
+        this.clasificacion = clasificacion;
         this.concepto = concepto;
         this.razonSocial = razonSocial;
         this.monto = monto;
@@ -27,13 +27,36 @@ public class RegistroIndicadores {
         this.semana = semana;
         this.descripcion = descripcion;
         this.anio = anio;
-        this.listaReportes = listaReportes;
+    }
+
+    public RegistroIndicadores(String clasificacion, String concepto, String razonSocial, double monto, String mes, int semana, String descripcion, int anio, Cuenta idCuenta) {
+        this.clasificacion = clasificacion;
+        this.concepto = concepto;
+        this.razonSocial = razonSocial;
+        this.monto = monto;
+        this.mes = mes;
+        this.semana = semana;
+        this.descripcion = descripcion;
+        this.anio = anio;
+        this.id_Cuenta = idCuenta;
     }
 
     public RegistroIndicadores() {
     }
 
+    public RegistroIndicadores getRegistroIndicadores(){
+        return this;
+    }
 
+    public Cuenta getId_Cuenta() {
+        return id_Cuenta;
+    }
+
+    public void setId_Cuenta(Cuenta id_Cuenta) {
+        this.id_Cuenta = id_Cuenta;
+    }
+
+    /*
     public List<ReportesIndicadores> getListaReportes() {
         return listaReportes;
     }
@@ -41,6 +64,7 @@ public class RegistroIndicadores {
     public void setListaReportes(List<ReportesIndicadores> listaReportes) {
         this.listaReportes = listaReportes;
     }
+     */
 
     public int getIdRegistroIndicadores() {
         return idRegistroIndicadores;
@@ -50,12 +74,12 @@ public class RegistroIndicadores {
         this.idRegistroIndicadores = idRegistroIndicadores;
     }
 
-    public int getIdClasificacion() {
-        return idClasificacion;
+    public String getClasificacion() {
+        return clasificacion;
     }
 
-    public void setIdClasificacion(int idClasificacion) {
-        this.idClasificacion = idClasificacion;
+    public void setClasificacion(String clasificacion) {
+        this.clasificacion = clasificacion;
     }
 
     public String getConcepto() {
@@ -117,14 +141,9 @@ public class RegistroIndicadores {
     @Override
     public String toString() {
         return "RegistroIndicadores{" +
-                "idRegistroIndicadores=" + idRegistroIndicadores +
-                ", idClasificacion=" + idClasificacion +
-                ", concepto='" + concepto + '\'' +
-                ", razonSocial='" + razonSocial + '\'' +
                 ", monto=" + monto +
                 ", mes='" + mes + '\'' +
                 ", semana=" + semana +
-                ", descripcion='" + descripcion + '\'' +
                 ", anio=" + anio +
                 '}';
     }

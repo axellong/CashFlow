@@ -1,4 +1,4 @@
-package sample.DAOs;
+package sample.DAOs.DAOsReportes;
 
 import entity.ReportesEfectivo;
 import hibernete.ConexionHibernete;
