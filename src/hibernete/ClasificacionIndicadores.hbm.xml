@@ -13,8 +13,5 @@
 
         <property name="nombreClasificacion" column="nombre_clasificacion"/>
 
-
-
-
     </class>
 </hibernate-mapping>

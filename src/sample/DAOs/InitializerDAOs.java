@@ -1,5 +1,8 @@
 package sample.DAOs;
 
+import sample.DAOs.DAOsReportes.ReportesEfectivoDAO;
+import sample.DAOs.DAOsReportes.ReportesIndicadoresDAO;
+
 public class InitializerDAOs {
 
     private CategoriaDAO categoriaDAO;

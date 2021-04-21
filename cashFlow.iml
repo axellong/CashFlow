@@ -13,6 +13,7 @@
     <orderEntry type="library" name="Postgresql" level="project" />
     <orderEntry type="library" name="Mail" level="project" />
     <orderEntry type="library" name="JavaFX" level="project" />
-    <orderEntry type="library" name="Hibernete" level="application" />
+    <orderEntry type="library" name="Hibernete" level="project" />
+    <orderEntry type="library" exported="" name="Jasper" level="project" />
   </component>
 </module>
