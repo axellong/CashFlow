@@ -7,6 +7,8 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import logic.Model.Calculos;
+import sample.DAOs.DAOsReportes.CuentasPorCobrarDAO;
 import sample.Util.SceneAssembler;
 
 import java.util.Objects;
@@ -19,10 +21,10 @@ public class Main extends Application {
 
     //HILO START DE JAVAFX
     @Override
-    public void start(Stage stage){
+    public void start(Stage stage) {
         primaryStage = stage;
         //SceneAssembler.setRoot("Login","LoginView");
-        SceneAssembler.setRoot("Dash","DashView");
+        SceneAssembler.setRoot("Dash", "DashView");
         scene.setFill(Color.TRANSPARENT);
         primaryStage.setTitle("CashFlow");
         primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Resources/iconLogo.png"))));
@@ -36,7 +38,10 @@ public class Main extends Application {
 
     //METODO MAIN
     public static void main(String[] args) {
-        launch(args);
+       // launch(args);
+        Calculos calculos = new Calculos();
+        CuentasPorCobrarDAO dao = new CuentasPorCobrarDAO();
+        calculos.geCuentas(dao,"marzo",2021);
     }
 
 

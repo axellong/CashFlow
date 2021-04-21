@@ -26,7 +26,6 @@ public class PruebaReports {
             vie.setVisible(true);
             System.out.println("salio");
             Calculos calculos = new Calculos();
-            calculos.llenadoCuentasPagar();
         }catch (Exception exception){
             exception.getMessage();
         }

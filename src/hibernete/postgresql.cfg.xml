@@ -22,6 +22,7 @@
         <mapping resource="hibernete/ReportesIndicadores.hbm.xml"/>
         <mapping resource="hibernete/SubCategoria.hbm.xml"/>
         <mapping resource="hibernete/Usuario.hbm.xml"/>
+        <mapping resource="hibernete/Cuenta.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>
