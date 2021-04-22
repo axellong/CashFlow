@@ -15,6 +15,9 @@ public class RegistroEfectivo {
     private Time hora;
     private SubCategoria idSubcategoria;
     private int idClasificacion;
+    private int semana;
+    private String mes;
+    private int anio;
 
     //lista para hibernete
     private List<ReportesEfectivo> listaReportesEfectivo;
@@ -39,6 +42,20 @@ public class RegistroEfectivo {
         this.hora = hora;
         this.idSubcategoria = idSubcategoria;
         this.idClasificacion = idClasificacion;
+    }
+
+    public RegistroEfectivo(String tipoMovimiento, int idCategoria, String concepto, double monto, Date fecha, Time hora, SubCategoria idSubcategoria, int idClasificacion, String mes, int semana, int anio) {
+        this.tipoMovimiento = tipoMovimiento;
+        this.idCategoria = idCategoria;
+        this.concepto = concepto;
+        this.monto = monto;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.idSubcategoria = idSubcategoria;
+        this.idClasificacion = idClasificacion;
+        this.mes = mes;
+        this.semana = semana;
+        this.anio = anio;
     }
 
 
@@ -112,6 +129,30 @@ public class RegistroEfectivo {
 
     public void setIdClasificacion(int idClasificacion) {
         this.idClasificacion = idClasificacion;
+    }
+
+    public int getSemana() {
+        return semana;
+    }
+
+    public void setSemana(int semana) {
+        this.semana = semana;
+    }
+
+    public String getMes() {
+        return mes;
+    }
+
+    public void setMes(String mes) {
+        this.mes = mes;
+    }
+
+    public int getAnio() {
+        return anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
 
     @Override

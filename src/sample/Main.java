@@ -8,6 +8,8 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.DAOs.DAOsReportes.GastosDAO;
+import sample.DAOs.DAOsReportes.IngresosDAO;
 import sample.DAOs.RegistroIndicadoresDAO;
 import sample.Util.SceneAssembler;
 
@@ -35,13 +37,7 @@ public class Main extends Application {
 
     //METODO MAIN
     public static void main(String[] args) {
-        //launch(args);
-
-
-        RegistroIndicadoresDAO registroIndicadoresDAO = new RegistroIndicadoresDAO();
-        RegistroIndicadores registroIndicadores = new RegistroIndicadores("pagar", "pago", "a pagar", 16314, "junio", 1, "cliente a pagar", 2021);
-        registroIndicadoresDAO.saveRegistroIndicador(registroIndicadores, 68275);
-
+        launch(args);
 
         //PruebaReports pruebaReports = new PruebaReports();
     }
