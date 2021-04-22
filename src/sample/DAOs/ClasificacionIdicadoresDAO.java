@@ -55,13 +55,13 @@ public class ClasificacionIdicadoresDAO {
         session.close();
     }
 
-    public ClasificacionIndicadores getClasificacion(int idClasificacionIndicador) throws HibernateException {
+    public ClasificacionIndicadores getClasificacion(String nombreClasificacion) throws HibernateException {
         ClasificacionIndicadores clasificacionIndicador = null;
         Session session = factory.openSession();
         session.beginTransaction();
 
         Criteria criteria = session.createCriteria(ClasificacionIndicadores.class);
-        criteria.add(Restrictions.eq("idClasificadoresIndicadores", idClasificacionIndicador));
+        criteria.add(Restrictions.eq("nombreClasificacion", nombreClasificacion));
         clasificacionIndicador = (ClasificacionIndicadores) criteria.list().get(0);
 
         session.close();

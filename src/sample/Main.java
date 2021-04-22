@@ -1,5 +1,6 @@
 package sample;
 
+
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -19,10 +20,10 @@ public class Main extends Application {
 
     //HILO START DE JAVAFX
     @Override
-    public void start(Stage stage){
+    public void start(Stage stage) {
         primaryStage = stage;
         //SceneAssembler.setRoot("Login","LoginView");
-        SceneAssembler.setRoot("Dash","DashView");
+        SceneAssembler.setRoot("Dash", "DashView");
         scene.setFill(Color.TRANSPARENT);
         primaryStage.setTitle("CashFlow");
         primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Resources/iconLogo.png"))));
@@ -36,8 +37,14 @@ public class Main extends Application {
 
     //METODO MAIN
     public static void main(String[] args) {
+
         launch(args);
+        //CallReport callReport = new CallReport();
+        //callReport.getReportJunto("marzo", 2021);
+
     }
 
-
 }
+
+
+

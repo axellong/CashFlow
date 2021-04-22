@@ -17,6 +17,10 @@
         <property name="monto" column="monto"/>
         <property name="fecha" column="fecha"/>
         <property name="hora" column="hora"/>
+        <property name="semana" column="semana"/>
+        <property name="mes" column="mes"/>
+        <property name="anio" column="anio"/>
+
    <!--     <property name="idSubcategoria" column="id_subcategoria"/>-->
         <property name="idClasificacion" column="id_clasificacion"/>
 

@@ -18,10 +18,9 @@
         <mapping resource="hibernete/ClasificacionIndicadores.hbm.xml"/>
         <mapping resource="hibernete/RegistroEfectivo.hbm.xml"/>
         <mapping resource="hibernete/RegistroIndicadores.hbm.xml"/>
-        <mapping resource="hibernete/ReportesEfectivo.hbm.xml"/>
-        <mapping resource="hibernete/ReportesIndicadores.hbm.xml"/>
         <mapping resource="hibernete/SubCategoria.hbm.xml"/>
         <mapping resource="hibernete/Usuario.hbm.xml"/>
+        <mapping resource="hibernete/Cuenta.hbm.xml"/>
 
     </session-factory>
 </hibernate-configuration>

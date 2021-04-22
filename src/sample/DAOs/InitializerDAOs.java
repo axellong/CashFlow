@@ -1,5 +1,10 @@
 package sample.DAOs;
 
+import sample.DAOs.DAOsReportes.CuentasPorCobrarDAO;
+import sample.DAOs.DAOsReportes.CuentasPorPagarDAO;
+import sample.DAOs.DAOsReportes.GastosDAO;
+import sample.DAOs.DAOsReportes.IngresosDAO;
+
 public class InitializerDAOs {
 
     private CategoriaDAO categoriaDAO;
@@ -7,11 +12,15 @@ public class InitializerDAOs {
     private ClasificacionIdicadoresDAO clasificacionIdicadoresDAO;
     private RegistrosEfectivoDAO registrosEfectivoDAO;
     private RegistroIndicadoresDAO registroIndicadoresDAO;
-    private ReportesEfectivoDAO reportesEfectivoDAO;
-    private ReportesIndicadoresDAO reportesIndicadoresDAO;
     private SubCategoriasDAO subCategoriasDAO;
     private UsuarioDAO usuarioDAO;
     private static InitializerDAOs initializerDAOs;
+
+    //DAOsReportes
+    private CuentasPorCobrarDAO cuentasPorCobrarDAO;
+    private CuentasPorPagarDAO cuentasPorPagarDAO;
+    private GastosDAO gastosDAO;
+    private IngresosDAO ingresosDAO;
 
     private InitializerDAOs(){
             categoriaDAO = new CategoriaDAO();
@@ -19,10 +28,14 @@ public class InitializerDAOs {
             clasificacionIdicadoresDAO = new ClasificacionIdicadoresDAO();
             registrosEfectivoDAO = new RegistrosEfectivoDAO();
             registroIndicadoresDAO = new RegistroIndicadoresDAO();
-            reportesEfectivoDAO = new ReportesEfectivoDAO();
-            reportesIndicadoresDAO = new ReportesIndicadoresDAO();
             subCategoriasDAO = new SubCategoriasDAO();
             usuarioDAO = new UsuarioDAO();
+
+        //DAOsReportes
+            cuentasPorCobrarDAO = new CuentasPorCobrarDAO();
+            cuentasPorPagarDAO = new CuentasPorPagarDAO();
+            gastosDAO = new GastosDAO();
+            ingresosDAO = new IngresosDAO();
     }
 
     public static InitializerDAOs getInitializerDAOs(){
@@ -52,19 +65,29 @@ public class InitializerDAOs {
         return registroIndicadoresDAO;
     }
 
-    public ReportesEfectivoDAO getReportesEfectivoDAO() {
-        return reportesEfectivoDAO;
-    }
-
-    public ReportesIndicadoresDAO getReportesIndicadoresDAO() {
-        return reportesIndicadoresDAO;
-    }
-
     public SubCategoriasDAO getSubCategoriasDAO() {
         return subCategoriasDAO;
     }
 
     public UsuarioDAO getUsuarioDAO() {
         return usuarioDAO;
+    }
+
+    //DAOsReportes
+
+    public CuentasPorCobrarDAO getCuentasPorCobrarDAO() {
+        return cuentasPorCobrarDAO;
+    }
+
+    public CuentasPorPagarDAO getCuentasPorPagarDAO() {
+        return cuentasPorPagarDAO;
+    }
+
+    public GastosDAO getGastosDAO() {
+        return gastosDAO;
+    }
+
+    public IngresosDAO getIngresosDAO() {
+        return ingresosDAO;
     }
 }

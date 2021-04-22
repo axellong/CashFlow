@@ -1,5 +1,6 @@
 package sample.DAOs;
 
+import entity.Cuenta;
 import entity.RegistroIndicadores;
 import hibernete.ConexionHibernete;
 import org.hibernate.Criteria;
@@ -8,7 +9,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class RegistroIndicadoresDAO {
 
@@ -30,14 +33,49 @@ public class RegistroIndicadoresDAO {
         factory = ConexionHibernete.getFactory();
     }
 
-    public int saveRegistroIndicador (RegistroIndicadores registroIndicadores) throws HibernateException {
-        Session session = factory.openSession();
-        session.beginTransaction();
-        int id = 0;
-        id = (int) session.save(registroIndicadores);
-        session.getTransaction().commit();
-        session.close();
-        return id;
+    public void saveRegistroIndicador (RegistroIndicadores registroIndicadores, int numeroCuenta) throws HibernateException {
+       //añadir el numero de cuenta
+        boolean cuentaEncontrada = false;
+        Cuenta cuenta1 = new Cuenta();
+
+        for (int i = 0; i < getListRegistroIndicadores().size(); i++) {
+            if (getListRegistroIndicadores().get(i).getId_Cuenta().getCuenta() == numeroCuenta){
+                cuentaEncontrada = true;
+                registroIndicadores.setId_Cuenta(getListRegistroIndicadores().get(i).getId_Cuenta());
+                break;
+            }
+            else{
+                cuentaEncontrada = false;
+                cuenta1 = new Cuenta(numeroCuenta);
+                registroIndicadores.setId_Cuenta(cuenta1);
+            }
+        }
+
+       //inicializar la coleccion set para agregar registro dentro de cuenta
+        Set<RegistroIndicadores> registroIndicadores1 = new HashSet<>();
+        registroIndicadores1.add(registroIndicadores);
+        //añadir el registroIndicadores1 a la cuenta
+        cuenta1.setRegistroIndicadores(registroIndicadores1);
+
+        try {
+            Session session = factory.openSession();
+            session.beginTransaction();
+
+            if (cuentaEncontrada)
+                session.save(registroIndicadores);
+            else{
+                session.save(cuenta1);
+                session.save(registroIndicadores);
+            }
+
+            session.getTransaction().commit();
+            session.close();
+
+        }catch (Exception e){
+            System.out.println("Process fail");
+            System.out.println("Exception occured. "+ e.getMessage());
+            e.printStackTrace();
+        }
     }
 
 

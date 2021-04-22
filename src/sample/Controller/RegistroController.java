@@ -69,7 +69,7 @@ public class RegistroController implements Initializable {
             add.setAnio(LocalDate.now().getYear());
             add.setMes(LocalDate.now().getMonth().name());
             add.setConcepto("Banco");
-            registroIndicadoresDAO.saveRegistroIndicador(add);
+            registroIndicadoresDAO.saveRegistroIndicador(add,2);
             clean();
         }
     }
@@ -92,7 +92,7 @@ public class RegistroController implements Initializable {
             add.setMes(LocalDate.now().getMonth().name());
             String concepto = pagar ? radioPagar.getText() : radioCobrar.getText();
             add.setConcepto(concepto);
-            registroIndicadoresDAO.saveRegistroIndicador(add);
+            registroIndicadoresDAO.saveRegistroIndicador(add,1);
             clean();
         }
 
