@@ -10,6 +10,9 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import sample.Reports.CallReport;
+
+
+
 import sample.Util.SceneAssembler;
 
 import java.util.Objects;
@@ -39,11 +42,14 @@ public class Main extends Application {
 
     //METODO MAIN
     public static void main(String[] args) {
+
         // launch(args);
         CallReport callReport = new CallReport();
-        callReport.getReportJunto("marzo",2021);
+        callReport.getReportJunto("marzo", 2021);
 
     }
 
-
 }
+
+
+

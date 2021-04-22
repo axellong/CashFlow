@@ -35,14 +35,18 @@ public class RegistroIndicadoresDAO {
 
     public void saveRegistroIndicador (RegistroIndicadores registroIndicadores, int numeroCuenta) throws HibernateException {
        //añadir el numero de cuenta
-
-        Cuenta cuenta1 = new Cuenta(numeroCuenta);
+        boolean cuentaEncontrada = false;
+        Cuenta cuenta1 = new Cuenta();
 
         for (int i = 0; i < getListRegistroIndicadores().size(); i++) {
             if (getListRegistroIndicadores().get(i).getId_Cuenta().getCuenta() == numeroCuenta){
-                registroIndicadores.getId_Cuenta().setId_Cuenta(getListRegistroIndicadores().get(i).getId_Cuenta().getId_Cuenta());
+                cuentaEncontrada = true;
+                registroIndicadores.setId_Cuenta(getListRegistroIndicadores().get(i).getId_Cuenta());
+                break;
             }
             else{
+                cuentaEncontrada = false;
+                cuenta1 = new Cuenta(numeroCuenta);
                 registroIndicadores.setId_Cuenta(cuenta1);
             }
         }
@@ -57,16 +61,12 @@ public class RegistroIndicadoresDAO {
             Session session = factory.openSession();
             session.beginTransaction();
 
-            for (int i = 0; i < getListRegistroIndicadores().size(); i++) {
-                if (numeroCuenta == getListRegistroIndicadores().get(i).getId_Cuenta().getCuenta()){
-                    session.save(registroIndicadores);
-                    session.save(cuenta1);
-                }
-                else{
-                    session.save(registroIndicadores);
-                }
+            if (cuentaEncontrada)
+                session.save(registroIndicadores);
+            else{
+                session.save(cuenta1);
+                session.save(registroIndicadores);
             }
-
 
             session.getTransaction().commit();
             session.close();
@@ -76,8 +76,6 @@ public class RegistroIndicadoresDAO {
             System.out.println("Exception occured. "+ e.getMessage());
             e.printStackTrace();
         }
-
-
     }
 
 
