@@ -27,10 +27,8 @@ import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.time.format.TextStyle;
+import java.util.*;
 
 import static sample.Util.Utils.nullOrEmpty;
 
@@ -71,6 +69,13 @@ public class FlujoController implements Initializable {
         Categoria_SubCategoria categoria_subCategoria =boxCategoria.getSelectionModel().getSelectedItem();
         boolean salida = checkSalida.isSelected();
         boolean entrada = checkEntrada.isSelected();
+        LocalDate date = LocalDate.now();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(Date.from(date.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
+        calendar.setFirstDayOfWeek( Calendar.MONDAY);
+        calendar.setMinimalDaysInFirstWeek( 4 );
+        int semana = calendar.get(Calendar.WEEK_OF_MONTH);
         if (!nullOrEmpty(descripcion) && !nullOrEmpty(cantidad) && categoria_subCategoria != null && (salida || entrada)){
             RegistroEfectivo registroEfectivo = new RegistroEfectivo();
             registroEfectivo.setConcepto(descripcion);
@@ -78,6 +83,9 @@ public class FlujoController implements Initializable {
             registroEfectivo.setHora(Time.valueOf(LocalTime.now()));
             registroEfectivo.setMonto(Double.parseDouble(cantidad));
             registroEfectivo.setIdSubcategoria(categoria_subCategoria.getEntity());
+            registroEfectivo.setAnio(date.getYear());
+            registroEfectivo.setMes(date.getMonth().getDisplayName(TextStyle.FULL, new Locale("es", "ES")));
+            registroEfectivo.setSemana(semana);
             if (entrada){
                 registroEfectivo.setTipoMovimiento(checkEntrada.getText());
             }else{

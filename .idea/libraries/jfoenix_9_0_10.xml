@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="jasperreports">
+  <library name="jfoenix-9.0.10">
     <CLASSES>
-      <root url="jar://C:/ResourcesJava/JasperReport/jasperreports-6.16.0.jar!/" />
+      <root url="jar://C:/ResourcesJava/JFoenix/jfoenix-9.0.10.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -89,6 +89,7 @@ public class UserController implements  Initializable{
                 update.setNombreUsuario(usuario);
                 update.setEmail(email);
                 update.setContrasena(contrasena);
+                update.getUsuario().setCredencial(permisos);
                 update.setUsuario(new Usuario(update));
                 usuarioDAO.updateUsuario(update.getUsuario());
                 usuariosList.add(update);

@@ -5,13 +5,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.input.MouseEvent;
+import sample.Reports.CallReport;
 
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.TextStyle;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -38,13 +36,8 @@ public class ReporteController implements Initializable {
             String mes = date.getMonth().getDisplayName(TextStyle.FULL, new Locale("es", "ES"));
             int año = date.getYear();
 
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTime(Date.from(date.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
-            calendar.setFirstDayOfWeek( Calendar.MONDAY);
-            calendar.setMinimalDaysInFirstWeek( 4 );
-
-            int numberWeekOfYear = calendar.get(Calendar.WEEK_OF_MONTH);
-            System.out.println(numberWeekOfYear+" "+ mes +" "+año);
+            CallReport callReport = new CallReport();
+            callReport.getReportJunto(mes,año);
         }
 
     }

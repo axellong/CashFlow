@@ -17,6 +17,9 @@ import sample.Util.Utils;
 
 import java.net.URL;
 import java.time.LocalDate;
+import java.time.format.TextStyle;
+import java.util.Locale;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import static sample.Util.Utils.nullOrEmpty;
@@ -66,17 +69,18 @@ public class RegistroController implements Initializable {
             add.setSemana(Integer.parseInt(semana));
             add.setMonto(Double.parseDouble(monto));
             add.setDescripcion(descripcion);
+            add.setRazonSocial(descripcion);
             add.setAnio(LocalDate.now().getYear());
-            add.setMes(LocalDate.now().getMonth().name());
+            add.setMes(LocalDate.now().getMonth().getDisplayName(TextStyle.FULL, new Locale("es", "ES")));
             add.setConcepto("Banco");
-            registroIndicadoresDAO.saveRegistroIndicador(add,2);
+            add.setDescripcion("Banco");
+            registroIndicadoresDAO.saveRegistroIndicador(add,new Random().nextInt(4000)+1);
             clean();
         }
     }
 
     @FXML
     void MouseClickedSaveCobrarPagar(MouseEvent event) {
-        System.out.println("h");
         String cuenta = inputCuenta.getText();
         String semana = inputSemana_1.getText();
         String monto = inputMonto_1.getText();
@@ -88,11 +92,13 @@ public class RegistroController implements Initializable {
             add.setSemana(Integer.parseInt(semana));
             add.setMonto(Double.parseDouble(monto));
             add.setRazonSocial(razonSocial);
+            add.setDescripcion(razonSocial);
             add.setAnio(LocalDate.now().getYear());
-            add.setMes(LocalDate.now().getMonth().name());
+            add.setMes(LocalDate.now().getMonth().getDisplayName(TextStyle.FULL, new Locale("es", "ES")));
             String concepto = pagar ? radioPagar.getText() : radioCobrar.getText();
             add.setConcepto(concepto);
-            registroIndicadoresDAO.saveRegistroIndicador(add,1);
+            add.setClasificacion(concepto);
+            registroIndicadoresDAO.saveRegistroIndicador(add,Integer.parseInt(cuenta));
             clean();
         }
 

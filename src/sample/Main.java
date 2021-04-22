@@ -22,8 +22,8 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         primaryStage = stage;
-        //SceneAssembler.setRoot("Login","LoginView");
-        SceneAssembler.setRoot("Dash", "DashView");
+        SceneAssembler.setRoot("Login","LoginView");
+        //SceneAssembler.setRoot("Dash", "DashView");
         scene.setFill(Color.TRANSPARENT);
         primaryStage.setTitle("CashFlow");
         primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("Resources/iconLogo.png"))));
