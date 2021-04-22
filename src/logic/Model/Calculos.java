@@ -5,6 +5,7 @@ import sample.DAOs.DAOsReportes.CuentasPorCobrarDAO;
 import sample.DAOs.DAOsReportes.CuentasPorPagarDAO;
 import sample.DAOs.DAOsReportes.ExtraClass.RegistroCuenta;
 import sample.DAOs.DAOsReportes.ReportesEfectivoDAO;
+import sample.DAOs.InitializerDAOs;
 
 import java.util.*;
 
@@ -29,7 +30,7 @@ public class Calculos {
 
 
     public List<ReportFill> getCuentasPagar(String mes, int año) {
-        CuentasPorPagarDAO dao = new CuentasPorPagarDAO();
+        CuentasPorPagarDAO dao = InitializerDAOs.getInitializerDAOs().getCuentasPorPagarDAO();
         List<ReportFill> reportFills = new ArrayList<>();
         for (int i = 1; i <= 5; i++) {
             List<RegistroCuenta> lista = dao.getListCuentasPorSemanaDelMes(mes, i, año);
@@ -59,45 +60,36 @@ public class Calculos {
 
         }
 
+
         return llenadoListasReportes();
 
 
     }
 
     public List<ReportFill> getCuentascobrar(String mes, int año) {
-        CuentasPorCobrarDAO dao = new CuentasPorCobrarDAO();
+        CuentasPorCobrarDAO dao = InitializerDAOs.getInitializerDAOs().getCuentasPorCobrarDAO();
         List<ReportFill> reportFills = new ArrayList<>();
         for (int i = 1; i <= 5; i++) {
             List<RegistroCuenta> lista = dao.getListCuentasPorSemanaDelMes(mes, i, año);
             switch (i) {
                 case 1:
-
                     listaSemana1 = creacionListaLLenado(lista);
                     listaDeLista.add(listaSemana1);
-
                     break;
                 case 2:
-
                     listaSemana2 = creacionListaLLenado(lista);
                     listaDeLista.add(listaSemana2);
-
-
                     break;
                 case 3:
-
                     listaSemana3 = creacionListaLLenado(lista);
-
                     listaDeLista.add(listaSemana3);
                     break;
                 case 4:
-
                     listaSemana4 = creacionListaLLenado(lista);
-
                     listaDeLista.add(listaSemana4);
                     break;
                 case 5:
                     listaSemana5 = creacionListaLLenado(lista);
-
                     listaDeLista.add(listaSemana5);
                     break;
             }
@@ -185,7 +177,6 @@ public class Calculos {
             }
 
         }
-
         int semana = 0;
         for (List<RegistroCuenta> lista : listaDeLista) {
             semana++;
@@ -219,8 +210,6 @@ public class Calculos {
             }
         }
 
-
-        System.out.println(listaFinal);
 
         return listaFinal;
     }

@@ -5,31 +5,29 @@ import logic.Model.ReportFill;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRField;
-import sample.DAOs.DAOsReportes.ExtraClass.RegistroCuenta;
 
 import java.util.List;
 
 public class ReportsCuentasCobrar implements JRDataSource {
-    private List<ReportFill>  listaLlenado;
-    private int totalesv;
-    private List<Double>  totales;
-    private String mes = "";
-    private int index;
+    private List<ReportFill> listaLlenadoCobrar;
+    private List<Double> totalesCobrar;
+    private String mesCobrar = "";
+    private int indexCobrar;
 
 
-    public ReportsCuentasCobrar(String mes,int año) {
+    public ReportsCuentasCobrar(String mesCobrar, int año) {
         Calculos calculos = new Calculos();
-        index = -1;
-        listaLlenado= calculos.getCuentascobrar(mes,año);
-        totales = calculos.getTotales(listaLlenado);
-        System.out.println(listaLlenado);
+        indexCobrar = -1;
+        listaLlenadoCobrar = calculos.getCuentascobrar(mesCobrar,año);
+        totalesCobrar = calculos.getTotales(listaLlenadoCobrar);
+        System.out.println(listaLlenadoCobrar);
 
     }
 
     @Override
     public boolean next() throws JRException {
-        index++;
-        return (index < listaLlenado.size());
+        indexCobrar++;
+        return (indexCobrar < listaLlenadoCobrar.size());
     }
 
     @Override
@@ -38,57 +36,57 @@ public class ReportsCuentasCobrar implements JRDataSource {
         String fieldName = jrField.getName();
         switch (fieldName) {
             case "cuentaCobrar":
-                value = listaLlenado.get(index).getNumeroCuenta();
+                value = listaLlenadoCobrar.get(indexCobrar).getNumeroCuenta();
                 break;
-            case "semana1":
-                value = listaLlenado.get(index).getSemana1();
+            case "semana1Cobrar":
+                value = listaLlenadoCobrar.get(indexCobrar).getSemana1();
                 break;
-            case "semana2":
-                value = listaLlenado.get(index).getSemana2();
+            case "semana2Cobrar":
+                value = listaLlenadoCobrar.get(indexCobrar).getSemana2();
                 break;
-            case "semana3":
-                value = listaLlenado.get(index).getSemana3();
+            case "semana3Cobrar":
+                value = listaLlenadoCobrar.get(indexCobrar).getSemana3();
                 break;
-            case "semana4":
-                value = listaLlenado.get(index).getSemana4();
+            case "semana4Cobrar":
+                value = listaLlenadoCobrar.get(indexCobrar).getSemana4();
                 break;
-            case "semana5":
-                value = listaLlenado.get(index).getSemana5();
+            case "semana5Cobrar":
+                value = listaLlenadoCobrar.get(indexCobrar).getSemana5();
                 break;
-            case "cuentasCobrarFinal":
-                value = listaLlenado.get(index).getTotalSemana();
+            case "cuentasCobrarFinalCobrar":
+                value = listaLlenadoCobrar.get(indexCobrar).getTotalSemana();
                 break;
-            case "totalSemana1":
-                value = totales.get(0);
+            case "totalSemana1Cobrar":
+                value = totalesCobrar.get(0);
                 break;
-            case "totalSemana2":
+            case "totalSemana2Cobrar":
 
-                value = totales.get(1);
-
-                break;
-            case "totalSemana3":
-
-                value = totales.get(2);
+                value = totalesCobrar.get(1);
 
                 break;
-            case "totalSemana4":
+            case "totalSemana3Cobrar":
 
-                value = totales.get(3);
-
-                break;
-            case "totalSemana5":
-
-                value = totales.get(4);
+                value = totalesCobrar.get(2);
 
                 break;
-            case "MES":
+            case "totalSemana4Cobrar":
+
+                value = totalesCobrar.get(3);
+
+                break;
+            case "totalSemana5Cobrar":
+
+                value = totalesCobrar.get(4);
+
+                break;
+            case "MESCobrar":
                 value = "marzo";
                 break;
-            case "totalSemanas":
-                value = totales.get(5);
+            case "totalSemanasCobrar":
+                value = totalesCobrar.get(5);
                 break;
         }
-        totalesv++;
+
         return value;
     }
 

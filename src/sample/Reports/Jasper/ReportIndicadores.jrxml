@@ -14,41 +14,41 @@
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="ingreso1" class="java.lang.Double"/>
-	<field name="ingreso2" class="java.lang.Double"/>
-	<field name="ingreso3" class="java.lang.Double"/>
-	<field name="ingreso4" class="java.lang.Double"/>
-	<field name="ingreso5" class="java.lang.Double"/>
-	<field name="ingresoTarjeta1" class="java.lang.Double"/>
-	<field name="ingresoTarjeta2" class="java.lang.Double"/>
-	<field name="ingresoTarjeta4" class="java.lang.Double"/>
-	<field name="ingresoTarjeta3" class="java.lang.Double"/>
-	<field name="ingresoTarjeta5" class="java.lang.Double"/>
-	<field name="ingresosTotal1" class="java.lang.Double"/>
-	<field name="ingresosTotal2" class="java.lang.Double"/>
-	<field name="ingresosTotal3" class="java.lang.Double"/>
-	<field name="ingresosTotal4" class="java.lang.Double"/>
-	<field name="ingresosTotal5" class="java.lang.Double"/>
-	<field name="Costos1" class="java.lang.Double"/>
-	<field name="Costos2" class="java.lang.Double"/>
-	<field name="Costos3" class="java.lang.Double"/>
-	<field name="Costos4" class="java.lang.Double"/>
-	<field name="Costos5" class="java.lang.Double"/>
-	<field name="gastos1" class="java.lang.Double"/>
-	<field name="gastos2" class="java.lang.Double"/>
-	<field name="gastos3" class="java.lang.Double"/>
-	<field name="gastos4" class="java.lang.Double"/>
-	<field name="gastos5" class="java.lang.Double"/>
-	<field name="totalGastos1" class="java.lang.Double"/>
-	<field name="totalGastos2" class="java.lang.Double"/>
-	<field name="totalGastos3" class="java.lang.Double"/>
-	<field name="totalGastos4" class="java.lang.Double"/>
-	<field name="totalGastos5" class="java.lang.Double"/>
-	<field name="efectivo1" class="java.lang.Double"/>
-	<field name="efectivo2" class="java.lang.Double"/>
-	<field name="efectivo3" class="java.lang.Double"/>
-	<field name="efectivo4" class="java.lang.Double"/>
-	<field name="efectivo5" class="java.lang.Double"/>
+	<field name="ingreso1Flujo" class="java.lang.Double"/>
+	<field name="ingreso2Flujo" class="java.lang.Double"/>
+	<field name="ingreso3Flujo" class="java.lang.Double"/>
+	<field name="ingreso4Flujo" class="java.lang.Double"/>
+	<field name="ingreso5Flujo" class="java.lang.Double"/>
+	<field name="ingresoTarjeta1Flujo" class="java.lang.Double"/>
+	<field name="ingresoTarjeta2Flujo" class="java.lang.Double"/>
+	<field name="ingresoTarjeta4Flujo" class="java.lang.Double"/>
+	<field name="ingresoTarjeta3Flujo" class="java.lang.Double"/>
+	<field name="ingresoTarjeta5Flujo" class="java.lang.Double"/>
+	<field name="ingresosTotal1Flujo" class="java.lang.Double"/>
+	<field name="ingresosTotal2Flujo" class="java.lang.Double"/>
+	<field name="ingresosTotal3Flujo" class="java.lang.Double"/>
+	<field name="ingresosTotal4Flujo" class="java.lang.Double"/>
+	<field name="ingresosTotal5Flujo" class="java.lang.Double"/>
+	<field name="Costos1Flujo" class="java.lang.Double"/>
+	<field name="Costos2Flujo" class="java.lang.Double"/>
+	<field name="Costos3Flujo" class="java.lang.Double"/>
+	<field name="Costos4Flujo" class="java.lang.Double"/>
+	<field name="Costos5Flujo" class="java.lang.Double"/>
+	<field name="gastos1Flujo" class="java.lang.Double"/>
+	<field name="gastos2Flujo" class="java.lang.Double"/>
+	<field name="gastos3Flujo" class="java.lang.Double"/>
+	<field name="gastos4Flujo" class="java.lang.Double"/>
+	<field name="gastos5Flujo" class="java.lang.Double"/>
+	<field name="totalGastos1Flujo" class="java.lang.Double"/>
+	<field name="totalGastos2Flujo" class="java.lang.Double"/>
+	<field name="totalGastos3Flujo" class="java.lang.Double"/>
+	<field name="totalGastos4Flujo" class="java.lang.Double"/>
+	<field name="totalGastos5Flujo" class="java.lang.Double"/>
+	<field name="efectivo1Flujo" class="java.lang.Double"/>
+	<field name="efectivo2Flujo" class="java.lang.Double"/>
+	<field name="efectivo3Flujo" class="java.lang.Double"/>
+	<field name="efectivo4Flujo" class="java.lang.Double"/>
+	<field name="efectivo5Flujo" class="java.lang.Double"/>
 	<field name="totalUtilidad1" class="java.lang.Double"/>
 	<field name="totalUtilidad2" class="java.lang.Double"/>
 	<field name="totalUtilidad3" class="java.lang.Double"/>
@@ -320,7 +320,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingreso1}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingreso1Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="471" y="50" width="140" height="30" backcolor="#EBEBEB" uuid="ed281efb-341c-4257-baf6-772d1116e9e0">
@@ -332,7 +332,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingreso2}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingreso2Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="611" y="50" width="140" height="30" backcolor="#EBEBEB" uuid="edcfb809-42c7-4b8c-bf7d-ed6f1230f8b6">
@@ -344,7 +344,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingreso3}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingreso3Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="750" y="50" width="140" height="30" backcolor="#EBEBEB" uuid="7a7b07e6-5c3b-4c54-92f7-f294c5940a62">
@@ -356,7 +356,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingreso4}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingreso4Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="890" y="50" width="140" height="30" backcolor="#EBEBEB" uuid="6085db5a-1261-48ee-874e-bb7fc631eb39">
@@ -368,7 +368,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingreso5}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingreso5Flujo}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="330" y="80" width="140" height="30" backcolor="#EBEBEB" uuid="71690924-8bd5-4590-8122-8d235c1b3a69">
@@ -380,7 +380,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingresoTarjeta1}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingresoTarjeta1Flujo}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="470" y="80" width="140" height="30" backcolor="#EBEBEB" uuid="0624de74-34a0-43e2-a098-e879ebe84dbb">
@@ -392,7 +392,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingresoTarjeta2}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingresoTarjeta2Flujo}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="610" y="80" width="140" height="30" backcolor="#EBEBEB" uuid="8a867591-db2f-43a9-94d8-99f630ce3ea8">
@@ -404,7 +404,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingresoTarjeta3}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingresoTarjeta3Flujo}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="750" y="80" width="140" height="30" backcolor="#EBEBEB" uuid="4bda5c21-9762-4b9f-8137-b77c3bbd21d3">
@@ -416,7 +416,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingresoTarjeta4}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingresoTarjeta4Flujo}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="890" y="80" width="140" height="30" backcolor="#EBEBEB" uuid="ff5ba723-24bb-4a8f-94c1-a40e7069842f">
@@ -428,7 +428,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingresoTarjeta5}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingresoTarjeta5Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="330" y="110" width="140" height="30" backcolor="#EBEBEB" uuid="40ab93da-afb7-48cc-b2d8-c7a1833f31e0">
@@ -440,7 +440,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingresosTotal1}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingresosTotal1Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="471" y="110" width="138" height="30" backcolor="#EBEBEB" uuid="fadef991-7685-4d57-9bd4-a2c68b8eda9e">
@@ -452,7 +452,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingresoTarjeta2}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingresoTarjeta2Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="610" y="110" width="140" height="30" backcolor="#EBEBEB" uuid="266c2647-b9db-4331-b0e3-c175602e25bf">
@@ -464,7 +464,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingresosTotal3}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingresosTotal3Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="750" y="110" width="140" height="30" backcolor="#EBEBEB" uuid="08e1c613-99a3-4ebe-8065-6f4e1ef89c45">
@@ -476,7 +476,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingresosTotal4}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingresosTotal4Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="890" y="110" width="140" height="30" backcolor="#EBEBEB" uuid="f7c1c7a6-755d-4070-bcc9-2703d248fde9">
@@ -488,7 +488,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{ingresosTotal5}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{ingresosTotal5Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="330" y="200" width="141" height="30" backcolor="#EDEDED" uuid="18395fb6-43b3-4fcd-94e4-b7bf57b603cd">
@@ -500,7 +500,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{Costos1}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{Costos1Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="470" y="200" width="141" height="30" backcolor="#EDEDED" uuid="e13c2f67-8ef6-46c3-a8c1-bf17d12b676c">
@@ -512,7 +512,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{Costos2}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{Costos2Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="609" y="200" width="140" height="30" backcolor="#EDEDED" uuid="ed2329f9-dd5b-4ff5-8644-55a9cca751a0">
@@ -524,7 +524,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{Costos3}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{Costos3Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="751" y="200" width="138" height="30" backcolor="#EDEDED" uuid="a5933424-97ac-4dca-ad3a-77ca9f4caabd">
@@ -536,7 +536,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{Costos4}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{Costos4Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="889" y="200" width="141" height="30" backcolor="#EDEDED" uuid="f458cb08-a206-437f-b98c-20b2f2de510c">
@@ -548,7 +548,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{Costos5}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{Costos5Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="330" y="230" width="140" height="30" backcolor="#EBEBEB" uuid="47c979b4-4c03-4645-ad16-afe213925656">
@@ -560,7 +560,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{gastos1}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{gastos1Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="470" y="230" width="140" height="30" backcolor="#EBEBEB" uuid="3b03fe08-28f5-4a5c-8555-c75194365c09">
@@ -572,7 +572,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{gastos2}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{gastos2Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="610" y="230" width="140" height="30" backcolor="#EBEBEB" uuid="5614bbf7-fb7b-430f-8462-e3220c53d46d">
@@ -584,7 +584,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{gastos3}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{gastos3Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="750" y="230" width="138" height="30" backcolor="#EBEBEB" uuid="e40918dd-823b-4448-9a08-5d260c766b87">
@@ -596,7 +596,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{gastos4}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{gastos4Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="888" y="230" width="142" height="30" backcolor="#EBEBEB" uuid="69e1c4f5-91be-4ddc-b72b-47ea0f02919f">
@@ -608,7 +608,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{gastos5}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{gastos5Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="330" y="260" width="141" height="30" backcolor="#EBEBEB" uuid="aa3c8ef4-c737-4168-9250-20b6432f7f14">
@@ -620,7 +620,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{totalGastos1}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{totalGastos1Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="471" y="260" width="140" height="30" backcolor="#EBEBEB" uuid="55c2c4f7-df6d-4a09-8bb2-dafcb74f609d">
@@ -632,7 +632,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{totalGastos2}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{totalGastos2Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="611" y="260" width="140" height="30" backcolor="#EBEBEB" uuid="1fc3814c-6fb2-43c7-9bee-845e002d4e1c">
@@ -644,7 +644,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{totalGastos3}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{totalGastos3Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="749" y="260" width="140" height="30" backcolor="#EBEBEB" uuid="97bc35d9-4249-4974-9d67-2a51188a508c">
@@ -656,7 +656,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{totalGastos4}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{totalGastos4Flujo}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="890" y="260" width="140" height="30" backcolor="#EBEBEB" uuid="4b2a8dc2-7a06-408a-bf7c-f12ae6a657e8">
@@ -668,7 +668,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{totalGastos5}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{totalGastos5Flujo}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="1030" y="110" width="139" height="30" backcolor="#EBEBEB" uuid="8096e4f9-4af8-49b4-acd6-c740452e168e">

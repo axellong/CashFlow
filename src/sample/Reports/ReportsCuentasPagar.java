@@ -9,27 +9,26 @@ import net.sf.jasperreports.engine.JRField;
 import java.util.List;
 
 public class ReportsCuentasPagar implements JRDataSource {
-    private List<ReportFill> listaCuentas;
-    private int totalesv;
-    private List<Double> totales;
-    private String mes = "";
-    private int index;
+
+    private List<ReportFill> listaCuentasPagar;
+    private List<Double> totalesPagar;
+    private String mesPagar = "";
+    private int indexPagar;
 
 
 
     public ReportsCuentasPagar(String mes,int año) {
-        this.mes=mes;
+        this.mesPagar=mes;
+        indexPagar = -1;
         Calculos calculos = new Calculos();
-        listaCuentas = calculos.getCuentasPagar(mes, año);
-        index = -1;
-        totales = calculos.getTotales(listaCuentas);
-        totalesv = 0;
+        listaCuentasPagar = calculos.getCuentasPagar(mes, año);
+        totalesPagar = calculos.getTotales(listaCuentasPagar);
     }
 
     @Override
     public boolean next() throws JRException {
-        index++;
-        return (index < listaCuentas.size());
+        indexPagar++;
+        return (indexPagar < listaCuentasPagar.size());
     }
 
     @Override
@@ -37,56 +36,56 @@ public class ReportsCuentasPagar implements JRDataSource {
         Object value = null;
         String fieldName = jrField.getName();
         switch (fieldName) {
-            case "cuenta":
-                value = listaCuentas.get(index).getNumeroCuenta();
+            case "cuentaPagar":
+                value = listaCuentasPagar.get(indexPagar).getNumeroCuenta();
                 break;
-            case "semana1":
-                value = listaCuentas.get(index).getSemana1();
+            case "semana1Pagar":
+                value = listaCuentasPagar.get(indexPagar).getSemana1();
                 break;
-            case "semana2":
-                value = listaCuentas.get(index).getSemana2();
+            case "semana2Pagar":
+                value = listaCuentasPagar.get(indexPagar).getSemana2();
                 break;
-            case "semana3":
-                value = listaCuentas.get(index).getSemana3();
+            case "semana3Pagar":
+                value = listaCuentasPagar.get(indexPagar).getSemana3();
                 break;
-            case "semana4":
-                value = listaCuentas.get(index).getSemana4();
+            case "semana4Pagar":
+                value = listaCuentasPagar.get(indexPagar).getSemana4();
                 break;
-            case "semana5":
-                value = listaCuentas.get(index).getSemana5();
+            case "semana5Pagar":
+                value = listaCuentasPagar.get(indexPagar).getSemana5();
                 break;
-            case "cuentaFinal":
-                value = listaCuentas.get(index).getTotalSemana();
+            case "cuentaFinalPagar":
+                value = listaCuentasPagar.get(indexPagar).getTotalSemana();
                 break;
-            case "totalSemana1":
-                value = totales.get(0);
+            case "totalSemana1Pagar":
+                value = totalesPagar.get(0);
                 break;
-            case "totalSemana2":
-                value = totales.get(1);
+            case "totalSemana2Pagar":
+                value = totalesPagar.get(1);
 
                 break;
-            case "totalSemana3":
+            case "totalSemana3Pagar":
 
-                value = totales.get(2);
-
-                break;
-            case "totalSemana4":
-
-                value = totales.get(3);
+                value = totalesPagar.get(2);
 
                 break;
-            case "totalSemana5":
+            case "totalSemana4Pagar":
 
-                value = totales.get(4);
+                value = totalesPagar.get(3);
+
                 break;
-            case "MES":
-                value = mes;
+            case "totalSemana5Pagar":
+
+                value = totalesPagar.get(4);
                 break;
-            case "totalSemanas":
-                value = totales.get(5);
+            case "MESPagar":
+                value = mesPagar;
+                break;
+            case "totalSemanasPagar":
+                value = totalesPagar.get(5);
                 break;
         }
-        totalesv++;
+
         return value;
     }
 
