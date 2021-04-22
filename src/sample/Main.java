@@ -47,8 +47,8 @@ public class Main extends Application {
 
         // launch(args);
         CallReport callReport = new CallReport();
-        callReport.getReportFlujo("abril",2021);
-        //callReport.getReportJunto("abril",2021);
+        //callReport.getReportFlujo("abril",2021);
+        callReport.getReportJunto("abril",2021);
 
 
 

@@ -68,7 +68,7 @@ public class ReportFillIngreso {
     }
 
     public double getTotalSemana() {
-        return totalSemana;
+        return semana1+semana2+semana3+semana4+semana5;
     }
 
     public void setTotalSemana(double totalSemana) {
