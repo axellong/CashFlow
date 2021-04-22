@@ -39,6 +39,8 @@ public class Main extends Application {
     public static void main(String[] args) {
        // launch(args);
         CallReport callReport = new CallReport();
+        callReport.getReportPagar("marzo",2021);
+        callReport.getReportCobrar("marzo",2021);
     }
 
 

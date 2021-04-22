@@ -12,13 +12,15 @@ public class ReportsCuentasPagar implements JRDataSource {
     private List<ReportFill> listaCuentas;
     private int totalesv;
     private List<Double> totales;
-    private String mes = "marzo";
+    private String mes = "";
     private int index;
 
 
-    public ReportsCuentasPagar() {
+
+    public ReportsCuentasPagar(String mes,int año) {
+        this.mes=mes;
         Calculos calculos = new Calculos();
-        listaCuentas = calculos.getCuentasPagar("marzo", 2021);
+        listaCuentas = calculos.getCuentasPagar(mes, año);
         index = -1;
         totales = calculos.getTotales(listaCuentas);
         totalesv = 0;
@@ -88,8 +90,7 @@ public class ReportsCuentasPagar implements JRDataSource {
         return value;
     }
 
-    public static JRDataSource getDataSource() {
-        return new ReportsCuentasPagar()
-                ;
+    public static JRDataSource getDataSource(String mes, int año) {
+        return new ReportsCuentasPagar(mes,año);
     }
 }
