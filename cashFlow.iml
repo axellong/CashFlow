@@ -7,13 +7,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jfoenix-9.0.10" level="project" />
-    <orderEntry type="library" name="JavaFx" level="project" />
-    <orderEntry type="library" name="postgresql-42.2.16" level="project" />
-    <orderEntry type="library" name="AnimateFX:1.2.1" level="project" />
-    <orderEntry type="library" name="Hibernete" level="project" />
-    <orderEntry type="library" name="Mail" level="project" />
     <orderEntry type="library" name="com.sun.activation:javax.activation:1.2.0" level="project" />
+    <orderEntry type="library" name="jasperreports" level="project" />
+    <orderEntry type="library" name="JavaFx" level="project" />
+    <orderEntry type="library" name="jfoenix-9.0.10" level="project" />
+    <orderEntry type="library" name="AnimateFX:1.2.1" level="project" />
+    <orderEntry type="library" name="postgresql-42.2.16" level="project" />
+    <orderEntry type="library" name="Mail" level="project" />
+    <orderEntry type="library" name="Hibernete" level="project" />
     <orderEntry type="library" name="Jasper" level="project" />
   </component>
 </module>

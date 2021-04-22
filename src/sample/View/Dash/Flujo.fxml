@@ -5,6 +5,8 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -50,5 +52,11 @@
             <Font size="13.0" />
          </font>
       </JFXButton>
+      <DatePicker fx:id="datePickerFecha" layoutX="280.0" layoutY="304.0" prefHeight="30.0" prefWidth="200.0" />
+      <Label layoutX="280.0" layoutY="279.0" text="Fecha" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

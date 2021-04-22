@@ -46,7 +46,7 @@ public class DashController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setLabels();
-        adminView();
+        //adminView();
         menu= FXCollections.observableArrayList();
         try {
             category = integratePanel("Dash","Category",262.5,45);
