@@ -78,7 +78,6 @@ public class RegistroIndicadoresDAO {
         }
     }
 
-
     public void updateRegistroIndicadores(RegistroIndicadores registroIndicadores) throws HibernateException {
         Session session = factory.openSession();
         session.beginTransaction();

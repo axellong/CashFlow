@@ -38,7 +38,10 @@ public class Main extends Application {
     //METODO MAIN
     public static void main(String[] args) {
         launch(args);
-
+        /*
+        IngresosDAO ingresosDAO = new IngresosDAO();
+        ingresosDAO.getListIngresosPorSemanaDelMes(1, "abril", 2021);
+         */
         //PruebaReports pruebaReports = new PruebaReports();
     }
 
