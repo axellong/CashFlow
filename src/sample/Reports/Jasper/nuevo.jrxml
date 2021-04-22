@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nuevo" pageWidth="3000" pageHeight="700" orientation="Landscape" columnWidth="2960" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e9674d51-7583-47de-80ea-f23e0fe95799">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nuevo" pageWidth="4000" pageHeight="700" orientation="Landscape" columnWidth="3960" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e9674d51-7583-47de-80ea-f23e0fe95799">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
@@ -42,6 +42,27 @@
 	<field name="cuentaPagar" class="java.lang.Integer"/>
 	<field name="cuentaFinalPagar" class="java.lang.Double"/>
 	<field name="totalSemanasPagar" class="java.lang.Double"/>
+	<field name="nombreGastos" class="java.lang.String"/>
+	<field name="nombreIngresos" class="java.lang.String"/>
+	<field name="semana1Ingresos" class="java.lang.Double"/>
+	<field name="semana2Ingresos" class="java.lang.Double"/>
+	<field name="semana3Ingreso" class="java.lang.Double"/>
+	<field name="semana5Ingreso" class="java.lang.Double"/>
+	<field name="semanaTotalIngreso" class="java.lang.Double"/>
+	<field name="semana1Gastos" class="java.lang.Double"/>
+	<field name="semana2Gastos" class="java.lang.Double"/>
+	<field name="semana3Gastos" class="java.lang.Double"/>
+	<field name="semana4Gastos" class="java.lang.Double"/>
+	<field name="semana5Gastos" class="java.lang.Double"/>
+	<field name="semanaTotalGastos" class="java.lang.Double"/>
+	<field name="mes" class="java.lang.String"/>
+	<field name="totalUtilidadSemana1" class="java.lang.Double"/>
+	<field name="totalUtilidadSemana2" class="java.lang.Double"/>
+	<field name="totalUtilidadSemana3" class="java.lang.Double"/>
+	<field name="totalUtilidadSemana4" class="java.lang.Double"/>
+	<field name="totalUtilidadSemana5" class="java.lang.Double"/>
+	<field name="totalUtilidades" class="java.lang.Double"/>
+	<field name="semana4Ingreso" class="java.lang.Double"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -61,10 +82,17 @@
 				</textElement>
 				<text><![CDATA[Cuentas por pagar]]></text>
 			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2610" y="20" width="1090" height="58" uuid="45796da8-12c7-4379-96f6-4e9b55c5574b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[FLUJO DE EFECTIVO]]></text>
+			</staticText>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="56" splitType="Stretch">
+		<band height="156" splitType="Stretch">
 			<staticText>
 				<reportElement mode="Opaque" x="779" y="10" width="100" height="30" backcolor="#DBDBDB" uuid="a32f49c0-95f3-46d0-bf15-18df1ba05f11"/>
 				<box>
@@ -111,10 +139,33 @@
 				</textElement>
 				<text><![CDATA[MES]]></text>
 			</staticText>
+			<frame>
+				<reportElement mode="Opaque" x="3744" y="20" width="200" height="30" backcolor="#CFCFCF" uuid="d2d0fff3-369c-441b-bd1e-0624fa969556"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#D9D9D9"/>
+				</box>
+				<textField textAdjust="StretchHeight">
+					<reportElement x="51" y="1" width="100" height="30" uuid="0387662e-819f-48e7-bd1d-d0b95e2d09d0"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="15"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{MESPagar}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<staticText>
+				<reportElement mode="Opaque" x="3644" y="20" width="100" height="30" backcolor="#DBDBDB" uuid="8a02b0d4-c426-485d-b29c-218fa5918212"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[MES]]></text>
+			</staticText>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="76" splitType="Stretch">
+		<band height="78" splitType="Stretch">
 			<staticText>
 				<reportElement mode="Opaque" x="240" y="10" width="140" height="30" backcolor="#DBDBDB" uuid="cb955f1a-97ec-4970-8be3-ab3613e14d26"/>
 				<box>
@@ -375,10 +426,270 @@
 				</textElement>
 				<text><![CDATA[Cuenta]]></text>
 			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2479" y="10" width="109" height="30" backcolor="#DBDBDB" uuid="f541bb68-6003-497b-8c6e-f572138b8a95"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2479" y="40" width="109" height="30" backcolor="#F2F2F2" uuid="0faf1083-2cf2-4a68-89a8-0e0380bb299a"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2589" y="40" width="109" height="30" backcolor="#F2F2F2" uuid="ca8fb458-f32c-44f1-8d65-70036445ec3f"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2589" y="10" width="109" height="30" backcolor="#DBDBDB" uuid="897254ea-fed0-472b-9eca-24372f8edb3c"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2698" y="40" width="109" height="30" backcolor="#F2F2F2" uuid="d6bbe208-baa2-460d-b440-f5717152c919"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2698" y="10" width="109" height="30" backcolor="#DBDBDB" uuid="27628c2b-4c1f-4ebf-91e2-08f97f03d486"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2807" y="40" width="109" height="30" backcolor="#F2F2F2" uuid="6600d80c-e336-4cf1-a3ac-e5f2a189876e"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2807" y="10" width="109" height="30" backcolor="#DBDBDB" uuid="3fb02f5e-9ae5-4847-b66a-0d0ca0242017"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2916" y="40" width="109" height="30" backcolor="#F2F2F2" uuid="56118f4f-54e2-4c8e-abcf-f2a4f290f85a"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2916" y="10" width="109" height="30" backcolor="#DBDBDB" uuid="3521329a-655a-4d8e-9ce3-6195308bba30"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3025" y="10" width="109" height="30" backcolor="#DBDBDB" uuid="ac55c210-071b-4265-b91e-e037a3a458cd"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Final]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3025" y="40" width="109" height="30" backcolor="#F2F2F2" uuid="e6dcbeea-f7ed-4dc3-8425-11d634686f1f"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3289" y="10" width="109" height="30" backcolor="#DBDBDB" uuid="54d827b0-97b5-468a-b8a7-2fb70145fa18"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3289" y="40" width="109" height="30" backcolor="#F2F2F2" uuid="545ed3c1-75b3-45ba-a148-49e9ad2cb471"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3399" y="40" width="109" height="30" backcolor="#F2F2F2" uuid="0bd5177c-e709-4551-92b9-2a9a3722d690"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3399" y="10" width="109" height="30" backcolor="#DBDBDB" uuid="ad9be90a-5d80-42c9-94b0-1fc754c74f03"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3508" y="40" width="109" height="30" backcolor="#F2F2F2" uuid="bd200ab1-6034-4144-8cd1-50252bfc2718"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3508" y="10" width="109" height="30" backcolor="#DBDBDB" uuid="70cc8097-d655-4d15-bdb0-558f3cbfcde1"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3617" y="40" width="109" height="30" backcolor="#F2F2F2" uuid="fa392aff-1c8e-4124-b66f-83f598344f90"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3617" y="10" width="109" height="30" backcolor="#DBDBDB" uuid="6a14b2ae-deea-4b66-81bc-844418f723a6"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3726" y="40" width="109" height="30" backcolor="#F2F2F2" uuid="ff948e02-c38f-4adf-b56b-77602e8d0d8c"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3726" y="10" width="109" height="30" backcolor="#DBDBDB" uuid="de5576b2-7614-46f2-bf06-506b6e6717db"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Semana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3835" y="10" width="109" height="30" backcolor="#DBDBDB" uuid="b56733b5-bdc2-4076-99d6-7009e5374d15"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Final]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3835" y="40" width="109" height="30" backcolor="#F2F2F2" uuid="26955438-fa53-4655-9703-f24eaba449f7"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="2370" y="10" width="109" height="60" backcolor="#DBDBDB" uuid="33a86d55-ef1b-49bd-ba39-ad784ecb1042"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Ingresos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="3180" y="10" width="109" height="60" backcolor="#DBDBDB" uuid="84383bf6-4468-4442-9071-3a50877f243e"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Gastos]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="45" splitType="Stretch">
+		<band height="49" splitType="Stretch">
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="1200" y="8" width="229" height="29" backcolor="#DEDEDE" uuid="3d193089-2d67-4f7b-b763-f245b689363e">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="96c6eb54-8cda-4b3e-9f74-4b2a5cc0f970"/>
@@ -550,13 +861,181 @@
 					<textFieldExpression><![CDATA[$F{semana3Cobrar}]]></textFieldExpression>
 				</textField>
 			</frame>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3182" y="1" width="104" height="30" backcolor="#D9D9D9" uuid="3d323444-d62a-489c-9895-d78cc02f0ac9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4a280ce5-87f4-479b-9211-5b8498102045"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreGastos}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="2370" y="0" width="109" height="30" backcolor="#DEDEDE" uuid="5ca4f35a-1158-4b54-94fb-0aad0c1babca">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a48d5b83-2654-4169-ad6a-4c9c5d467096"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreIngresos}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="2479" y="0" width="109" height="30" backcolor="#DEDEDE" uuid="0828258e-a01b-42ea-9f08-8539f556471c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84a73d8b-801e-4433-9bb2-76807f8fd97f"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semana1Ingresos}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="2589" y="0" width="108" height="30" backcolor="#DEDEDE" uuid="92cc5c50-f41a-4c77-8152-aadeacb22e86">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3b0aafdd-6874-43d1-9611-24c0826fbd9a"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semana2Ingresos}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="2695" y="0" width="112" height="30" backcolor="#DEDEDE" uuid="c2a7f7a7-8bd5-4c10-bf88-9e32b94ad5d6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="51e5eedc-3d30-4071-be79-a7ba4e8fc189"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semana3Ingreso}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="2916" y="0" width="108" height="30" backcolor="#DEDEDE" uuid="3abcbd35-c416-46d0-99e5-fe40c91d8fbc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="febe5abc-5fb7-4279-9a4f-d3f2229645dc"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semana5Ingreso}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3025" y="0" width="109" height="30" backcolor="#DEDEDE" uuid="6ee2bd77-5036-4fd7-9d99-b0f772ef97fb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4f786363-0dc2-4eaf-9857-72db6f1aaa62"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semanaTotalIngreso}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3286" y="1" width="114" height="30" backcolor="#D9D9D9" uuid="de316045-8c1b-4600-b80a-41c2e4707b4c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="49568149-429f-487a-89dd-f409da17d8c0"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semana1Gastos}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3400" y="1" width="110" height="30" backcolor="#D9D9D9" uuid="f395874e-17e4-4e49-a9be-e71de15a8639">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84ad1107-6197-4587-b34a-6d1f0862af04"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semana2Gastos}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3509" y="1" width="109" height="30" backcolor="#D9D9D9" uuid="024b9fb3-24c0-42b0-b766-83986fbd8fba">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e14480f9-f012-4423-b756-b01f203d5f2a"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semana3Gastos}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3619" y="1" width="116" height="30" backcolor="#D9D9D9" uuid="b988585a-5af5-434e-8932-aa64749295d7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b3a23f56-cb48-48e6-ab4b-3f5f3937a73b"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semana4Gastos}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3728" y="1" width="108" height="30" backcolor="#D9D9D9" uuid="b1dc5845-709f-439a-997b-d85c996e95d4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e936acd9-dbe4-484c-980e-66faf6973cda"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semana5Gastos}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3837" y="1" width="108" height="30" backcolor="#D9D9D9" uuid="d1379d32-d16d-4ec1-8855-8520dd823650">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="40a52b84-e8aa-4137-a1a3-1351eb7d7cd3"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semanaTotalGastos}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="2807" y="0" width="109" height="30" backcolor="#E0E0E0" uuid="558f8547-5540-4c9e-a439-54ab5dedff5e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8250f719-fa76-439d-884e-34e32c600d32"/>
+				</reportElement>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semana4Ingreso}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>
 		<band height="45" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="89" splitType="Stretch">
+		<band height="120" splitType="Stretch">
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="1570" y="20" width="140" height="30" backcolor="#DEDEDE" uuid="ac55f261-eeab-4891-baf2-39e9bf9e0a7a">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a07b820b-96da-4a8a-a38d-9422ba4ebb27"/>
@@ -717,6 +1196,86 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalSemanasCobrar}]]></textFieldExpression>
 			</textField>
+			<staticText>
+				<reportElement mode="Transparent" x="3130" y="-5" width="130" height="30" forecolor="#3B00FF" backcolor="#C9C5C5" uuid="b45a17c5-bbe3-43e9-aa2a-986b532fdd53"/>
+				<box>
+					<pen lineWidth="0.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="23" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Diferencias]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3280" y="40" width="130" height="30" backcolor="#D4D4D4" uuid="1f08887d-6d68-4bc3-ad82-ed1425e2b38a"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalUtilidadSemana1}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3410" y="40" width="103" height="30" backcolor="#D4D4D4" uuid="53bef48f-9ae9-44ec-b828-6a02735b5b47"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalUtilidadSemana2}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3512" y="40" width="108" height="30" backcolor="#D4D4D4" uuid="8a2be525-d83e-41ed-a7a8-216e3c42807d"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalUtilidadSemana3}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3619" y="40" width="112" height="30" backcolor="#D4D4D4" uuid="f2c6e65a-5f2d-4379-9339-cf2f27ef3a5f"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalUtilidadSemana5}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3731" y="40" width="108" height="30" backcolor="#D4D4D4" uuid="ffedd4ac-83a9-4dd9-a2da-00ed2a0697af"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalUtilidadSemana4}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement mode="Opaque" x="3840" y="40" width="109" height="30" backcolor="#D4D4D4" uuid="9aee1887-7106-4cd8-9738-c911e94b7319"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalUtilidades}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="3129" y="40" width="149" height="30" backcolor="#DBDBDB" uuid="c3bc2d26-c12d-42be-a314-53d62a051f7b"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Total Utilidades]]></text>
+			</staticText>
 		</band>
 	</pageFooter>
 	<summary>

@@ -89,6 +89,7 @@ public class IngresosDAO {
         session.getTransaction();
         session.close();
 
+
         return listaIngresos;
     }
 
