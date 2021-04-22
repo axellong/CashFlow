@@ -1,14 +1,11 @@
 package sample.Reports;
 
-import jdk.dynalink.linker.LinkerServices;
 import logic.Model.Calculos;
 import logic.Model.ReportFill;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRField;
-import org.junit.runner.Runner;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class ReporteJunto implements JRDataSource {

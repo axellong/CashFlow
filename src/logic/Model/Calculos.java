@@ -1,13 +1,12 @@
 package logic.Model;
 
-import entity.RegistroIndicadores;
 import sample.DAOs.DAOsReportes.CuentasPorCobrarDAO;
 import sample.DAOs.DAOsReportes.CuentasPorPagarDAO;
 import sample.DAOs.DAOsReportes.ExtraClass.RegistroCuenta;
-import sample.DAOs.DAOsReportes.ReportesEfectivoDAO;
 import sample.DAOs.InitializerDAOs;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Calculos {
     List<RegistroCuenta> listaSemana1;
