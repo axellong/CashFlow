@@ -9,6 +9,8 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import sample.DAOs.DAOsReportes.ExtraClass.Ingresos;
+import sample.DAOs.DAOsReportes.IngresosDAO;
 import sample.Reports.CallReport;
 
 
@@ -45,7 +47,11 @@ public class Main extends Application {
 
         // launch(args);
         CallReport callReport = new CallReport();
-        callReport.getReportJunto("marzo", 2021);
+        callReport.getReportFlujo("abril",2021);
+        //callReport.getReportJunto("abril",2021);
+
+
+
 
     }
 

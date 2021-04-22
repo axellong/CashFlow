@@ -57,4 +57,20 @@ public class CallReport {
 
     }
 
+    public void getReportFlujo(String mes, int año) {
+        try {
+            JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/sample/Reports/Jasper/ReportIndicadores.jasper"));
+            JasperPrint jsp = JasperFillManager.fillReport(jas, null, ReportFlujo.getDataSource(mes,año));
+            JasperViewer vie = new JasperViewer(jsp, false);
+            vie.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+            vie.setVisible(true);
+            System.out.println("salio");
+        } catch (Exception exception) {
+            exception.getMessage();
+        }
+
+
+
+    }
+
 }

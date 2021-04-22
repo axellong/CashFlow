@@ -74,14 +74,14 @@ public class ReporteJunto implements JRDataSource {
         } else {
             banderaCobrar=true;
             cobrarsigue = false;
-            indexCobrar = -1;
+
         }
         if (indexPagar < listaCuentasPagar.size() & banderaPagar==false) {
             pagarsigue = true;
         } else {
             banderaPagar=true;
             pagarsigue = false;
-            indexPagar = -1;
+
         }
 
         if (pagarsigue == false & cobrarsigue == false) {
