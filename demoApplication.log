@@ -3719,3 +3719,7 @@
 [main] DEBUG net.sf.jasperreports.engine.fill.DelayedFillActions  - 1 running delayed actions on {type: REPORT, group: null, band: 0}
 [main] DEBUG net.sf.jasperreports.engine.fill.DelayedFillActions  - 1 running delayed actions on {type: MASTER, group: null, band: 0}
 [main] DEBUG net.sf.jasperreports.engine.fill.JRBaseFiller  - Fill 1: ended
+[JavaFX Application Thread] WARN  org.hibernate.engine.jdbc.internal.JdbcServicesImpl  - HHH000342: Could not obtain connection to query metadata : FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)
+[main] WARN  org.hibernate.engine.jdbc.internal.JdbcServicesImpl  - HHH000342: Could not obtain connection to query metadata : FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)
+[main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - SQL Error: 0, SQLState: 28P01
+[main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper  - FATAL: la autentificación password falló para el usuario «postgres» (pgjdbc: autodetected server-encoding to be ISO-8859-1, if the message is not readable, please check database logs and/or host, port, dbname, user, password, pg_hba.conf)
