@@ -15,6 +15,7 @@ import javafx.scene.shape.Line;
 import logic.Credential;
 import sample.Main;
 import sample.Util.SceneAdd;
+import sample.Util.SceneAssembler;
 import sample.Util.Utils;
 
 import java.io.IOException;
@@ -45,7 +46,7 @@ public class DashController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setLabels();
-        adminView();
+        //adminView();
         menu= FXCollections.observableArrayList();
         try {
             category = integratePanel("Dash","Category",262.5,45);
@@ -86,6 +87,12 @@ public class DashController implements Initializable {
     void MouseClickedRegistro(MouseEvent event) {
         nodeChange(register.getNode());
         moveLine(168.0);
+    }
+
+    @FXML
+    void MouseClickedReporte(MouseEvent event) {
+        SceneAssembler.newStage("Dash","Reporte");
+        moveLine(217.0);
     }
 
     private void nodeChange(Parent node){

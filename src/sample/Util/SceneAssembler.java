@@ -72,9 +72,10 @@ public class SceneAssembler {
             Scene scene = new Scene(node);
             secondStage.setScene(scene);
             secondStage.initOwner(Main.primaryStage);
+            secondStage.initStyle(StageStyle.TRANSPARENT);
             secondStage.initModality(Modality.APPLICATION_MODAL);
             secondStage.centerOnScreen();
-            //secondStage.showAndWait();
+            secondStage.showAndWait();
 
         } catch (IOException e) {
             // TODO Auto-generated catch block

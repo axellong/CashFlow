@@ -1,0 +1,7 @@
+*{
+    -color-pane-report: rgba(16,16,16,1);
+}
+
+#pane{
+    -fx-background-color: -color-pane-report;
+}

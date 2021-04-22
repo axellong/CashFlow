@@ -124,7 +124,7 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </JFXButton>
-                        <JFXButton id="button-menu" layoutY="217.0" pickOnBounds="false" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
+                        <JFXButton id="button-menu" layoutY="217.0" onMouseClicked="#MouseClickedReporte" pickOnBounds="false" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
                            <graphic>
                               <HBox accessibleRole="BUTTON" alignment="CENTER_LEFT" mouseTransparent="true" prefHeight="40.0" prefWidth="225.0">
                                  <children>
