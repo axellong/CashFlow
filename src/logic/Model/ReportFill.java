@@ -9,13 +9,15 @@ public class ReportFill {
     double semana5;
     double totalSemana;
 
-    public ReportFill() {
+    public ReportFill(int cuenta) {
         semana1 = 0.00;
         semana2 = 0.00;
         semana3 = 0.00;
         semana4 = 0.00;
         semana5 = 0.00;
+        numeroCuenta=cuenta;
     }
+
 
     public int getNumeroCuenta() {
         return numeroCuenta;

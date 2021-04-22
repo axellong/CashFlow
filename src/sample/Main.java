@@ -7,8 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import logic.Model.Calculos;
-import sample.DAOs.DAOsReportes.CuentasPorCobrarDAO;
+import sample.Reports.CallReport;
 import sample.Util.SceneAssembler;
 
 import java.util.Objects;
@@ -39,9 +38,7 @@ public class Main extends Application {
     //METODO MAIN
     public static void main(String[] args) {
        // launch(args);
-        Calculos calculos = new Calculos();
-        CuentasPorCobrarDAO dao = new CuentasPorCobrarDAO();
-        calculos.geCuentas(dao,"marzo",2021);
+        CallReport callReport = new CallReport();
     }
 
 

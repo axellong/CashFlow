@@ -1,5 +1,6 @@
 package sample.Reports;
 
+import logic.Model.Calculos;
 import logic.Model.ReportFill;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
@@ -11,14 +12,18 @@ import java.util.List;
 public class ReportsCuentasCobrar implements JRDataSource {
     private List<ReportFill>  listaLlenado;
     private int totalesv;
-    private double[] totales;
+    private List<Double>  totales;
     private String mes = "MARZO";
     private int index;
 
 
     public ReportsCuentasCobrar() {
+        Calculos calculos = new Calculos();
         index = -1;
-        totalesv = 0;
+        listaLlenado= calculos.getCuentascobrar("marzo",2021);
+        totales = calculos.getTotales(listaLlenado);
+        System.out.println(listaLlenado);
+
     }
 
     @Override
@@ -54,33 +59,33 @@ public class ReportsCuentasCobrar implements JRDataSource {
                 value = listaLlenado.get(index).getTotalSemana();
                 break;
             case "totalSemana1":
-                value = totales[0];
+                value = totales.get(0);
                 break;
             case "totalSemana2":
 
-                value = totales[1];
+                value = totales.get(1);
 
                 break;
             case "totalSemana3":
 
-                value = totales[2];
+                value = totales.get(2);
 
                 break;
             case "totalSemana4":
 
-                value = totales[3];
+                value = totales.get(3);
 
                 break;
             case "totalSemana5":
 
-                value = totales[4];
+                value = totales.get(4);
 
                 break;
             case "MES":
                 value = "marzo";
                 break;
             case "totalSemanas":
-                value = totales[5];
+                value = totales.get(5);
                 break;
         }
         totalesv++;

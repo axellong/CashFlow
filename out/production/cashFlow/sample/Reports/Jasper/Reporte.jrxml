@@ -20,7 +20,7 @@
 	<field name="totalSemana2" class="java.lang.Double"/>
 	<field name="totalSemana1" class="java.lang.Double"/>
 	<field name="MES" class="java.lang.String"/>
-	<field name="cuentaCobrar" class="java.lang.String"/>
+	<field name="cuentaCobrar" class="java.lang.Integer"/>
 	<field name="semana5" class="java.lang.Double"/>
 	<field name="semana4" class="java.lang.Double"/>
 	<field name="semana3" class="java.lang.Double"/>
@@ -139,7 +139,7 @@
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[]]></text>
+				<text><![CDATA[1]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="490" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="1cc4f099-c955-49f4-b1ae-3c16370a74da"/>
@@ -149,7 +149,7 @@
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[]]></text>
+				<text><![CDATA[2]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="630" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="fd3f97a6-2715-428c-bd29-5e9aff3044c3"/>
@@ -159,7 +159,7 @@
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[]]></text>
+				<text><![CDATA[3]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="770" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="f0b4c93a-65af-4f6d-a0a7-14a89c86c646"/>
@@ -169,7 +169,7 @@
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[]]></text>
+				<text><![CDATA[4]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="910" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="01b1b455-cca1-4e8c-a872-8665a1d19dc8"/>
@@ -179,7 +179,7 @@
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[]]></text>
+				<text><![CDATA[5]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="1050" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="b97feb61-0b85-43a2-9205-957852b94991"/>
@@ -190,6 +190,16 @@
 					<font size="20"/>
 				</textElement>
 				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="20" width="230" height="60" backcolor="#DBDBDB" uuid="23bc7fa9-2739-4961-908b-a7406225c8ca"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Cuenta]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
