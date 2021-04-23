@@ -79,4 +79,5 @@ public class RegistrosEfectivoDAO {
         session.close();
         return listaRegistrosEfectivos;
     }
+
 }

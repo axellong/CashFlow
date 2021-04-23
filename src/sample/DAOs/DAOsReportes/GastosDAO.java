@@ -30,7 +30,7 @@ public class GastosDAO {
         factory = ConexionHibernete.getFactory();
     }
 
-    public List<Ingresos> getListGastosPorMes(String mes, int anio) {
+    public List<RegistroEfectivo> getListGastosPorMes(String mes, int anio) {
         List<RegistroEfectivo> listRegistroEfectivo = new ArrayList<>();
         List<Ingresos> listaIngresos = new ArrayList<>();
 
@@ -42,21 +42,11 @@ public class GastosDAO {
         criteria.add(Restrictions.eq("anio", anio));
         listRegistroEfectivo = criteria.list();
 
-        for (int i = 0; i < listRegistroEfectivo.size(); i++) {
-            String nombreClasificacion = listRegistroEfectivo.get(i).getIdSubcategoria().getId_Categoria().getClasificacion().getNombreClasificacion();
-            double monto = listRegistroEfectivo.get(i).getMonto();
-            String mes1 = listRegistroEfectivo.get(i).getMes();
-            int semana1 = listRegistroEfectivo.get(i).getSemana();
-            int anio1 = listRegistroEfectivo.get(i).getAnio();
-
-            Ingresos ingresos = new Ingresos(nombreClasificacion, monto, mes1, semana1, anio1);
-            listaIngresos.add(ingresos);
-        }
 
         session.getTransaction();
         session.close();
 
-        return listaIngresos;
+        return listRegistroEfectivo;
     }
 
     public List<Ingresos> getListGastosPorSemanaDelMes(int semana, String mes, int anio) {

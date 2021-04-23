@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.input.MouseEvent;
-import sample.Reports.CallReport;
+import sample.Util.SceneAssembler;
 import sample.Util.Utils;
 
 import java.net.URL;
@@ -35,8 +35,12 @@ public class ReporteController implements Initializable {
             String mes = Utils.getMes(date);
             int año = date.getYear();
 
-            CallReport callReport = new CallReport();
-            callReport.getReportJunto(mes, año);
+//            CallReport callReport = new CallReport();
+//            callReport.getReportJunto(mes, año);
+
+            ReportePDFController pdf = (ReportePDFController) SceneAssembler.newStage("Report","ReportePDF");
+            pdf.inicializarDatos(mes,año);
+            SceneAssembler.secondStageVisible();
         }
 
     }

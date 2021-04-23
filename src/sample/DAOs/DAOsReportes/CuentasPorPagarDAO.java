@@ -33,7 +33,7 @@ public class CuentasPorPagarDAO {
         factory = ConexionHibernete.getFactory();
     }
 
-    public List<RegistroCuenta> getListCuentasPorMes(String mes, int anio) throws HibernateException {
+    public List<RegistroIndicadores> getListCuentasPorMes(String mes, int anio) throws HibernateException {
         List<RegistroIndicadores> listaCuentasPorCobrar = null;
         //Inicializar un Set, es una colección para ayudar a obtener los datos correctamente
         Set<RegistroIndicadores> listaDeCuentas = new HashSet<RegistroIndicadores>();
@@ -57,7 +57,7 @@ public class CuentasPorPagarDAO {
         //set to list - recuperar los datos y hacerlo compatible para List
         listaCuentasPorCobrar.addAll(listaDeCuentas);
 
-        //Arreglo especial para el llenado de los reportes
+        /*//Arreglo especial para el llenado de los reportes
         List<RegistroCuenta> listCuentas = new ArrayList<>();
 
         //llenar el arreglo especificamente para el llenado de los reportes
@@ -70,12 +70,12 @@ public class CuentasPorPagarDAO {
 
             RegistroCuenta x = new RegistroCuenta(cuenta, monto, mes1, semana1, anio1);
             listCuentas.add(x);
-        }
+        }*/
 
         session.getTransaction();
         session.close();
 
-        return listCuentas;
+        return listaCuentasPorCobrar;
     }
 
     public List<RegistroCuenta> getListCuentasPorSemanaDelMes(String mes, int semana, int anio) throws HibernateException {

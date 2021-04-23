@@ -49,7 +49,7 @@ public class RegistroBancoDAO {
     }
 
 
-    public List<Banco> getListRegistroBancosPorMes(String mes, int anio) throws HibernateException {
+    public List<RegistroBanco> getListRegistroBancosPorMes(String mes, int anio) throws HibernateException {
         List<RegistroBanco> listaRegistrosBancos = new ArrayList<>();
         List<Banco> listaBancos = new ArrayList<>();
         Session session = factory.openSession();
@@ -60,7 +60,7 @@ public class RegistroBancoDAO {
         criteria.add(Restrictions.eq("anio", anio));
         listaRegistrosBancos = criteria.list();
 
-        for (int i = 0; i < listaRegistrosBancos.size(); i++) {
+        /*for (int i = 0; i < listaRegistrosBancos.size(); i++) {
             int numeroBanco1 = listaRegistrosBancos.get(i).getNumeroCuenta();
             String mes1 = listaRegistrosBancos.get(i).getMes();
             int semana1 = listaRegistrosBancos.get(i).getSemana();
@@ -69,11 +69,11 @@ public class RegistroBancoDAO {
 
             Banco x = new Banco(numeroBanco1, monto, semana1, mes1, anio1);
             listaBancos.add(x);
-        }
+        }*/
 
         session.getTransaction();
         session.close();
-        return listaBancos;
+        return listaRegistrosBancos;
     }
 
     public List<Banco> getListRegistroBancosPorSemanaDelMes(int semana, String mes, int anio) throws HibernateException {

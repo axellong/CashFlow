@@ -8,6 +8,7 @@ public class RegistroBanco {
     private int semana;
     private String mes;
     private int anio;
+    private int[] semanas = new int[5];
 
     public RegistroBanco() {
 
@@ -20,6 +21,14 @@ public class RegistroBanco {
         this.semana = semana;
         this.mes = mes;
         this.anio = anio;
+    }
+
+    public int[] getSemanas() {
+        return semanas;
+    }
+
+    public void setSemanas(int[] semanas) {
+        this.semanas = semanas;
     }
 
     public int getIdRegistroBanco() {

@@ -19,10 +19,20 @@ public class RegistroEfectivo {
     private String mes;
     private int anio;
 
+    private int[] semanas = new int[5];
+
     //lista para hibernete
     private List<ReportesEfectivo> listaReportesEfectivo;
 
     public RegistroEfectivo() {
+    }
+
+    public int[] getSemanas() {
+        return semanas;
+    }
+
+    public void setSemanas(int[] semanas) {
+        this.semanas = semanas;
     }
 
     public List<ReportesEfectivo> getListaReportesEfectivo() {

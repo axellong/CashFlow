@@ -7,6 +7,7 @@ public class ReportesEfectivo {
     private RegistroEfectivo idRegistroEfectivo;
     private int numReporte;
 
+
     public ReportesEfectivo(String descripcion, RegistroEfectivo idRegistroEfectivo, int numReporte) {
         this.descripcion = descripcion;
         this.idRegistroEfectivo = idRegistroEfectivo;

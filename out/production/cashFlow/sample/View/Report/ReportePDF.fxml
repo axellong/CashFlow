@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+
+<AnchorPane prefHeight="600.0" prefWidth="700.0" stylesheets="@../General.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.ReportePDFController">
+    <children>
+        <ScrollPane fx:id="scrollReport" layoutY="60.0" prefHeight="600.0" prefWidth="700.0">
+            <content>
+                <Pane prefHeight="1450.0" prefWidth="700.0">
+               <children>
+                  <TableView fx:id="tabCobrar" layoutX="14.0" layoutY="35.0" prefHeight="200.0" prefWidth="660.0">
+                    <columns>
+                      <TableColumn fx:id="colCuentaCobrar" prefWidth="94.0" text="Cobrar" />
+                      <TableColumn fx:id="colSemana1Cob" prefWidth="94.0" text="Semana 1" />
+                        <TableColumn fx:id="colSemana2Cob" prefWidth="94.0" text="Semana 2" />
+                        <TableColumn fx:id="colSemana3Cob" prefWidth="94.0" text="Semana 3" />
+                        <TableColumn fx:id="colSemana4Cob" prefWidth="94.0" text="Semana 4" />
+                        <TableColumn fx:id="colSemana5Cob" prefWidth="94.0" text="Semana 5" />
+                        <TableColumn fx:id="colFinalCob" prefWidth="95.0" text="Final" />
+                    </columns>
+                  </TableView>
+                  <HBox layoutX="14.0" layoutY="235.0" prefHeight="30.0" prefWidth="660.0" style="-fx-border-color: #000;">
+                     <children>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label layoutX="33.0" layoutY="6.0" text="Total" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalCobSem1" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalCobSem2" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalCobSem3" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalCobSem4" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalCobSem5" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalCobFinal" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tabPagar" layoutX="14.0" layoutY="290.0" prefHeight="200.0" prefWidth="660.0">
+                     <columns>
+                        <TableColumn fx:id="colCuentaPagar" prefWidth="94.0" text="Pagar" />
+                        <TableColumn fx:id="colSemana1Pag" prefWidth="94.0" text="Semana 1" />
+                        <TableColumn fx:id="colSemana2Pag" prefWidth="94.0" text="Semana 2" />
+                        <TableColumn fx:id="colSemana3Pag" prefWidth="94.0" text="Semana 3" />
+                        <TableColumn fx:id="colSemana4Pag" prefWidth="94.0" text="Semana 4" />
+                        <TableColumn fx:id="colSemana5Pag" prefWidth="94.0" text="Semana 5" />
+                        <TableColumn fx:id="colFinalPag" prefWidth="95.0" text="Final" />
+                     </columns>
+                  </TableView>
+                  <HBox layoutX="14.0" layoutY="490.0" prefHeight="30.0" prefWidth="660.0" style="-fx-border-color: #000;">
+                     <children>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label layoutX="33.0" layoutY="6.0" text="Total" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalPagSem1" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalPagSem2" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalPagSem3" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalPagSem4" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalPagSem5" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalPagFinal" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <Line endX="557.0" layoutX="115.0" layoutY="556.0" startX="-100.0" />
+                  <TableView fx:id="tabIngresos" layoutX="20.0" layoutY="620.0" prefHeight="150.0" prefWidth="660.0">
+                     <columns>
+                        <TableColumn fx:id="colCuentaIng" prefWidth="94.0" text="Ingresos" />
+                        <TableColumn fx:id="colSemana1Ing" prefWidth="94.0" text="Semana 1" />
+                        <TableColumn fx:id="colSemana2Ing" prefWidth="94.0" text="Semana 2" />
+                        <TableColumn fx:id="colSemana3Ing" prefWidth="94.0" text="Semana 3" />
+                        <TableColumn fx:id="colSemana4Ing" prefWidth="94.0" text="Semana 4" />
+                        <TableColumn fx:id="colSemana5Ing" prefWidth="94.0" text="Semana 5" />
+                        <TableColumn fx:id="colFinalIng" prefWidth="95.0" text="Final" />
+                     </columns>
+                  </TableView>
+                  <HBox layoutX="20.0" layoutY="770.0" prefHeight="30.0" prefWidth="660.0" style="-fx-border-color: #000;">
+                     <children>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label layoutX="33.0" layoutY="6.0" text="Total" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalIngSem1" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalIngSem2" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalIngSem3" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalIngSem4" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalIngSem5" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalIngFinal" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tabGastos" layoutX="20.0" layoutY="847.0" prefHeight="150.0" prefWidth="660.0">
+                     <columns>
+                        <TableColumn fx:id="colCuentaGas" prefWidth="94.0" text="Gastos" />
+                        <TableColumn fx:id="colSemana1Gas" prefWidth="94.0" text="Semana 1" />
+                        <TableColumn fx:id="colSemana2Gas" prefWidth="94.0" text="Semana 2" />
+                        <TableColumn fx:id="colSemana3Gas" prefWidth="94.0" text="Semana 3" />
+                        <TableColumn fx:id="colSemana4Gas" prefWidth="94.0" text="Semana 4" />
+                        <TableColumn fx:id="colSemana5Gas" prefWidth="94.0" text="Semana 5" />
+                        <TableColumn fx:id="colFinalGas" prefWidth="95.0" text="Final" />
+                     </columns>
+                  </TableView>
+                  <HBox layoutX="20.0" layoutY="997.0" prefHeight="30.0" prefWidth="660.0" style="-fx-border-color: #000;">
+                     <children>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label layoutX="33.0" layoutY="6.0" text="Total" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalGasSem1" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalGasSem2" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalGasSem3" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalGasSem4" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalGasSem5" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalGasFinal" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="20.0" layoutY="1060.0" prefHeight="30.0" prefWidth="660.0" style="-fx-border-color: #000;">
+                     <children>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label layoutX="24.0" layoutY="5.0" text="Utilidad" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalUtiSem1" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalUtiSem2" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalUtiSem3" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalUtiSem4" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalUtiSem5" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalUtiFinal" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+                  <Line endX="557.0" layoutX="121.0" layoutY="1121.0" startX="-100.0" />
+                  <TableView fx:id="tabBancos" layoutX="20.0" layoutY="1150.0" prefHeight="200.0" prefWidth="660.0">
+                     <columns>
+                        <TableColumn fx:id="colCuentaBan" prefWidth="94.0" text="Bancos" />
+                        <TableColumn fx:id="colSemana1Ban" prefWidth="94.0" text="Semana 1" />
+                        <TableColumn fx:id="colSemana2Ban" prefWidth="94.0" text="Semana 2" />
+                        <TableColumn fx:id="colSemana3Ban" prefWidth="94.0" text="Semana 3" />
+                        <TableColumn fx:id="colSemana4Ban" prefWidth="94.0" text="Semana 4" />
+                        <TableColumn fx:id="colSemana5Ban" prefWidth="94.0" text="Semana 5" />
+                        <TableColumn fx:id="colFinalBan" prefWidth="95.0" text="Final" />
+                     </columns>
+                  </TableView>
+                  <HBox layoutX="20.0" layoutY="1350.0" prefHeight="30.0" prefWidth="660.0" style="-fx-border-color: #000;">
+                     <children>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label layoutX="33.0" layoutY="6.0" text="Total" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalBanSem1" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalBanSem2" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalBanSem3" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalBanSem4" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalBanSem5" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="30.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="totalBanFinal" layoutX="33.0" layoutY="6.0" text="Label" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </HBox>
+               </children>
+                </Pane>
+            </content>
+        </ScrollPane>
+        <JFXButton id="button-close" buttonType="RAISED" layoutX="674.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#MouseClickedClose" prefHeight="12.0" prefWidth="12.0" ripplerFill="#6b6b6b" text="Button" />
+      <Label layoutX="29.0" layoutY="18.0" text="Mes: " />
+      <Label fx:id="labelMes" layoutX="67.0" layoutY="19.0" text="Label" />
+      <Label layoutX="172.0" layoutY="20.0" text="Año:" />
+      <Label fx:id="labelYear" layoutX="209.0" layoutY="20.0" text="Label" />
+    </children>
+</AnchorPane>

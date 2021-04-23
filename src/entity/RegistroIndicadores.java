@@ -12,6 +12,7 @@ public class RegistroIndicadores {
     private String descripcion;
     private int anio;
     private Cuenta id_Cuenta;
+    private int[] semanas = new int[5];
 
 
     // lista para hibernete
@@ -136,12 +137,30 @@ public class RegistroIndicadores {
         this.anio = anio;
     }
 
+    public int[] getSemanas() {
+        return semanas;
+    }
+
+    public void setSemanas(int[] semanas) {
+        this.semanas = semanas;
+    }
+
+    private String recorrer(){
+        String semanasStr = "";
+        for (int i = 0;i<semanas.length ;i++){
+            semanasStr = semanasStr + " "+semanas[i] +" ";
+        }
+        return semanasStr;
+    }
+
     @Override
     public String toString() {
         return "RegistroIndicadores{" +
+                ", cuenta=" + id_Cuenta.getCuenta() +
                 ", monto=" + monto +
                 ", mes='" + mes + '\'' +
                 ", semana=" + semana +
+                ", semanas=" + recorrer()+
                 ", anio=" + anio +
                 '}';
     }
