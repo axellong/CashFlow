@@ -59,7 +59,7 @@
                   <Font size="13.0" />
                </font>
             </JFXTextField>
-            <JFXTextField id="input-label" fx:id="inputDescripcionBanco" focusColor="WHITE" labelFloat="true" layoutY="160.0" prefHeight="30.0" prefWidth="280.0" promptText="Descripción :">
+            <JFXTextField id="input-label" fx:id="inputDescripcionBanco" focusColor="WHITE" labelFloat="true" layoutY="160.0" prefHeight="30.0" prefWidth="120.0" promptText="Descripción :">
                <font>
                   <Font size="13.0" />
                </font>
@@ -79,6 +79,11 @@
                   <Font size="13.0" />
                </font>
             </Label>
+            <JFXTextField id="input-label" fx:id="inputCuentaBanco" focusColor="WHITE" labelFloat="true" layoutX="168.0" layoutY="143.0" prefHeight="30.0" prefWidth="120.0" promptText="No.Banco">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXTextField>
          </children>
       </Pane>
    </children>

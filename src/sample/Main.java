@@ -35,7 +35,7 @@ public class Main extends Application {
 
     //METODO MAIN
     public static void main(String[] args) {
-        //launch(args);
+        launch(args);
 
 
         //PruebaReports pruebaReports = new PruebaReports();
