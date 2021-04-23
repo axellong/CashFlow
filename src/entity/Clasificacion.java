@@ -6,6 +6,7 @@ public class Clasificacion {
     private int idClasificacion;
     private String nombreClasificacion;
     private List<Categoria> categoriaList;
+
     public Clasificacion() {
     }
 

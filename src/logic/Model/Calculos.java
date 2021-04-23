@@ -1,6 +1,5 @@
 package logic.Model;
 
-import entity.RegistroIndicadores;
 import sample.DAOs.DAOsReportes.CuentasPorCobrarDAO;
 import sample.DAOs.DAOsReportes.CuentasPorPagarDAO;
 import sample.DAOs.DAOsReportes.ExtraClass.Ingresos;
@@ -9,7 +8,8 @@ import sample.DAOs.DAOsReportes.GastosDAO;
 import sample.DAOs.DAOsReportes.IngresosDAO;
 import sample.DAOs.InitializerDAOs;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Calculos {
     List<RegistroCuenta> listaSemana1;
@@ -235,7 +235,7 @@ public class Calculos {
         List<ReportFill> reportFills = new ArrayList<>();
         for (int i = 1; i <= 5; i++) {
             List<Ingresos> lista = dao.getListIngresosPorSemanaDelMes(i, mes, año);
-            System.out.println("INGRESO"+lista);
+            System.out.println("INGRESO" + lista);
             switch (i) {
                 case 1:
                     listaSemana1Ingreso = creacionListaLLenadoIngreso(lista);
@@ -272,7 +272,7 @@ public class Calculos {
         List<ReportFill> reportFills = new ArrayList<>();
         for (int i = 1; i <= 5; i++) {
             List<Ingresos> lista = dao.getListGastosPorSemanaDelMes(i, mes, año);
-            System.out.println("GASTOS"+lista);
+            System.out.println("GASTOS" + lista);
             switch (i) {
                 case 1:
                     listaSemana1Ingreso = creacionListaLLenadoIngreso(lista);
@@ -322,7 +322,8 @@ public class Calculos {
             semana3 = semana3 + l.getSemana3();
             semana4 = semana4 + l.getSemana4();
             semana5 = semana5 + l.getSemana5();
-        };
+        }
+        ;
 
         for (ReportFillIngreso l : lista2) {
             semana1 = semana1 - l.getSemana1();

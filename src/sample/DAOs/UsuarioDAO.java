@@ -6,10 +6,8 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
 import org.hibernate.criterion.Restrictions;
 
-import java.io.File;
 import java.util.List;
 
 public class UsuarioDAO {
@@ -59,20 +57,20 @@ public class UsuarioDAO {
         session.close();
     }
 
-   public Usuario getUsuario(String email,String password) throws HibernateException{
-       Session session = factory.openSession();
-       Criteria crit = session.createCriteria(Usuario.class);
-       crit.add(Restrictions.eq("email",email));
-       crit.add(Restrictions.eq("password",password));
-       Usuario user = null;
-       if(!crit.list().isEmpty()){
-           user = (Usuario) crit.list().get(0);
-       }
-       session.close();
-       return user;
-   }
+    public Usuario getUsuario(String email, String password) throws HibernateException {
+        Session session = factory.openSession();
+        Criteria crit = session.createCriteria(Usuario.class);
+        crit.add(Restrictions.eq("email", email));
+        crit.add(Restrictions.eq("password", password));
+        Usuario user = null;
+        if (!crit.list().isEmpty()) {
+            user = (Usuario) crit.list().get(0);
+        }
+        session.close();
+        return user;
+    }
 
-    public List<Usuario> getListUsuarios() throws HibernateException{
+    public List<Usuario> getListUsuarios() throws HibernateException {
         Session session = factory.openSession();
         Criteria crit = session.createCriteria(Usuario.class);
         List<Usuario> listUsers = crit.list();

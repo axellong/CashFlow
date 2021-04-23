@@ -47,23 +47,23 @@ public class ReportFlujo implements JRDataSource {
         indexFlujoEgreso++;
         indexFlujoInrgeso++;
 
-        if (indexFlujoEgreso<listaLlenadoFlujoEgreso.size() & banderaEgreso==false){
-            egresoSigue=true;
-        }else {
-            banderaEgreso=true;
-            egresoSigue=false;
+        if (indexFlujoEgreso < listaLlenadoFlujoEgreso.size() & banderaEgreso == false) {
+            egresoSigue = true;
+        } else {
+            banderaEgreso = true;
+            egresoSigue = false;
         }
-        if (indexFlujoInrgeso<listaLlenadoFlujoIngreso.size() & banderaIngreso==false){
-            ingresoSigue=true;
-        }else {
-            banderaIngreso=true;
-            ingresoSigue=false;
+        if (indexFlujoInrgeso < listaLlenadoFlujoIngreso.size() & banderaIngreso == false) {
+            ingresoSigue = true;
+        } else {
+            banderaIngreso = true;
+            ingresoSigue = false;
         }
 
-        if (!egresoSigue & !ingresoSigue){
-            sigue=false;
-        }else {
-            sigue=true;
+        if (!egresoSigue & !ingresoSigue) {
+            sigue = false;
+        } else {
+            sigue = true;
         }
 
 
@@ -114,31 +114,38 @@ public class ReportFlujo implements JRDataSource {
             case "nombreIngresos":
                 if (ingresoSigue) {
                     value = listaLlenadoFlujoIngreso.get(indexFlujoInrgeso).getNumeroCuenta();
-                } break;
+                }
+                break;
             case "semana1Ingresos":
                 if (ingresoSigue) {
                     value = listaLlenadoFlujoIngreso.get(indexFlujoInrgeso).getSemana1();
-                } break;
+                }
+                break;
             case "semana2Ingresos":
                 if (ingresoSigue) {
                     value = listaLlenadoFlujoIngreso.get(indexFlujoInrgeso).getSemana2();
-                } break;
+                }
+                break;
             case "semana3Ingreso":
                 if (ingresoSigue) {
                     value = listaLlenadoFlujoIngreso.get(indexFlujoInrgeso).getSemana3();
-                } break;
+                }
+                break;
             case "semana4Ingreso":
                 if (ingresoSigue) {
                     value = listaLlenadoFlujoIngreso.get(indexFlujoInrgeso).getSemana4();
-                } break;
+                }
+                break;
             case "semana5Ingreso":
                 if (ingresoSigue) {
                     value = listaLlenadoFlujoIngreso.get(indexFlujoInrgeso).getSemana5();
-                } break;
+                }
+                break;
             case "semanaTotalIngreso":
                 if (ingresoSigue) {
                     value = listaLlenadoFlujoIngreso.get(indexFlujoInrgeso).getTotalSemana();
-                } break;
+                }
+                break;
 
             case "totalUtilidadSemana1":
                 value = totalesFlujo.get(0);

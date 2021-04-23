@@ -18,7 +18,7 @@ public class ReportsCuentasCobrar implements JRDataSource {
     public ReportsCuentasCobrar(String mesCobrar, int año) {
         Calculos calculos = new Calculos();
         indexCobrar = -1;
-        listaLlenadoCobrar = calculos.getCuentascobrar(mesCobrar,año);
+        listaLlenadoCobrar = calculos.getCuentascobrar(mesCobrar, año);
         totalesCobrar = calculos.getTotales(listaLlenadoCobrar);
         System.out.println(listaLlenadoCobrar);
 

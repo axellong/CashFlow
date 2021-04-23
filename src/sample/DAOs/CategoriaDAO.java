@@ -18,13 +18,13 @@ public class CategoriaDAO {
         return factory;
     }
 
-    public void setFactory(SessionFactory factory){
+    public void setFactory(SessionFactory factory) {
         CategoriaDAO.factory = factory;
     }
 
     @SuppressWarnings("deprecation")
 
-    public CategoriaDAO(){
+    public CategoriaDAO() {
         ConexionHibernete.setDriver("postgresql");
         ConexionHibernete.generarConexion();
         factory = ConexionHibernete.getFactory();
@@ -70,7 +70,7 @@ public class CategoriaDAO {
     }
 
     public List<Categoria> getListCategorias() throws HibernateException {
-        List <Categoria> listaCategorias = null;
+        List<Categoria> listaCategorias = null;
         Session session = factory.openSession();
         session.beginTransaction();
 

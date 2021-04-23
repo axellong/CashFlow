@@ -17,13 +17,13 @@ public class SubCategoriasDAO {
         return factory;
     }
 
-    public void setFactory(SessionFactory factory){
+    public void setFactory(SessionFactory factory) {
         SubCategoriasDAO.factory = factory;
     }
 
     @SuppressWarnings("deprecation")
 
-    public SubCategoriasDAO(){
+    public SubCategoriasDAO() {
         ConexionHibernete.setDriver("postgresql");
         ConexionHibernete.generarConexion();
         factory = ConexionHibernete.getFactory();
@@ -69,7 +69,7 @@ public class SubCategoriasDAO {
     }
 
     public List<SubCategoria> getListSubCategorias() throws HibernateException {
-        List <SubCategoria> listaSubCategorias = null;
+        List<SubCategoria> listaSubCategorias = null;
         Session session = factory.openSession();
         session.beginTransaction();
 

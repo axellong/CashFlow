@@ -20,6 +20,7 @@ public class SceneAssembler {
     private static double xOffset;
     private static double yOffset;
     private static Alert alert;
+    private static Stage secondStage;
 
     //METODO PARA CARGAR UN NUEVO FXML
     public static Parent loadFXML(String carpeta, String fxml) throws IOException {
@@ -28,9 +29,9 @@ public class SceneAssembler {
     }
 
     // METODO PARA ASIGNAR EL FXML AL Parent CON MOVIMIENTO
-    public static void setRoot(String carpeta,String fxml){
+    public static void setRoot(String carpeta, String fxml) {
         try {
-            Main.root = loadFXML(carpeta,fxml);
+            Main.root = loadFXML(carpeta, fxml);
             if (Main.scene == null) {
                 Main.scene = new Scene(Main.root);
             } else {
@@ -52,10 +53,10 @@ public class SceneAssembler {
     }
 
     // METODO PARA ASIGNAR UNA SCENA NUEVA
-    public static void setFXML(String carpeta,String fxml) throws IOException {
+    public static void setFXML(String carpeta, String fxml) throws IOException {
         FadeOut fade = new FadeOut();
         fade.setNode(Main.root);
-        fade.setOnFinished((ActionEvent event) ->{
+        fade.setOnFinished((ActionEvent event) -> {
             setRoot(carpeta, fxml);
             Main.primaryStage.sizeToScene();
             Main.primaryStage.centerOnScreen();
@@ -65,25 +66,32 @@ public class SceneAssembler {
     }
 
     //METODO PARA LA CREACION DE UNA NUEVA VENTANA
-    public static void newStage(String carpeta, String fxml) {
+    public static Object newStage(String carpeta, String fxml) {
+        Object controller = null;
         try {
-            Parent node = loadFXML(carpeta,fxml);
-            Stage secondStage = new Stage();
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("View/" + carpeta + "/" + fxml + ".fxml"));
+            Parent node = fxmlLoader.load();
+            secondStage = new Stage();
             Scene scene = new Scene(node);
+            controller = fxmlLoader.getController();
             secondStage.setScene(scene);
             secondStage.initOwner(Main.primaryStage);
             secondStage.initStyle(StageStyle.TRANSPARENT);
             secondStage.initModality(Modality.APPLICATION_MODAL);
             secondStage.centerOnScreen();
-            secondStage.showAndWait();
 
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+        return controller;
     }
 
-    public static Optional<ButtonType> sceneAlert(String title,String contentText){
+    public static void secondStageVisible() {
+        secondStage.showAndWait();
+    }
+
+    public static Optional<ButtonType> sceneAlert(String title, String contentText) {
         alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
@@ -92,8 +100,8 @@ public class SceneAssembler {
         return alert.showAndWait();
     }
 
-    public static void closeAlert(){
-        if(alert != null){
+    public static void closeAlert() {
+        if (alert != null) {
             alert.close();
         }
     }

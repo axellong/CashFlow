@@ -64,8 +64,8 @@ public class CategoryController implements Initializable {
         String categoriaStr = inputCategoria.getText();
         String subCategoriaStr = inputSubCategoria.getText();
         Clasificacion clasificacionObj = boxClasificacion.getSelectionModel().getSelectedItem();
-        if(!nullOrEmpty(categoriaStr) && !nullOrEmpty(subCategoriaStr) && clasificacionObj != null){
-            if(selected != null){
+        if (!nullOrEmpty(categoriaStr) && !nullOrEmpty(subCategoriaStr) && clasificacionObj != null) {
+            if (selected != null) {
                 categoriasList.remove(selected);
                 CategoryTable update = selected;
                 update.getSubCategoriaEntity().getId_Categoria().setNombreCategoria(categoriaStr);
@@ -74,7 +74,7 @@ public class CategoryController implements Initializable {
                 subCategoriasDAO.updateSubCategoria(update.getSubCategoriaEntity());
                 categoriaDAO.updateCategoria(update.getSubCategoriaEntity().getId_Categoria());
                 categoriasList.add(update);
-            }else{
+            } else {
                 SubCategoria add = new SubCategoria();
                 add.setNombreSubCategoria(subCategoriaStr);
                 Categoria categoria = new Categoria();
@@ -94,7 +94,7 @@ public class CategoryController implements Initializable {
     @FXML
     void MouseClickeSelect(MouseEvent event) {
         selected = tableViewCategoria.getSelectionModel().getSelectedItem();
-        if(selected != null){
+        if (selected != null) {
             inputCategoria.setText(selected.getCategoria());
             inputSubCategoria.setText(selected.getSubCategoria());
             Clasificacion clasificacionSelec = checkSelection(selected.getSubCategoriaEntity().getId_Categoria().getClasificacion());
@@ -107,12 +107,12 @@ public class CategoryController implements Initializable {
         clean();
     }
 
-    public void initializarData(){
+    public void initializarData() {
         fillTable();
         fillbox();
     }
 
-    private void initializeTable(){
+    private void initializeTable() {
         categoriasList = FXCollections.observableArrayList();
         colClasificacion.setCellValueFactory(new PropertyValueFactory<>("clasificacion"));
         colSubCategoria.setCellValueFactory(new PropertyValueFactory<>("SubCategoria"));
@@ -120,7 +120,7 @@ public class CategoryController implements Initializable {
         tableViewCategoria.setItems(categoriasList);
     }
 
-    private void fillTable(){
+    private void fillTable() {
         categoriasList.clear();
         List<SubCategoria> subCategoriaList = subCategoriasDAO.getListSubCategorias();
         List<CategoryTable> categoryTables = new ArrayList<>();
@@ -128,17 +128,17 @@ public class CategoryController implements Initializable {
         categoriasList.addAll(categoryTables);
     }
 
-    private void fillbox(){
-        if(boxClasificacion.getItems().isEmpty()){
+    private void fillbox() {
+        if (boxClasificacion.getItems().isEmpty()) {
             clasificacionList = clasificacionDAO.getListClasificaciones();
             boxClasificacion.getItems().clear();
             boxClasificacion.getItems().addAll(clasificacionList);
         }
     }
 
-    private Clasificacion checkSelection(Clasificacion review){
+    private Clasificacion checkSelection(Clasificacion review) {
         Clasificacion correct = null;
-        if(!clasificacionList.isEmpty()){
+        if (!clasificacionList.isEmpty()) {
             for (Clasificacion node : clasificacionList) {
                 if (node.getNombreClasificacion().equals(review.getNombreClasificacion())) {
                     correct = node;
@@ -148,7 +148,7 @@ public class CategoryController implements Initializable {
         return correct;
     }
 
-    public void clean(){
+    public void clean() {
         selected = null;
         tableViewCategoria.getSelectionModel().clearSelection();
         boxClasificacion.getSelectionModel().clearSelection();

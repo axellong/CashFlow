@@ -6,10 +6,13 @@ import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.criterion.*;
+import org.hibernate.criterion.Restrictions;
 import sample.DAOs.DAOsReportes.ExtraClass.RegistroCuenta;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class CuentasPorCobrarDAO {
     private static SessionFactory factory;
@@ -18,32 +21,32 @@ public class CuentasPorCobrarDAO {
         return factory;
     }
 
-    public void setFactory(SessionFactory factory){
+    public void setFactory(SessionFactory factory) {
         CuentasPorCobrarDAO.factory = factory;
     }
 
     @SuppressWarnings("deprecation")
 
-    public CuentasPorCobrarDAO(){
+    public CuentasPorCobrarDAO() {
         ConexionHibernete.setDriver("postgresql");
         ConexionHibernete.generarConexion();
         factory = ConexionHibernete.getFactory();
     }
 
-    public List <RegistroCuenta> getListCuentasPorMes(String mes, int anio) throws HibernateException {
-        List <RegistroIndicadores> listaCuentasPorCobrar = null;
+    public List<RegistroCuenta> getListCuentasPorMes(String mes, int anio) throws HibernateException {
+        List<RegistroIndicadores> listaCuentasPorCobrar = null;
         //Inicializar un Set, es una colección para ayudar a obtener los datos correctamente
         Set<RegistroIndicadores> listaDeCuentas = new HashSet<RegistroIndicadores>();
 
         Session session = factory.openSession();
         session.beginTransaction();
         Criteria criteria = session.createCriteria(RegistroIndicadores.class);
-        criteria.add(Restrictions.eq("clasificacion", "cobrar"));
+        criteria.add(Restrictions.eq("clasificacion", "Cobrar"));
         criteria.add(Restrictions.eq("mes", mes));
         criteria.add(Restrictions.eq("anio", anio));
 
         //conseguir los datos
-        listaCuentasPorCobrar =  criteria.list();
+        listaCuentasPorCobrar = criteria.list();
 
         //list to set - se hace esto, porque hay una incompatibilidad con list para conseguir datos especificos de la clase RegistroIndicadores
         for (RegistroIndicadores r : listaCuentasPorCobrar)
@@ -75,21 +78,21 @@ public class CuentasPorCobrarDAO {
         return listCuentas;
     }
 
-    public List <RegistroCuenta> getListCuentasPorSemanaDelMes(String mes,int semana, int anio) throws HibernateException {
-        List <RegistroIndicadores> listaCuentasPorCobrar = null;
+    public List<RegistroCuenta> getListCuentasPorSemanaDelMes(String mes, int semana, int anio) throws HibernateException {
+        List<RegistroIndicadores> listaCuentasPorCobrar = null;
         //Inicializar un Set, es una colección para ayudar a obtener los datos correctamente
         Set<RegistroIndicadores> listaDeCuentas = new HashSet<RegistroIndicadores>();
 
         Session session = factory.openSession();
         session.beginTransaction();
         Criteria criteria = session.createCriteria(RegistroIndicadores.class);
-        criteria.add(Restrictions.eq("clasificacion", "cobrar"));
+        criteria.add(Restrictions.eq("clasificacion", "Cobrar"));
         criteria.add(Restrictions.eq("mes", mes));
         criteria.add(Restrictions.eq("semana", semana));
         criteria.add(Restrictions.eq("anio", anio));
 
         //conseguir los datos
-        listaCuentasPorCobrar =  criteria.list();
+        listaCuentasPorCobrar = criteria.list();
 
         //list to set - se hace esto, porque hay una incompatibilidad con list para conseguir datos especificos de la clase RegistroIndicadores
         for (RegistroIndicadores r : listaCuentasPorCobrar)

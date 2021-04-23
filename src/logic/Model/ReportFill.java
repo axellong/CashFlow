@@ -15,7 +15,7 @@ public class ReportFill {
         semana3 = 0.00;
         semana4 = 0.00;
         semana5 = 0.00;
-        numeroCuenta=cuenta;
+        numeroCuenta = cuenta;
     }
 
 
@@ -68,7 +68,7 @@ public class ReportFill {
     }
 
     public double getTotalSemana() {
-        return semana1+semana2+semana3+semana4+semana5;
+        return semana1 + semana2 + semana3 + semana4 + semana5;
     }
 
     public void setTotalSemana(double totalSemana) {

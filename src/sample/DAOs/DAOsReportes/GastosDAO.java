@@ -18,19 +18,19 @@ public class GastosDAO {
         return factory;
     }
 
-    public void setFactory(SessionFactory factory){
+    public void setFactory(SessionFactory factory) {
         GastosDAO.factory = factory;
     }
 
     @SuppressWarnings("deprecation")
 
-    public GastosDAO(){
+    public GastosDAO() {
         ConexionHibernete.setDriver("postgresql");
         ConexionHibernete.generarConexion();
         factory = ConexionHibernete.getFactory();
     }
 
-    public List<Ingresos> getListGastosPorMes(String mes, int anio){
+    public List<Ingresos> getListGastosPorMes(String mes, int anio) {
         List<RegistroEfectivo> listRegistroEfectivo = new ArrayList<>();
         List<Ingresos> listaIngresos = new ArrayList<>();
 
@@ -59,7 +59,7 @@ public class GastosDAO {
         return listaIngresos;
     }
 
-    public List<Ingresos> getListGastosPorSemanaDelMes(int semana, String mes, int anio){
+    public List<Ingresos> getListGastosPorSemanaDelMes(int semana, String mes, int anio) {
         List<RegistroEfectivo> listRegistroEfectivo = new ArrayList<>();
         List<Ingresos> listaIngresos = new ArrayList<>();
 

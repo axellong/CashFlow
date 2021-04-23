@@ -37,6 +37,7 @@ public class LoginController implements Initializable {
     UsuarioDAO usuarioDAO;
     Usuario usuario;
     FadeOut fade = new FadeOut();
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         segure = new LoginSecure();
@@ -46,18 +47,22 @@ public class LoginController implements Initializable {
 
     //metodos para minimizar y cerrar
     @FXML
-    void MouseClickedMin(MouseEvent event) { Utils.minimize(); }
+    void MouseClickedMin(MouseEvent event) {
+        Utils.minimize();
+    }
 
     @FXML
-    void MouseClickedClose(MouseEvent event) { Utils.close(); }
+    void MouseClickedClose(MouseEvent event) {
+        Utils.close();
+    }
 
     // metodos para ingresar y verificacion
     @FXML
     void MouseClickedIngresar(MouseEvent event) {
         int code = Integer.parseInt(inputCode.getText());
-        if( segure.CheckSecureCode(code)){
+        if (segure.CheckSecureCode(code)) {
             clean();
-            Utils.changeScene("Dash","DashView");
+            Utils.changeScene("Dash", "DashView");
             Credential.setUser(usuario);
             //Guardar Credenciales de Usuario
         }
@@ -67,12 +72,12 @@ public class LoginController implements Initializable {
     void MouseClickedVerificar(MouseEvent event) {
         String email = inputEmail.getText();
         String pass = inputPassword.getText();
-        if(!nullOrEmpty(email) && !nullOrEmpty(pass)){
-            usuario = usuarioDAO.getUsuario(email,pass);
-            if(usuario != null){
+        if (!nullOrEmpty(email) && !nullOrEmpty(pass)) {
+            usuario = usuarioDAO.getUsuario(email, pass);
+            if (usuario != null) {
                 makefadeOut(true);
                 sentEmailHilo(email);
-            }else{
+            } else {
                 System.out.println("No se encontro");
             }
         }
@@ -105,23 +110,26 @@ public class LoginController implements Initializable {
         paneIngresar.setDisable(!value);
     }
 
-    private void makefadeOut(boolean value){
+    private void makefadeOut(boolean value) {
         fade.setResetOnFinished(true);
-        if(value) { fade.setNode(paneVerificar);
-        }else{ fade.setNode(paneIngresar); }
+        if (value) {
+            fade.setNode(paneVerificar);
+        } else {
+            fade.setNode(paneIngresar);
+        }
         fade.play();
-        fade.setOnFinished((ActionEvent event)-> changePane(value));
+        fade.setOnFinished((ActionEvent event) -> changePane(value));
     }
 
-    private void sentEmailHilo(String email){
-        Runnable emailHilo =()-> segure.SendMail(email);
+    private void sentEmailHilo(String email) {
+        Runnable emailHilo = () -> segure.SendMail(email);
         Thread hilo = new Thread(emailHilo);
         hilo.start();
     }
 
     //metodo de limpieza
 
-    public void clean(){
+    public void clean() {
         inputCode.setText(null);
         inputEmail.setText(null);
         inputPassword.setText(null);

@@ -8,7 +8,7 @@ public class Usuario {
     private String nombre;
     private String username;
     private String password;
-    private  boolean credencial;
+    private boolean credencial;
     private String email;
 
     public Usuario(int idUsuario, String nombre, String username, String password, boolean credencial, String email) {
@@ -30,7 +30,7 @@ public class Usuario {
     }
 
 
-    public Usuario (String nombre, String username, String password, String email){
+    public Usuario(String nombre, String username, String password, String email) {
         this.nombre = nombre;
         this.username = username;
         this.password = password;

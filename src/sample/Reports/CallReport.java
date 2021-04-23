@@ -1,6 +1,5 @@
 package sample.Reports;
 
-import logic.Model.Calculos;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
@@ -8,8 +7,6 @@ import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 
 import javax.swing.*;
-import java.sql.Date;
-import java.time.LocalDate;
 
 public class CallReport {
     public CallReport() {
@@ -41,10 +38,11 @@ public class CallReport {
             exception.getMessage();
         }
     }
+
     public void getReportJunto(String mes, int año) {
         try {
             JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/sample/Reports/Jasper/nuevo.jasper"));
-            JasperPrint jsp = JasperFillManager.fillReport(jas, null, ReporteJunto.getDataSource(mes,año));
+            JasperPrint jsp = JasperFillManager.fillReport(jas, null, ReporteJunto.getDataSource(mes, año));
             JasperViewer vie = new JasperViewer(jsp, false);
             vie.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             vie.setVisible(true);
@@ -52,7 +50,6 @@ public class CallReport {
         } catch (Exception exception) {
             exception.getMessage();
         }
-
 
 
     }
@@ -60,7 +57,7 @@ public class CallReport {
     public void getReportFlujo(String mes, int año) {
         try {
             JasperReport jas = (JasperReport) JRLoader.loadObject(getClass().getResource("/sample/Reports/Jasper/ReportIndicadores.jasper"));
-            JasperPrint jsp = JasperFillManager.fillReport(jas, null, ReportFlujo.getDataSource(mes,año));
+            JasperPrint jsp = JasperFillManager.fillReport(jas, null, ReportFlujo.getDataSource(mes, año));
             JasperViewer vie = new JasperViewer(jsp, false);
             vie.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
             vie.setVisible(true);
@@ -68,7 +65,6 @@ public class CallReport {
         } catch (Exception exception) {
             exception.getMessage();
         }
-
 
 
     }

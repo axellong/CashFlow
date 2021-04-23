@@ -29,8 +29,10 @@ import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
-import java.time.format.TextStyle;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.ResourceBundle;
 
 import static sample.Util.Utils.nullOrEmpty;
 
@@ -58,6 +60,7 @@ public class FlujoController implements Initializable {
     private RegistrosEfectivoDAO registrosEfectivoDAO;
 
     private ObservableList<FlujoTable> flujoTables;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         subCategoriasDAO = InitializerDAOs.getInitializerDAOs().getSubCategoriasDAO();
@@ -72,11 +75,11 @@ public class FlujoController implements Initializable {
 
         String descripcion = inputDescripcion.getText();
         String cantidad = inputCantidad.getText();
-        Categoria_SubCategoria categoria_subCategoria =boxCategoria.getSelectionModel().getSelectedItem();
+        Categoria_SubCategoria categoria_subCategoria = boxCategoria.getSelectionModel().getSelectedItem();
         boolean salida = checkSalida.isSelected();
         boolean entrada = checkEntrada.isSelected();
         LocalDate date = datePickerFecha.getValue();
-        if (!nullOrEmpty(descripcion) && !nullOrEmpty(cantidad) && categoria_subCategoria != null && (salida || entrada) && date !=null){
+        if (!nullOrEmpty(descripcion) && !nullOrEmpty(cantidad) && categoria_subCategoria != null && (salida || entrada) && date != null) {
             RegistroEfectivo registroEfectivo = new RegistroEfectivo();
             registroEfectivo.setConcepto(descripcion);
             registroEfectivo.setFecha(Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant()));
@@ -86,9 +89,9 @@ public class FlujoController implements Initializable {
             registroEfectivo.setAnio(date.getYear());
             registroEfectivo.setMes(Utils.getMes(date));
             registroEfectivo.setSemana(Utils.getSemana(date));
-            if (entrada){
+            if (entrada) {
                 registroEfectivo.setTipoMovimiento(checkEntrada.getText());
-            }else{
+            } else {
                 registroEfectivo.setTipoMovimiento(checkSalida.getText());
             }
             registrosEfectivoDAO.saveRegistroEfectivo(registroEfectivo);
@@ -97,11 +100,11 @@ public class FlujoController implements Initializable {
         }
     }
 
-    private void onlyNumeric(){
+    private void onlyNumeric() {
         inputCantidad.setTextFormatter(new TextFormatter<>(new IntegerStringConverter(), null, Utils.integerFilter));
     }
 
-    private void initializeTable(){
+    private void initializeTable() {
         flujoTables = FXCollections.observableArrayList();
         colFecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
         colDescripcion.setCellValueFactory(new PropertyValueFactory<>("descripcion"));
@@ -110,7 +113,7 @@ public class FlujoController implements Initializable {
         tableViewFlujo.setItems(flujoTables);
     }
 
-    private void fillTable(){
+    private void fillTable() {
         flujoTables.clear();
         List<RegistroEfectivo> registroEfectivos = registrosEfectivoDAO.getListRegistrosEfectivos();
         List<FlujoTable> flujo = new ArrayList<>();
@@ -118,21 +121,21 @@ public class FlujoController implements Initializable {
         flujoTables.addAll(flujo);
     }
 
-    private void fillBox(int value){
-        if(!boxCategoria.getItems().isEmpty()){
+    private void fillBox(int value) {
+        if (!boxCategoria.getItems().isEmpty()) {
             boxCategoria.getItems().clear();
-        }else{
+        } else {
             boxCategoria.setVisibleRowCount(4);
         }
-        if(value != 0){
+        if (value != 0) {
             List<SubCategoria> subCategoriaList = subCategoriasDAO.getListSubCategorias();
-            subCategoriaList.forEach((node)->{
-                if(value == 1){
-                    if(node.getId_Categoria().getClasificacion().getIdClasificacion() == 2 || node.getId_Categoria().getClasificacion().getIdClasificacion() ==4){
+            subCategoriaList.forEach((node) -> {
+                if (value == 1) {
+                    if (node.getId_Categoria().getClasificacion().getIdClasificacion() == 2 || node.getId_Categoria().getClasificacion().getIdClasificacion() == 4) {
                         boxCategoria.getItems().add(new Categoria_SubCategoria(node));
                     }
-                }else {
-                    if(node.getId_Categoria().getClasificacion().getIdClasificacion() == 1 || node.getId_Categoria().getClasificacion().getIdClasificacion() ==3){
+                } else {
+                    if (node.getId_Categoria().getClasificacion().getIdClasificacion() == 1 || node.getId_Categoria().getClasificacion().getIdClasificacion() == 3) {
                         boxCategoria.getItems().add(new Categoria_SubCategoria(node));
                     }
                 }
@@ -141,21 +144,22 @@ public class FlujoController implements Initializable {
         }
 
     }
-    public void initializarData(){
+
+    public void initializarData() {
         fillTable();
         fillBox(0);
     }
 
-    private void checkSelection(){
+    private void checkSelection() {
         checkSalida.selectedProperty().addListener((ObservableValue<? extends Boolean> ov, Boolean old_val, Boolean new_val) -> {
-            if(checkEntrada.isSelected()){
+            if (checkEntrada.isSelected()) {
                 checkEntrada.setSelected(false);
                 checkSalida.setSelected(new_val);
                 fillBox(2);
             }
         });
         checkEntrada.selectedProperty().addListener((ObservableValue<? extends Boolean> ov, Boolean old_val, Boolean new_val) -> {
-            if(checkSalida.isSelected()){
+            if (checkSalida.isSelected()) {
                 checkSalida.setSelected(false);
                 checkEntrada.setSelected(new_val);
                 fillBox(1);
@@ -163,7 +167,7 @@ public class FlujoController implements Initializable {
         });
     }
 
-    public void clean(){
+    public void clean() {
         //checkEntrada.setSelected(false);
         //checkSalida.setSelected(false);
         boxCategoria.getSelectionModel().clearSelection();

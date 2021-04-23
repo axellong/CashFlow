@@ -22,24 +22,24 @@ public class InitializerDAOs {
     private GastosDAO gastosDAO;
     private IngresosDAO ingresosDAO;
 
-    private InitializerDAOs(){
-            categoriaDAO = new CategoriaDAO();
-            clasificacionDAO = new ClasificacionDAO();
-            clasificacionIdicadoresDAO = new ClasificacionIdicadoresDAO();
-            registrosEfectivoDAO = new RegistrosEfectivoDAO();
-            registroIndicadoresDAO = new RegistroIndicadoresDAO();
-            subCategoriasDAO = new SubCategoriasDAO();
-            usuarioDAO = new UsuarioDAO();
+    private InitializerDAOs() {
+        categoriaDAO = new CategoriaDAO();
+        clasificacionDAO = new ClasificacionDAO();
+        clasificacionIdicadoresDAO = new ClasificacionIdicadoresDAO();
+        registrosEfectivoDAO = new RegistrosEfectivoDAO();
+        registroIndicadoresDAO = new RegistroIndicadoresDAO();
+        subCategoriasDAO = new SubCategoriasDAO();
+        usuarioDAO = new UsuarioDAO();
 
         //DAOsReportes
-            cuentasPorCobrarDAO = new CuentasPorCobrarDAO();
-            cuentasPorPagarDAO = new CuentasPorPagarDAO();
-            gastosDAO = new GastosDAO();
-            ingresosDAO = new IngresosDAO();
+        cuentasPorCobrarDAO = new CuentasPorCobrarDAO();
+        cuentasPorPagarDAO = new CuentasPorPagarDAO();
+        gastosDAO = new GastosDAO();
+        ingresosDAO = new IngresosDAO();
     }
 
-    public static InitializerDAOs getInitializerDAOs(){
-        if(initializerDAOs == null){
+    public static InitializerDAOs getInitializerDAOs() {
+        if (initializerDAOs == null) {
             initializerDAOs = new InitializerDAOs();
         }
         return initializerDAOs;

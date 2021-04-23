@@ -26,40 +26,40 @@ public class Utils {
         Main.primaryStage.setIconified(true);
     }
 
-    public static void close(){
+    public static void close() {
         System.exit(0);
     }
 
-    public static void changeScene(String carpeta, String fxml){
+    public static void changeScene(String carpeta, String fxml) {
         try {
-            SceneAssembler.setFXML(carpeta,fxml);
+            SceneAssembler.setFXML(carpeta, fxml);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static boolean nullOrEmpty(String str){
+    public static boolean nullOrEmpty(String str) {
 
-        if(str == null){
+        if (str == null) {
             return true;
-        }else{
-            if(str.isBlank()){
+        } else {
+            if (str.isBlank()) {
                 return true;
             }
         }
         return false;
     }
 
-    public static int getSemana(LocalDate date){
+    public static int getSemana(LocalDate date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(Date.from(date.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant()));
-        calendar.setFirstDayOfWeek( Calendar.MONDAY);
-        calendar.setMinimalDaysInFirstWeek( 1 );
+        calendar.setFirstDayOfWeek(Calendar.MONDAY);
+        calendar.setMinimalDaysInFirstWeek(1);
         int semana = calendar.get(Calendar.WEEK_OF_MONTH);
         return semana;
     }
 
-    public static String getMes(LocalDate date){
+    public static String getMes(LocalDate date) {
         return date.getMonth().getDisplayName(TextStyle.FULL, new Locale("es", "ES"));
     }
 }

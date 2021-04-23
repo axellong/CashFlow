@@ -17,13 +17,13 @@ public class RegistrosEfectivoDAO {
         return factory;
     }
 
-    public void setFactory(SessionFactory factory){
+    public void setFactory(SessionFactory factory) {
         RegistrosEfectivoDAO.factory = factory;
     }
 
     @SuppressWarnings("deprecation")
 
-    public RegistrosEfectivoDAO(){
+    public RegistrosEfectivoDAO() {
         ConexionHibernete.setDriver("postgresql");
         ConexionHibernete.generarConexion();
         factory = ConexionHibernete.getFactory();
@@ -69,7 +69,7 @@ public class RegistrosEfectivoDAO {
     }
 
     public List<RegistroEfectivo> getListRegistrosEfectivos() throws HibernateException {
-        List <RegistroEfectivo> listaRegistrosEfectivos = null;
+        List<RegistroEfectivo> listaRegistrosEfectivos = null;
         Session session = factory.openSession();
         session.beginTransaction();
 

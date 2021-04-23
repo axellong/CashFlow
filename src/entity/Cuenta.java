@@ -1,7 +1,6 @@
 package entity;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class Cuenta {
@@ -9,10 +8,10 @@ public class Cuenta {
     private int cuenta;
     private Set<RegistroIndicadores> registroIndicadores = new HashSet<RegistroIndicadores>();
 
-    public Cuenta(){
+    public Cuenta() {
     }
 
-    public Cuenta (int cuenta){
+    public Cuenta(int cuenta) {
         this.cuenta = cuenta;
     }
 

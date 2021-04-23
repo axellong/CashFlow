@@ -8,7 +8,7 @@ public class RegistroCuenta {
     private int anio;
 
 
-    public RegistroCuenta(){
+    public RegistroCuenta() {
     }
 
     public RegistroCuenta(int cuenta, double monto, String mes, int semana, int anio) {

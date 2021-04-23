@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nuevo" pageWidth="4000" pageHeight="700" orientation="Landscape" columnWidth="3960" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e9674d51-7583-47de-80ea-f23e0fe95799">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="nuevo" pageWidth="4000" pageHeight="2000" orientation="Landscape" columnWidth="3960" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e9674d51-7583-47de-80ea-f23e0fe95799">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-	<property name="com.jaspersoft.studio.unit." value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
-	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -690,7 +681,7 @@
 	</columnHeader>
 	<detail>
 		<band height="49" splitType="Stretch">
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="1200" y="8" width="229" height="29" backcolor="#DEDEDE" uuid="3d193089-2d67-4f7b-b763-f245b689363e">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="96c6eb54-8cda-4b3e-9f74-4b2a5cc0f970"/>
 				</reportElement>
@@ -702,7 +693,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{cuentaPagar}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="1430" y="7" width="140" height="30" backcolor="#DEDEDE" uuid="655a9d43-8631-494a-9dad-02ddfe16058a">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ed6904a3-ad82-47a0-bf75-2d96050c35d8"/>
 				</reportElement>
@@ -714,7 +705,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana1Pagar}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="1570" y="7" width="140" height="30" backcolor="#DEDEDE" uuid="f4aa88c0-bbaf-46f5-8068-092e4cdd1a20">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3dd586be-a5b6-4d0c-88d5-d668c658c3bd"/>
 				</reportElement>
@@ -726,7 +717,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana2Pagar}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="1710" y="7" width="140" height="30" backcolor="#DEDEDE" uuid="d32b8130-5b98-4937-8437-d0eaa2fdfc44">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="609b5883-a769-4b80-9434-d2efe8c600cb"/>
 				</reportElement>
@@ -738,7 +729,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana3Pagar}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="1850" y="7" width="140" height="30" backcolor="#DEDEDE" uuid="0b50c91c-c51d-40b4-8069-aacc2c28d3c2">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9bcc4ffe-fef4-47fa-88e5-9701344ce0ba"/>
 				</reportElement>
@@ -750,7 +741,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana4Pagar}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="1990" y="7" width="140" height="30" backcolor="#DEDEDE" uuid="c6c0dd19-29a1-4da0-b2b9-105163ae0cbb">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06ea6925-25ab-4789-b23b-64e82a072de2"/>
 				</reportElement>
@@ -762,7 +753,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana5Pagar}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="2130" y="7" width="140" height="30" backcolor="#DEDEDE" uuid="402ffebf-cfbf-4680-8b53-9d2a622672e7">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="657fd226-092c-463c-b22d-47e877a5e54a"/>
 				</reportElement>
@@ -776,7 +767,7 @@
 			</textField>
 			<frame>
 				<reportElement x="-10" y="1" width="1100" height="39" uuid="e9488a1b-5c24-4299-82ae-5b37e2579bb9"/>
-				<textField textAdjust="StretchHeight">
+				<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 					<reportElement mode="Opaque" x="20" y="5" width="230" height="30" backcolor="#DEDEDE" uuid="f7d3bba9-6bc7-460a-b850-89f2bc03d043">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="44fe469a-0170-45c0-b457-bf4a28bc66c0"/>
 					</reportElement>
@@ -788,7 +779,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$F{cuentaCobrar}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement mode="Opaque" x="950" y="5" width="140" height="30" backcolor="#ADA8A8" uuid="1ec442b9-1bb5-4ab2-b4ab-17a3933aad2b">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ca3f2068-2c99-418a-9bfa-d5aee781518d"/>
 					</reportElement>
@@ -800,7 +791,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$F{cuentasCobrarFinalCobrar}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement mode="Opaque" x="390" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="de67ccda-c9fa-49d2-8fe9-ec13ea2c6d7a">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3dd586be-a5b6-4d0c-88d5-d668c658c3bd"/>
 					</reportElement>
@@ -812,7 +803,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$F{semana2Cobrar}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement mode="Opaque" x="670" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="97ccc9ea-da19-45e4-b95a-36d52ca9aa44">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9bcc4ffe-fef4-47fa-88e5-9701344ce0ba"/>
 					</reportElement>
@@ -824,7 +815,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$F{semana4Cobrar}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement mode="Opaque" x="250" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="3eea42dc-3a17-4ac1-b2fd-1691bd1d31da">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ed6904a3-ad82-47a0-bf75-2d96050c35d8"/>
 					</reportElement>
@@ -836,7 +827,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$F{semana1Cobrar}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement mode="Opaque" x="810" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="e0c30284-6111-43c1-a7ad-777accf00d60">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06ea6925-25ab-4789-b23b-64e82a072de2"/>
 					</reportElement>
@@ -848,7 +839,7 @@
 					</textElement>
 					<textFieldExpression><![CDATA[$F{semana5Cobrar}]]></textFieldExpression>
 				</textField>
-				<textField textAdjust="StretchHeight">
+				<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 					<reportElement mode="Opaque" x="530" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="f0f5318e-2e29-4e57-8b5b-e30ed2364d2f">
 						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="609b5883-a769-4b80-9434-d2efe8c600cb"/>
 					</reportElement>
@@ -861,7 +852,7 @@
 					<textFieldExpression><![CDATA[$F{semana3Cobrar}]]></textFieldExpression>
 				</textField>
 			</frame>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3182" y="1" width="104" height="30" backcolor="#D9D9D9" uuid="3d323444-d62a-489c-9895-d78cc02f0ac9">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4a280ce5-87f4-479b-9211-5b8498102045"/>
 				</reportElement>
@@ -873,7 +864,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombreGastos}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="ScaleFont" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="2370" y="0" width="109" height="30" backcolor="#DEDEDE" uuid="5ca4f35a-1158-4b54-94fb-0aad0c1babca">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a48d5b83-2654-4169-ad6a-4c9c5d467096"/>
 				</reportElement>
@@ -885,7 +876,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombreIngresos}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="2479" y="0" width="109" height="30" backcolor="#DEDEDE" uuid="0828258e-a01b-42ea-9f08-8539f556471c">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84a73d8b-801e-4433-9bb2-76807f8fd97f"/>
 				</reportElement>
@@ -897,7 +888,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana1Ingresos}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="2589" y="0" width="108" height="30" backcolor="#DEDEDE" uuid="92cc5c50-f41a-4c77-8152-aadeacb22e86">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3b0aafdd-6874-43d1-9611-24c0826fbd9a"/>
 				</reportElement>
@@ -909,7 +900,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana2Ingresos}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="2695" y="0" width="112" height="30" backcolor="#DEDEDE" uuid="c2a7f7a7-8bd5-4c10-bf88-9e32b94ad5d6">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="51e5eedc-3d30-4071-be79-a7ba4e8fc189"/>
 				</reportElement>
@@ -921,7 +912,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana3Ingreso}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="2916" y="0" width="108" height="30" backcolor="#DEDEDE" uuid="3abcbd35-c416-46d0-99e5-fe40c91d8fbc">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="febe5abc-5fb7-4279-9a4f-d3f2229645dc"/>
 				</reportElement>
@@ -933,7 +924,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana5Ingreso}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3025" y="0" width="109" height="30" backcolor="#DEDEDE" uuid="6ee2bd77-5036-4fd7-9d99-b0f772ef97fb">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4f786363-0dc2-4eaf-9857-72db6f1aaa62"/>
 				</reportElement>
@@ -945,7 +936,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semanaTotalIngreso}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3286" y="1" width="114" height="30" backcolor="#D9D9D9" uuid="de316045-8c1b-4600-b80a-41c2e4707b4c">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="49568149-429f-487a-89dd-f409da17d8c0"/>
 				</reportElement>
@@ -957,7 +948,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana1Gastos}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3400" y="1" width="110" height="30" backcolor="#D9D9D9" uuid="f395874e-17e4-4e49-a9be-e71de15a8639">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="84ad1107-6197-4587-b34a-6d1f0862af04"/>
 				</reportElement>
@@ -969,7 +960,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana2Gastos}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3509" y="1" width="109" height="30" backcolor="#D9D9D9" uuid="024b9fb3-24c0-42b0-b766-83986fbd8fba">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e14480f9-f012-4423-b756-b01f203d5f2a"/>
 				</reportElement>
@@ -981,7 +972,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana3Gastos}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3619" y="1" width="116" height="30" backcolor="#D9D9D9" uuid="b988585a-5af5-434e-8932-aa64749295d7">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b3a23f56-cb48-48e6-ab4b-3f5f3937a73b"/>
 				</reportElement>
@@ -993,7 +984,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana4Gastos}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3728" y="1" width="108" height="30" backcolor="#D9D9D9" uuid="b1dc5845-709f-439a-997b-d85c996e95d4">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e936acd9-dbe4-484c-980e-66faf6973cda"/>
 				</reportElement>
@@ -1005,7 +996,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semana5Gastos}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3837" y="1" width="108" height="30" backcolor="#D9D9D9" uuid="d1379d32-d16d-4ec1-8855-8520dd823650">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="40a52b84-e8aa-4137-a1a3-1351eb7d7cd3"/>
 				</reportElement>
@@ -1017,7 +1008,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{semanaTotalGastos}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="2807" y="0" width="109" height="30" backcolor="#E0E0E0" uuid="558f8547-5540-4c9e-a439-54ab5dedff5e">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8250f719-fa76-439d-884e-34e32c600d32"/>
 				</reportElement>
@@ -1036,7 +1027,7 @@
 	</columnFooter>
 	<pageFooter>
 		<band height="120" splitType="Stretch">
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="1570" y="20" width="140" height="30" backcolor="#DEDEDE" uuid="ac55f261-eeab-4891-baf2-39e9bf9e0a7a">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a07b820b-96da-4a8a-a38d-9422ba4ebb27"/>
 				</reportElement>
@@ -1058,7 +1049,7 @@
 				</textElement>
 				<text><![CDATA[Total cuentas por pagar]]></text>
 			</staticText>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="1430" y="20" width="140" height="30" backcolor="#DEDEDE" uuid="4a617400-5776-402b-8d77-bdeb13008ca0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d2514b39-0821-4470-87a1-c0f70f117298"/>
 				</reportElement>
@@ -1070,7 +1061,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalSemana1Pagar}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="1710" y="20" width="140" height="30" backcolor="#DEDEDE" uuid="4e7082bd-3fbd-43d0-a883-67617897acab">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d78c3c91-798a-4982-a6b2-2295d6f39a37"/>
 				</reportElement>
@@ -1082,7 +1073,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalSemana3Pagar}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="1840" y="20" width="140" height="30" backcolor="#DEDEDE" uuid="fc5502b7-5cf5-4b7b-a478-cd320f6816e2">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8dc74063-dc12-4ea4-b9a4-32908d91a307"/>
 				</reportElement>
@@ -1094,7 +1085,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalSemana4Pagar}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="1980" y="20" width="151" height="30" backcolor="#DEDEDE" uuid="08ec4e91-2c99-4ab3-a4bd-38acba72f66d">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6fa78a07-c0f4-4200-87cc-d713a8e6ff94"/>
 				</reportElement>
@@ -1106,7 +1097,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalSemana5Pagar}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="2131" y="20" width="140" height="30" backcolor="#DBDBDB" uuid="3324693b-faaf-4f62-b30c-f02377de852c"/>
 				<box>
 					<pen lineWidth="1.0" lineStyle="Solid"/>
@@ -1116,7 +1107,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalSemanasPagar}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="380" y="20" width="140" height="30" backcolor="#DEDEDE" uuid="8c9f8f41-9502-4467-82be-a7ec8589c4c5">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a07b820b-96da-4a8a-a38d-9422ba4ebb27"/>
 				</reportElement>
@@ -1138,7 +1129,7 @@
 				</textElement>
 				<text><![CDATA[Total cuentas por cobrar]]></text>
 			</staticText>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="240" y="20" width="140" height="30" backcolor="#DEDEDE" uuid="87e0f1bb-191d-4a9e-9d36-b685b08155b2">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d2514b39-0821-4470-87a1-c0f70f117298"/>
 				</reportElement>
@@ -1150,7 +1141,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalSemana1Cobrar}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="520" y="20" width="140" height="30" backcolor="#DEDEDE" uuid="2244dc7c-124f-4702-8731-6c9905a5af0b">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d78c3c91-798a-4982-a6b2-2295d6f39a37"/>
 				</reportElement>
@@ -1162,7 +1153,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalSemana3Cobrar}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="650" y="20" width="140" height="30" backcolor="#DEDEDE" uuid="70006e8a-a536-4ed3-ac26-99d5c0b2ac1d">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8dc74063-dc12-4ea4-b9a4-32908d91a307"/>
 				</reportElement>
@@ -1174,7 +1165,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalSemana4Cobrar}]]></textFieldExpression>
 			</textField>
-			<textField>
+			<textField isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="790" y="20" width="149" height="30" backcolor="#DEDEDE" uuid="dfd51924-3cb8-431b-acbf-8043b2a980f3">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6fa78a07-c0f4-4200-87cc-d713a8e6ff94"/>
 				</reportElement>
@@ -1186,7 +1177,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalSemana5Cobrar}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="940" y="20" width="139" height="30" backcolor="#ADA8A8" uuid="e4f1f05d-2191-4b5f-9e3e-3103cc6f464c"/>
 				<box>
 					<pen lineWidth="1.0" lineStyle="Solid"/>
@@ -1206,7 +1197,7 @@
 				</textElement>
 				<text><![CDATA[Diferencias]]></text>
 			</staticText>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3280" y="40" width="130" height="30" backcolor="#D4D4D4" uuid="1f08887d-6d68-4bc3-ad82-ed1425e2b38a"/>
 				<box>
 					<pen lineWidth="1.0" lineStyle="Solid"/>
@@ -1216,7 +1207,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalUtilidadSemana1}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3410" y="40" width="103" height="30" backcolor="#D4D4D4" uuid="53bef48f-9ae9-44ec-b828-6a02735b5b47"/>
 				<box>
 					<pen lineWidth="1.0" lineStyle="Solid"/>
@@ -1226,7 +1217,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalUtilidadSemana2}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3512" y="40" width="108" height="30" backcolor="#D4D4D4" uuid="8a2be525-d83e-41ed-a7a8-216e3c42807d"/>
 				<box>
 					<pen lineWidth="1.0" lineStyle="Solid"/>
@@ -1236,7 +1227,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalUtilidadSemana3}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3619" y="40" width="112" height="30" backcolor="#D4D4D4" uuid="f2c6e65a-5f2d-4379-9339-cf2f27ef3a5f"/>
 				<box>
 					<pen lineWidth="1.0" lineStyle="Solid"/>
@@ -1246,7 +1237,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalUtilidadSemana5}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3731" y="40" width="108" height="30" backcolor="#D4D4D4" uuid="ffedd4ac-83a9-4dd9-a2da-00ed2a0697af"/>
 				<box>
 					<pen lineWidth="1.0" lineStyle="Solid"/>
@@ -1256,7 +1247,7 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{totalUtilidadSemana4}]]></textFieldExpression>
 			</textField>
-			<textField textAdjust="StretchHeight">
+			<textField textAdjust="StretchHeight" isBlankWhenNull="true">
 				<reportElement mode="Opaque" x="3840" y="40" width="109" height="30" backcolor="#D4D4D4" uuid="9aee1887-7106-4cd8-9738-c911e94b7319"/>
 				<box>
 					<pen lineWidth="1.0" lineStyle="Solid"/>

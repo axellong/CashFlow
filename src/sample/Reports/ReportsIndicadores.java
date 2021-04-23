@@ -19,7 +19,7 @@ public class ReportsIndicadores implements JRDataSource {
     private boolean index;
 
 
-    public ReportsIndicadores(String mes , int año) {
+    public ReportsIndicadores(String mes, int año) {
         listaEfectivo = new Object[]{
                 0.00, 1.00, 2.00, 3.00, 4.00
         };
@@ -200,6 +200,6 @@ public class ReportsIndicadores implements JRDataSource {
     }
 
     public static JRDataSource getDataSource(String mes, int año) {
-        return new ReportsIndicadores(mes,año);
+        return new ReportsIndicadores(mes, año);
     }
 }

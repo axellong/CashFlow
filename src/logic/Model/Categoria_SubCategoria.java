@@ -9,7 +9,7 @@ public class Categoria_SubCategoria {
 
     private SubCategoria entity;
 
-    public Categoria_SubCategoria(SubCategoria entity){
+    public Categoria_SubCategoria(SubCategoria entity) {
         this.entity = entity;
         subCategoria = entity.getNombreSubCategoria();
         categoria = entity.getId_Categoria().getNombreCategoria();

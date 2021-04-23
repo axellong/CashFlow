@@ -1,68 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXCheckBox?>
-<?import com.jfoenix.controls.JFXPasswordField?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import java.net.URL?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-
-<AnchorPane prefHeight="480.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.UserController">
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<AnchorPane prefHeight="480.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.UserController">
 
     <stylesheets>
-        <URL value="@UserStyle.css" />
-        <URL value="@../General.css" />
+        <URL value="@UserStyle.css"/>
+        <URL value="@../General.css"/>
     </stylesheets>
-   <children>
-      <TableView id="table-base" fx:id="tableViewUsuario" layoutY="20.0" onMouseClicked="#MouseClickedSelect" prefHeight="220.0" prefWidth="550.0">
-        <columns>
-          <TableColumn fx:id="colNombre" maxWidth="-Infinity" minWidth="183.0" prefWidth="183.0" text="Nombre" />
-          <TableColumn fx:id="colUsuario" maxWidth="-Infinity" minWidth="183.0" prefWidth="183.0" text="Usuario" />
-            <TableColumn fx:id="colEmail" maxWidth="-Infinity" minWidth="184.0" prefWidth="184.0" text="Email" />
-        </columns>
-      </TableView>
-      <JFXTextField id="input-label" fx:id="inputNombre" focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="267.0" promptText="Nombre:">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField id="input-label" fx:id="inputNombredeUsuario" focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="327.0" promptText="Nombre de Usuario:">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </JFXTextField>
-      <JFXTextField id="input-label" fx:id="inputEmail" focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="387.0" promptText="Email:">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </JFXTextField>
-      <JFXButton id="button-base" buttonType="RAISED" layoutX="344.0" layoutY="368.0" onMouseClicked="#MouseClickedSaveAndEdit" prefHeight="35.0" prefWidth="180.0" text="Guardar / Editar" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </JFXButton>
-      <JFXButton id="button-delete" buttonType="RAISED" layoutX="344.0" layoutY="311.0" onMouseClicked="#MouseClickedDelete" prefHeight="35.0" prefWidth="180.0" text="Eliminar" textAlignment="CENTER" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </JFXButton>
-      <JFXButton id="button-clearselection" buttonType="RAISED" layoutX="442.0" layoutY="245.0" onMouseClicked="#MouseClickedClearSelection" text="Limpiar seleccion" textAlignment="CENTER" textFill="WHITE" />
-      <JFXPasswordField id="input-label" fx:id="inputContrasena" focusColor="WHITE" labelFloat="true" layoutX="181.0" layoutY="327.0" promptText="Contraseña:">
-         <font>
-            <Font size="13.0" />
-         </font>
-      </JFXPasswordField>
-      <Label fx:id="labelWarningUsuario" layoutX="14.0" layoutY="359.0" text="Ya existe este usuario!" textAlignment="CENTER" textFill="RED" wrapText="true">
-         <font>
-            <Font name="System Italic" size="12.0" />
-         </font>
-      </Label>
-      <Label layoutX="181.0" layoutY="378.0" text="Permisos:" textFill="WHITE" />
-      <JFXCheckBox fx:id="checkAdmin" layoutX="181.0" layoutY="402.0" text="Administrador" textFill="WHITE" unCheckedColor="WHITE" />
-   </children>
+    <children>
+        <TableView id="table-base" fx:id="tableViewUsuario" layoutY="20.0" onMouseClicked="#MouseClickedSelect"
+                   prefHeight="220.0" prefWidth="550.0">
+            <columns>
+                <TableColumn fx:id="colNombre" maxWidth="-Infinity" minWidth="183.0" prefWidth="183.0" text="Nombre"/>
+                <TableColumn fx:id="colUsuario" maxWidth="-Infinity" minWidth="183.0" prefWidth="183.0" text="Usuario"/>
+                <TableColumn fx:id="colEmail" maxWidth="-Infinity" minWidth="184.0" prefWidth="184.0" text="Email"/>
+            </columns>
+        </TableView>
+        <JFXTextField id="input-label" fx:id="inputNombre" focusColor="WHITE" labelFloat="true" layoutX="7.0"
+                      layoutY="267.0" promptText="Nombre:">
+            <font>
+                <Font size="13.0"/>
+            </font>
+        </JFXTextField>
+        <JFXTextField id="input-label" fx:id="inputNombredeUsuario" focusColor="WHITE" labelFloat="true" layoutX="7.0"
+                      layoutY="327.0" promptText="Nombre de Usuario:">
+            <font>
+                <Font size="13.0"/>
+            </font>
+        </JFXTextField>
+        <JFXTextField id="input-label" fx:id="inputEmail" focusColor="WHITE" labelFloat="true" layoutX="7.0"
+                      layoutY="387.0" promptText="Email:">
+            <font>
+                <Font size="13.0"/>
+            </font>
+        </JFXTextField>
+        <JFXButton id="button-base" buttonType="RAISED" layoutX="344.0" layoutY="368.0"
+                   onMouseClicked="#MouseClickedSaveAndEdit" prefHeight="35.0" prefWidth="180.0" text="Guardar / Editar"
+                   textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton id="button-delete" buttonType="RAISED" layoutX="344.0" layoutY="311.0"
+                   onMouseClicked="#MouseClickedDelete" prefHeight="35.0" prefWidth="180.0" text="Eliminar"
+                   textAlignment="CENTER" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="12.0"/>
+            </font>
+        </JFXButton>
+        <JFXButton id="button-clearselection" buttonType="RAISED" layoutX="442.0" layoutY="245.0"
+                   onMouseClicked="#MouseClickedClearSelection" text="Limpiar seleccion" textAlignment="CENTER"
+                   textFill="WHITE"/>
+        <JFXPasswordField id="input-label" fx:id="inputContrasena" focusColor="WHITE" labelFloat="true" layoutX="181.0"
+                          layoutY="327.0" promptText="Contraseña:">
+            <font>
+                <Font size="13.0"/>
+            </font>
+        </JFXPasswordField>
+        <Label fx:id="labelWarningUsuario" layoutX="14.0" layoutY="359.0" text="Ya existe este usuario!"
+               textAlignment="CENTER" textFill="RED" wrapText="true">
+            <font>
+                <Font name="System Italic" size="12.0"/>
+            </font>
+        </Label>
+        <Label layoutX="181.0" layoutY="378.0" text="Permisos:" textFill="WHITE"/>
+        <JFXCheckBox fx:id="checkAdmin" layoutX="181.0" layoutY="402.0" text="Administrador" textFill="WHITE"
+                     unCheckedColor="WHITE"/>
+    </children>
 
 </AnchorPane>

@@ -10,11 +10,11 @@ public class UserTable {
     private String contrasena;
     private Usuario usuario;
 
-    public UserTable(){
+    public UserTable() {
 
     }
 
-    public UserTable(Usuario usuario){
+    public UserTable(Usuario usuario) {
         this.usuario = usuario;
         nombre = usuario.getNombre();
         nombreUsuario = usuario.getUsername();

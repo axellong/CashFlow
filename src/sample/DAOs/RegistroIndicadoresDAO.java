@@ -21,37 +21,36 @@ public class RegistroIndicadoresDAO {
         return factory;
     }
 
-    public void setFactory(SessionFactory factory){
+    public void setFactory(SessionFactory factory) {
         RegistroIndicadoresDAO.factory = factory;
     }
 
     @SuppressWarnings("deprecation")
 
-    public RegistroIndicadoresDAO(){
+    public RegistroIndicadoresDAO() {
         ConexionHibernete.setDriver("postgresql");
         ConexionHibernete.generarConexion();
         factory = ConexionHibernete.getFactory();
     }
 
-    public void saveRegistroIndicador (RegistroIndicadores registroIndicadores, int numeroCuenta) throws HibernateException {
-       //añadir el numero de cuenta
+    public void saveRegistroIndicador(RegistroIndicadores registroIndicadores, int numeroCuenta) throws HibernateException {
+        //añadir el numero de cuenta
         boolean cuentaEncontrada = false;
         Cuenta cuenta1 = new Cuenta();
 
         for (int i = 0; i < getListRegistroIndicadores().size(); i++) {
-            if (getListRegistroIndicadores().get(i).getId_Cuenta().getCuenta() == numeroCuenta){
+            if (getListRegistroIndicadores().get(i).getId_Cuenta().getCuenta() == numeroCuenta) {
                 cuentaEncontrada = true;
                 registroIndicadores.setId_Cuenta(getListRegistroIndicadores().get(i).getId_Cuenta());
                 break;
-            }
-            else{
+            } else {
                 cuentaEncontrada = false;
                 cuenta1 = new Cuenta(numeroCuenta);
                 registroIndicadores.setId_Cuenta(cuenta1);
             }
         }
 
-       //inicializar la coleccion set para agregar registro dentro de cuenta
+        //inicializar la coleccion set para agregar registro dentro de cuenta
         Set<RegistroIndicadores> registroIndicadores1 = new HashSet<>();
         registroIndicadores1.add(registroIndicadores);
         //añadir el registroIndicadores1 a la cuenta
@@ -63,7 +62,7 @@ public class RegistroIndicadoresDAO {
 
             if (cuentaEncontrada)
                 session.save(registroIndicadores);
-            else{
+            else {
                 session.save(cuenta1);
                 session.save(registroIndicadores);
             }
@@ -71,9 +70,9 @@ public class RegistroIndicadoresDAO {
             session.getTransaction().commit();
             session.close();
 
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Process fail");
-            System.out.println("Exception occured. "+ e.getMessage());
+            System.out.println("Exception occured. " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -109,7 +108,7 @@ public class RegistroIndicadoresDAO {
     }
 
     public List<RegistroIndicadores> getListRegistroIndicadores() throws HibernateException {
-        List <RegistroIndicadores> listaRegistroIndicadores = null;
+        List<RegistroIndicadores> listaRegistroIndicadores = null;
         Session session = factory.openSession();
         session.beginTransaction();
 

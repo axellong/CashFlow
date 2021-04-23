@@ -1,85 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXRadioButton?>
-<?import com.jfoenix.controls.JFXTextField?>
-<?import java.net.URL?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
-
-<AnchorPane id="base-panel" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="550.0" scaleZ="-1.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.RegistroController">
-   <stylesheets>
-      <URL value="@../General.css" />
-      <URL value="@Registro.css" />
-   </stylesheets>
-   <children>
-      <Pane layoutX="14.0" prefHeight="240.0" prefWidth="536.0">
-         <children>
-            <JFXTextField id="input-label" fx:id="inputCuenta" focusColor="WHITE" labelFloat="true" layoutY="106.0" prefHeight="30.0" prefWidth="120.0" promptText="No.Cuenta">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField id="input-label" fx:id="inputMonto_1" focusColor="WHITE" labelFloat="true" layoutX="140.0" layoutY="106.0" prefHeight="30.0" prefWidth="120.0" promptText="Monto $ :">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField id="input-label" fx:id="inputRazonSocial" focusColor="WHITE" labelFloat="true" layoutY="160.0" prefHeight="30.0" prefWidth="260.0" promptText="Razon Social :">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </JFXTextField>
-            <Label text="Cuentas" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <JFXButton id="button-base" layoutX="330.0" layoutY="158.0" onMouseClicked="#MouseClickedSaveCobrarPagar" prefHeight="35.0" prefWidth="180.0" text="Guardar" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font></JFXButton>
-            <JFXRadioButton id="radio-button" fx:id="radioCobrar" layoutX="330.0" layoutY="62.0" text="Cobrar" />
-            <JFXRadioButton id="radio-button" fx:id="radioPagar" layoutX="330.0" layoutY="116.0" text="Pagar" />
-            <DatePicker fx:id="datePickerCuentas" layoutY="55.0" />
-            <Label layoutY="30.0" text="Fecha :" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Pane layoutX="14.0" layoutY="240.0" prefHeight="240.0" prefWidth="536.0">
-         <children>
-            <JFXTextField id="input-label" fx:id="inputMonto_2" focusColor="WHITE" labelFloat="true" layoutY="106.0" prefHeight="30.0" prefWidth="120.0" promptText="Monto $ :">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField id="input-label" fx:id="inputDescripcionBanco" focusColor="WHITE" labelFloat="true" layoutY="160.0" prefHeight="30.0" prefWidth="280.0" promptText="Descripción :">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </JFXTextField>
-            <Label text="Bancos" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <JFXButton id="button-base" layoutX="330.0" layoutY="158.0" onMouseClicked="#MouseClickedSaveBanco" prefHeight="35.0" prefWidth="180.0" text="Guardar" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font></JFXButton>
-            <DatePicker fx:id="datePickerBanco" layoutY="55.0" />
-            <Label layoutY="30.0" text="Fecha :" textFill="WHITE">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-   </children>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<AnchorPane id="base-panel" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="550.0"
+            scaleZ="-1.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.Controller.RegistroController">
+    <stylesheets>
+        <URL value="@../General.css"/>
+        <URL value="@Registro.css"/>
+    </stylesheets>
+    <children>
+        <Pane layoutX="14.0" prefHeight="240.0" prefWidth="536.0">
+            <children>
+                <JFXTextField id="input-label" fx:id="inputCuenta" focusColor="WHITE" labelFloat="true" layoutY="106.0"
+                              prefHeight="30.0" prefWidth="120.0" promptText="No.Cuenta">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </JFXTextField>
+                <JFXTextField id="input-label" fx:id="inputMonto_1" focusColor="WHITE" labelFloat="true" layoutX="140.0"
+                              layoutY="106.0" prefHeight="30.0" prefWidth="120.0" promptText="Monto $ :">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </JFXTextField>
+                <JFXTextField id="input-label" fx:id="inputRazonSocial" focusColor="WHITE" labelFloat="true"
+                              layoutY="160.0" prefHeight="30.0" prefWidth="260.0" promptText="Razon Social :">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </JFXTextField>
+                <Label text="Cuentas" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="20.0"/>
+                    </font>
+                </Label>
+                <JFXButton id="button-base" layoutX="330.0" layoutY="158.0"
+                           onMouseClicked="#MouseClickedSaveCobrarPagar" prefHeight="35.0" prefWidth="180.0"
+                           text="Guardar" textFill="WHITE">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </JFXButton>
+                <JFXRadioButton id="radio-button" fx:id="radioCobrar" layoutX="330.0" layoutY="62.0" text="Cobrar"/>
+                <JFXRadioButton id="radio-button" fx:id="radioPagar" layoutX="330.0" layoutY="116.0" text="Pagar"/>
+                <DatePicker fx:id="datePickerCuentas" layoutY="55.0"/>
+                <Label layoutY="30.0" text="Fecha :" textFill="WHITE">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+        <Pane layoutX="14.0" layoutY="240.0" prefHeight="240.0" prefWidth="536.0">
+            <children>
+                <JFXTextField id="input-label" fx:id="inputMonto_2" focusColor="WHITE" labelFloat="true" layoutY="106.0"
+                              prefHeight="30.0" prefWidth="120.0" promptText="Monto $ :">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </JFXTextField>
+                <JFXTextField id="input-label" fx:id="inputDescripcionBanco" focusColor="WHITE" labelFloat="true"
+                              layoutY="160.0" prefHeight="30.0" prefWidth="280.0" promptText="Descripción :">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </JFXTextField>
+                <Label text="Bancos" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="20.0"/>
+                    </font>
+                </Label>
+                <JFXButton id="button-base" layoutX="330.0" layoutY="158.0" onMouseClicked="#MouseClickedSaveBanco"
+                           prefHeight="35.0" prefWidth="180.0" text="Guardar" textFill="WHITE">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </JFXButton>
+                <DatePicker fx:id="datePickerBanco" layoutY="55.0"/>
+                <Label layoutY="30.0" text="Fecha :" textFill="WHITE">
+                    <font>
+                        <Font size="13.0"/>
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </children>
 </AnchorPane>

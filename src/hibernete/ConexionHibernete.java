@@ -17,7 +17,7 @@ public class ConexionHibernete {
     }
 
     public static void generarConexion() {
-        if(factory == null) {
+        if (factory == null) {
             System.err.println("Iniciando");
             try {
                 System.err.println("Leyendo configuracion.");

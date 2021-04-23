@@ -1,205 +1,229 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import java.net.URL?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Label?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
-
-<AnchorPane id="base-panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.DashController">
-   <children>
-      <AnchorPane id="principal-Pane" fx:id="panePrincipal" pickOnBounds="false" prefHeight="550.0" prefWidth="850.0" AnchorPane.leftAnchor="0.0">
-         <children>
-            <HBox alignment="CENTER" layoutX="792.0" layoutY="14.0">
-               <children>
-                  <JFXButton id="button-min" buttonType="RAISED" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#MouseClickedMin" prefHeight="12.0" prefWidth="12.0" ripplerFill="WHITE" text="Button">
-                     <HBox.margin>
-                        <Insets left="5.0" right="5.0" />
-                     </HBox.margin>
-                  </JFXButton>
-                  <JFXButton id="button-close" buttonType="RAISED" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#MouseClickedClose" prefHeight="12.0" prefWidth="12.0" ripplerFill="#6b6b6b" text="Button">
-                     <HBox.margin>
-                        <Insets left="5.0" right="5.0" />
-                     </HBox.margin>
-                  </JFXButton>
-               </children>
-            </HBox>
-            <AnchorPane id="menu-pane" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false" prefHeight="550.0" prefWidth="225.0">
-               <children>
-                  <Pane layoutY="152.0" prefWidth="225.0">
-                     <children>
-                        <Label layoutX="14.0" text="General" textFill="#ababab">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Label>
-                        <JFXButton id="button-menu" layoutY="23.0" onMouseClicked="#MouseClickedCategory" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
-                           <graphic>
-                              <HBox accessibleRole="BUTTON" alignment="CENTER_LEFT" mouseTransparent="true" prefHeight="45.0" prefWidth="225.0">
-                                 <children>
-                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Resources/icons8_opened_folder_48.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="15.0" right="15.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label text="Categorias" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                              </HBox>
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<AnchorPane id="base-panel" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefHeight="550.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.DashController">
+    <children>
+        <AnchorPane id="principal-Pane" fx:id="panePrincipal" pickOnBounds="false" prefHeight="550.0" prefWidth="850.0"
+                    AnchorPane.leftAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER" layoutX="792.0" layoutY="14.0">
+                    <children>
+                        <JFXButton id="button-min" buttonType="RAISED" minHeight="-Infinity" minWidth="-Infinity"
+                                   onMouseClicked="#MouseClickedMin" prefHeight="12.0" prefWidth="12.0"
+                                   ripplerFill="WHITE" text="Button">
+                            <HBox.margin>
+                                <Insets left="5.0" right="5.0"/>
+                            </HBox.margin>
                         </JFXButton>
-                        <JFXButton id="button-menu" layoutY="73.0" onMouseClicked="#MouseClickedFlujo" pickOnBounds="false" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
-                           <graphic>
-                              <HBox id="button-menu" alignment="CENTER_LEFT" mouseTransparent="true" prefHeight="45.0" prefWidth="225.0">
-                                 <children>
-                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Resources/icons8_input_48.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="13.0" right="15.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label text="Flujo de efectvo" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </HBox>
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
+                        <JFXButton id="button-close" buttonType="RAISED" minHeight="-Infinity" minWidth="-Infinity"
+                                   onMouseClicked="#MouseClickedClose" prefHeight="12.0" prefWidth="12.0"
+                                   ripplerFill="#6b6b6b" text="Button">
+                            <HBox.margin>
+                                <Insets left="5.0" right="5.0"/>
+                            </HBox.margin>
                         </JFXButton>
-                        <Label layoutX="14.0" layoutY="134.0" text="Indicadores de dinero" textFill="#ababab">
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </Label>
-                        <JFXButton id="button-menu" layoutY="168.0" onMouseClicked="#MouseClickedRegistro" pickOnBounds="false" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
-                           <graphic>
-                              <HBox accessibleRole="BUTTON" alignment="CENTER_LEFT" mouseTransparent="true" prefHeight="40.0" prefWidth="225.0">
-                                 <children>
-                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Resources/icons8_edit_property_48.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="15.0" right="15.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label text="Registros" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <opaqueInsets>
-                                    <Insets left="100.0" />
-                                 </opaqueInsets>
-                              </HBox>
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </JFXButton>
-                        <JFXButton id="button-menu" layoutY="217.0" onMouseClicked="#MouseClickedReporte" pickOnBounds="false" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
-                           <graphic>
-                              <HBox accessibleRole="BUTTON" alignment="CENTER_LEFT" mouseTransparent="true" prefHeight="40.0" prefWidth="225.0">
-                                 <children>
-                                    <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@Resources/icons8_report_file_48.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets left="15.0" right="15.0" />
-                                       </HBox.margin>
-                                    </ImageView>
-                                    <Label text="Reportes" textFill="WHITE">
-                                       <font>
-                                          <Font name="System Bold" size="13.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <opaqueInsets>
-                                    <Insets />
-                                 </opaqueInsets>
-                              </HBox>
-                           </graphic>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </JFXButton>
-                        <Line id="line-button" fx:id="lineButton" endY="40.0" layoutX="3.0" layoutY="23.0" stroke="WHITE" strokeWidth="0.0" visible="false" />
-                     </children>
-                  </Pane>
-                  <JFXButton layoutX="14.0" layoutY="511.0" onMouseClicked="#MouseClickedCerrarSesion" ripplerFill="WHITE" text="Cerrar sesión" textFill="WHITE" />
-                  <ImageView fitHeight="60.0" fitWidth="40.0" layoutX="93.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@Resources/icons8_male_user_64.png" />
-                     </image>
-                  </ImageView>
-                  <Label fx:id="labelUser" layoutX="16.0" layoutY="64.0" text="User" textFill="WHITE">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="labelEmail" layoutX="16.0" layoutY="89.0" text="E-mail" textFill="WHITE">
-                     <font>
-                        <Font size="13.0" />
-                     </font>
-                  </Label>
-                  <JFXButton id="button-menu" fx:id="buttonAddUser" layoutX="171.0" layoutY="496.0" minHeight="40.0" minWidth="40.0" onMouseClicked="#MouseClickedUsuario" prefHeight="35.0" prefWidth="35.0" ripplerFill="#ffffff81" style="-fx-border-radius: 25; -fx-background-radius: 25;" visible="false">
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <graphic>
-                        <ImageView fitHeight="32.0" fitWidth="32.0" focusTraversable="true" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@Resources/icons8_add_user_group_man_woman_48.png" />
-                           </image>
+                    </children>
+                </HBox>
+                <AnchorPane id="menu-pane" minHeight="-Infinity" minWidth="-Infinity" pickOnBounds="false"
+                            prefHeight="550.0" prefWidth="225.0">
+                    <children>
+                        <Pane layoutY="152.0" prefWidth="225.0">
+                            <children>
+                                <Label layoutX="14.0" text="General" textFill="#ababab">
+                                    <font>
+                                        <Font size="13.0"/>
+                                    </font>
+                                </Label>
+                                <JFXButton id="button-menu" layoutY="23.0" onMouseClicked="#MouseClickedCategory"
+                                           prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
+                                    <graphic>
+                                        <HBox accessibleRole="BUTTON" alignment="CENTER_LEFT" mouseTransparent="true"
+                                              prefHeight="45.0" prefWidth="225.0">
+                                            <children>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true"
+                                                           preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Resources/icons8_opened_folder_48.png"/>
+                                                    </image>
+                                                    <HBox.margin>
+                                                        <Insets left="15.0" right="15.0"/>
+                                                    </HBox.margin>
+                                                </ImageView>
+                                                <Label text="Categorias" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="System Bold" size="13.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <opaqueInsets>
+                                                <Insets/>
+                                            </opaqueInsets>
+                                        </HBox>
+                                    </graphic>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </JFXButton>
+                                <JFXButton id="button-menu" layoutY="73.0" onMouseClicked="#MouseClickedFlujo"
+                                           pickOnBounds="false" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
+                                    <graphic>
+                                        <HBox id="button-menu" alignment="CENTER_LEFT" mouseTransparent="true"
+                                              prefHeight="45.0" prefWidth="225.0">
+                                            <children>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true"
+                                                           preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Resources/icons8_input_48.png"/>
+                                                    </image>
+                                                    <HBox.margin>
+                                                        <Insets left="13.0" right="15.0"/>
+                                                    </HBox.margin>
+                                                </ImageView>
+                                                <Label text="Flujo de efectvo" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="System Bold" size="13.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                        </HBox>
+                                    </graphic>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </JFXButton>
+                                <Label layoutX="14.0" layoutY="134.0" text="Indicadores de dinero" textFill="#ababab">
+                                    <font>
+                                        <Font size="13.0"/>
+                                    </font>
+                                </Label>
+                                <JFXButton id="button-menu" layoutY="168.0" onMouseClicked="#MouseClickedRegistro"
+                                           pickOnBounds="false" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
+                                    <graphic>
+                                        <HBox accessibleRole="BUTTON" alignment="CENTER_LEFT" mouseTransparent="true"
+                                              prefHeight="40.0" prefWidth="225.0">
+                                            <children>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true"
+                                                           preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Resources/icons8_edit_property_48.png"/>
+                                                    </image>
+                                                    <HBox.margin>
+                                                        <Insets left="15.0" right="15.0"/>
+                                                    </HBox.margin>
+                                                </ImageView>
+                                                <Label text="Registros" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="System Bold" size="13.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <opaqueInsets>
+                                                <Insets left="100.0"/>
+                                            </opaqueInsets>
+                                        </HBox>
+                                    </graphic>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </JFXButton>
+                                <JFXButton id="button-menu" layoutY="217.0" onMouseClicked="#MouseClickedReporte"
+                                           pickOnBounds="false" prefHeight="40.0" prefWidth="225.0" ripplerFill="WHITE">
+                                    <graphic>
+                                        <HBox accessibleRole="BUTTON" alignment="CENTER_LEFT" mouseTransparent="true"
+                                              prefHeight="40.0" prefWidth="225.0">
+                                            <children>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true"
+                                                           preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@Resources/icons8_report_file_48.png"/>
+                                                    </image>
+                                                    <HBox.margin>
+                                                        <Insets left="15.0" right="15.0"/>
+                                                    </HBox.margin>
+                                                </ImageView>
+                                                <Label text="Reportes" textFill="WHITE">
+                                                    <font>
+                                                        <Font name="System Bold" size="13.0"/>
+                                                    </font>
+                                                </Label>
+                                            </children>
+                                            <opaqueInsets>
+                                                <Insets/>
+                                            </opaqueInsets>
+                                        </HBox>
+                                    </graphic>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </JFXButton>
+                                <Line id="line-button" fx:id="lineButton" endY="40.0" layoutX="3.0" layoutY="23.0"
+                                      stroke="WHITE" strokeWidth="0.0" visible="false"/>
+                            </children>
+                        </Pane>
+                        <JFXButton layoutX="14.0" layoutY="511.0" onMouseClicked="#MouseClickedCerrarSesion"
+                                   ripplerFill="WHITE" text="Cerrar sesión" textFill="WHITE"/>
+                        <ImageView fitHeight="60.0" fitWidth="40.0" layoutX="93.0" layoutY="14.0" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@Resources/icons8_male_user_64.png"/>
+                            </image>
                         </ImageView>
-                     </graphic>
-                  </JFXButton>
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <effect>
-                  <DropShadow blurType="ONE_PASS_BOX" color="#050505d8" height="11.25" radius="6.0625" width="15.0" />
-               </effect>
-            </AnchorPane>
-            <ImageView fx:id="initialLog" fitHeight="446.0" fitWidth="546.0" layoutX="333.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../CashflowLogo.png" />
-               </image>
-            </ImageView>
-         </children>
-      </AnchorPane>
-   </children>
-   <stylesheets>
-      <URL value="@DashStyle.css" />
-      <URL value="@../General.css" />
-   </stylesheets>
+                        <Label fx:id="labelUser" layoutX="16.0" layoutY="64.0" text="User" textFill="WHITE">
+                            <font>
+                                <Font size="13.0"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="labelEmail" layoutX="16.0" layoutY="89.0" text="E-mail" textFill="WHITE">
+                            <font>
+                                <Font size="13.0"/>
+                            </font>
+                        </Label>
+                        <JFXButton id="button-menu" fx:id="buttonAddUser" layoutX="171.0" layoutY="496.0"
+                                   minHeight="40.0" minWidth="40.0" onMouseClicked="#MouseClickedUsuario"
+                                   prefHeight="35.0" prefWidth="35.0" ripplerFill="#ffffff81"
+                                   style="-fx-border-radius: 25; -fx-background-radius: 25;" visible="false">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                            <graphic>
+                                <ImageView fitHeight="32.0" fitWidth="32.0" focusTraversable="true"
+                                           mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@Resources/icons8_add_user_group_man_woman_48.png"/>
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                    </children>
+                    <opaqueInsets>
+                        <Insets/>
+                    </opaqueInsets>
+                    <effect>
+                        <DropShadow blurType="ONE_PASS_BOX" color="#050505d8" height="11.25" radius="6.0625"
+                                    width="15.0"/>
+                    </effect>
+                </AnchorPane>
+                <ImageView fx:id="initialLog" fitHeight="446.0" fitWidth="546.0" layoutX="333.0" layoutY="102.0"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../CashflowLogo.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+    </children>
+    <stylesheets>
+        <URL value="@DashStyle.css"/>
+        <URL value="@../General.css"/>
+    </stylesheets>
 </AnchorPane>

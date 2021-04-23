@@ -1,7 +1,5 @@
 package entity;
 
-import java.util.List;
-
 public class RegistroIndicadores {
 
     private int idRegistroIndicadores;
@@ -17,7 +15,7 @@ public class RegistroIndicadores {
 
 
     // lista para hibernete
-   // private List<ReportesIndicadores> listaReportes ;
+    // private List<ReportesIndicadores> listaReportes ;
     public RegistroIndicadores(String clasificacion, String concepto, String razonSocial, double monto, String mes, int semana, String descripcion, int anio) {
         this.clasificacion = clasificacion;
         this.concepto = concepto;
@@ -44,7 +42,7 @@ public class RegistroIndicadores {
     public RegistroIndicadores() {
     }
 
-    public RegistroIndicadores getRegistroIndicadores(){
+    public RegistroIndicadores getRegistroIndicadores() {
         return this;
     }
 

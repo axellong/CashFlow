@@ -6,11 +6,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.DatePicker;
 import javafx.scene.input.MouseEvent;
 import sample.Reports.CallReport;
+import sample.Util.Utils;
 
 import java.net.URL;
 import java.time.LocalDate;
-import java.time.format.TextStyle;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class ReporteController implements Initializable {
@@ -32,12 +31,12 @@ public class ReporteController implements Initializable {
     @FXML
     void MouseClickedReporte(MouseEvent event) {
         LocalDate date = datePickerReporte.getValue();
-        if(date != null) {
-            String mes = date.getMonth().getDisplayName(TextStyle.FULL, new Locale("es", "ES"));
+        if (date != null) {
+            String mes = Utils.getMes(date);
             int año = date.getYear();
 
             CallReport callReport = new CallReport();
-            callReport.getReportJunto(mes,año);
+            callReport.getReportJunto(mes, año);
         }
 
     }

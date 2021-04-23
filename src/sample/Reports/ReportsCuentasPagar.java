@@ -16,9 +16,8 @@ public class ReportsCuentasPagar implements JRDataSource {
     private int indexPagar;
 
 
-
-    public ReportsCuentasPagar(String mes,int año) {
-        this.mesPagar=mes;
+    public ReportsCuentasPagar(String mes, int año) {
+        this.mesPagar = mes;
         indexPagar = -1;
         Calculos calculos = new Calculos();
         listaCuentasPagar = calculos.getCuentasPagar(mes, año);
@@ -90,6 +89,6 @@ public class ReportsCuentasPagar implements JRDataSource {
     }
 
     public static JRDataSource getDataSource(String mes, int año) {
-        return new ReportsCuentasPagar(mes,año);
+        return new ReportsCuentasPagar(mes, año);
     }
 }

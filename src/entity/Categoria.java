@@ -15,7 +15,7 @@ public class Categoria {
     public Categoria() {
     }
 
-    public Categoria( String nombreCategoria, int idUsuario) {
+    public Categoria(String nombreCategoria, int idUsuario) {
         this.nombreCategoria = nombreCategoria;
         this.idUsuario = idUsuario;
         this.subCategorias = subCategorias;
