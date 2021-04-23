@@ -21,6 +21,7 @@ public class InitializerDAOs {
     private CuentasPorPagarDAO cuentasPorPagarDAO;
     private GastosDAO gastosDAO;
     private IngresosDAO ingresosDAO;
+    private RegistroBancoDAO registroBancoDAO;
 
     private InitializerDAOs(){
             categoriaDAO = new CategoriaDAO();
@@ -36,6 +37,7 @@ public class InitializerDAOs {
             cuentasPorPagarDAO = new CuentasPorPagarDAO();
             gastosDAO = new GastosDAO();
             ingresosDAO = new IngresosDAO();
+            registroBancoDAO = new RegistroBancoDAO();
     }
 
     public static InitializerDAOs getInitializerDAOs(){
@@ -89,5 +91,9 @@ public class InitializerDAOs {
 
     public IngresosDAO getIngresosDAO() {
         return ingresosDAO;
+    }
+
+    public RegistroBancoDAO getRegistroBancoDAO() {
+        return registroBancoDAO;
     }
 }
