@@ -14,20 +14,20 @@
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<field name="totalSemana5" class="java.lang.Double"/>
-	<field name="totalSemana4" class="java.lang.Double"/>
-	<field name="totalSemana3" class="java.lang.Double"/>
-	<field name="totalSemana2" class="java.lang.Double"/>
-	<field name="totalSemana1" class="java.lang.Double"/>
-	<field name="MES" class="java.lang.String"/>
-	<field name="cuentaCobrar" class="java.lang.String"/>
-	<field name="semana5" class="java.lang.Double"/>
-	<field name="semana4" class="java.lang.Double"/>
-	<field name="semana3" class="java.lang.Double"/>
-	<field name="semana2" class="java.lang.Double"/>
-	<field name="semana1" class="java.lang.Double"/>
-	<field name="cuentasCobrarFinal" class="java.lang.Double"/>
-	<field name="totalSemanas" class="java.lang.Double"/>
+	<field name="totalSemana5Cobrar" class="java.lang.Double"/>
+	<field name="totalSemana4Cobrar" class="java.lang.Double"/>
+	<field name="totalSemana3Cobrar" class="java.lang.Double"/>
+	<field name="totalSemana2Cobrar" class="java.lang.Double"/>
+	<field name="totalSemana1Cobrar" class="java.lang.Double"/>
+	<field name="MESCobrar" class="java.lang.String"/>
+	<field name="cuentaCobrar" class="java.lang.Integer"/>
+	<field name="semana5Cobrar" class="java.lang.Double"/>
+	<field name="semana4Cobrar" class="java.lang.Double"/>
+	<field name="semana3Cobrar" class="java.lang.Double"/>
+	<field name="semana2Cobrar" class="java.lang.Double"/>
+	<field name="semana1Cobrar" class="java.lang.Double"/>
+	<field name="cuentasCobrarFinalCobrar" class="java.lang.Double"/>
+	<field name="totalSemanasCobrar" class="java.lang.Double"/>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -64,7 +64,7 @@
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="15"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{MES}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{MESCobrar}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
@@ -139,7 +139,7 @@
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[]]></text>
+				<text><![CDATA[1]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="490" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="1cc4f099-c955-49f4-b1ae-3c16370a74da"/>
@@ -149,7 +149,7 @@
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[]]></text>
+				<text><![CDATA[2]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="630" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="fd3f97a6-2715-428c-bd29-5e9aff3044c3"/>
@@ -159,7 +159,7 @@
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[]]></text>
+				<text><![CDATA[3]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="770" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="f0b4c93a-65af-4f6d-a0a7-14a89c86c646"/>
@@ -169,7 +169,7 @@
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[]]></text>
+				<text><![CDATA[4]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="910" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="01b1b455-cca1-4e8c-a872-8665a1d19dc8"/>
@@ -179,7 +179,7 @@
 				<textElement textAlignment="Center">
 					<font size="20"/>
 				</textElement>
-				<text><![CDATA[]]></text>
+				<text><![CDATA[5]]></text>
 			</staticText>
 			<staticText>
 				<reportElement mode="Opaque" x="1050" y="50" width="140" height="30" backcolor="#F2F2F2" uuid="b97feb61-0b85-43a2-9205-957852b94991"/>
@@ -190,6 +190,16 @@
 					<font size="20"/>
 				</textElement>
 				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="20" width="230" height="60" backcolor="#DBDBDB" uuid="23bc7fa9-2739-4961-908b-a7406225c8ca"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid" lineColor="#C2C2C2"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Cuenta]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -219,7 +229,7 @@
 					<textElement textAlignment="Center">
 						<font size="20"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{cuentasCobrarFinal}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{cuentasCobrarFinalCobrar}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight">
 					<reportElement mode="Opaque" x="390" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="b7ff5d78-d4e9-46ec-b070-b2444239c765">
@@ -231,7 +241,7 @@
 					<textElement textAlignment="Center">
 						<font size="20"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{semana2}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{semana2Cobrar}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight">
 					<reportElement mode="Opaque" x="670" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="69c0c69a-7bd0-4d87-9164-ca0148537cc7">
@@ -243,7 +253,7 @@
 					<textElement textAlignment="Center">
 						<font size="20"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{semana4}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{semana4Cobrar}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight">
 					<reportElement mode="Opaque" x="250" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="a459f508-1cc5-41aa-8aed-4767f720cd28">
@@ -255,7 +265,7 @@
 					<textElement textAlignment="Center">
 						<font size="20"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{semana1}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{semana1Cobrar}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight">
 					<reportElement mode="Opaque" x="810" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="e9a1e06f-8319-445c-8e47-fc996f9e726c">
@@ -267,7 +277,7 @@
 					<textElement textAlignment="Center">
 						<font size="20"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{semana5}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{semana5Cobrar}]]></textFieldExpression>
 				</textField>
 				<textField textAdjust="StretchHeight">
 					<reportElement mode="Opaque" x="530" y="5" width="140" height="30" backcolor="#DEDEDE" uuid="3b2bfaec-f890-4382-b175-f9e0cd490133">
@@ -279,7 +289,7 @@
 					<textElement textAlignment="Center">
 						<font size="20"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{semana3}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{semana3Cobrar}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
@@ -304,7 +314,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{totalSemana2}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{totalSemana2Cobrar}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement mode="Opaque" x="120" y="10" width="230" height="30" backcolor="#DEDEDE" uuid="eb0e2c37-c935-41ae-8187-6302e5bd4c2e"/>
@@ -326,7 +336,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{totalSemana1}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{totalSemana1Cobrar}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="630" y="10" width="140" height="30" backcolor="#DEDEDE" uuid="6471b2be-2830-4b58-b3d5-35b5d08801bc">
@@ -338,7 +348,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{totalSemana3}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{totalSemana3Cobrar}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="760" y="10" width="140" height="30" backcolor="#DEDEDE" uuid="1ea555d8-4267-4bee-bd26-3c5de7b65d75">
@@ -350,7 +360,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{totalSemana4}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{totalSemana4Cobrar}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement mode="Opaque" x="900" y="10" width="149" height="30" backcolor="#DEDEDE" uuid="d3a687a2-64a3-42f8-b43f-824c89a6f843">
@@ -362,7 +372,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{totalSemana5}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{totalSemana5Cobrar}]]></textFieldExpression>
 			</textField>
 			<textField textAdjust="StretchHeight">
 				<reportElement mode="Opaque" x="1050" y="10" width="139" height="30" backcolor="#ADA8A8" uuid="737405bc-614e-41b5-8889-7201fbfd2945"/>
@@ -372,7 +382,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="20"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{totalSemanas}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{totalSemanasCobrar}]]></textFieldExpression>
 			</textField>
 		</band>
 	</lastPageFooter>

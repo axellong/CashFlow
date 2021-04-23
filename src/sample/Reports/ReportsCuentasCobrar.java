@@ -1,52 +1,33 @@
 package sample.Reports;
 
+import logic.Model.Calculos;
+import logic.Model.ReportFill;
 import net.sf.jasperreports.engine.JRDataSource;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JRField;
 
+import java.util.List;
+
 public class ReportsCuentasCobrar implements JRDataSource {
-    private Object[][] listaPruebaSemanas;
-    private int totalesv;
-    private double[] totales;
-    private String mes = "MARZO";
-    private int index;
+    private List<ReportFill> listaLlenadoCobrar;
+    private List<Double> totalesCobrar;
+    private String mesCobrar = "";
+    private int indexCobrar;
 
 
-    public ReportsCuentasCobrar() {
-        index = -1;
-        listaPruebaSemanas = new Object[][]{
-                {"cuenta1", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta2", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta3", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta4", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta5", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta1", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta2", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta3", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta4", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta5", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta1", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta2", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta3", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta4", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta5", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta1", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta2", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta3", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta4", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-                {"cuenta5", 100.00, 200.00, 300.000, 400.00, 500.00, 15000.00, 6.00, 7.00, 8.00, 9.00, 10.00},
-        };
+    public ReportsCuentasCobrar(String mesCobrar, int año) {
+        Calculos calculos = new Calculos();
+        indexCobrar = -1;
+        listaLlenadoCobrar = calculos.getCuentascobrar(mesCobrar,año);
+        totalesCobrar = calculos.getTotales(listaLlenadoCobrar);
+        System.out.println(listaLlenadoCobrar);
 
-        totales = new double[]{
-                1.00, 2.00, 3.00, 4.00, 9.00,10000.99
-        };
-        totalesv = 0;
     }
 
     @Override
     public boolean next() throws JRException {
-        index++;
-        return (index < listaPruebaSemanas.length);
+        indexCobrar++;
+        return (indexCobrar < listaLlenadoCobrar.size());
     }
 
     @Override
@@ -55,62 +36,62 @@ public class ReportsCuentasCobrar implements JRDataSource {
         String fieldName = jrField.getName();
         switch (fieldName) {
             case "cuentaCobrar":
-                value = listaPruebaSemanas[index][0];
+                value = listaLlenadoCobrar.get(indexCobrar).getNumeroCuenta();
                 break;
-            case "semana1":
-                value = listaPruebaSemanas[index][1];
+            case "semana1Cobrar":
+                value = listaLlenadoCobrar.get(indexCobrar).getSemana1();
                 break;
-            case "semana2":
-                value = listaPruebaSemanas[index][2];
+            case "semana2Cobrar":
+                value = listaLlenadoCobrar.get(indexCobrar).getSemana2();
                 break;
-            case "semana3":
-                value = listaPruebaSemanas[index][3];
+            case "semana3Cobrar":
+                value = listaLlenadoCobrar.get(indexCobrar).getSemana3();
                 break;
-            case "semana4":
-                value = listaPruebaSemanas[index][4];
+            case "semana4Cobrar":
+                value = listaLlenadoCobrar.get(indexCobrar).getSemana4();
                 break;
-            case "semana5":
-                value = listaPruebaSemanas[index][5];
+            case "semana5Cobrar":
+                value = listaLlenadoCobrar.get(indexCobrar).getSemana5();
                 break;
-            case "cuentasCobrarFinal":
-                value = listaPruebaSemanas[index][5];
+            case "cuentasCobrarFinalCobrar":
+                value = listaLlenadoCobrar.get(indexCobrar).getTotalSemana();
                 break;
-            case "totalSemana1":
-                value = totales[0];
+            case "totalSemana1Cobrar":
+                value = totalesCobrar.get(0);
                 break;
-            case "totalSemana2":
+            case "totalSemana2Cobrar":
 
-                value = totales[1];
-
-                break;
-            case "totalSemana3":
-
-                value = totales[2];
+                value = totalesCobrar.get(1);
 
                 break;
-            case "totalSemana4":
+            case "totalSemana3Cobrar":
 
-                value = totales[3];
-
-                break;
-            case "totalSemana5":
-
-                value = totales[4];
+                value = totalesCobrar.get(2);
 
                 break;
-            case "MES":
+            case "totalSemana4Cobrar":
+
+                value = totalesCobrar.get(3);
+
+                break;
+            case "totalSemana5Cobrar":
+
+                value = totalesCobrar.get(4);
+
+                break;
+            case "MESCobrar":
                 value = "marzo";
                 break;
-            case "totalSemanas":
-                value = totales[5];
+            case "totalSemanasCobrar":
+                value = totalesCobrar.get(5);
                 break;
         }
-        totalesv++;
+
         return value;
     }
 
-    public static JRDataSource getDataSource() {
-        return new ReportsCuentasCobrar();
+    public static JRDataSource getDataSource(String mes, int año) {
+        return new ReportsCuentasCobrar(mes, año);
     }
 }
 

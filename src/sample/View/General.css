@@ -1,9 +1,18 @@
 * {
-    -color-prompt-text-general: rgba(255,255,255,0.8);
+    -color-prompt-text-general: rgba(255,255,255,1);
     -color-focus-general: rgba(255,255,255,1);
     -color-unfocus-general: rgba(255,255,255,0.8);
     -color-button-general: rgba(30, 215, 96,0.65); /*rgba(11,118,85,0.6);*/
 
+}
+
+.Text{
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 13;
+}
+.label{
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 13;
 }
 
 #base-panel{
@@ -34,7 +43,6 @@
 #button-base .text{
 	-fx-font-weight: bold;
 	-fx-text-fill:-color-prompt-text-general;
-	-fx-font-size: 13;
 }
 
 
@@ -54,7 +62,7 @@
 }
 
 #checkbox-base {
-    -fx-text-fill: rgba(255,255,255,0.8);
+    -fx-text-fill: rgba(255,255,255,1);
 }
 
 /* MODIFICA EL TEXTO DEL COMBOBOX*/

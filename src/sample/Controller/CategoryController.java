@@ -25,6 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import static sample.Util.Utils.nullOrEmpty;
+
 public class CategoryController implements Initializable {
 
     @FXML
@@ -59,26 +61,32 @@ public class CategoryController implements Initializable {
     // metodo que se aactiva al seleccionar el boton guardar o Edit
     @FXML
     void MouseClickedSaveAndEdit(MouseEvent event) {
-        if(selected != null){
-            categoriasList.remove(selected);
-            CategoryTable update = selected;
-            update.getSubCategoriaEntity().getId_Categoria().setNombreCategoria(inputCategoria.getText());
-            update.getSubCategoriaEntity().setNombreSubCategoria(inputSubCategoria.getText());
-            update.getSubCategoriaEntity().getId_Categoria().setClasificacion(boxClasificacion.getSelectionModel().getSelectedItem());
-            subCategoriasDAO.updateSubCategoria(update.getSubCategoriaEntity());
-            categoriaDAO.updateCategoria(update.getSubCategoriaEntity().getId_Categoria());
-            categoriasList.add(update);
-        }else{
-            SubCategoria add = new SubCategoria();
-            add.setNombreSubCategoria(inputSubCategoria.getText());
-            Categoria categoria = new Categoria();
-            categoria.setNombreCategoria(inputCategoria.getText());
-            categoria.setClasificacion(boxClasificacion.getSelectionModel().getSelectedItem());
-            add.setId_Categoria(categoria);
-            categoriaDAO.saveCategoria(categoria);
-            subCategoriasDAO.saveSubCategoria(add);
-            categoriasList.add(new CategoryTable(add));
+        String categoriaStr = inputCategoria.getText();
+        String subCategoriaStr = inputSubCategoria.getText();
+        Clasificacion clasificacionObj = boxClasificacion.getSelectionModel().getSelectedItem();
+        if(!nullOrEmpty(categoriaStr) && !nullOrEmpty(subCategoriaStr) && clasificacionObj != null){
+            if(selected != null){
+                categoriasList.remove(selected);
+                CategoryTable update = selected;
+                update.getSubCategoriaEntity().getId_Categoria().setNombreCategoria(categoriaStr);
+                update.getSubCategoriaEntity().setNombreSubCategoria(subCategoriaStr);
+                update.getSubCategoriaEntity().getId_Categoria().setClasificacion(clasificacionObj);
+                subCategoriasDAO.updateSubCategoria(update.getSubCategoriaEntity());
+                categoriaDAO.updateCategoria(update.getSubCategoriaEntity().getId_Categoria());
+                categoriasList.add(update);
+            }else{
+                SubCategoria add = new SubCategoria();
+                add.setNombreSubCategoria(subCategoriaStr);
+                Categoria categoria = new Categoria();
+                categoria.setNombreCategoria(categoriaStr);
+                categoria.setClasificacion(clasificacionObj);
+                add.setId_Categoria(categoria);
+                categoriaDAO.saveCategoria(categoria);
+                subCategoriasDAO.saveSubCategoria(add);
+                categoriasList.add(new CategoryTable(add));
+            }
         }
+
         clean();
     }
 

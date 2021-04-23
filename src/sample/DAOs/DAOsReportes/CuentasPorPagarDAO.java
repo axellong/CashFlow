@@ -24,7 +24,8 @@ public class CuentasPorPagarDAO {
 
     @SuppressWarnings("deprecation")
 
-    public CuentasPorPagarDAO(){
+    public
+    CuentasPorPagarDAO(){
         ConexionHibernete.setDriver("postgresql");
         ConexionHibernete.generarConexion();
         factory = ConexionHibernete.getFactory();

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
@@ -19,9 +20,9 @@
    <children>
       <TableView id="table-base" fx:id="tableViewUsuario" layoutY="20.0" onMouseClicked="#MouseClickedSelect" prefHeight="220.0" prefWidth="550.0">
         <columns>
-          <TableColumn fx:id="colNombre" prefWidth="203.999966442585" text="Nombre" />
-          <TableColumn fx:id="colUsuario" prefWidth="155.2000274658203" text="Usuario" />
-            <TableColumn fx:id="colEmail" prefWidth="189.60001220703123" text="Email" />
+          <TableColumn fx:id="colNombre" maxWidth="-Infinity" minWidth="183.0" prefWidth="183.0" text="Nombre" />
+          <TableColumn fx:id="colUsuario" maxWidth="-Infinity" minWidth="183.0" prefWidth="183.0" text="Usuario" />
+            <TableColumn fx:id="colEmail" maxWidth="-Infinity" minWidth="184.0" prefWidth="184.0" text="Email" />
         </columns>
       </TableView>
       <JFXTextField id="input-label" fx:id="inputNombre" focusColor="WHITE" labelFloat="true" layoutX="7.0" layoutY="267.0" promptText="Nombre:">
@@ -60,6 +61,8 @@
             <Font name="System Italic" size="12.0" />
          </font>
       </Label>
+      <Label layoutX="181.0" layoutY="378.0" text="Permisos:" textFill="WHITE" />
+      <JFXCheckBox fx:id="checkAdmin" layoutX="181.0" layoutY="402.0" text="Administrador" textFill="WHITE" unCheckedColor="WHITE" />
    </children>
 
 </AnchorPane>

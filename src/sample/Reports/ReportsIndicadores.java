@@ -6,6 +6,8 @@ import net.sf.jasperreports.engine.JRField;
 
 public class ReportsIndicadores implements JRDataSource {
 
+    private int año;
+    private String mes;
     private Object[] listaEfectivo;
     private Object[] listaTarjeta;
     private Object[] listaIngresos;
@@ -17,7 +19,7 @@ public class ReportsIndicadores implements JRDataSource {
     private boolean index;
 
 
-    public ReportsIndicadores() {
+    public ReportsIndicadores(String mes , int año) {
         listaEfectivo = new Object[]{
                 0.00, 1.00, 2.00, 3.00, 4.00
         };
@@ -197,7 +199,7 @@ public class ReportsIndicadores implements JRDataSource {
         return value;
     }
 
-    public static JRDataSource getDataSource() {
-        return new ReportsIndicadores();
+    public static JRDataSource getDataSource(String mes, int año) {
+        return new ReportsIndicadores(mes,año);
     }
 }

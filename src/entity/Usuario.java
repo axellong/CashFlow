@@ -1,5 +1,7 @@
 package entity;
 
+import logic.Model.UserTable;
+
 public class Usuario {
 
     private int idUsuario;
@@ -16,6 +18,15 @@ public class Usuario {
         this.password = password;
         this.credencial = credencial;
         this.email = email;
+    }
+
+    public Usuario(UserTable user) {
+        this.idUsuario = user.getUsuario().getIdUsuario();
+        this.nombre = user.getNombre();
+        this.username = user.getNombreUsuario();
+        this.password = user.getContrasena();
+        this.credencial = user.getUsuario().isCredencial();
+        this.email = user.getEmail();
     }
 
 

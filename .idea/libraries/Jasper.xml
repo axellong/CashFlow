@@ -1,29 +1,10 @@
 <component name="libraryTable">
   <library name="Jasper">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/AbsoluteLayout.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/commons-beanutils-1.9.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/commons-codec-1.10.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/commons-collections4-4.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/commons-collections4-4.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/commons-digester-2.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/commons-logging-1.2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/groovy-all-2.4.5.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/itext-2.1.7.js4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/itext-pdfa-5.5.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/itextpdf-5.5.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/jasperreports-6.16.0.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/jfreechart-1.0.12.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/junit-4.12.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/log4j-1.2.17.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/poi-3.16.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/poi-excelant-3.16.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/poi-ooxml-3.16.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/poi-ooxml-schemas-3.16.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/poi-scratchpad-3.16.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/JasperReports/xmlbeans-2.6.0.jar!/" />
+      <root url="file://C:/ResourcesJava/Jasper-20210422T093035Z-001/Jasper" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://C:/ResourcesJava/Jasper-20210422T093035Z-001/Jasper" recursive="false" />
   </library>
 </component>

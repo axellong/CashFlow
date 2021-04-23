@@ -16,8 +16,11 @@ import logic.LoginSecure;
 import sample.DAOs.InitializerDAOs;
 import sample.DAOs.UsuarioDAO;
 import sample.Util.Utils;
+
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static sample.Util.Utils.nullOrEmpty;
 
 public class LoginController implements Initializable {
 
@@ -33,12 +36,11 @@ public class LoginController implements Initializable {
     LoginSecure segure;
     UsuarioDAO usuarioDAO;
     Usuario usuario;
-
+    FadeOut fade = new FadeOut();
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         segure = new LoginSecure();
         usuarioDAO = InitializerDAOs.getInitializerDAOs().getUsuarioDAO();
-
         inputCode.setTextFormatter(new TextFormatter<>(new IntegerStringConverter(), null, Utils.integerFilter));
     }
 
@@ -63,17 +65,18 @@ public class LoginController implements Initializable {
 
     @FXML
     void MouseClickedVerificar(MouseEvent event) {
-        String Email = inputEmail.getText();
-        String Passw = inputPassword.getText();
-        usuario = usuarioDAO.getUsuario(Email,Passw);
-        System.out.println(usuario);
-
-        if(usuario != null){
-            makefadeOut(true);
-            segure.SendMail(Email);
-        }else{
-            System.out.println("No se encontro");
+        String email = inputEmail.getText();
+        String pass = inputPassword.getText();
+        if(!nullOrEmpty(email) && !nullOrEmpty(pass)){
+            usuario = usuarioDAO.getUsuario(email,pass);
+            if(usuario != null){
+                makefadeOut(true);
+                sentEmailHilo(email);
+            }else{
+                System.out.println("No se encontro");
+            }
         }
+
     }
 
     // metodos para regresar, cambiar scene
@@ -91,7 +94,8 @@ public class LoginController implements Initializable {
 
     @FXML
     void MouseClikedForgetCode(MouseEvent event) {
-
+        String email = inputEmail.getText();
+        sentEmailHilo(email);
     }
 
     private void changePane(boolean value) {
@@ -102,12 +106,17 @@ public class LoginController implements Initializable {
     }
 
     private void makefadeOut(boolean value){
-        FadeOut fade = new FadeOut();
         fade.setResetOnFinished(true);
         if(value) { fade.setNode(paneVerificar);
         }else{ fade.setNode(paneIngresar); }
         fade.play();
         fade.setOnFinished((ActionEvent event)-> changePane(value));
+    }
+
+    private void sentEmailHilo(String email){
+        Runnable emailHilo =()-> segure.SendMail(email);
+        Thread hilo = new Thread(emailHilo);
+        hilo.start();
     }
 
     //metodo de limpieza

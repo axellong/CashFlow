@@ -4,6 +4,7 @@
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
@@ -17,17 +18,17 @@
    <children>
       <Pane layoutX="14.0" prefHeight="240.0" prefWidth="536.0">
          <children>
-            <JFXTextField id="input-label" fx:id="inputSemana_1" focusColor="WHITE" labelFloat="true" layoutY="52.0" prefHeight="30.0" prefWidth="120.0" promptText="No.Semana :">
+            <JFXTextField id="input-label" fx:id="inputCuenta" focusColor="WHITE" labelFloat="true" layoutY="106.0" prefHeight="30.0" prefWidth="120.0" promptText="No.Cuenta">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXTextField>
-            <JFXTextField id="input-label" fx:id="inputMonto_1" focusColor="WHITE" labelFloat="true" layoutY="106.0" prefHeight="30.0" prefWidth="120.0" promptText="Monto $ :">
+            <JFXTextField id="input-label" fx:id="inputMonto_1" focusColor="WHITE" labelFloat="true" layoutX="140.0" layoutY="106.0" prefHeight="30.0" prefWidth="120.0" promptText="Monto $ :">
                <font>
                   <Font size="13.0" />
                </font>
             </JFXTextField>
-            <JFXTextField id="input-label" fx:id="inputRazonSocial" focusColor="WHITE" labelFloat="true" layoutY="160.0" prefHeight="30.0" prefWidth="280.0" promptText="Razon Social :">
+            <JFXTextField id="input-label" fx:id="inputRazonSocial" focusColor="WHITE" labelFloat="true" layoutY="160.0" prefHeight="30.0" prefWidth="260.0" promptText="Razon Social :">
                <font>
                   <Font size="13.0" />
                </font>
@@ -41,17 +42,18 @@
                <font>
                   <Font size="13.0" />
                </font></JFXButton>
-            <JFXRadioButton id="radio-button" fx:id="radioCobrar" layoutX="170.0" layoutY="62.0" text="Cobrar" />
-            <JFXRadioButton id="radio-button" fx:id="radioPagar" layoutX="170.0" layoutY="116.0" text="Pagar" />
+            <JFXRadioButton id="radio-button" fx:id="radioCobrar" layoutX="330.0" layoutY="62.0" text="Cobrar" />
+            <JFXRadioButton id="radio-button" fx:id="radioPagar" layoutX="330.0" layoutY="116.0" text="Pagar" />
+            <DatePicker fx:id="datePickerCuentas" layoutY="55.0" />
+            <Label layoutY="30.0" text="Fecha :" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
       <Pane layoutX="14.0" layoutY="240.0" prefHeight="240.0" prefWidth="536.0">
          <children>
-            <JFXTextField id="input-label" fx:id="inputSemana_2" focusColor="WHITE" labelFloat="true" layoutY="52.0" prefHeight="30.0" prefWidth="120.0" promptText="No.Semana :">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </JFXTextField>
             <JFXTextField id="input-label" fx:id="inputMonto_2" focusColor="WHITE" labelFloat="true" layoutY="106.0" prefHeight="30.0" prefWidth="120.0" promptText="Monto $ :">
                <font>
                   <Font size="13.0" />
@@ -71,6 +73,12 @@
                <font>
                   <Font size="13.0" />
                </font></JFXButton>
+            <DatePicker fx:id="datePickerBanco" layoutY="55.0" />
+            <Label layoutY="30.0" text="Fecha :" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>

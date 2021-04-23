@@ -10,6 +10,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextFormatter;
@@ -22,17 +23,21 @@ import sample.DAOs.InitializerDAOs;
 import sample.DAOs.RegistrosEfectivoDAO;
 import sample.DAOs.SubCategoriasDAO;
 import sample.Util.Utils;
+
 import java.net.URL;
 import java.sql.Time;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.ZoneId;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.time.format.TextStyle;
+import java.util.*;
+
+import static sample.Util.Utils.nullOrEmpty;
 
 public class FlujoController implements Initializable {
+
+    @FXML
+    private DatePicker datePickerFecha;
 
     @FXML
     private TableView<FlujoTable> tableViewFlujo;
@@ -64,14 +69,24 @@ public class FlujoController implements Initializable {
 
     @FXML
     void MouseClickedSave(MouseEvent event) {
-        if (inputDescripcion.getText() != null && inputCantidad.getText() != null && boxCategoria.getSelectionModel().getSelectedItem() != null && (checkSalida.isSelected() || checkEntrada.isSelected())){
+
+        String descripcion = inputDescripcion.getText();
+        String cantidad = inputCantidad.getText();
+        Categoria_SubCategoria categoria_subCategoria =boxCategoria.getSelectionModel().getSelectedItem();
+        boolean salida = checkSalida.isSelected();
+        boolean entrada = checkEntrada.isSelected();
+        LocalDate date = datePickerFecha.getValue();
+        if (!nullOrEmpty(descripcion) && !nullOrEmpty(cantidad) && categoria_subCategoria != null && (salida || entrada) && date !=null){
             RegistroEfectivo registroEfectivo = new RegistroEfectivo();
-            registroEfectivo.setConcepto(inputDescripcion.getText());
-            registroEfectivo.setFecha(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()));
+            registroEfectivo.setConcepto(descripcion);
+            registroEfectivo.setFecha(Date.from(date.atStartOfDay(ZoneId.systemDefault()).toInstant()));
             registroEfectivo.setHora(Time.valueOf(LocalTime.now()));
-            registroEfectivo.setMonto(Double.parseDouble(inputCantidad.getText()));
-            registroEfectivo.setIdSubcategoria(boxCategoria.getSelectionModel().getSelectedItem().getEntity());
-            if (checkEntrada.isSelected()){
+            registroEfectivo.setMonto(Double.parseDouble(cantidad));
+            registroEfectivo.setIdSubcategoria(categoria_subCategoria.getEntity());
+            registroEfectivo.setAnio(date.getYear());
+            registroEfectivo.setMes(Utils.getMes(date));
+            registroEfectivo.setSemana(Utils.getSemana(date));
+            if (entrada){
                 registroEfectivo.setTipoMovimiento(checkEntrada.getText());
             }else{
                 registroEfectivo.setTipoMovimiento(checkSalida.getText());
@@ -103,18 +118,32 @@ public class FlujoController implements Initializable {
         flujoTables.addAll(flujo);
     }
 
-    private void fillBox(){
+    private void fillBox(int value){
         if(!boxCategoria.getItems().isEmpty()){
             boxCategoria.getItems().clear();
         }else{
-            boxCategoria.setVisibleRowCount(3);
+            boxCategoria.setVisibleRowCount(4);
         }
-        List<SubCategoria> subCategoriaList = subCategoriasDAO.getListSubCategorias();
-        subCategoriaList.forEach((node)-> boxCategoria.getItems().add(new Categoria_SubCategoria(node)));
+        if(value != 0){
+            List<SubCategoria> subCategoriaList = subCategoriasDAO.getListSubCategorias();
+            subCategoriaList.forEach((node)->{
+                if(value == 1){
+                    if(node.getId_Categoria().getClasificacion().getIdClasificacion() == 2 || node.getId_Categoria().getClasificacion().getIdClasificacion() ==4){
+                        boxCategoria.getItems().add(new Categoria_SubCategoria(node));
+                    }
+                }else {
+                    if(node.getId_Categoria().getClasificacion().getIdClasificacion() == 1 || node.getId_Categoria().getClasificacion().getIdClasificacion() ==3){
+                        boxCategoria.getItems().add(new Categoria_SubCategoria(node));
+                    }
+                }
+
+            });
+        }
+
     }
     public void initializarData(){
         fillTable();
-        fillBox();
+        fillBox(0);
     }
 
     private void checkSelection(){
@@ -122,21 +151,24 @@ public class FlujoController implements Initializable {
             if(checkEntrada.isSelected()){
                 checkEntrada.setSelected(false);
                 checkSalida.setSelected(new_val);
+                fillBox(2);
             }
         });
         checkEntrada.selectedProperty().addListener((ObservableValue<? extends Boolean> ov, Boolean old_val, Boolean new_val) -> {
             if(checkSalida.isSelected()){
                 checkSalida.setSelected(false);
                 checkEntrada.setSelected(new_val);
+                fillBox(1);
             }
         });
     }
 
     public void clean(){
-        checkEntrada.setSelected(false);
-        checkSalida.setSelected(false);
+        //checkEntrada.setSelected(false);
+        //checkSalida.setSelected(false);
         boxCategoria.getSelectionModel().clearSelection();
         inputCantidad.setText(null);
         inputDescripcion.setText(null);
+        //datePickerFecha.getEditor().clear();
     }
 }

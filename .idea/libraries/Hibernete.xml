@@ -1,19 +1,10 @@
 <component name="libraryTable">
   <library name="Hibernete">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/Hibernate/antlr-2.7.7.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/Hibernate/classmate-0.5.4.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/Hibernate/commons-collections-3.2.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/Hibernate/dom4j-1.6.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/Hibernate/hibernate-commons-annotations-4.0.1.Final.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/Hibernate/hibernate-core-4.0.0.Final.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/Hibernate/hibernate-jpa-2.0-api-1.0.1.Final.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/Hibernate/jandex-1.0.3.Final.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/Hibernate/javassist-3.12.1.GA.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/Hibernate/jboss-logging-3.1.0.CR2.jar!/" />
-      <root url="jar://$PROJECT_DIR$/../../../../../../../Conectores-Java/Hibernate/jboss-transaction-api_1.1_spec-1.0.0.Final.jar!/" />
+      <root url="file://C:/HibernateCoreJava/hibernateJarFiles/required" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://C:/HibernateCoreJava/hibernateJarFiles/required" recursive="false" />
   </library>
 </component>
