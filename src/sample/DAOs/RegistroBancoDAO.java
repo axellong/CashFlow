@@ -19,13 +19,13 @@ public class RegistroBancoDAO {
         return factory;
     }
 
-    public void setFactory(SessionFactory factory){
+    public void setFactory(SessionFactory factory) {
         RegistroBancoDAO.factory = factory;
     }
 
     @SuppressWarnings("deprecation")
 
-    public RegistroBancoDAO(){
+    public RegistroBancoDAO() {
         ConexionHibernete.setDriver("postgresql");
         ConexionHibernete.generarConexion();
         factory = ConexionHibernete.getFactory();
@@ -50,7 +50,7 @@ public class RegistroBancoDAO {
 
 
     public List<Banco> getListRegistroBancosPorMes(String mes, int anio) throws HibernateException {
-        List <RegistroBanco> listaRegistrosBancos = new ArrayList<>();
+        List<RegistroBanco> listaRegistrosBancos = new ArrayList<>();
         List<Banco> listaBancos = new ArrayList<>();
         Session session = factory.openSession();
         session.beginTransaction();
@@ -77,7 +77,7 @@ public class RegistroBancoDAO {
     }
 
     public List<Banco> getListRegistroBancosPorSemanaDelMes(int semana, String mes, int anio) throws HibernateException {
-        List <RegistroBanco> listaRegistrosBancos = new ArrayList<>();
+        List<RegistroBanco> listaRegistrosBancos = new ArrayList<>();
         List<Banco> listaBancos = new ArrayList<>();
         Session session = factory.openSession();
         session.beginTransaction();

@@ -9,9 +9,9 @@ public class RegistroBanco {
     private String mes;
     private int anio;
 
-   public RegistroBanco(){
+    public RegistroBanco() {
 
-   }
+    }
 
     public RegistroBanco(int numeroCuenta, double monto, String descripcion, int semana, String mes, int anio) {
         this.numeroCuenta = numeroCuenta;

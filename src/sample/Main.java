@@ -1,6 +1,5 @@
 package sample;
 
-import entity.RegistroBanco;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -8,7 +7,6 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import sample.DAOs.RegistroBancoDAO;
 import sample.Util.SceneAssembler;
 
 public class Main extends Application {
@@ -18,10 +16,10 @@ public class Main extends Application {
 
     //HILO START DE JAVAFX
     @Override
-    public void start(Stage stage){
+    public void start(Stage stage) {
         primaryStage = stage;
         //SceneAssembler.setRoot("Login","LoginView");
-        SceneAssembler.setRoot("Dash","DashView");
+        SceneAssembler.setRoot("Dash", "DashView");
         scene.setFill(Color.TRANSPARENT);
         primaryStage.setTitle("CashFlow");
         primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("Resources/iconLogo.png")));
